@@ -16,7 +16,7 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
         basePage = new BasePage(driver);
     }
 
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel2Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel1Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @FindBy(xpath = "//img[@class='logo_img']")
     @CacheLookup
     WebElement logo;
@@ -29,13 +29,11 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
         }
     }
 
+
+
     @FindBy(xpath = "//*[@class='user_id']/span[1]")
     @CacheLookup
     WebElement UserIdLabel;
-
-
-
-
 
     public boolean userIdLabelIsEnabled() {
         try{
@@ -46,6 +44,7 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
             return  false;
         }
     }
+
     public boolean userIdLabelIsDisplayed() {
         try{
             return basePage.elementIsDisplayed(UserIdLabel);
@@ -54,6 +53,7 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
             return false;
         }
     }
+
     public String getTextUserIdLabel() {
         try{
             basePage.waitElementToBeVisible(UserIdLabel);
@@ -67,6 +67,7 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
     @FindBy(xpath = "//*[@class='user_id']/span[2]")
     @CacheLookup
     WebElement UserId;
+
     public boolean userIdIsEnabled() {
         try{
             basePage.waitElementToBeVisible(UserId);
@@ -76,6 +77,7 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
             return  false;
         }
     }
+
     public String getTextUserId() {
         try{
             basePage.waitElementToBeVisible(UserId);
@@ -87,15 +89,108 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
     }
 
 
+    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Balance']/div[@class='balance_section']/span[1]")
+    @CacheLookup
+    WebElement balanceLabel;
+
+    public String getTextBalanceLabel() {
+        try{
+            basePage.waitElementToBeVisible(balanceLabel);
+            return basePage.getText(balanceLabel);
+        }
+        catch (Exception e){
+            return  "Cant find webElement balanceLabel ";
+        }
+    }
+
+    public boolean balanceLabelIsEnabled() {
+        try{
+            basePage.waitElementToBeVisible(balanceLabel);
+            return basePage.elementIsEnable(balanceLabel);
+        }
+        catch (Exception e){
+            return  false;
+        }
+    }
+
+    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Balance']/div[@class='balance_section']/span[2]")
+    @CacheLookup
+    WebElement balance;
+
+    public boolean balanceIsEnabled() {
+        try{
+            basePage.waitElementToBeVisible(balance);
+            return basePage.elementIsEnable(balance);
+        }
+        catch (Exception e){
+            return  false;
+        }
+    }
+
+    public String getTextBalance() {
+        try{
+            basePage.waitElementToBeVisible(balanceLabel);
+            return basePage.getText(balanceLabel);
+        }
+        catch (Exception e){
+            return  "Cant find webElement balanceLabel ";
+        }
+    }
 
 
+    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Bonus Balance']/div[@class='balance_section']/span[1]")
+    @CacheLookup
+    WebElement bonusLabel;
 
+    public boolean bonusLabelIsEnabled() {
+        try{
+            basePage.waitElementToBeVisible(bonusLabel);
+            return basePage.elementIsEnable(bonusLabel);
+        }
+        catch (Exception e){
+            return  false;
+        }
+    }
 
+    public String getTextBonusLabel() {
+        try{
+            basePage.waitElementToBeVisible(bonusLabel);
+            return basePage.getText(bonusLabel);
+        }
+        catch (Exception e){
+            return  "Cant find webElement bonusLabel ";
+        }
+    }
+
+    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Bonus Balance']/div[@class='balance_section']/span[2]")
+    @CacheLookup
+    WebElement bonus;
+
+    public boolean bonusIsEnabled() {
+        try{
+            basePage.waitElementToBeVisible(bonus);
+            return basePage.elementIsEnable(bonus);
+        }
+        catch (Exception e){
+            return  false;
+        }
+    }
+
+    public String getTextBonus() {
+        try{
+            basePage.waitElementToBeVisible(bonus);
+            return basePage.getText(bonus);
+        }
+        catch (Exception e){
+            return  "Cant find webElement bonus ";
+        }
+    }
 
 
     @FindBy(xpath = "//i[@class= 'icon icon-message']")
     @CacheLookup
     WebElement messageIcon;
+
     public void clickOnMessageIconIfVisible() {
         if(userIdLabelIsEnabled()) {
             try {
@@ -107,6 +202,7 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
             }
         }
     }
+
 
     @FindBy(xpath = "//*[@class = 'dropdown-style1-type-Dpd']")
     @CacheLookup
@@ -157,110 +253,6 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
 
 
 
-    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Balance']/div[@class='balance_section']/span[1]")
-    @CacheLookup
-    WebElement balanceLabel;
-
-    public String getTextBalanceLabel() {
-        try{
-            basePage.waitElementToBeVisible(balanceLabel);
-            return basePage.getText(balanceLabel);
-        }
-        catch (Exception e){
-            return  "Cant find webElement balanceLabel ";
-        }
-    }
-    public boolean balanceLabelIsEnabled() {
-        try{
-            basePage.waitElementToBeVisible(balanceLabel);
-            return basePage.elementIsEnable(balanceLabel);
-        }
-        catch (Exception e){
-            return  false;
-        }
-    }
-
-    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Balance']/div[@class='balance_section']/span[2]")
-    @CacheLookup
-    WebElement balance;
-    public boolean balanceIsEnabled() {
-        try{
-            basePage.waitElementToBeVisible(balance);
-            return basePage.elementIsEnable(balance);
-        }
-        catch (Exception e){
-            return  false;
-        }
-    }
-    public String getTextBalance() {
-        try{
-            basePage.waitElementToBeVisible(balanceLabel);
-            return basePage.getText(balanceLabel);
-        }
-        catch (Exception e){
-            return  "Cant find webElement balanceLabel ";
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Bonus Balance']/div[@class='balance_section']/span[1]")
-    @CacheLookup
-    WebElement bonusLabel;
-    public boolean bonusLabelIsEnabled() {
-        try{
-            basePage.waitElementToBeVisible(bonusLabel);
-            return basePage.elementIsEnable(bonusLabel);
-        }
-        catch (Exception e){
-            return  false;
-        }
-    }
-    public String getTextBonusLabel() {
-        try{
-            basePage.waitElementToBeVisible(bonusLabel);
-            return basePage.getText(bonusLabel);
-        }
-        catch (Exception e){
-            return  "Cant find webElement bonusLabel ";
-        }
-    }
-
-    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Bonus Balance']/div[@class='balance_section']/span[2]")
-    @CacheLookup
-    WebElement bonus;
-    public boolean bonusIsEnabled() {
-        try{
-            basePage.waitElementToBeVisible(bonus);
-            return basePage.elementIsEnable(bonus);
-        }
-        catch (Exception e){
-            return  false;
-        }
-    }
-    public String getTextBonus() {
-        try{
-            basePage.waitElementToBeVisible(bonus);
-            return basePage.getText(bonus);
-        }
-        catch (Exception e){
-            return  "Cant find webElement bonus ";
-        }
-    }
-
-
-
 
 
 
@@ -304,6 +296,7 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
     @FindBy(xpath = "//div[@class='TEST_ACCOUNT_DPD_Deposit list-section']")
     @CacheLookup
     WebElement customDropDownDeposit;
+
     public void clickOnCustomDropDownDeposit() {
         try{
             basePage.waitElementToBeVisible(customDropDownDeposit);
@@ -396,6 +389,7 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
     @FindBy(xpath = "//div[@class='TEST_ACCOUNT_DPD_Logout list-section']")
     @CacheLookup
     WebElement customDropDownLogOut;
+
     public void clickOnCustomDropDownLogOut() {
         try{
             basePage.waitElementToBeVisible(customDropDownLogOut);

@@ -40,7 +40,6 @@ public class BasePage {
     public int i = 1;
 
 
-
     public BasePage(WebDriver driver) throws AWTException {
         this.driver = driver;
         actions = new Actions(driver);
@@ -56,8 +55,6 @@ public class BasePage {
     public String baseURL = readConfig.getApplicationURL();
 
 
-
-
     public HttpResponse<String> menuListAPI() throws UnirestException {
         Unirest.setTimeouts(0, 0);
         HttpResponse<String> response = Unirest.get(baseURL + "/assets/json/menu.json?=636")
@@ -68,8 +65,9 @@ public class BasePage {
     //region <HeaderPanel2BottomLinks >
 
     public static ArrayList<String> LinkTitle = new ArrayList<>();
-    public static ArrayList<String> LinkXpath = new ArrayList<>();
+    public static ArrayList<String> LinkHrefPath = new ArrayList<>();
     public static ArrayList<String> LinkHref = new ArrayList<>();
+    public static ArrayList<String> LinkStyleType = new ArrayList<>();
     public static ArrayList<String> LinkOpenInRouting = new ArrayList<>();
 
     public ArrayList<String> SubLinkTitle = new ArrayList<>();
@@ -91,14 +89,11 @@ public class BasePage {
             String arrMenuListItems = String.valueOf(MenuListArray.get(i));
             JSONObject arrMenuListItem = new JSONObject(arrMenuListItems);
             String type = arrMenuListItem.get("Type").toString();
-//            BaseTest.logger.info("type >>>>  " + type);
-
 
             if (type.equals("HeaderPanel2Menu")) {
                 ItemsArray = arrMenuListItem.getJSONArray("Items");
-//                BaseTest.logger.info(baseURL + "   HeaderPanel2Menu Links count is  " + ItemsArray.length());
 
-                for (int j = 0; j < ItemsArray.length(); j++){
+                for (int j = 0; j < ItemsArray.length(); j++) {
                     String linkInfo = ItemsArray.get(j).toString();
                     JSONObject linkInfoJson = new JSONObject(linkInfo);
 
@@ -106,38 +101,94 @@ public class BasePage {
 //                    BaseTest.logger.info("Orientation >>>>  " + Orientation);
 //                    if (Orientation.equals("false")){
 
-                        String OpenInRouting = linkInfoJson.get("OpenInRouting").toString();
-                        LinkOpenInRouting.add(OpenInRouting);
+                    String StyleType = linkInfoJson.get("StyleType").toString();
+                    LinkStyleType.add(StyleType);
+
+                    String OpenInRouting = linkInfoJson.get("OpenInRouting").toString();
+                    LinkOpenInRouting.add(OpenInRouting);
 //                        BaseTest.logger.info("OpenInRouting >>>>  " + OpenInRouting);
 
-                        String menuTitle = linkInfoJson.get("Title").toString();
-                        LinkTitle.add(menuTitle);
+                    String menuTitle = linkInfoJson.get("Title").toString();
+                    LinkTitle.add(menuTitle);
 //                        LinkXpath.add("//li[contains (@class, 'TEST_HeaderPanel2Menu_" + menuTitle + "')]");
 //                        BaseTest.logger.info("menuTitle >>>>  " + menuTitle);
 
-                        String menuLinkHref = linkInfoJson.get("Href").toString();
-                        LinkHref.add(baseURL + "/"+menuLinkHref);
-//                        BaseTest.logger.info("menuLinkHref >>>>  " +baseURL + "/" + menuLinkHref);
+                    String menuLinkHref = linkInfoJson.get("Href").toString();
+                    LinkHrefPath.add(menuLinkHref);
 
-
-                        subMenuArray = linkInfoJson.getJSONArray("SubMenu");
-
-                        if (subMenuArray.length()!=0){
-                            for (int k=0; k< subMenuArray.length();k++){
-                                String subMenulinkInfo = subMenuArray.get(k).toString();
-                                JSONObject subMenulinkInfoJson = new JSONObject(subMenulinkInfo);
-                                String subMenuTitle = subMenulinkInfoJson.get("Title").toString();
-                                LinkTitle.add(subMenuTitle);
-//                                BaseTest.logger.info("subMenuTitle >>>>  " + subMenuTitle);
-                                String subOpenInRouting = subMenulinkInfoJson.get("OpenInRouting").toString();
-                                LinkOpenInRouting.add(OpenInRouting);
-
-                                String subMenuHref = subMenulinkInfoJson.get("Href").toString();
-                                LinkHref.add(baseURL + "/" + menuLinkHref + subMenuHref);
-//                                BaseTest.logger.info("subMenuLinkHref >>>>  " + baseURL + "/" + subMenuHref);
-                            }
+                    if (menuLinkHref.contains("https://")) {
+                        LinkHref.add(menuLinkHref);
+                    } else {
+                        if (menuLinkHref.startsWith("/")) {
+                            LinkHref.add(baseURL + menuLinkHref);
+                        } else {
+                            LinkHref.add(baseURL + "/" + menuLinkHref);
                         }
-//                    }
+                    }
+
+//                        BaseTest.logger.info("menuLinkHref >>>>  " +baseURL + "/" + menuLinkHref);
+                    subMenuArray = linkInfoJson.getJSONArray("SubMenu");
+
+                    if (subMenuArray.length() != 0) {
+                        for (int k = 0; k < subMenuArray.length(); k++) {
+                            String subMenulinkInfo = subMenuArray.get(k).toString();
+                            JSONObject subMenulinkInfoJson = new JSONObject(subMenulinkInfo);
+
+                            String subMenuTitle = subMenulinkInfoJson.get("Title").toString();
+                            LinkTitle.add(subMenuTitle);
+
+                            String subStyleType = linkInfoJson.get("StyleType").toString();
+                            LinkStyleType.add(subStyleType);
+
+//                                BaseTest.logger.info("subMenuTitle >>>>  " + subMenuTitle);
+                            String subOpenInRouting = subMenulinkInfoJson.get("OpenInRouting").toString();
+                            LinkOpenInRouting.add(subOpenInRouting);
+
+                            String subMenuHref = subMenulinkInfoJson.get("Href").toString();
+                            LinkHrefPath.add(subMenuHref);
+
+                            if (subMenuHref.contains("https://")) {
+                                LinkHref.add(subMenuHref);
+                            } else {
+                                if (subMenuHref.startsWith("/")) {
+
+                                    if (menuLinkHref.contains("https://")) {
+                                        LinkHref.add(menuLinkHref + subMenuHref);
+                                    } else {
+                                        if (menuLinkHref.startsWith("/")) {
+                                            LinkHref.add(baseURL + menuLinkHref + subMenuHref);
+
+                                        } else {
+                                            LinkHref.add(baseURL + "/" + menuLinkHref + subMenuHref);
+                                        }
+                                    }
+
+
+                                } else {
+
+                                    if (menuLinkHref.contains("https://")) {
+                                        LinkHref.add(menuLinkHref + "/" + subMenuHref);
+                                    } else {
+                                        if (menuLinkHref.startsWith("/")) {
+                                            LinkHref.add(baseURL + menuLinkHref + "/" + subMenuHref);
+                                        } else {
+                                            LinkHref.add(baseURL + "/" + menuLinkHref + "/" + subMenuHref);
+                                        }
+                                    }
+
+                                }
+                            }
+
+//                            if (LinkHref.contains(baseURL)){
+//                                LinkHref.add(subMenuHref);
+//                            }
+//                            else{
+//                                LinkHref.add(baseURL + menuLinkHref + subMenuHref);
+//                            }
+
+
+                        }
+                    }
                 }
                 break;
             }
@@ -148,21 +199,155 @@ public class BasePage {
     //endregion
 
 
+    //region <FooterLinks >
+
+    public static ArrayList<String> socialFooterTitle = new ArrayList<>();
+    public static ArrayList<String> socialFooterType = new ArrayList<>();
+    public static ArrayList<String> socialFooterIcon = new ArrayList<>();
+    public static ArrayList<String> socialFooterHref = new ArrayList<>();
+    public static ArrayList<String> socialFooterOpenInRouting = new ArrayList<>();
+
+
+    public static ArrayList<String> menuFooterTitle = new ArrayList<>();
+    public static ArrayList<String> menuFooterPath = new ArrayList<>();
+    public static ArrayList<String> menuFooterHref = new ArrayList<>();
+    public static ArrayList<String> menuFooterOpenInRouting = new ArrayList<>();
+
+    public static ArrayList<String> manuSubFooterTitle = new ArrayList<>();
+    public static ArrayList<String> menuSubFooterHref = new ArrayList<>();
+    public static ArrayList<String> menuSubFooterPath = new ArrayList<>();
+    public static ArrayList<String> menuSubFooterOpenInRouting = new ArrayList<>();
+
+    public void footerMenuLinksAPI() throws UnirestException, IOException {
+
+        int statusCod;
+        JSONObject jsonObjectBody;
+        JSONArray MenuListArray;
+        JSONArray ItemsArray;
+        JSONArray subMenuArray;
+        HttpResponse<String> response = menuListAPI();
+        Unirest.shutdown();
+        statusCod = response.getStatus();
+        jsonObjectBody = new JSONObject(response.getBody());
+
+        MenuListArray = jsonObjectBody.getJSONArray("MenuList");
+        for (int i = 0; i < MenuListArray.length(); i++) {
+            String arrMenuListItems = String.valueOf(MenuListArray.get(i));
+            JSONObject arrMenuListItem = new JSONObject(arrMenuListItems);
+            String type = arrMenuListItem.get("Type").toString();
+//            BaseTest.logger.info("type >>>>  " + type);
+
+
+            if (type.equals("FooterMenu")) {
+                ItemsArray = arrMenuListItem.getJSONArray("Items");
+
+                for (int j = 0; j < ItemsArray.length(); j++) {
+                    String footerItem = ItemsArray.get(j).toString();
+                    JSONObject footerItemJson = new JSONObject(footerItem);
+
+                    String ItemTitle = footerItemJson.get("Title").toString();
+                    String ItemType = footerItemJson.get("Type").toString();
+
+
+                    if (ItemTitle.equals("SocialNetworks") || ItemTitle.equals("Follow us")) {
+                        subMenuArray = footerItemJson.getJSONArray("SubMenu");
+                        if (subMenuArray.length() != 0) {
+                            for (int k = 0; k < subMenuArray.length(); k++) {
+
+                                String subMenuFooterSocial = subMenuArray.get(k).toString();
+                                JSONObject subMenuFooterSocialJson = new JSONObject(subMenuFooterSocial);
+
+                                String subMenuType = subMenuFooterSocialJson.get("Type").toString();
+                                socialFooterType.add(subMenuType);
+
+                                String subMenuIcon = subMenuFooterSocialJson.get("Icon").toString();
+                                socialFooterIcon.add(subMenuIcon);
+
+
+                                String subMenuTitle = subMenuFooterSocialJson.get("Title").toString();
+                                socialFooterTitle.add(subMenuTitle);
+
+                                String subMenuHref = subMenuFooterSocialJson.get("Href").toString();
+
+                                if (subMenuHref.contains("https://")) {
+                                    socialFooterHref.add(subMenuHref);
+                                } else {
+                                    if (subMenuHref.startsWith("/")) {
+                                        socialFooterHref.add(baseURL + subMenuHref);
+                                    } else {
+                                        socialFooterHref.add(baseURL + "/" + subMenuHref);
+                                    }
+                                }
+
+
+                                String subMenuOpenInRouting = subMenuFooterSocialJson.get("OpenInRouting").toString();
+                                socialFooterOpenInRouting.add(subMenuOpenInRouting);
+
+                            }
+                        }
+                    }
+
+
+                    if (ItemType.equals("ft-menu-item")) {
+
+                        String menuTitle = footerItemJson.get("Title").toString();
+                        menuFooterTitle.add(menuTitle);
+                        String menuHref = footerItemJson.get("Href").toString();
+                        menuFooterPath.add(menuHref);
+                        String menuOpenInRouting = footerItemJson.get("OpenInRouting").toString();
+                        menuFooterOpenInRouting.add(menuOpenInRouting);
+
+                        if (menuHref.contains("https://")) {
+                            menuFooterHref.add(menuHref);
+                        } else {
+                            if (menuHref.startsWith("/")) {
+                                menuFooterHref.add(baseURL + menuHref);
+                            } else {
+                                menuFooterHref.add(baseURL + "/" + menuHref);
+                            }
+                        }
+
+
+                        subMenuArray = footerItemJson.getJSONArray("SubMenu");
+                        if (subMenuArray.length() != 0) {
+                            for (int k = 0; k < subMenuArray.length(); k++) {
+
+                                String subMenuFooterMenu = subMenuArray.get(k).toString();
+                                JSONObject subMenuFooterSocialJson = new JSONObject(subMenuFooterMenu);
+
+
+                                String subMenuTitle = subMenuFooterSocialJson.get("Title").toString();
+                                manuSubFooterTitle.add(subMenuTitle);
+
+                                String subMenuHref = subMenuFooterSocialJson.get("Href").toString();
+                                menuSubFooterPath.add(subMenuHref);
 
 
 
+                                if (subMenuHref.contains("https://")) {
+                                    menuSubFooterHref.add(subMenuHref);
+                                } else {
+                                    if (subMenuHref.startsWith("/")) {
+                                        menuSubFooterHref.add(baseURL + subMenuHref);
+                                    } else {
+                                        menuSubFooterHref.add(baseURL + "/" + subMenuHref);
+                                    }
+
+                                }
+                                String subMenuOpenInRouting = subMenuFooterSocialJson.get("OpenInRouting").toString();
+                                menuSubFooterOpenInRouting.add(subMenuOpenInRouting);
+
+                            }
+                        }
+                    }
 
 
+                }
+            }
+        }
+    }
 
-
-
-
-
-
-
-
-
-
+    //endregion
 
 
     /* this method will be used for validate webElements visibility */
@@ -207,6 +392,7 @@ public class BasePage {
         element.clear();
         element.sendKeys(keys);
     }
+
     public void sendKeys(WebElement element, String keys) {
         element.sendKeys(keys);
     }
@@ -232,11 +418,11 @@ public class BasePage {
     //region <Get>
 
 
-
     /* this method will be return BasePage_s driver */
     public WebDriver getDriver() {
         return this.driver;
     }
+
     /* this method will get attribute from element */
     public String getTagName(WebElement element) {
         return element.getTagName();
@@ -402,7 +588,6 @@ public class BasePage {
     }
 
 
-
     public void actionDownArrowXTime(int x) {
         for (int i = 0; i < x; i++) {
             actions.sendKeys(Keys.ARROW_DOWN).perform();
@@ -415,6 +600,7 @@ public class BasePage {
         actions.keyUp(Keys.CONTROL);
         actions.perform();
     }
+
     public void actionControlCopy() {
         actions.keyDown(Keys.CONTROL);
         actions.sendKeys("c");
@@ -428,6 +614,7 @@ public class BasePage {
         actions.keyUp(Keys.CONTROL);
         actions.perform();
     }
+
     public void actionTab() {
         actions.sendKeys(Keys.TAB).perform();
     }
@@ -437,6 +624,7 @@ public class BasePage {
     public void robotTab() {
         robot.keyPress(KeyEvent.VK_TAB);
     }
+
     public void robotEnter() {
         robot.keyPress(KeyEvent.VK_ENTER);
     }
@@ -613,57 +801,59 @@ public class BasePage {
     }
 
     /* this method will be return True if Response cod is 0-300 */
-    public boolean checkConnectionUrlResponseCod(String url) {
+    public static boolean checkConnectionUrlResponseCod(String url) {
         boolean responseCodOK;
 
         if (url == null || url.isEmpty()) {
             System.out.println("  Empty link");
             responseCodOK = false;
-        }
-        try {
-            URL link = new URL(url);
-            HttpURLConnection connection = (HttpURLConnection) link.openConnection();
-            connection.connect();
-            int cod = connection.getResponseCode();
+        } else {
+            try {
+                URL link = new URL(url);
+                HttpURLConnection connection = (HttpURLConnection) link.openConnection();
+                connection.connect();
+                int cod = connection.getResponseCode();
 
-            if (cod >= 100 && cod < 200) {
-                System.out.println(url + " Info Message  " + cod);
-                responseCodOK = true;
-            } else if (cod >= 200 && cod < 300) {
-                System.out.println(url + " Response cod is OK  " + cod);
-                responseCodOK = true;
-            } else if (cod >= 300 && cod < 400) {
-                System.out.println(url + " Server Redirection  " + cod);
+                if (cod >= 100 && cod < 200) {
+                    System.out.println(url + " Info Message  " + cod);
+                    responseCodOK = true;
+                } else if (cod >= 200 && cod < 300) {
+                    System.out.println(url + " Response cod is OK  " + cod);
+                    responseCodOK = true;
+                } else if (cod >= 300 && cod < 400) {
+                    System.out.println(url + " Server Redirection  " + cod);
+                    responseCodOK = false;
+                } else if (cod >= 400 && cod < 500) {
+                    System.out.println(url + " Client error  " + cod);
+                    responseCodOK = false;
+                } else if (cod >= 500) {
+                    System.out.println(url + " Server error  " + cod);
+                    responseCodOK = false;
+                } else {
+                    System.out.println(" Something went wrong  ");
+                    responseCodOK = false;
+                }
+
+            } catch (Exception e) {
                 responseCodOK = false;
-            } else if (cod >= 400 && cod < 500) {
-                System.out.println(url + " Client error  " + cod);
-                responseCodOK = false;
-            } else if (cod >= 500) {
-                System.out.println(url + " Server error  " + cod);
-                responseCodOK = false;
-            } else {
-                System.out.println(" Something went wrong  ");
-                responseCodOK = false;
+                System.out.println("We have Exception  --> " + e);
             }
-
-        } catch (Exception e) {
-            responseCodOK = false;
-            System.out.println("We have Exception  --> " + e);
         }
+
         return responseCodOK;
     }
 
-    public ArrayList<String> getBrowserErrors(){
+    public ArrayList<String> getBrowserErrors() {
         driver.get("https://pokies2go.io/casino/all-games");
         ArrayList<String> browserErrors = new ArrayList<>();
         LogEntries logEntries = driver.manage().logs().get("browser");
         int i = 1;
         for (LogEntry entry : logEntries) {
             System.out.println(new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage());
-            String errorLogType= entry.getLevel().toString();
-            String errorLog= entry.getMessage().toString();
-            if(errorLog.contains("400") ||errorLog.contains("401")||errorLog.contains("402")||errorLog.contains("403")||errorLog.contains("404")||errorLog.contains("405")||errorLog.contains("Error")||errorLog.contains("ERROR")||errorLog.contains("error")||errorLog.contains("Failed")||errorLog.contains("Unchecked")||errorLog.contains("Uncaught")){
-                browserErrors.add("Error LogType: "+ errorLogType+" Error Log message: "+errorLog);
+            String errorLogType = entry.getLevel().toString();
+            String errorLog = entry.getMessage().toString();
+            if (errorLog.contains("400") || errorLog.contains("401") || errorLog.contains("402") || errorLog.contains("403") || errorLog.contains("404") || errorLog.contains("405") || errorLog.contains("Error") || errorLog.contains("ERROR") || errorLog.contains("error") || errorLog.contains("Failed") || errorLog.contains("Unchecked") || errorLog.contains("Uncaught")) {
+                browserErrors.add("Error LogType: " + errorLogType + " Error Log message: " + errorLog);
                 i++;
             }
         }

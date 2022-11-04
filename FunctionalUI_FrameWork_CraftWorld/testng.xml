@@ -7,8 +7,9 @@
     </listeners>
     <test name="testCases">
         <classes>
-            <class name="testCases.CraftWorld_00_2_HeaderTest_UserLogedIn"/>
-<!--            <class name="testCases.CraftWorld_06_FooterTest"/>-->
+            <class name="testCases.CraftWorld_00_HeaderTest_UserLogedIn"/>
+            <class name="testCases.CraftWorld_00_HeaderTest_UserLogedOut"/>
+            <class name="testCases.CraftWorld_06_FooterTest"/>
 <!--            <class name="testCases.CraftWorld_01_LoginPopUpTest"/>-->
 <!--            <class name="testCases.CraftWorld_02_PasswordRecoveryTest"/>-->
 <!--            <class name="testCases.CraftWorld_03_SignUpQuickRegisterTest"/>-->

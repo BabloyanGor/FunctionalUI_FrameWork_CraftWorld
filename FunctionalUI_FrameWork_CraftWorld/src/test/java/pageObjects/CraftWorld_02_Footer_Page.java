@@ -15,6 +15,74 @@ public class CraftWorld_02_Footer_Page extends BasePage {
         basePage = new BasePage(driver);
     }
 
+
+    @FindBy(xpath = "//div[contains (@class, 'footer-section_boxMenu')]//div[contains (@class, 'footer-column_title')]")
+    java.util.List<WebElement> footerTitlesLinks;
+
+    public java.util.List<WebElement> footerTitlesLinks() {
+        return footerTitlesLinks;
+    }
+
+
+    @FindBy(xpath = "//div[@class= 'footer-section_boxMenu styleType-ft-menu-item_boxMenu' ]//a")
+    @CacheLookup
+    java.util.List<WebElement> footerLinks;
+
+    public java.util.List<WebElement> footerMenuLinks() {
+        return footerLinks;
+    }
+
+
+
+
+
+    @FindBy(xpath = "//div[contains (@class, 'footer-open-button')]")
+    @CacheLookup
+    WebElement openButtonFooterLink;
+
+    public void clickOnOpenFooterLink() {
+        try {
+            javaScriptClick(openButtonFooterLink);
+        } catch (Exception e) {
+        }
+    }
+
+    public boolean openFooterButtonIsDisplayed(){
+        try{
+            return elementIsDisplayed(openButtonFooterLink);
+        }
+        catch(Exception e){
+            return false;
+        }
+
+    }
+
+    public boolean footerIsOpen(){
+        try{
+            String className = getAttribute(openButtonFooterLink,"class");
+            if (className.contains("180")){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        catch (Exception e){
+            return false;
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
     //region <The first Footer column <<Legal>> >
 
     @FindBy(xpath = "//div[@class='footer-column styleType-ft-menu-item TEST_FooterMenu_LEGAL']/div")

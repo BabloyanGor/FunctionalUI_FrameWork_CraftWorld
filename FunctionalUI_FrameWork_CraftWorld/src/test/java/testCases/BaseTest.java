@@ -64,8 +64,8 @@ public class BaseTest extends DriverFactory {
     public BaseTest() throws AWTException {
     }
 
-    @BeforeMethod
-    public void setup() throws  UnirestException, IOException {
+    @BeforeClass
+    public void setup()  {
 
 
 
@@ -92,6 +92,9 @@ public class BaseTest extends DriverFactory {
         craftBet_01_header_pageLogInUser = PageFactory.initElements(this.driver, CraftWorld_01_Header_Page_LogInUser.class);
         craftWorld_01_header_page_logOutUser = PageFactory.initElements(this.driver, CraftWorld_01_Header_Page_LogOutUser.class);
         craftWorld_02_footer_page = PageFactory.initElements(this.driver, CraftWorld_02_Footer_Page.class);
+
+
+
         craftWorld_03_login_popUp_page = PageFactory.initElements(this.driver, CraftWorld_03_Login_PopUp_Page.class);
         craftWorld_04_passwordRecovery_page = PageFactory.initElements(this.driver, CraftWorld_04_PasswordRecovery_Page.class);
         craftWorld_05_signUp_popUp_page = PageFactory.initElements(this.driver, CraftWorld_05_SignUp_PopUp_Page.class);
@@ -122,7 +125,7 @@ public class BaseTest extends DriverFactory {
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started ");
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         try {
             this.driver.quit();
