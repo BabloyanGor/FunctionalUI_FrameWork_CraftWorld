@@ -1,56 +1,56 @@
-2022-11-07 09:39:05,825 [main] INFO craftBet - Browser for test will be chrome as chosen
-2022-11-07 09:39:06,090 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-2022-11-07 09:39:06,124 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-2022-11-07 09:39:08,795 [main] INFO craftBet - All Page elements are initialized
-2022-11-07 09:39:08,804 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
-2022-11-07 09:39:10,355 [main] INFO craftBet - username passed
-2022-11-07 09:39:10,496 [main] INFO craftBet - password passed
-2022-11-07 09:39:10,568 [main] INFO craftBet - Log In Button was clicked
-2022-11-07 09:39:53,082 [main] INFO craftBet - Browser closed
-2022-11-07 09:39:53,082 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
-2022-11-07 09:39:53,084 [main] INFO craftBet - Browser for test will be chrome as chosen
-2022-11-07 09:39:53,091 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-2022-11-07 09:39:53,104 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-2022-11-07 09:39:55,206 [main] INFO craftBet - All Page elements are initialized
-2022-11-07 09:39:55,212 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
-2022-11-07 09:39:56,261 [main] INFO craftBet - 0  Sport   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,268 [main] INFO craftBet - 1  In-Play   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,273 [main] INFO craftBet - 2  Asian Sport   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,278 [main] INFO craftBet - 3  Virtual Sport   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,283 [main] INFO craftBet - 4  Kiron   OpenInRouting  false  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,288 [main] INFO craftBet - 5  Casino   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,293 [main] INFO craftBet - 6  Live Casino   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,299 [main] INFO craftBet - 7  PragmaticPlay   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,305 [main] INFO craftBet - 8  Evolution   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,310 [main] INFO craftBet - 9  Ezugi   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,316 [main] INFO craftBet - 10  TVBet   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,321 [main] INFO craftBet - 11  SAGaming   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,326 [main] INFO craftBet - 12  VivoGaming   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,331 [main] INFO craftBet - 13  VisionaryiGaming   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,336 [main] INFO craftBet - 14  Virtual Games   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,342 [main] INFO craftBet - 15  Skill Games   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,347 [main] INFO craftBet - 16  Backgammon   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,353 [main] INFO craftBet - 17  Poker   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,358 [main] INFO craftBet - 18  Okey   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,363 [main] INFO craftBet - 19  Keno   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,368 [main] INFO craftBet - 20  High Low   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,373 [main] INFO craftBet - 21  Crash   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,378 [main] INFO craftBet - 22  Lottery   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\", \"new\":\"1\"}"
-2022-11-07 09:39:56,383 [main] INFO craftBet - 23  Separator   OpenInRouting  false  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,388 [main] INFO craftBet - 24  Promotions   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,394 [main] INFO craftBet - 25  News   OpenInRouting  false  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,404 [main] INFO craftBet - 26  MobileApps   OpenInRouting  true  StyleType  "{\"style\":\"style1\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,410 [main] INFO craftBet - 27  Time   OpenInRouting  false  StyleType  "{\"style\":\"style2\", \"visibility\":\"always\", \"animated\":\"0\"}"
-2022-11-07 09:39:56,504 [main] INFO craftBet - Browser closed
-2022-11-07 09:39:56,504 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
-2022-11-07 09:39:56,505 [main] INFO craftBet - Browser for test will be chrome as chosen
-2022-11-07 09:39:56,511 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 107.0.5304.62 (resolved driver for Chrome 107)
-2022-11-07 09:39:56,521 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win32\107.0.5304.62\chromedriver.exe
-2022-11-07 09:39:58,447 [main] INFO craftBet - All Page elements are initialized
-2022-11-07 09:39:58,452 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
-2022-11-07 09:39:59,543 [main] INFO craftBet - username passed
-2022-11-07 09:39:59,646 [main] INFO craftBet - password passed
-2022-11-07 09:39:59,727 [main] INFO craftBet - Log In Button was clicked
-2022-11-07 09:43:50,898 [main] INFO craftBet - Browser closed
-2022-11-07 09:43:50,898 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
-2022-11-07 09:43:50,908 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-11-07 12:12:27,831 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 12:12:36,407 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 12:12:37,009 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 12:12:39,617 [main] INFO craftBet - username passed
+2022-11-07 12:12:39,752 [main] INFO craftBet - password passed
+2022-11-07 12:12:39,847 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 12:12:42,740 [main] INFO craftBet - Validate on HeaderMenu2 links Href presence
+2022-11-07 12:12:42,909 [main] INFO craftBet - Validate on HeaderMenu2 links functionality LoggedIn
+2022-11-07 12:12:43,681 [main] INFO craftBet - HeaderMenu2 links Size is28
+2022-11-07 12:12:44,452 [main] INFO craftBet - Sport  This link should open in same tab
+2022-11-07 12:12:45,976 [main] INFO craftBet - In-Play  This link should open in same tab
+2022-11-07 12:12:47,486 [main] INFO craftBet - Asian Sport  This link should open in same tab
+2022-11-07 12:12:48,992 [main] INFO craftBet - Virtual Sport  This link should open in same tab
+2022-11-07 12:12:50,567 [main] INFO craftBet - Kiron  This link should open in same tab
+2022-11-07 12:12:52,108 [main] INFO craftBet - Casino  This link should open in same tab
+2022-11-07 12:12:53,650 [main] INFO craftBet - Live Casino  This link should open in same tab
+2022-11-07 12:12:55,162 [main] INFO craftBet - PragmaticPlay  This link should open in same tab
+2022-11-07 12:12:56,659 [main] INFO craftBet - Evolution  This link should open in same tab
+2022-11-07 12:12:58,150 [main] INFO craftBet - Ezugi  This link should open in same tab
+2022-11-07 12:12:59,646 [main] INFO craftBet - TVBet  This link should open in same tab
+2022-11-07 12:13:01,190 [main] INFO craftBet - SAGaming  This link should open in same tab
+2022-11-07 12:13:02,688 [main] INFO craftBet - VivoGaming  This link should open in same tab
+2022-11-07 12:13:04,399 [main] INFO craftBet - VisionaryiGaming  This link should open in same tab
+2022-11-07 12:13:05,978 [main] INFO craftBet - Virtual Games  This link should open in same tab
+2022-11-07 12:13:07,560 [main] INFO craftBet - Skill Games  This link should open in same tab
+2022-11-07 12:13:09,046 [main] INFO craftBet - Backgammon  This link should open in same tab
+2022-11-07 12:13:10,525 [main] INFO craftBet - Poker  This link should open in same tab
+2022-11-07 12:13:12,001 [main] INFO craftBet - Okey  This link should open in same tab
+2022-11-07 12:13:13,611 [main] INFO craftBet - Keno  This link should open in same tab
+2022-11-07 12:13:15,172 [main] INFO craftBet - High Low  This link should open in same tab
+2022-11-07 12:13:16,673 [main] INFO craftBet - Crash  This link should open in same tab
+2022-11-07 12:13:18,228 [main] INFO craftBet - Lottery  This link should open in same tab
+2022-11-07 12:13:19,063 [main] INFO craftBet - Separator or Time
+2022-11-07 12:13:19,756 [main] INFO craftBet - Promotions  This link should open in same tab
+2022-11-07 12:13:21,386 [main] INFO craftBet - News  This link should open in new tab
+2022-11-07 12:13:25,306 [main] INFO craftBet - MobileApps  This link should open in same tab
+2022-11-07 12:13:25,330 [main] INFO craftBet - MobileApps  >>>>>>>>>>>>>>>>   First exception
+2022-11-07 12:13:25,345 [main] INFO craftBet - MobileApps  >>>>>>>>>>>>>>>>   Second exception
+2022-11-07 12:13:31,068 [main] INFO craftBet - MobileApps  This link should open in same tab
+2022-11-07 12:13:31,869 [main] INFO craftBet - Separator or Time
+2022-11-07 12:13:32,287 [main] INFO craftBet - Browser closed
+2022-11-07 12:13:32,288 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 12:13:32,294 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 12:13:35,469 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 12:13:35,954 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 12:13:37,344 [main] INFO craftBet - Browser closed
+2022-11-07 12:13:37,345 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 12:13:37,352 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 12:13:40,419 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 12:13:40,749 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 12:13:42,277 [main] INFO craftBet - username passed
+2022-11-07 12:13:42,374 [main] INFO craftBet - password passed
+2022-11-07 12:13:42,445 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 12:18:08,923 [main] INFO craftBet - Browser closed
+2022-11-07 12:18:08,923 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 12:18:08,941 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  

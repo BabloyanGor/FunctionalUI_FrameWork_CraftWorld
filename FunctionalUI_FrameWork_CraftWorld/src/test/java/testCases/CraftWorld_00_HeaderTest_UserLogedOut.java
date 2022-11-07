@@ -37,17 +37,17 @@ public class CraftWorld_00_HeaderTest_UserLogedOut extends BaseTest {
         SoftAssert softAssert = new SoftAssert();
         craftBet_01_header_pageLogInUser.headerPanel2BottomLinks();
 
-        System.out.println("captured links size  >>>>>>>>>>>>" + craftBet_01_header_pageLogInUser.bottomMenuAllLinks().size());
-        System.out.println("links Titles size  >>>>>>>>>>>>>" + BasePage.LinkTitle.size());
-        System.out.println("links Titles size  >>>>>>>>>>>>>" + BasePage.LinkStyleType.size());
+//        System.out.println("captured links size  >>>>>>>>>>>>" + craftBet_01_header_pageLogInUser.bottomMenuAllLinks().size());
+//        System.out.println("links Titles size  >>>>>>>>>>>>>" + BasePage.LinkTitle.size());
+//        System.out.println("links Titles size  >>>>>>>>>>>>>" + BasePage.LinkStyleType.size());
 
         for (int k = 0; k < craftBet_01_header_pageLogInUser.bottomMenuAllLinks().size(); k++) {
-            logger.info(k + "  " + BasePage.LinkTitle.get(k) + "   OpenInRouting  "+BasePage.LinkOpenInRouting.get(k)  + "  StyleType  " +BasePage.LinkStyleType.get(k));
+//            logger.info(k + "  " + BasePage.LinkTitle.get(k) + "   OpenInRouting  "+BasePage.LinkOpenInRouting.get(k)  + "  StyleType  " +BasePage.LinkStyleType.get(k));
 
             if (BasePage.LinkStyleType.get(k).contains("loggedOut")){
 
 
-                logger.info(BasePage.LinkStyleType.get(k));
+//                logger.info(BasePage.LinkStyleType.get(k));
 
 
                 if (BasePage.LinkTitle.get(k).equals("Separator") || BasePage.LinkTitle.get(k).equals("Seperator") || BasePage.LinkTitle.get(k).equals("Time")) {

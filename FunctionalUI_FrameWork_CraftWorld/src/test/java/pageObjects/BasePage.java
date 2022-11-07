@@ -815,28 +815,28 @@ public class BasePage {
                 int cod = connection.getResponseCode();
 
                 if (cod >= 100 && cod < 200) {
-                    System.out.println(url + " Info Message  " + cod);
+//                    System.out.println(url + " Info Message  " + cod);
                     responseCodOK = true;
                 } else if (cod >= 200 && cod < 300) {
-                    System.out.println(url + " Response cod is OK  " + cod);
+//                    System.out.println(url + " Response cod is OK  " + cod);
                     responseCodOK = true;
                 } else if (cod >= 300 && cod < 400) {
-                    System.out.println(url + " Server Redirection  " + cod);
+//                    System.out.println(url + " Server Redirection  " + cod);
                     responseCodOK = false;
                 } else if (cod >= 400 && cod < 500) {
-                    System.out.println(url + " Client error  " + cod);
+//                    System.out.println(url + " Client error  " + cod);
                     responseCodOK = false;
                 } else if (cod >= 500) {
-                    System.out.println(url + " Server error  " + cod);
+//                    System.out.println(url + " Server error  " + cod);
                     responseCodOK = false;
                 } else {
-                    System.out.println(" Something went wrong  ");
+//                    System.out.println(" Something went wrong  ");
                     responseCodOK = false;
                 }
 
             } catch (Exception e) {
                 responseCodOK = false;
-                System.out.println("We have Exception  --> " + e);
+//                System.out.println("We have Exception  --> " + e);
             }
         }
 
