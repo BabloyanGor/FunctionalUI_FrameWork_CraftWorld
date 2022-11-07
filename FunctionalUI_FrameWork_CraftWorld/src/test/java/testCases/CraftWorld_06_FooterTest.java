@@ -1,7 +1,6 @@
 package testCases;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -54,6 +53,8 @@ public class CraftWorld_06_FooterTest extends BaseTest {
     }
 
 
+
+
     @Test(priority = 20, description = "Validate on Footer Social Links presence")
     @Description("Validate on Footer Social Links presence")
     @Severity(SeverityLevel.NORMAL)
@@ -99,6 +100,9 @@ public class CraftWorld_06_FooterTest extends BaseTest {
 
 
 
+
+
+
     @Test(priority = 22, description = "Validate on Footer Menu Links presence")
     @Description("Validate on Footer Menu Links presence")
     @Severity(SeverityLevel.NORMAL)
@@ -116,8 +120,6 @@ public class CraftWorld_06_FooterTest extends BaseTest {
     }
 
 
-
-
     @Test(priority = 23, description = "Validate on Footer Menu Titles Links API response StatusCod check")
     @Description("Validate on Footer Menu Titles Links API response StatusCod check")
     @Severity(SeverityLevel.NORMAL)
@@ -133,6 +135,8 @@ public class CraftWorld_06_FooterTest extends BaseTest {
         }
         softAssert.assertAll();
     }
+
+
 
     @Test(priority = 24, description = "Validate on Footer Menu Links API response StatusCod check")
     @Description("Validate on Footer Menu Links API response StatusCod check")
@@ -161,38 +165,15 @@ public class CraftWorld_06_FooterTest extends BaseTest {
         SoftAssert softAssert = new SoftAssert();
 
         for (int i = 0; i < craftWorld_02_footer_page.footerTitlesLinks().size(); i++) {
-            try {
-                if (craftWorld_02_footer_page.openFooterButtonIsDisplayed() && !craftWorld_02_footer_page.footerIsOpen()){
-                    craftWorld_02_footer_page.clickOnOpenFooterLink();
-                }
-                WebElement footerTitleLink = craftWorld_02_footer_page.footerTitlesLinks().get(i);
-                craftWorld_02_footer_page.waitAction(waitTime);
-//                craftWorld_02_footer_page.scrollPageDown();
-                craftWorld_02_footer_page.actionMoveToElement(footerTitleLink);
-                craftWorld_02_footer_page.waitAction(waitTime);
-                craftWorld_02_footer_page.javaScriptClick(footerTitleLink);
-                craftWorld_02_footer_page.waitAction(waitTime);
 
-                if (BasePage.menuFooterPath.get(i).contains("https://")|| BasePage.menuFooterOpenInRouting.get(i).equals("false")) {
+            if (craftWorld_02_footer_page.openFooterButtonIsDisplayed() && !craftWorld_02_footer_page.footerIsOpen()) {
+                craftWorld_02_footer_page.clickOnOpenFooterLink();
+            }
 
-                    craftWorld_02_footer_page.handleWindowsWithArrayList(1);
-                    craftWorld_02_footer_page.waitAction(waitTime);
-                    softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
-                            "Link Title: " + BasePage.menuFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
-                    craftWorld_02_footer_page.getDriver().close();
-                    craftWorld_02_footer_page.handleWindowsWithArrayList(0);
+            if (!BasePage.menuFooterPath.get(i).equals("")) {
 
-                } else {
-                    softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
-                            "Link Title: " + BasePage.menuFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
-                }
-
-
-            } catch (Exception e) {
+                logger.info("Title: " + BasePage.menuFooterTitle.get(i) + "  Href: " + BasePage.menuFooterHref.get(i));
                 try {
-                    if (craftWorld_02_footer_page.openFooterButtonIsDisplayed() && !craftWorld_02_footer_page.footerIsOpen()){
-                        craftWorld_02_footer_page.clickOnOpenFooterLink();
-                    }
                     WebElement footerTitleLink = craftWorld_02_footer_page.footerTitlesLinks().get(i);
                     craftWorld_02_footer_page.waitAction(waitTime);
 //                craftWorld_02_footer_page.scrollPageDown();
@@ -200,6 +181,7 @@ public class CraftWorld_06_FooterTest extends BaseTest {
                     craftWorld_02_footer_page.waitAction(waitTime);
                     craftWorld_02_footer_page.javaScriptClick(footerTitleLink);
                     craftWorld_02_footer_page.waitAction(waitTime);
+
 
                     if (BasePage.menuFooterPath.get(i).contains("https://")|| BasePage.menuFooterOpenInRouting.get(i).equals("false")) {
 
@@ -215,14 +197,46 @@ public class CraftWorld_06_FooterTest extends BaseTest {
                                 "Link Title: " + BasePage.menuFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                     }
 
-                }
-                catch (Exception e1){
-                    softAssert.fail(BasePage.manuSubFooterTitle.get(i) + "  Has an exception");
-                }
+
+                } catch (Exception e) {
+                    try {
+                        if (craftWorld_02_footer_page.openFooterButtonIsDisplayed() && !craftWorld_02_footer_page.footerIsOpen()){
+                            craftWorld_02_footer_page.clickOnOpenFooterLink();
+                        }
+                        WebElement footerTitleLink = craftWorld_02_footer_page.footerTitlesLinks().get(i);
+                        craftWorld_02_footer_page.waitAction(waitTime);
+//                craftWorld_02_footer_page.scrollPageDown();
+                        craftWorld_02_footer_page.actionMoveToElement(footerTitleLink);
+                        craftWorld_02_footer_page.waitAction(waitTime);
+                        craftWorld_02_footer_page.javaScriptClick(footerTitleLink);
+                        craftWorld_02_footer_page.waitAction(waitTime);
+
+                        if (BasePage.menuFooterPath.get(i).contains("https://")|| BasePage.menuFooterOpenInRouting.get(i).equals("false")) {
+
+                            craftWorld_02_footer_page.handleWindowsWithArrayList(1);
+                            craftWorld_02_footer_page.waitAction(waitTime);
+                            softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
+                                    "Link Title: " + BasePage.menuFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                            craftWorld_02_footer_page.getDriver().close();
+                            craftWorld_02_footer_page.handleWindowsWithArrayList(0);
+
+                        } else {
+                            softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
+                                    "Link Title: " + BasePage.menuFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                        }
+
+                    }
+                    catch (Exception e1){
+                        softAssert.fail(BasePage.menuFooterTitle.get(i) + "  Has an exception");
+                    }
+
             }
+            }
+
+            softAssert.assertAll();
         }
-        softAssert.assertAll();
     }
+
 
     @Test(priority = 26, description = "Validate on Footer Menu Links Real paths")
     @Description("Validate on Footer Menu Links Real paths")
@@ -288,7 +302,6 @@ public class CraftWorld_06_FooterTest extends BaseTest {
                 }
                 catch (Exception e1){
                     softAssert.fail(BasePage.manuSubFooterTitle.get(i) + "  Has an exception");
-                    Allure.addAttachment("","");
                 }
             }
         }

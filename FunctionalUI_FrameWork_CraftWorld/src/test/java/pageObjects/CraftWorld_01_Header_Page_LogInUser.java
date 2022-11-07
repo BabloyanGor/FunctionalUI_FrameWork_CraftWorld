@@ -400,6 +400,14 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
         }
     }
 
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel1Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @FindBy (xpath = "//div[@class='header-section_topPanel flex_between']//li[contains (@class, 'HeaderPanel1Menu')]")
+    java.util.List<WebElement> Header1MenuLinks;
+
+    public List<WebElement> HeaderPanel1MenuAllLinks() {
+        return Header1MenuLinks;
+    }
+
 
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel2Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

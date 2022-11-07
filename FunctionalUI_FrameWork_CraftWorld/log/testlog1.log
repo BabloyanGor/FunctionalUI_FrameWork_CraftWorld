@@ -1,56 +1,212 @@
-2022-11-07 12:12:27,831 [main] INFO craftBet - Browser for test will be chrome as chosen
-2022-11-07 12:12:36,407 [main] INFO craftBet - All Page elements are initialized
-2022-11-07 12:12:37,009 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
-2022-11-07 12:12:39,617 [main] INFO craftBet - username passed
-2022-11-07 12:12:39,752 [main] INFO craftBet - password passed
-2022-11-07 12:12:39,847 [main] INFO craftBet - Log In Button was clicked
-2022-11-07 12:12:42,740 [main] INFO craftBet - Validate on HeaderMenu2 links Href presence
-2022-11-07 12:12:42,909 [main] INFO craftBet - Validate on HeaderMenu2 links functionality LoggedIn
-2022-11-07 12:12:43,681 [main] INFO craftBet - HeaderMenu2 links Size is28
-2022-11-07 12:12:44,452 [main] INFO craftBet - Sport  This link should open in same tab
-2022-11-07 12:12:45,976 [main] INFO craftBet - In-Play  This link should open in same tab
-2022-11-07 12:12:47,486 [main] INFO craftBet - Asian Sport  This link should open in same tab
-2022-11-07 12:12:48,992 [main] INFO craftBet - Virtual Sport  This link should open in same tab
-2022-11-07 12:12:50,567 [main] INFO craftBet - Kiron  This link should open in same tab
-2022-11-07 12:12:52,108 [main] INFO craftBet - Casino  This link should open in same tab
-2022-11-07 12:12:53,650 [main] INFO craftBet - Live Casino  This link should open in same tab
-2022-11-07 12:12:55,162 [main] INFO craftBet - PragmaticPlay  This link should open in same tab
-2022-11-07 12:12:56,659 [main] INFO craftBet - Evolution  This link should open in same tab
-2022-11-07 12:12:58,150 [main] INFO craftBet - Ezugi  This link should open in same tab
-2022-11-07 12:12:59,646 [main] INFO craftBet - TVBet  This link should open in same tab
-2022-11-07 12:13:01,190 [main] INFO craftBet - SAGaming  This link should open in same tab
-2022-11-07 12:13:02,688 [main] INFO craftBet - VivoGaming  This link should open in same tab
-2022-11-07 12:13:04,399 [main] INFO craftBet - VisionaryiGaming  This link should open in same tab
-2022-11-07 12:13:05,978 [main] INFO craftBet - Virtual Games  This link should open in same tab
-2022-11-07 12:13:07,560 [main] INFO craftBet - Skill Games  This link should open in same tab
-2022-11-07 12:13:09,046 [main] INFO craftBet - Backgammon  This link should open in same tab
-2022-11-07 12:13:10,525 [main] INFO craftBet - Poker  This link should open in same tab
-2022-11-07 12:13:12,001 [main] INFO craftBet - Okey  This link should open in same tab
-2022-11-07 12:13:13,611 [main] INFO craftBet - Keno  This link should open in same tab
-2022-11-07 12:13:15,172 [main] INFO craftBet - High Low  This link should open in same tab
-2022-11-07 12:13:16,673 [main] INFO craftBet - Crash  This link should open in same tab
-2022-11-07 12:13:18,228 [main] INFO craftBet - Lottery  This link should open in same tab
-2022-11-07 12:13:19,063 [main] INFO craftBet - Separator or Time
-2022-11-07 12:13:19,756 [main] INFO craftBet - Promotions  This link should open in same tab
-2022-11-07 12:13:21,386 [main] INFO craftBet - News  This link should open in new tab
-2022-11-07 12:13:25,306 [main] INFO craftBet - MobileApps  This link should open in same tab
-2022-11-07 12:13:25,330 [main] INFO craftBet - MobileApps  >>>>>>>>>>>>>>>>   First exception
-2022-11-07 12:13:25,345 [main] INFO craftBet - MobileApps  >>>>>>>>>>>>>>>>   Second exception
-2022-11-07 12:13:31,068 [main] INFO craftBet - MobileApps  This link should open in same tab
-2022-11-07 12:13:31,869 [main] INFO craftBet - Separator or Time
-2022-11-07 12:13:32,287 [main] INFO craftBet - Browser closed
-2022-11-07 12:13:32,288 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
-2022-11-07 12:13:32,294 [main] INFO craftBet - Browser for test will be chrome as chosen
-2022-11-07 12:13:35,469 [main] INFO craftBet - All Page elements are initialized
-2022-11-07 12:13:35,954 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
-2022-11-07 12:13:37,344 [main] INFO craftBet - Browser closed
-2022-11-07 12:13:37,345 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
-2022-11-07 12:13:37,352 [main] INFO craftBet - Browser for test will be chrome as chosen
-2022-11-07 12:13:40,419 [main] INFO craftBet - All Page elements are initialized
-2022-11-07 12:13:40,749 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
-2022-11-07 12:13:42,277 [main] INFO craftBet - username passed
-2022-11-07 12:13:42,374 [main] INFO craftBet - password passed
-2022-11-07 12:13:42,445 [main] INFO craftBet - Log In Button was clicked
-2022-11-07 12:18:08,923 [main] INFO craftBet - Browser closed
-2022-11-07 12:18:08,923 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
-2022-11-07 12:18:08,941 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-11-07 13:37:32,556 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 13:37:37,254 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 13:37:37,564 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 13:37:38,887 [main] INFO craftBet - username passed
+2022-11-07 13:37:39,024 [main] INFO craftBet - password passed
+2022-11-07 13:37:39,130 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 13:38:07,596 [main] INFO craftBet - Browser closed
+2022-11-07 13:38:07,596 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 13:38:07,633 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-11-07 13:38:32,459 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 13:38:36,822 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 13:38:37,109 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 13:38:38,616 [main] INFO craftBet - username passed
+2022-11-07 13:38:38,727 [main] INFO craftBet - password passed
+2022-11-07 13:38:38,818 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 13:38:40,857 [main] INFO craftBet - Validate on HeaderMenu2 links Href presence
+2022-11-07 13:38:40,965 [main] INFO craftBet - Validate on HeaderMenu2 links functionality LoggedIn
+2022-11-07 13:38:41,677 [main] INFO craftBet - HeaderMenu2 links Size is12
+2022-11-07 13:38:42,458 [main] INFO craftBet - Casino  This link should open in same tab
+2022-11-07 13:38:44,408 [main] INFO craftBet - Live Casino  This link should open in same tab
+2022-11-07 13:38:45,967 [main] INFO craftBet - PragmaticPlay  This link should open in same tab
+2022-11-07 13:38:47,437 [main] INFO craftBet - Evolution  This link should open in same tab
+2022-11-07 13:38:49,000 [main] INFO craftBet - Ezugi  This link should open in same tab
+2022-11-07 13:38:50,564 [main] INFO craftBet - VivoGaming  This link should open in same tab
+2022-11-07 13:38:52,217 [main] INFO craftBet - Virtual Games  This link should open in same tab
+2022-11-07 13:38:53,728 [main] INFO craftBet - World Cup  This link should open in same tab
+2022-11-07 13:38:55,278 [main] INFO craftBet - Sport  This link should open in same tab
+2022-11-07 13:38:56,848 [main] INFO craftBet - In-Play  This link should open in same tab
+2022-11-07 13:38:57,644 [main] INFO craftBet - Separator or Time
+2022-11-07 13:38:58,326 [main] INFO craftBet - Promotions  This link should open in same tab
+2022-11-07 13:38:59,833 [main] INFO craftBet - Browser closed
+2022-11-07 13:38:59,834 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 13:38:59,842 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 13:39:01,622 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 13:39:01,885 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 13:39:03,200 [main] INFO craftBet - Browser closed
+2022-11-07 13:39:03,200 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 13:39:03,211 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 13:39:04,965 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 13:39:04,975 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 13:39:06,269 [main] INFO craftBet - username passed
+2022-11-07 13:39:06,384 [main] INFO craftBet - password passed
+2022-11-07 13:39:06,474 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 13:39:08,144 [main] INFO craftBet - Social footer size is  0
+2022-11-07 13:41:22,506 [main] INFO craftBet - Browser closed
+2022-11-07 13:41:22,507 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 13:41:22,595 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-11-07 14:04:05,473 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 14:04:12,969 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 14:04:12,988 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 14:04:14,354 [main] INFO craftBet - username passed
+2022-11-07 14:04:14,462 [main] INFO craftBet - password passed
+2022-11-07 14:04:14,555 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 14:04:16,645 [main] INFO craftBet - Validate on HeaderMenu2 links Href presence
+2022-11-07 14:04:16,784 [main] INFO craftBet - Validate on HeaderMenu2 links functionality LoggedIn
+2022-11-07 14:04:17,500 [main] INFO craftBet - HeaderMenu2 links Size is14
+2022-11-07 14:04:18,318 [main] INFO craftBet - Casino  This link should open in same tab
+2022-11-07 14:04:19,999 [main] INFO craftBet - Live Casino  This link should open in same tab
+2022-11-07 14:04:21,492 [main] INFO craftBet - PragmaticPlay  This link should open in same tab
+2022-11-07 14:04:23,110 [main] INFO craftBet - Evolution  This link should open in same tab
+2022-11-07 14:04:25,741 [main] INFO craftBet - Ezugi  This link should open in same tab
+2022-11-07 14:04:27,406 [main] INFO craftBet - VivoGaming  This link should open in same tab
+2022-11-07 14:04:29,415 [main] INFO craftBet - SAGaming  This link should open in same tab
+2022-11-07 14:04:30,969 [main] INFO craftBet - Sport  This link should open in same tab
+2022-11-07 14:04:32,554 [main] INFO craftBet - MAHJONG  This link should open in same tab
+2022-11-07 14:04:34,047 [main] INFO craftBet - Skill Games  This link should open in same tab
+2022-11-07 14:04:35,546 [main] INFO craftBet - Poker  This link should open in same tab
+2022-11-07 14:04:36,341 [main] INFO craftBet - Separator or Time
+2022-11-07 14:04:37,235 [main] INFO craftBet - Promotions  This link should open in same tab
+2022-11-07 14:04:38,031 [main] INFO craftBet - Separator or Time
+2022-11-07 14:04:38,287 [main] INFO craftBet - Browser closed
+2022-11-07 14:04:38,288 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 14:04:38,291 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 14:04:40,300 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 14:04:40,548 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 14:04:41,435 [main] INFO craftBet - Browser closed
+2022-11-07 14:04:41,435 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 14:04:41,438 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 14:04:42,978 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 14:04:43,361 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 14:04:44,218 [main] INFO craftBet - username passed
+2022-11-07 14:04:44,379 [main] INFO craftBet - password passed
+2022-11-07 14:04:44,450 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 14:04:45,935 [main] INFO craftBet - Social footer size is  0
+2022-11-07 14:07:02,572 [main] INFO craftBet - Browser closed
+2022-11-07 14:07:02,573 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 14:07:02,605 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-11-07 14:08:06,223 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 14:08:10,275 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 14:08:10,638 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 14:08:12,017 [main] INFO craftBet - username passed
+2022-11-07 14:08:12,129 [main] INFO craftBet - password passed
+2022-11-07 14:08:12,207 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 14:08:14,436 [main] INFO craftBet - Validate on HeaderMenu2 links Href presence
+2022-11-07 14:08:14,545 [main] INFO craftBet - Validate on HeaderMenu2 links functionality LoggedIn
+2022-11-07 14:08:15,323 [main] INFO craftBet - HeaderMenu2 links Size is17
+2022-11-07 14:08:16,043 [main] INFO craftBet - Sport  This link should open in same tab
+2022-11-07 14:08:17,592 [main] INFO craftBet - In-Play  This link should open in same tab
+2022-11-07 14:08:19,116 [main] INFO craftBet - ESPORTS  This link should open in same tab
+2022-11-07 14:08:20,745 [main] INFO craftBet - Kiron  This link should open in same tab
+2022-11-07 14:08:22,324 [main] INFO craftBet - LIVE CASINO  This link should open in same tab
+2022-11-07 14:08:23,937 [main] INFO craftBet - Evolution  This link should open in same tab
+2022-11-07 14:08:25,561 [main] INFO craftBet - Ezugi  This link should open in same tab
+2022-11-07 14:08:27,205 [main] INFO craftBet - TVBet  This link should open in same tab
+2022-11-07 14:08:29,122 [main] INFO craftBet - SAGaming  This link should open in same tab
+2022-11-07 14:08:30,965 [main] INFO craftBet - PragmaticPlay  This link should open in same tab
+2022-11-07 14:08:32,547 [main] INFO craftBet - SLOTS  This link should open in same tab
+2022-11-07 14:08:34,062 [main] INFO craftBet - VIRTUAL GAMES  This link should open in same tab
+2022-11-07 14:08:35,589 [main] INFO craftBet - POKER  This link should open in same tab
+2022-11-07 14:08:37,362 [main] INFO craftBet - Lottery Lobby  This link should open in same tab
+2022-11-07 14:08:38,146 [main] INFO craftBet - Separator or Time
+2022-11-07 14:08:38,905 [main] INFO craftBet - Promotions  This link should open in same tab
+2022-11-07 14:08:39,903 [main] INFO craftBet - Browser closed
+2022-11-07 14:08:39,903 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 14:08:39,906 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 14:08:41,209 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 14:08:41,555 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 14:08:42,333 [main] INFO craftBet - Browser closed
+2022-11-07 14:08:42,334 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 14:08:42,342 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 14:08:43,731 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 14:08:44,142 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 14:08:44,883 [main] INFO craftBet - username passed
+2022-11-07 14:08:44,997 [main] INFO craftBet - password passed
+2022-11-07 14:08:45,073 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 14:08:46,885 [main] INFO craftBet - Social footer size is  5
+2022-11-07 14:11:25,934 [main] INFO craftBet - Browser closed
+2022-11-07 14:11:25,934 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 14:11:25,947 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-11-07 14:13:13,552 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 14:13:20,133 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 14:13:20,150 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 14:13:22,036 [main] INFO craftBet - username passed
+2022-11-07 14:13:22,269 [main] INFO craftBet - password passed
+2022-11-07 14:13:22,447 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 14:13:30,905 [main] INFO craftBet - Title: LEGAL  Href: https://craftbet.com/info/legal
+2022-11-07 14:13:54,895 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 14:13:58,929 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 14:13:59,295 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 14:14:00,702 [main] INFO craftBet - username passed
+2022-11-07 14:14:00,815 [main] INFO craftBet - password passed
+2022-11-07 14:14:00,918 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 14:14:28,895 [main] INFO craftBet - Browser closed
+2022-11-07 14:14:28,895 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 14:14:28,922 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-11-07 15:17:59,236 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 15:18:07,529 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 15:18:07,839 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 15:18:08,960 [main] INFO craftBet - username passed
+2022-11-07 15:18:09,110 [main] INFO craftBet - password passed
+2022-11-07 15:18:09,287 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 15:18:16,891 [main] INFO craftBet - Title: LEGAL  Href: https://tigerbet001.com/info/legal
+2022-11-07 15:18:29,301 [main] INFO craftBet - Title: SPORTSBOOK  Href: https://tigerbet001.com/info/sportsbook
+2022-11-07 15:18:36,092 [main] INFO craftBet - Title: CASINO & LIVE CASINO  Href: https://tigerbet001.com/info/casinoandlivecasino
+2022-11-07 15:18:42,896 [main] INFO craftBet - Title: VIRTUAL GAMES  Href: https://tigerbet001.com/info/virtualgames
+2022-11-07 15:18:45,017 [main] INFO craftBet - Browser closed
+2022-11-07 15:18:45,018 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 15:18:45,038 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-11-07 15:19:43,222 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 15:19:50,341 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 15:19:50,691 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 15:19:51,989 [main] INFO craftBet - username passed
+2022-11-07 15:19:52,222 [main] INFO craftBet - password passed
+2022-11-07 15:19:52,490 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 15:19:54,627 [main] INFO craftBet - Validate on HeaderMenu2 links Href presence
+2022-11-07 15:19:54,858 [main] INFO craftBet - Validate on HeaderMenu2 links functionality LoggedIn
+2022-11-07 15:19:55,898 [main] INFO craftBet - HeaderMenu2 links Size is24
+2022-11-07 15:19:56,687 [main] INFO craftBet - Sport  This link should open in same tab
+2022-11-07 15:19:58,194 [main] INFO craftBet - In-Play  This link should open in same tab
+2022-11-07 15:19:59,766 [main] INFO craftBet - Live Casino  This link should open in same tab
+2022-11-07 15:20:01,369 [main] INFO craftBet - PragmaticPlay  This link should open in same tab
+2022-11-07 15:20:02,991 [main] INFO craftBet - Evolution  This link should open in same tab
+2022-11-07 15:20:04,693 [main] INFO craftBet - Ezugi  This link should open in same tab
+2022-11-07 15:20:06,671 [main] INFO craftBet - TVBet  This link should open in same tab
+2022-11-07 15:20:08,860 [main] INFO craftBet - SAGaming  This link should open in same tab
+2022-11-07 15:20:10,438 [main] INFO craftBet - VivoGaming  This link should open in same tab
+2022-11-07 15:20:11,998 [main] INFO craftBet - Betconstruct  This link should open in same tab
+2022-11-07 15:20:13,640 [main] INFO craftBet - Virtual Sport  This link should open in same tab
+2022-11-07 15:20:15,166 [main] INFO craftBet - Kiron  This link should open in same tab
+2022-11-07 15:20:16,750 [main] INFO craftBet - Casino  This link should open in same tab
+2022-11-07 15:20:18,369 [main] INFO craftBet - Virtual Games  This link should open in same tab
+2022-11-07 15:20:19,920 [main] INFO craftBet - Skill Games  This link should open in same tab
+2022-11-07 15:20:21,482 [main] INFO craftBet - Backgammon  This link should open in same tab
+2022-11-07 15:20:23,109 [main] INFO craftBet - Poker  This link should open in same tab
+2022-11-07 15:20:24,765 [main] INFO craftBet - Keno  This link should open in same tab
+2022-11-07 15:20:26,439 [main] INFO craftBet - High Low  This link should open in same tab
+2022-11-07 15:20:27,941 [main] INFO craftBet - Crash  This link should open in same tab
+2022-11-07 15:20:29,566 [main] INFO craftBet - Lottery  This link should open in same tab
+2022-11-07 15:20:30,387 [main] INFO craftBet - Separator or Time
+2022-11-07 15:20:31,102 [main] INFO craftBet - Promotions  This link should open in same tab
+2022-11-07 15:20:31,932 [main] INFO craftBet - Separator or Time
+2022-11-07 15:20:32,352 [main] INFO craftBet - Browser closed
+2022-11-07 15:20:32,352 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 15:20:32,356 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 15:20:34,871 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 15:20:35,197 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 15:20:36,631 [main] INFO craftBet - Browser closed
+2022-11-07 15:20:36,632 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 15:20:36,640 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-11-07 15:20:38,066 [main] INFO craftBet - All Page elements are initialized
+2022-11-07 15:20:38,073 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-11-07 15:20:39,305 [main] INFO craftBet - username passed
+2022-11-07 15:20:39,404 [main] INFO craftBet - password passed
+2022-11-07 15:20:39,487 [main] INFO craftBet - Log In Button was clicked
+2022-11-07 15:20:41,030 [main] INFO craftBet - Social footer size is  5
+2022-11-07 15:20:49,949 [main] INFO craftBet - Title: LEGAL  Href: https://tigerbet001.com/info/legal
+2022-11-07 15:21:02,365 [main] INFO craftBet - Title: SPORTSBOOK  Href: https://tigerbet001.com/info/sportsbook
+2022-11-07 15:21:09,127 [main] INFO craftBet - Title: CASINO & LIVE CASINO  Href: https://tigerbet001.com/info/casinoandlivecasino
+2022-11-07 15:21:15,919 [main] INFO craftBet - Title: VIRTUAL GAMES  Href: https://tigerbet001.com/info/virtualgames
+2022-11-07 15:24:41,977 [main] INFO craftBet - Browser closed
+2022-11-07 15:24:41,978 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-11-07 15:24:42,023 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
