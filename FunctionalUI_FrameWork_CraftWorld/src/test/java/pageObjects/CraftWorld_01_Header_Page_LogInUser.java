@@ -487,6 +487,7 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
             return false;
         }
     }
+
     @FindBy(xpath = "//div[@class='timezone']/span[3]")
     @CacheLookup
     WebElement currentTimeTimeZone;
