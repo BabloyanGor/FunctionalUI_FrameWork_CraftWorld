@@ -1,0 +1,21 @@
+# Created on 2022-11-05T14:08:40.514
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:398)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:386)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+
+# Created on 2022-11-05T14:08:48.931
+Unexpected IOException with stream:  INFO [main] (CraftWorld_02_PasswordRecoveryTest.java:121)- password recovery input passed: --->2345<---
+
+
+# Created on 2022-11-05T14:08:58.999
+Unexpected IOException with stream:  INFO [main] (CraftWorld_02_PasswordRecoveryTest.java:123)- Send me password Recovery Button was clicked
+
+
+# Created on 2022-11-05T14:09:09.022
+Unexpected IOException: 8,1,testCases.CraftWorld_02_PasswordRecoveryTest,RecoveryPopUpNegativeTest(testCases.CraftWorld_02_PasswordRecoveryTest),null,expected [true] but found [false],null,expected [true] but found [false],CraftWorld_02_PasswordRecoveryTest.RecoveryPopUpNegativeTest:132 expected [true] but found [false],java.lang.AssertionError: expected [true] but found [false]\000A\0009at testCases.CraftWorld_02_PasswordRecoveryTest.RecoveryPopUpNegativeTest(CraftWorld_02_PasswordRecoveryTest.java:132)\000A
+
+
