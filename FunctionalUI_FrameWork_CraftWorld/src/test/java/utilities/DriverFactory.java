@@ -29,8 +29,8 @@ public class DriverFactory {
                 WebDriverManager.chromedriver().setup();
                 if (isHeadless.equals("true")){
                     cOptions=new ChromeOptions();
-//                    cOptions.addArguments("--headless", "--window-size=1920,1080");
-                    cOptions.setHeadless(true);
+                    cOptions.addArguments("--headless", "--window-size=1920,1080");
+//                    cOptions.setHeadless(true);
                     driver= new ChromeDriver(cOptions);
                 }
                 else{
