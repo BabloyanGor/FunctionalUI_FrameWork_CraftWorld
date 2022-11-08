@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.BasePage;
+import utilities.UserSoftAssertion;
 
 import java.awt.*;
 import java.io.IOException;
@@ -22,7 +23,7 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
     boolean firstTime = false;
     String user;
     String token;
-    int waitTime = 500;
+    int waitTime = 1000;
 
     //Header Menu First Row
 
@@ -65,23 +66,22 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
     @Test(priority = 20, description = "Validate on HeaderMenu2 links Href presence")
     @Description("Validate on HeaderMenu2 links Href presence")
     @Severity(SeverityLevel.BLOCKER)
-    public void emptyHref() {
-
+    public void emptyHref() throws AWTException {
+        UserSoftAssertion userSoftAssertion = new UserSoftAssertion();
         logger.info("Validate on HeaderMenu2 links Href presence");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i<BasePage.LinkHrefPath.size(); i++){
             String path = BasePage.LinkHrefPath.get(i);
             if (path.isEmpty()){
-                softAssert.fail(BasePage.LinkTitle.get(i) + "  Has no url path");
+                userSoftAssertion.fail(BasePage.LinkTitle.get(i) + "  Has no url path");
                 logger.info(BasePage.LinkTitle.get(i) + "  Has no url path");
             }
             else {
-                softAssert.assertTrue(true);
+                userSoftAssertion.assertTrue(true);
                 logger.info(BasePage.LinkTitle.get(i) + "  Pass");
             }
         }
-        softAssert.assertAll();
+        userSoftAssertion.assertAll();
     }
 
 
@@ -89,11 +89,11 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
     @Test(priority = 21, description = "Validate on HeaderMenu2 links functionality LoggedIn")
     @Description("Validate on HeaderMenu2 links functionality LoggedIn")
     @Severity(SeverityLevel.BLOCKER)
-    public void headerMenu2LinksFunctionalityTest() throws UnirestException, IOException {
+    public void headerMenu2LinksFunctionalityTest() throws UnirestException, IOException, AWTException {
 
         logger.info("Validate on HeaderMenu2 links functionality LoggedIn");
-
-        SoftAssert softAssert = new SoftAssert();
+        UserSoftAssertion userSoftAssertion = new UserSoftAssertion();
+//        SoftAssert softAssert = new SoftAssert();
         craftBet_01_header_pageLogInUser.headerPanel2BottomLinks();
 
 //        System.out.println("captured links size  >>>>>>>>>>>>" + craftBet_01_header_pageLogInUser.bottomMenuAllLinks().size());
@@ -114,10 +114,10 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
                 if (BasePage.LinkTitle.get(k).equals("Separator") || BasePage.LinkTitle.get(k).equals("Seperator") || BasePage.LinkTitle.get(k).equals("Time")) {
                     logger.info("Separator or Time");
                     if (BasePage.LinkHref.get(k).equals(baseURL) || BasePage.LinkHref.get(k).equals(baseURL+"/")|| BasePage.LinkHref.get(k).equals(baseURL+"/home")){
-                        softAssert.assertTrue(true,"Link Title: " + BasePage.LinkTitle.get(k) + "   Href: " + BasePage.LinkHref.get(k));
+                        userSoftAssertion.assertTrue(true,"Link Title: " + BasePage.LinkTitle.get(k) + "   Href: " + BasePage.LinkHref.get(k));
                     }
                     else{
-                        softAssert.fail("Link Title: " + BasePage.LinkTitle.get(k) + "   Href: " + BasePage.LinkHref.get(k));
+                        userSoftAssertion.fail("Link Title: " + BasePage.LinkTitle.get(k) + "   Href: " + BasePage.LinkHref.get(k));
                     }
 //                softAssert.assertEquals(BasePage.LinkHref.get(k), baseURL + "/",
 //                        "Link Title: " + BasePage.LinkTitle.get(k) + "   Href: " + BasePage.LinkHref.get(k));
@@ -131,13 +131,13 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
                     if (BasePage.LinkOpenInRouting.get(k).equals("true") || !BasePage.LinkHrefPath.get(k).contains(baseURL)) {
                         logger.info(BasePage.LinkTitle.get(k) + "  This link should open in same tab");
 
-                        softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                        userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                 "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
 
                         craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                         craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                         craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                        softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                        userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                 "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                         craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
 
@@ -146,7 +146,7 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
 
                         craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
                         craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                        softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                        userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                 "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                         craftBet_01_header_pageLogInUser.getDriver().close();
                         craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
@@ -155,7 +155,7 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
                         craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                         craftBet_01_header_pageLogInUser.waitAction(waitTime);
                         craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
-                        softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                        userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                 "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                         craftBet_01_header_pageLogInUser.getDriver().close();
                         craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
@@ -171,12 +171,12 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
 
                         if (BasePage.LinkOpenInRouting.get(k).equals("true") || !BasePage.LinkHrefPath.contains(baseURL)) {
                             logger.info(BasePage.LinkTitle.get(k) + "  This link should open in same tab");
-                            softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                     "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                             craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                             craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                             craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                            softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                     "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                             craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
 
@@ -184,7 +184,7 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
                             logger.info(BasePage.LinkTitle.get(k) + "  This link should open in new tab");
                             craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
                             craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                            softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                     "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                             craftBet_01_header_pageLogInUser.getDriver().close();
                             craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
@@ -193,7 +193,7 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
                             craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                             craftBet_01_header_pageLogInUser.waitAction(waitTime);
                             craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
-                            softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                     "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                             craftBet_01_header_pageLogInUser.getDriver().close();
                             craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
@@ -208,12 +208,12 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
 
                             if (BasePage.LinkOpenInRouting.get(k).equals("true") || !BasePage.LinkHrefPath.contains(baseURL)) {
                                 logger.info(BasePage.LinkTitle.get(k) + "  This link should open in same tab");
-                                softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                         "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                 craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                                 craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                                 craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                                softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                         "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                 craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
 
@@ -221,7 +221,7 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
                                 logger.info(BasePage.LinkTitle.get(k) + "  This link should open in new tab");
                                 craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
                                 craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                                softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                         "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                 craftBet_01_header_pageLogInUser.getDriver().close();
                                 craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
@@ -230,21 +230,21 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
                                 craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                                 craftBet_01_header_pageLogInUser.waitAction(waitTime);
                                 craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
-                                softAssert.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
+                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
                                         "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                 craftBet_01_header_pageLogInUser.getDriver().close();
                                 craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
                             }
 
                         } catch (Exception e3) {
-                            softAssert.fail("We have Exception On Link Title: " + BasePage.LinkTitle.get(k) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                            userSoftAssertion.fail("We have Exception On Link Title: " + BasePage.LinkTitle.get(k) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                         }
                     }
                 }
             }
         }
         }
-        softAssert.assertAll();
+        userSoftAssertion.assertAll();
     }
 
 

@@ -124,6 +124,50 @@ public class ReportingAllure extends BaseTest implements ITestListener {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
     }
 
+    public String typeByMime(String type) {
+        String attachmentType = null;
+        switch (type) {
+//            case "image/bmp":
+//            case "image/gif":
+//            case "image/tiff":
+//            case "image/jpeg":
+//            case "image/jpg":
+//            case "image/png":
+            case "image/*":
+//            case "text/xml":
+//            case "application/xml":
+            case "application/json":
+            case "text/json":
+//            case "text/yaml":
+//            case "application/yaml":
+//            case "application/x-yaml":
+//            case "text/x-yaml":
+            case "text/plain":
+            case "text/*":
+            case "text/html":
+            case "text/csv":
+            case "text/xlsx":
+//            case "image/svg+xml":
+            case "video/mp4":
+            case "video/ogg":
+            case "video/webm":
+//            case "text/uri-list":
+            default:
+
+        }
+        return attachmentType;
+    }
+
+
+    @Attachment(value = "{0}", type = "application/json")
+    public static String saveApplicationJson(String message) {
+        return message;
+    }
+    @Attachment(value = "{0}", type = "text/json")
+    public static String saveTextJson(String message) {
+        return message;
+    }
+
     //Text attachments for Allure
     @Attachment(value = "Page screenshot", type = "image/png")
     public byte[] saveScreenshotPNG(WebDriver driver) {
@@ -160,42 +204,42 @@ public class ReportingAllure extends BaseTest implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-//        logger.info(getTestMethodName(iTestResult) + " test is succeed.");
+        logger.info(getTestMethodName(iTestResult) + " test is succeed.");
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-//        logger.info(getTestMethodName(iTestResult) + " test is failed.");
+        logger.info(getTestMethodName(iTestResult) + " test is failed.");
 
-        //Get driver from BaseTest and assign to local webdriver variable.
-        BasePage basePage = null;
-        try {
-            basePage = new BasePage();
-        } catch (AWTException e) {
-            throw new RuntimeException(e);
-        }
-        Object testClass = iTestResult.getInstance();
-        WebDriver driver = basePage.getDriver();
-
-        //Allure ScreenShotRobot and SaveTestLog
-        if (driver != null) {
-            System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
-            saveScreenshotPNG(driver);
-        }
-
-        //Save a log on allure.
-        saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
+//        //Get driver from BaseTest and assign to local webdriver variable.
+//        BasePage basePage = null;
+//        try {
+//            basePage = new BasePage();
+//        } catch (AWTException e) {
+//            throw new RuntimeException(e);
+//        }
+//        Object testClass = iTestResult.getInstance();
+//        WebDriver driver = basePage.getDriver();
+//
+//        //Allure ScreenShotRobot and SaveTestLog
+//        if (driver != null) {
+//            System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
+//            saveScreenshotPNG(driver);
+//        }
+//
+//        //Save a log on allure.
+//        saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
 
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-//        logger.info(getTestMethodName(iTestResult) + " test is skipped.");
+        logger.info(getTestMethodName(iTestResult) + " test is skipped.");
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-//        logger.info("Test failed but it is in defined success ratio " + getTestMethodName(iTestResult));
+        logger.info("Test failed but it is in defined success ratio " + getTestMethodName(iTestResult));
     }
 }
 

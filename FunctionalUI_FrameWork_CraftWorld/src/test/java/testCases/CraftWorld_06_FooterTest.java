@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageObjects.BasePage;
+import utilities.UserSoftAssertion;
 
 import java.awt.*;
 import java.io.IOException;
@@ -59,7 +60,6 @@ public class CraftWorld_06_FooterTest extends BaseTest {
     @Description("Validate on Footer Social Links presence")
     @Severity(SeverityLevel.NORMAL)
     public void footerSocialLinksPresenceTest() {
-
         SoftAssert softAssert = new SoftAssert();
         logger.info("Social footer size is  " + BasePage.socialFooterTitle.size());
         for (int i = 0; i < BasePage.socialFooterHref.size(); i++) {
@@ -78,7 +78,7 @@ public class CraftWorld_06_FooterTest extends BaseTest {
     @Test(priority = 21, description = "Validate on Footer Social Links Icons presence")
     @Description("Validate on Footer Social Links Icons presence")
     @Severity(SeverityLevel.NORMAL)
-    public void footerSocialLinksIconsPresenceTest() {
+    public void footerSocialLinksIconsPresenceTest()  {
 
         SoftAssert softAssert = new SoftAssert();
 
@@ -107,6 +107,7 @@ public class CraftWorld_06_FooterTest extends BaseTest {
     @Description("Validate on Footer Menu Links presence")
     @Severity(SeverityLevel.NORMAL)
     public void footerMenusLinksPresenceTest() {
+
         SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i < BasePage.menuSubFooterPath.size(); i++) {
 
@@ -123,7 +124,7 @@ public class CraftWorld_06_FooterTest extends BaseTest {
     @Test(priority = 23, description = "Validate on Footer Menu Titles Links API response StatusCod check")
     @Description("Validate on Footer Menu Titles Links API response StatusCod check")
     @Severity(SeverityLevel.NORMAL)
-    public void footerMenusLinksTitlesAPICheckTest() {
+    public void footerMenusLinksTitlesAPICheckTest() throws AWTException {
         SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i < BasePage.menuFooterHref.size(); i++) {
 
@@ -141,7 +142,7 @@ public class CraftWorld_06_FooterTest extends BaseTest {
     @Test(priority = 24, description = "Validate on Footer Menu Links API response StatusCod check")
     @Description("Validate on Footer Menu Links API response StatusCod check")
     @Severity(SeverityLevel.NORMAL)
-    public void footerMenusLinksAPICheckTest() {
+    public void footerMenusLinksAPICheckTest() throws AWTException {
         SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i < BasePage.menuSubFooterHref.size(); i++) {
 
@@ -161,9 +162,9 @@ public class CraftWorld_06_FooterTest extends BaseTest {
     @Test(priority = 25, description = "Validate on Footer Menu Title Links Real paths")
     @Description("Validate on Footer Menu Title Links Real paths")
     @Severity(SeverityLevel.NORMAL)
-    public void footerMenusTitlesLinksRealPathTest() {
-        SoftAssert softAssert = new SoftAssert();
-
+    public void footerMenusTitlesLinksRealPathTest() throws AWTException {
+       // SoftAssert softAssert = new SoftAssert();
+        UserSoftAssertion userSoftAssertion = new UserSoftAssertion();
         for (int i = 0; i < craftWorld_02_footer_page.footerTitlesLinks().size(); i++) {
 
             if (craftWorld_02_footer_page.openFooterButtonIsDisplayed() && !craftWorld_02_footer_page.footerIsOpen()) {
@@ -187,13 +188,13 @@ public class CraftWorld_06_FooterTest extends BaseTest {
 
                         craftWorld_02_footer_page.handleWindowsWithArrayList(1);
                         craftWorld_02_footer_page.waitAction(waitTime);
-                        softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
+                        userSoftAssertion.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
                                 "Link Title: " + BasePage.menuFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                         craftWorld_02_footer_page.getDriver().close();
                         craftWorld_02_footer_page.handleWindowsWithArrayList(0);
 
                     } else {
-                        softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
+                        userSoftAssertion.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
                                 "Link Title: " + BasePage.menuFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                     }
 
@@ -215,25 +216,25 @@ public class CraftWorld_06_FooterTest extends BaseTest {
 
                             craftWorld_02_footer_page.handleWindowsWithArrayList(1);
                             craftWorld_02_footer_page.waitAction(waitTime);
-                            softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
+                            userSoftAssertion.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
                                     "Link Title: " + BasePage.menuFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                             craftWorld_02_footer_page.getDriver().close();
                             craftWorld_02_footer_page.handleWindowsWithArrayList(0);
 
                         } else {
-                            softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
+                            userSoftAssertion.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuFooterHref.get(i),
                                     "Link Title: " + BasePage.menuFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                         }
 
                     }
                     catch (Exception e1){
-                        softAssert.fail(BasePage.menuFooterTitle.get(i) + "  Has an exception");
+                        userSoftAssertion.fail(BasePage.menuFooterTitle.get(i) + "  Has an exception");
                     }
 
             }
             }
 
-            softAssert.assertAll();
+            userSoftAssertion.assertAll();
         }
     }
 
@@ -241,9 +242,9 @@ public class CraftWorld_06_FooterTest extends BaseTest {
     @Test(priority = 26, description = "Validate on Footer Menu Links Real paths")
     @Description("Validate on Footer Menu Links Real paths")
     @Severity(SeverityLevel.NORMAL)
-    public void footerMenusLinksRealPathTest() {
-        SoftAssert softAssert = new SoftAssert();
-
+    public void footerMenusLinksRealPathTest() throws AWTException {
+        //SoftAssert softAssert = new SoftAssert();
+        UserSoftAssertion userSoftAssertion = new UserSoftAssertion();
         for (int i = 0; i < craftWorld_02_footer_page.footerMenuLinks().size(); i++) {
             try {
                 if (craftWorld_02_footer_page.openFooterButtonIsDisplayed() && !craftWorld_02_footer_page.footerIsOpen()){
@@ -261,13 +262,13 @@ public class CraftWorld_06_FooterTest extends BaseTest {
 
                     craftWorld_02_footer_page.handleWindowsWithArrayList(1);
                     craftWorld_02_footer_page.waitAction(waitTime);
-                    softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuSubFooterHref.get(i),
+                    userSoftAssertion.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuSubFooterHref.get(i),
                             "Link Title: " + BasePage.manuSubFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                     craftWorld_02_footer_page.getDriver().close();
                     craftWorld_02_footer_page.handleWindowsWithArrayList(0);
 
                 } else {
-                    softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuSubFooterHref.get(i),
+                    userSoftAssertion.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuSubFooterHref.get(i),
                             "Link Title: " + BasePage.manuSubFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                 }
 
@@ -289,23 +290,23 @@ public class CraftWorld_06_FooterTest extends BaseTest {
 
                         craftWorld_02_footer_page.handleWindowsWithArrayList(1);
                         craftWorld_02_footer_page.waitAction(waitTime);
-                        softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuSubFooterHref.get(i),
+                        userSoftAssertion.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuSubFooterHref.get(i),
                                 "Link Title: " + BasePage.manuSubFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                         craftWorld_02_footer_page.getDriver().close();
                         craftWorld_02_footer_page.handleWindowsWithArrayList(0);
 
                     } else {
-                        softAssert.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuSubFooterHref.get(i),
+                        userSoftAssertion.assertEquals(craftWorld_02_footer_page.getUrl(), BasePage.menuSubFooterHref.get(i),
                                 "Link Title: " + BasePage.manuSubFooterTitle.get(i) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                     }
 
                 }
                 catch (Exception e1){
-                    softAssert.fail(BasePage.manuSubFooterTitle.get(i) + "  Has an exception");
+                    userSoftAssertion.fail(BasePage.manuSubFooterTitle.get(i) + "  Has an exception");
                 }
             }
         }
-        softAssert.assertAll();
+        userSoftAssertion.assertAll();
     }
 
 
