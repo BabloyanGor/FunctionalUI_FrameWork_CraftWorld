@@ -99,7 +99,7 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
 //        System.out.println("captured links size  >>>>>>>>>>>>" + craftBet_01_header_pageLogInUser.bottomMenuAllLinks().size());
 //        System.out.println("links Titles size  >>>>>>>>>>>>>" + BasePage.LinkTitle.size());
 //        System.out.println("links Titles size  >>>>>>>>>>>>>" + BasePage.LinkStyleType.size());
-        logger.info("HeaderMenu2 links Size is" + craftBet_01_header_pageLogInUser.bottomMenuAllLinks().size());
+        logger.info("HeaderMenu2 links Size is  " + craftBet_01_header_pageLogInUser.bottomMenuAllLinks().size());
         for (int k = 0; k < craftBet_01_header_pageLogInUser.bottomMenuAllLinks().size(); k++) {
 //            for (int k = 0; k < 16; k++) {
 

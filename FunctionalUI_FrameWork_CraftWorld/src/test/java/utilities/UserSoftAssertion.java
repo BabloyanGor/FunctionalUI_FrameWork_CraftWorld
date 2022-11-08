@@ -1,27 +1,23 @@
 package utilities;
 
-import io.qameta.allure.Attachment;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.ITestResult;
 import org.testng.asserts.IAssert;
 import org.testng.asserts.SoftAssert;
 import pageObjects.BasePage;
 
 import java.awt.*;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import static utilities.ReportingAllure.saveTextLog;
 
 public class UserSoftAssertion extends SoftAssert {
-    BasePage basePage = new BasePage();
     ReportingAllure reportingAllure = new ReportingAllure();
 
     public UserSoftAssertion() throws AWTException {
     }
+
+
+
     public static LocalDateTime now;
 
     public static String getTime() {
@@ -50,19 +46,19 @@ public class UserSoftAssertion extends SoftAssert {
         }
     }
 
-    @Override
-    public void onAssertSuccess(IAssert<?> assertCommand) {
-
-    }
+//    @Override
+//    public void onAssertSuccess(IAssert<?> assertCommand) {
+//
+//    }
 
     @Override
     public void onBeforeAssert(IAssert<?> assertCommand) {
-        basePage.waitAction(500);
+//        basePage.waitAction(500);
     }
 
-    @Override
-    public void onAfterAssert(IAssert<?> assertCommand) {
-    }
+//    @Override
+//    public void onAfterAssert(IAssert<?> assertCommand) {
+//    }
 
 
 }

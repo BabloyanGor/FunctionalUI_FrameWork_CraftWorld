@@ -67,10 +67,6 @@ public class BaseTest extends DriverFactory {
     @BeforeClass
     public void setup()  {
 
-
-
-
-
         logger = Logger.getLogger("craftBet");
         PropertyConfigurator.configure("Log4j.properties");
 
