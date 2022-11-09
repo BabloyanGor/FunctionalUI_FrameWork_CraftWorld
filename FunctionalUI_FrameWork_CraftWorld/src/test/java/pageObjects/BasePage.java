@@ -66,7 +66,7 @@ public class BasePage {
 
 
 
-    //region <HeaderPanel2BottomLinks >
+    //region <HeaderPanel1BottomLinks >
 
     public static ArrayList<String> LinkTitleHeaderPanel1 = new ArrayList<>();
     public static ArrayList<String> LinkHrefPathHeaderPanel1 = new ArrayList<>();
