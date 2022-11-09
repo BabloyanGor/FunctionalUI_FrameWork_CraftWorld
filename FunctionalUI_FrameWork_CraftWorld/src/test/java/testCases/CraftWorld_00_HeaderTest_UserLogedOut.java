@@ -46,15 +46,15 @@ public class CraftWorld_00_HeaderTest_UserLogedOut extends BaseTest {
         for (int k = 0; k < craftBet_01_header_pageLogInUser.bottomMenuAllLinks().size(); k++) {
 //            logger.info(k + "  " + BasePage.LinkTitle.get(k) + "   OpenInRouting  "+BasePage.LinkOpenInRouting.get(k)  + "  StyleType  " +BasePage.LinkStyleType.get(k));
 
-            if (BasePage.LinkStyleType.get(k).contains("loggedOut")){
+            if (BasePage.LinkStyleTypeHeaderPanel2.get(k).contains("loggedOut")){
 
 
 //                logger.info(BasePage.LinkStyleType.get(k));
 
 
-                if (BasePage.LinkTitle.get(k).equals("Separator") || BasePage.LinkTitle.get(k).equals("Seperator") || BasePage.LinkTitle.get(k).equals("Time")) {
-                    userSoftAssertion.assertEquals(BasePage.LinkHref.get(k), baseURL + "/",
-                            "Link Title: " + BasePage.LinkTitle.get(k) + "   Href: " + BasePage.LinkHref.get(k));
+                if (BasePage.LinkTitleHeaderPanel2.get(k).equals("Separator") || BasePage.LinkTitleHeaderPanel2.get(k).equals("Seperator") || BasePage.LinkTitleHeaderPanel2.get(k).equals("Time")) {
+                    userSoftAssertion.assertEquals(BasePage.LinkHrefHeaderPanel2.get(k), baseURL + "/",
+                            "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   Href: " + BasePage.LinkHrefHeaderPanel2.get(k));
                 } else {
                     try {
                         craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
@@ -62,21 +62,21 @@ public class CraftWorld_00_HeaderTest_UserLogedOut extends BaseTest {
                         craftBet_01_header_pageLogInUser.waitAction(waitTime);
 
 
-                        if (BasePage.LinkOpenInRouting.get(k).equals("true")) {
-                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                    "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                        if (BasePage.LinkOpenInRoutingHeaderPanel2.get(k).equals("true")) {
+                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                    "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
 
                             craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                             craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                             craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                    "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                    "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                             craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
 
                         } else {
                             craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
-                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                    "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                    "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                             craftBet_01_header_pageLogInUser.getDriver().close();
                             craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
 
@@ -84,8 +84,8 @@ public class CraftWorld_00_HeaderTest_UserLogedOut extends BaseTest {
                             craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                             craftBet_01_header_pageLogInUser.waitAction(waitTime);
                             craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
-                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                    "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                            userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                    "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                             craftBet_01_header_pageLogInUser.getDriver().close();
                             craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
                         }
@@ -97,21 +97,21 @@ public class CraftWorld_00_HeaderTest_UserLogedOut extends BaseTest {
                             craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                             craftBet_01_header_pageLogInUser.waitAction(waitTime);
 
-                            if (BasePage.LinkOpenInRouting.get(k).equals("true")) {
-                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                        "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                            if (BasePage.LinkOpenInRoutingHeaderPanel2.get(k).equals("true")) {
+                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                        "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                 craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                                 craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                                 craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                        "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                        "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                 craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
 
                             } else {
                                 craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
                                 craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                        "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                        "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                 craftBet_01_header_pageLogInUser.getDriver().close();
                                 craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
 
@@ -119,8 +119,8 @@ public class CraftWorld_00_HeaderTest_UserLogedOut extends BaseTest {
                                 craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                                 craftBet_01_header_pageLogInUser.waitAction(waitTime);
                                 craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
-                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                        "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                                userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                        "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                 craftBet_01_header_pageLogInUser.getDriver().close();
                                 craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
                             }
@@ -132,21 +132,21 @@ public class CraftWorld_00_HeaderTest_UserLogedOut extends BaseTest {
                                 craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                                 craftBet_01_header_pageLogInUser.waitAction(waitTime);
 
-                                if (BasePage.LinkOpenInRouting.get(k).equals("true")) {
-                                    userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                            "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                                if (BasePage.LinkOpenInRoutingHeaderPanel2.get(k).equals("true")) {
+                                    userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                            "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                     craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                                     craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                                     craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                                    userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                            "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                                    userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                            "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                     craftBet_01_header_pageLogInUser.actionMoveToElement(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
 
                                 } else {
                                     craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
                                     craftBet_01_header_pageLogInUser.waitAction(waitTime);
-                                    userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                            "Link Title: " + BasePage.LinkTitle.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                                    userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                            "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After first click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                     craftBet_01_header_pageLogInUser.getDriver().close();
                                     craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
 
@@ -154,14 +154,14 @@ public class CraftWorld_00_HeaderTest_UserLogedOut extends BaseTest {
                                     craftBet_01_header_pageLogInUser.javaScriptClick(craftBet_01_header_pageLogInUser.bottomMenuAllLinks().get(k));
                                     craftBet_01_header_pageLogInUser.waitAction(waitTime);
                                     craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(1);
-                                    userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHref.get(k),
-                                            "Link Title: " + BasePage.LinkTitle.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                                    userSoftAssertion.assertEquals(craftBet_01_header_pageLogInUser.getUrl(), BasePage.LinkHrefHeaderPanel2.get(k),
+                                            "Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   After second click  " + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                                     craftBet_01_header_pageLogInUser.getDriver().close();
                                     craftBet_01_header_pageLogInUser.handleWindowsWithArrayList(0);
                                 }
 
                             } catch (Exception e3) {
-                                userSoftAssertion.fail("We have Exception On Link Title: " + BasePage.LinkTitle.get(k) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
+                                userSoftAssertion.fail("We have Exception On Link Title: " + BasePage.LinkTitleHeaderPanel2.get(k) + "   Url: " + craftBet_01_header_pageLogInUser.getUrl());
                             }
                         }
                     }

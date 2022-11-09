@@ -46,19 +46,19 @@ public class UserSoftAssertion extends SoftAssert {
         }
     }
 
-//    @Override
-//    public void onAssertSuccess(IAssert<?> assertCommand) {
-//
-//    }
+    @Override
+    public void onAssertSuccess(IAssert<?> assertCommand) {
+
+    }
 
     @Override
     public void onBeforeAssert(IAssert<?> assertCommand) {
 //        basePage.waitAction(500);
     }
 
-//    @Override
-//    public void onAfterAssert(IAssert<?> assertCommand) {
-//    }
+    @Override
+    public void onAfterAssert(IAssert<?> assertCommand) {
+    }
 
 
 }

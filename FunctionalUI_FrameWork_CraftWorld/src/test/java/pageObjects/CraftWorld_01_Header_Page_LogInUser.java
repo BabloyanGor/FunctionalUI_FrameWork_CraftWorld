@@ -16,7 +16,24 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
         basePage = new BasePage(driver);
     }
 
+
+
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel1Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @FindBy (xpath = "//div[@class='header-section_topPanel flex_between']//li[contains (@class, 'HeaderPanel1Menu')]")
+    java.util.List<WebElement> Header1MenuLinks;
+
+    public List<WebElement> HeaderPanel1MenuAllLinks() {
+        return Header1MenuLinks;
+    }
+
+    @FindBy (xpath = "//div[@class='header-section_topPanel flex_between']//li[contains (@class, 'HeaderPanel1Menu')]//li")
+    java.util.List<WebElement> Header1MenuSubLinks;
+
+    public List<WebElement> Header1MenuSubAllLinks() {
+        return Header1MenuSubLinks;
+    }
+
     @FindBy(xpath = "//img[@class='logo_img']")
     @CacheLookup
     WebElement logo;
@@ -28,6 +45,103 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
         } catch (Exception e) {
         }
     }
+
+    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Balance']/div[@class='balance_section']/span[1]")
+    @CacheLookup
+    WebElement balanceLabel;
+
+    public String getTextBalanceLabel() {
+        try{
+            basePage.waitElementToBeVisible(balanceLabel);
+            return basePage.getText(balanceLabel);
+        }
+        catch (Exception e){
+            return  "Cant find webElement balanceLabel ";
+        }
+    }
+
+    public boolean balanceLabelIsEnabled() {
+        try{
+            basePage.waitElementToBeVisible(balanceLabel);
+            return basePage.elementIsEnable(balanceLabel);
+        }
+        catch (Exception e){
+            return  false;
+        }
+    }
+
+    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Balance']/div[@class='balance_section']/span[2]")
+    @CacheLookup
+    WebElement balance;
+
+    public boolean balanceIsEnabled() {
+        try{
+            basePage.waitElementToBeVisible(balance);
+            return basePage.elementIsEnable(balance);
+        }
+        catch (Exception e){
+            return  false;
+        }
+    }
+
+    public String getTextBalance() {
+        try{
+            basePage.waitElementToBeVisible(balanceLabel);
+            return basePage.getText(balanceLabel);
+        }
+        catch (Exception e){
+            return  "Cant find webElement balanceLabel ";
+        }
+    }
+
+
+
+
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel2Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @FindBy (xpath = "//div[@class='header-section_bottomPanel flex_between']//li[not (contains (@class, 'TEST_HeaderPanel2Menu_MoreMenu'))]")
+    java.util.List<WebElement> bottomMenuLinks;
+
+    public List<WebElement> bottomMenuAllLinks() {
+        return bottomMenuLinks;
+    }
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel1Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 
 
@@ -89,53 +203,6 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
     }
 
 
-    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Balance']/div[@class='balance_section']/span[1]")
-    @CacheLookup
-    WebElement balanceLabel;
-
-    public String getTextBalanceLabel() {
-        try{
-            basePage.waitElementToBeVisible(balanceLabel);
-            return basePage.getText(balanceLabel);
-        }
-        catch (Exception e){
-            return  "Cant find webElement balanceLabel ";
-        }
-    }
-
-    public boolean balanceLabelIsEnabled() {
-        try{
-            basePage.waitElementToBeVisible(balanceLabel);
-            return basePage.elementIsEnable(balanceLabel);
-        }
-        catch (Exception e){
-            return  false;
-        }
-    }
-
-    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Balance']/div[@class='balance_section']/span[2]")
-    @CacheLookup
-    WebElement balance;
-
-    public boolean balanceIsEnabled() {
-        try{
-            basePage.waitElementToBeVisible(balance);
-            return basePage.elementIsEnable(balance);
-        }
-        catch (Exception e){
-            return  false;
-        }
-    }
-
-    public String getTextBalance() {
-        try{
-            basePage.waitElementToBeVisible(balanceLabel);
-            return basePage.getText(balanceLabel);
-        }
-        catch (Exception e){
-            return  "Cant find webElement balanceLabel ";
-        }
-    }
 
 
     @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Bonus Balance']/div[@class='balance_section']/span[1]")
@@ -249,17 +316,6 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     @FindBy(xpath = "//li[@class='button-style3 TEST_HeaderPanel1Menu_Deposit']/div")
     @CacheLookup
     WebElement depositButton;
@@ -273,11 +329,6 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
         catch (Exception e){
         }
     }
-
-
-
-
-
 
 
     @FindBy(xpath = "//div[@id='custom_dropdown_style1']")
@@ -400,26 +451,10 @@ public class CraftWorld_01_Header_Page_LogInUser extends BasePage {
         }
     }
 
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel1Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    @FindBy (xpath = "//div[@class='header-section_topPanel flex_between']//li[contains (@class, 'HeaderPanel1Menu')]")
-    java.util.List<WebElement> Header1MenuLinks;
-
-    public List<WebElement> HeaderPanel1MenuAllLinks() {
-        return Header1MenuLinks;
-    }
 
 
 
 
-
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel2Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-    @FindBy (xpath = "//div[@class='header-section_bottomPanel flex_between']//li[not (contains (@class, 'TEST_HeaderPanel2Menu_MoreMenu'))]")
-    java.util.List<WebElement> bottomMenuLinks;
-
-    public List<WebElement> bottomMenuAllLinks() {
-        return bottomMenuLinks;
-    }
 
 
     @FindBy(xpath = "//li[contains (@class, 'TEST_HeaderPanel2Menu_MoreMenu')]")

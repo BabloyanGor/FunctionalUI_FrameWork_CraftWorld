@@ -51,6 +51,8 @@ public class BasePage {
     public BasePage() throws AWTException {
     }
 
+
+
     ReadConfig readConfig = new ReadConfig();
     public String baseURL = readConfig.getApplicationURL();
 
@@ -62,16 +64,145 @@ public class BasePage {
         return response;
     }
 
+
+
     //region <HeaderPanel2BottomLinks >
 
-    public static ArrayList<String> LinkTitle = new ArrayList<>();
-    public static ArrayList<String> LinkHrefPath = new ArrayList<>();
-    public static ArrayList<String> LinkHref = new ArrayList<>();
-    public static ArrayList<String> LinkStyleType = new ArrayList<>();
-    public static ArrayList<String> LinkOpenInRouting = new ArrayList<>();
+    public static ArrayList<String> LinkTitleHeaderPanel1 = new ArrayList<>();
+    public static ArrayList<String> LinkHrefPathHeaderPanel1 = new ArrayList<>();
+    public static ArrayList<String> LinkHrefHeaderPanel1 = new ArrayList<>();
+    public static ArrayList<String> LinkStyleTypeHeaderPanel1 = new ArrayList<>();
+    public static ArrayList<String> LinkOpenInRoutingHeaderPanel1 = new ArrayList<>();
 
-    public ArrayList<String> SubLinkTitle = new ArrayList<>();
-    public ArrayList<String> SubLinkHref = new ArrayList<>();
+    public ArrayList<String> SubLinkTitleHeaderPanel1 = new ArrayList<>();
+    public ArrayList<String> SubLinkHrefHeaderPanel1 = new ArrayList<>();
+
+    public void headerPanel1BottomLinks() throws UnirestException, IOException {
+        int statusCod;
+        JSONObject jsonObjectBody;
+        JSONArray MenuListArray;
+        JSONArray ItemsArray;
+        JSONArray subMenuArray;
+        HttpResponse<String> response = menuListAPI();
+        Unirest.shutdown();
+        statusCod = response.getStatus();
+        jsonObjectBody = new JSONObject(response.getBody());
+
+        MenuListArray = jsonObjectBody.getJSONArray("MenuList");
+        for (int i = 0; i < MenuListArray.length(); i++) {
+            String arrMenuListItems = String.valueOf(MenuListArray.get(i));
+            JSONObject arrMenuListItem = new JSONObject(arrMenuListItems);
+            String type = arrMenuListItem.get("Type").toString();
+
+            if (type.equals("HeaderPanel1Menu")) {
+                ItemsArray = arrMenuListItem.getJSONArray("Items");
+
+                for (int j = 0; j < ItemsArray.length(); j++) {
+                    String linkInfo = ItemsArray.get(j).toString();
+                    JSONObject linkInfoJson = new JSONObject(linkInfo);
+
+                    String Orientation = linkInfoJson.get("Orientation").toString();
+//                    BaseTest.logger.info("Orientation >>>>  " + Orientation);
+//                    if (Orientation.equals("false")){
+                    String StyleType = linkInfoJson.get("StyleType").toString();
+                    LinkStyleTypeHeaderPanel1.add(StyleType);
+
+                    String OpenInRouting = linkInfoJson.get("OpenInRouting").toString();
+                    LinkOpenInRoutingHeaderPanel1.add(OpenInRouting);
+//                        BaseTest.logger.info("OpenInRouting >>>>  " + OpenInRouting);
+
+                    String menuTitle = linkInfoJson.get("Title").toString();
+                    LinkTitleHeaderPanel1.add(menuTitle);
+//                        LinkXpath.add("//li[contains (@class, 'TEST_HeaderPanel2Menu_" + menuTitle + "')]");
+//                        BaseTest.logger.info("menuTitle >>>>  " + menuTitle);
+
+                    String menuLinkHref = linkInfoJson.get("Href").toString();
+                    LinkHrefPathHeaderPanel1.add(menuLinkHref);
+
+                    if (menuLinkHref.contains("https://")) {
+                        LinkHrefHeaderPanel1.add(menuLinkHref);
+                    } else {
+                        if (menuLinkHref.startsWith("/")) {
+                            LinkHrefHeaderPanel1.add(baseURL + menuLinkHref);
+                        } else {
+                            LinkHrefHeaderPanel1.add(baseURL + "/" + menuLinkHref);
+                        }
+                    }
+
+//                        BaseTest.logger.info("menuLinkHref >>>>  " +baseURL + "/" + menuLinkHref);
+                    subMenuArray = linkInfoJson.getJSONArray("SubMenu");
+
+                    if (subMenuArray.length() != 0) {
+                        for (int k = 0; k < subMenuArray.length(); k++) {
+                            String subMenulinkInfo = subMenuArray.get(k).toString();
+                            JSONObject subMenulinkInfoJson = new JSONObject(subMenulinkInfo);
+
+                            String subMenuTitle = subMenulinkInfoJson.get("Title").toString();
+                            LinkTitleHeaderPanel1.add(subMenuTitle);
+
+                            String subStyleType = linkInfoJson.get("StyleType").toString();
+                            LinkStyleTypeHeaderPanel1.add(subStyleType);
+
+//                                BaseTest.logger.info("subMenuTitle >>>>  " + subMenuTitle);
+                            String subOpenInRouting = subMenulinkInfoJson.get("OpenInRouting").toString();
+                            LinkOpenInRoutingHeaderPanel1.add(subOpenInRouting);
+
+                            String subMenuHref = subMenulinkInfoJson.get("Href").toString();
+                            LinkHrefPathHeaderPanel1.add(subMenuHref);
+
+                            if (subMenuHref.contains("https://")) {
+                                LinkHrefHeaderPanel1.add(subMenuHref);
+                            } else {
+                                if (subMenuHref.startsWith("/")) {
+
+                                    if (menuLinkHref.contains("https://")) {
+                                        LinkHrefHeaderPanel1.add(menuLinkHref + subMenuHref);
+                                    } else {
+                                        if (menuLinkHref.startsWith("/")) {
+                                            LinkHrefHeaderPanel1.add(baseURL + menuLinkHref + subMenuHref);
+
+                                        } else {
+                                            LinkHrefHeaderPanel1.add(baseURL + "/" + menuLinkHref + subMenuHref);
+                                        }
+                                    }
+
+
+                                } else {
+
+                                    if (menuLinkHref.contains("https://")) {
+                                        LinkHrefHeaderPanel1.add(menuLinkHref + "/" + subMenuHref);
+                                    } else {
+                                        if (menuLinkHref.startsWith("/")) {
+                                            LinkHrefHeaderPanel1.add(baseURL + menuLinkHref + "/" + subMenuHref);
+                                        } else {
+                                            LinkHrefHeaderPanel1.add(baseURL + "/" + menuLinkHref + "/" + subMenuHref);
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+
+    //endregion
+
+
+    //region <HeaderPanel2BottomLinks >
+
+    public static ArrayList<String> LinkTitleHeaderPanel2 = new ArrayList<>();
+    public static ArrayList<String> LinkHrefPathHeaderPanel2 = new ArrayList<>();
+    public static ArrayList<String> LinkHrefHeaderPanel2 = new ArrayList<>();
+    public static ArrayList<String> LinkStyleTypeHeaderPanel2 = new ArrayList<>();
+    public static ArrayList<String> LinkOpenInRoutingHeaderPanel2 = new ArrayList<>();
+
+    public ArrayList<String> SubLinkTitleHeaderPanel2 = new ArrayList<>();
+    public ArrayList<String> SubLinkHrefHeaderPanel2 = new ArrayList<>();
 
     public void headerPanel2BottomLinks() throws UnirestException, IOException {
         int statusCod;
@@ -102,27 +233,27 @@ public class BasePage {
 //                    if (Orientation.equals("false")){
 
                     String StyleType = linkInfoJson.get("StyleType").toString();
-                    LinkStyleType.add(StyleType);
+                    LinkStyleTypeHeaderPanel2.add(StyleType);
 
                     String OpenInRouting = linkInfoJson.get("OpenInRouting").toString();
-                    LinkOpenInRouting.add(OpenInRouting);
+                    LinkOpenInRoutingHeaderPanel2.add(OpenInRouting);
 //                        BaseTest.logger.info("OpenInRouting >>>>  " + OpenInRouting);
 
                     String menuTitle = linkInfoJson.get("Title").toString();
-                    LinkTitle.add(menuTitle);
+                    LinkTitleHeaderPanel2.add(menuTitle);
 //                        LinkXpath.add("//li[contains (@class, 'TEST_HeaderPanel2Menu_" + menuTitle + "')]");
 //                        BaseTest.logger.info("menuTitle >>>>  " + menuTitle);
 
                     String menuLinkHref = linkInfoJson.get("Href").toString();
-                    LinkHrefPath.add(menuLinkHref);
+                    LinkHrefPathHeaderPanel2.add(menuLinkHref);
 
                     if (menuLinkHref.contains("https://")) {
-                        LinkHref.add(menuLinkHref);
+                        LinkHrefHeaderPanel2.add(menuLinkHref);
                     } else {
                         if (menuLinkHref.startsWith("/")) {
-                            LinkHref.add(baseURL + menuLinkHref);
+                            LinkHrefHeaderPanel2.add(baseURL + menuLinkHref);
                         } else {
-                            LinkHref.add(baseURL + "/" + menuLinkHref);
+                            LinkHrefHeaderPanel2.add(baseURL + "/" + menuLinkHref);
                         }
                     }
 
@@ -135,31 +266,31 @@ public class BasePage {
                             JSONObject subMenulinkInfoJson = new JSONObject(subMenulinkInfo);
 
                             String subMenuTitle = subMenulinkInfoJson.get("Title").toString();
-                            LinkTitle.add(subMenuTitle);
+                            LinkTitleHeaderPanel2.add(subMenuTitle);
 
                             String subStyleType = linkInfoJson.get("StyleType").toString();
-                            LinkStyleType.add(subStyleType);
+                            LinkStyleTypeHeaderPanel2.add(subStyleType);
 
 //                                BaseTest.logger.info("subMenuTitle >>>>  " + subMenuTitle);
                             String subOpenInRouting = subMenulinkInfoJson.get("OpenInRouting").toString();
-                            LinkOpenInRouting.add(subOpenInRouting);
+                            LinkOpenInRoutingHeaderPanel2.add(subOpenInRouting);
 
                             String subMenuHref = subMenulinkInfoJson.get("Href").toString();
-                            LinkHrefPath.add(subMenuHref);
+                            LinkHrefPathHeaderPanel2.add(subMenuHref);
 
                             if (subMenuHref.contains("https://")) {
-                                LinkHref.add(subMenuHref);
+                                LinkHrefHeaderPanel2.add(subMenuHref);
                             } else {
                                 if (subMenuHref.startsWith("/")) {
 
                                     if (menuLinkHref.contains("https://")) {
-                                        LinkHref.add(menuLinkHref + subMenuHref);
+                                        LinkHrefHeaderPanel2.add(menuLinkHref + subMenuHref);
                                     } else {
                                         if (menuLinkHref.startsWith("/")) {
-                                            LinkHref.add(baseURL + menuLinkHref + subMenuHref);
+                                            LinkHrefHeaderPanel2.add(baseURL + menuLinkHref + subMenuHref);
 
                                         } else {
-                                            LinkHref.add(baseURL + "/" + menuLinkHref + subMenuHref);
+                                            LinkHrefHeaderPanel2.add(baseURL + "/" + menuLinkHref + subMenuHref);
                                         }
                                     }
 
@@ -167,26 +298,17 @@ public class BasePage {
                                 } else {
 
                                     if (menuLinkHref.contains("https://")) {
-                                        LinkHref.add(menuLinkHref + "/" + subMenuHref);
+                                        LinkHrefHeaderPanel2.add(menuLinkHref + "/" + subMenuHref);
                                     } else {
                                         if (menuLinkHref.startsWith("/")) {
-                                            LinkHref.add(baseURL + menuLinkHref + "/" + subMenuHref);
+                                            LinkHrefHeaderPanel2.add(baseURL + menuLinkHref + "/" + subMenuHref);
                                         } else {
-                                            LinkHref.add(baseURL + "/" + menuLinkHref + "/" + subMenuHref);
+                                            LinkHrefHeaderPanel2.add(baseURL + "/" + menuLinkHref + "/" + subMenuHref);
                                         }
                                     }
 
                                 }
                             }
-
-//                            if (LinkHref.contains(baseURL)){
-//                                LinkHref.add(subMenuHref);
-//                            }
-//                            else{
-//                                LinkHref.add(baseURL + menuLinkHref + subMenuHref);
-//                            }
-
-
                         }
                     }
                 }
@@ -348,6 +470,29 @@ public class BasePage {
     }
 
     //endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /* this method will be used for validate webElements visibility */
