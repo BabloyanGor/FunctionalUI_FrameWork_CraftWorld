@@ -14,7 +14,7 @@ public class CraftWorld_02_Footer_Page extends BasePage {
         super(driver);
         basePage = new BasePage(driver);
     }
-
+//*[@class='footer-column_title' or contains (@class, 'footer-column_item')]   //footer menus Titles and links
 
     @FindBy(xpath = "//div[contains (@class, 'footer-section_boxMenu')]//div[contains (@class, 'footer-column_title')]")
     java.util.List<WebElement> footerTitlesLinks;
