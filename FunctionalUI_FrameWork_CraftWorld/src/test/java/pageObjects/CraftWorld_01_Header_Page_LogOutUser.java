@@ -22,6 +22,19 @@ public class CraftWorld_01_Header_Page_LogOutUser extends BasePage {
 
     //    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel1Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+    @FindBy(xpath = "//button[contains (@class, 'global_login-btn')]")
+    @CacheLookup
+    WebElement Header1LoginButton;
+    public void clickOnHeader1LoginButton() {
+        try{
+            basePage.waitElementToBeVisible(Header1LoginButton);
+            basePage.clickOnElementIfClickable(Header1LoginButton);
+        }
+        catch(Exception e){
+        }
+    }
+
+
     @FindBy(xpath = "//img[@class='logo_img']")
     @CacheLookup
     WebElement logo;

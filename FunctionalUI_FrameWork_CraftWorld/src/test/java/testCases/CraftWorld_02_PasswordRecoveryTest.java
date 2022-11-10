@@ -24,7 +24,7 @@ public class CraftWorld_02_PasswordRecoveryTest extends BaseTest{
     @BeforeMethod
     public void goToLoginPopUp() {
         craftWorld_01_header_page_logOutUser.clickOnLogInButtonIfVisible();
-        craftWorld_03_login_popUp_page.clickLoginPopUpForgotPassword();
+//        craftWorld_03_login_popUp_page.clickLoginPopUpForgotPassword();
     }
 
 

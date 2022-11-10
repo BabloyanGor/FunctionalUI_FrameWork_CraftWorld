@@ -5,6 +5,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -32,7 +33,7 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
     }
 
     @BeforeClass
-    public void logIn() {
+    public void logIn() throws UnirestException, IOException {
         craftBet_01_header_pageLogInUser.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         if (firstTime) {
             craftBet_01_header_pageLogInUser.setItem("CraftBet-user", user);
@@ -41,15 +42,23 @@ public class CraftWorld_00_HeaderTest_UserLogedIn extends BaseTest {
             craftBet_01_header_pageLogInUser.navigateRefresh();
             logger.info("Page refreshed");
         } else {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            craftWorld_01_header_page_logOutUser.clickOnLogInButtonIfVisible();
-            craftWorld_03_login_popUp_page.loginPopUpEmailOrUsernameSendKeys(username);
-            logger.info("username passed");
-            craftWorld_03_login_popUp_page.loginPopUpPasswordSendKeys(password);
-            logger.info("password passed");
-            craftWorld_03_login_popUp_page.clickLoginPopUpLogInButton();
+
+            craftWorld_03_login_popUp_page.headerPanel1BottomLinks();
+            for (int i = 0; i< BasePage.HeaderPanel1Title.size(); i++){
+                String title = BasePage.HeaderPanel1Title.get(i);
+
+                if (title.equals("Login Button")){
+                    String type = BasePage.HeaderPanel1Type.get(i);
+                    if (type.equals("loginBtn_button")){
+                        craftWorld_01_header_page_logOutUser.clickOnHeader1LoginButton();
+                    }
+                    craftWorld_03_login_popUp_page.sendKeysLoginPopUpEmailInputField(username);
+                    craftWorld_03_login_popUp_page.sendKeysLoginPopUpPasswordInputField(password);
+                    craftWorld_03_login_popUp_page.clickOnLLoginPopUpLoginButtonOnPopUp();
+                }
+            }
             logger.info("Log In Button was clicked");
-            if (craftBet_01_header_pageLogInUser.userIdLabelIsEnabled()) {
+            if (craftBet_01_header_pageLogInUser.balanceIsVisible()) {
                 user = craftBet_01_header_pageLogInUser.getItem("CraftBet-user");
                 token = craftBet_01_header_pageLogInUser.getItem("token");
                 firstTime = true;

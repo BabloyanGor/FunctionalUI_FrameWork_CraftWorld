@@ -193,14 +193,14 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
     }
 
 
-    @Test(priority = 7, description = "Validate on Sign Up Pop Up LogIn link functionality")
-    @Description("Validate on Sign Up Pop Up LogIn link functionality")
-    @Severity(SeverityLevel.NORMAL)
-    public void SignUpPopUpLogInLinkFunctionality() {
-        craftWorld_05_signUp_popUp_page.clickOnLinkLogIn();
-        logger.info("LogIn  link was clicked");
-        Assert.assertEquals(craftWorld_03_login_popUp_page.loginPopUpLogoPresence(), true);
-    }
+//    @Test(priority = 7, description = "Validate on Sign Up Pop Up LogIn link functionality")
+//    @Description("Validate on Sign Up Pop Up LogIn link functionality")
+//    @Severity(SeverityLevel.NORMAL)
+//    public void SignUpPopUpLogInLinkFunctionality() {
+//        craftWorld_05_signUp_popUp_page.clickOnLinkLogIn();
+//        logger.info("LogIn  link was clicked");
+//        Assert.assertEquals(craftWorld_03_login_popUp_page.loginPopUpLogoPresence(), true);
+//    }
 
     @Test(priority = 8, description = "Validate on Sign Up Pop Up Quick/Full Register button functionality")
     @Description("Validate on Sign Up Pop Up Quick/Full Register button functionality")
@@ -232,7 +232,7 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
         logger.info("Terms and Conditions checkbox was selected");
         craftWorld_05_signUp_popUp_page.clickOnButtonRegisterQ();
         logger.info("Register button was clicked");
-        Assert.assertEquals(craftBet_01_header_pageLogInUser.userIdLabelIsEnabled(), true);
+        Assert.assertEquals(craftBet_01_header_pageLogInUser.balanceIsVisible(), true);
 
     }
 
@@ -306,7 +306,7 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
         logger.info("Terms and Conditions checkbox was selected");
         craftWorld_05_signUp_popUp_page.clickOnButtonRegisterQ();
         logger.info("Register button was clicked");
-        Assert.assertEquals(craftBet_01_header_pageLogInUser.userIdLabelIsEnabled(), true);
+        Assert.assertEquals(craftBet_01_header_pageLogInUser.balanceIsVisible(), true);
 
     }
 
