@@ -21,7 +21,7 @@ import java.time.Duration;
 public class
 
 CraftWorld_01_LoginPopUpTest extends BaseTest {
-    int wait = 1000;
+    int waitTime = 1000;
 
     public CraftWorld_01_LoginPopUpTest() throws AWTException {
     }
@@ -50,14 +50,16 @@ CraftWorld_01_LoginPopUpTest extends BaseTest {
                     craftWorld_03_login_popUp_page.sendKeysLoginPopUpEmailInputField(username);
                     craftWorld_03_login_popUp_page.sendKeysLoginPopUpPasswordInputField(password);
                     craftWorld_03_login_popUp_page.clickOnLLoginPopUpLoginButtonOnPopUp();
-
+                    craftWorld_03_login_popUp_page.waitAction(waitTime);
+                    craftWorld_03_login_popUp_page.navigateRefresh();
                     Assert.assertTrue(craftBet_01_header_pageLogInUser.balanceIsVisible());
 
                 } else if (type.equals("loginScn_section")) {
                     craftWorld_03_login_popUp_page.sendKeysLoginPopUpEmailInputField(username);
                     craftWorld_03_login_popUp_page.sendKeysLoginPopUpPasswordInputField(password);
                     craftWorld_03_login_popUp_page.clickOnLLoginPopUpLoginButtonOnPopUp();
-
+                    craftWorld_03_login_popUp_page.waitAction(waitTime);
+                    craftWorld_03_login_popUp_page.navigateRefresh();
                     Assert.assertTrue(craftBet_01_header_pageLogInUser.balanceIsVisible());
                 }
                 else {
@@ -66,6 +68,7 @@ CraftWorld_01_LoginPopUpTest extends BaseTest {
             }
         }
     }
+
 
 
 
