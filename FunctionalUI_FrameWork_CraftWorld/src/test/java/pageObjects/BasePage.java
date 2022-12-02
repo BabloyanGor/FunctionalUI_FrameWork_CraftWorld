@@ -1,7 +1,6 @@
 package pageObjects;
 
 
-import com.google.gson.Gson;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
@@ -17,7 +16,6 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import testCases.BaseTest;
 import utilities.ReadConfig;
 
 import java.awt.*;
@@ -368,6 +366,7 @@ public class BasePage {
 
     public void footerMenuLinksAPI() throws UnirestException, IOException {
 
+
         int statusCod;
         JSONObject jsonObjectBody;
         JSONArray MenuListArray;
@@ -498,20 +497,150 @@ public class BasePage {
                             }
                         }
                     }
-
-
-
-
-
-                    
-
-
                 }
             }
         }
     }
 
     //endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //region <Check version.js CorePlatform >
+
+    public String generateRandomKeyCorePlatform() {
+        String randomKey;
+        randomKey = "QaTest" + RandomStringUtils.randomAlphanumeric(15);
+        return randomKey;
+    }
+
+
+    public int versionJSCorePlatform() throws UnirestException {
+        int version = 0;
+        Unirest.setTimeouts(0, 0);
+        HttpResponse<String> response = Unirest.get(baseURL + "/assets/js/version.js?=" + generateRandomKeyCorePlatform())
+                .asString();
+        try{
+            int statusCod = response.getStatus();
+            if (statusCod==200) {
+                String responseBody = response.getBody();
+                version = Integer.parseInt(responseBody.substring(17, 20));
+            }
+        }
+        catch (Exception e){
+            System.out.println("Exception: " + e);
+        }
+
+        return version;
+    }
+
+
+    //endregion
+    //region <Check version.js SportsBook >
+    public String generateRandomKeySportsBook() {
+        String randomKey;
+        randomKey = "QaTest" + RandomStringUtils.randomAlphanumeric(15);
+        return randomKey;
+    }
+
+
+    public int versionJSSportsBook() throws UnirestException {
+        int version = 0;
+        String httpPart = baseURL.substring(0,8);
+        String urlPart = baseURL.substring(8);
+        Unirest.setTimeouts(0, 0);
+        HttpResponse<String> response = Unirest.get(httpPart + "sportsbookwebsite." + urlPart + "/website/assets/js/version.js?=" + generateRandomKeySportsBook())
+                .asString();
+        try{
+            int statusCod = response.getStatus();
+            if (statusCod==200) {
+                String responseBody = response.getBody();
+                version = Integer.parseInt(responseBody.substring(17, 20));
+            }
+        }
+        catch (Exception e){
+            System.out.println("Exception: " + e);
+        }
+
+        return version;
+    }
+
+
+    //endregion
+
+
+
+    //region <Config.json CorePlatform>
+    public String generateRandomKeyConfig() {
+        String randomKey;
+        randomKey = "QaTest" + RandomStringUtils.randomAlphanumeric(15);
+        return randomKey;
+    }
+    public void getLanguages() throws UnirestException {
+        Unirest.setTimeouts(0, 0);
+        HttpResponse<String> response = Unirest.get(baseURL + "/assets/json/config.json?=" + generateRandomKeyConfig())
+                .asString();
+        JSONObject jsonObjectBody;
+        JSONArray LanguagesListArray;
+        jsonObjectBody = new JSONObject(response.getBody());
+        LanguagesListArray = jsonObjectBody.getJSONArray("Languages");
+
+        System.out.println("Languages are : " + LanguagesListArray.length());
+
+        for (int i = 0; i<LanguagesListArray.length(); i++){
+            String languages = LanguagesListArray.get(i).toString();
+            JSONObject language = new JSONObject(languages);
+
+            String language_key = language.get("key").toString();
+            String language_value = language.get("value").toString();
+        }
+
+
+    }
+
+
+    //endregion
+    //region <Config.json SportsBook>
+    //endregion
+
+
+    //region <en.json CorePlatform>
+    //endregion
+    //region <en.json SportsBook>
+    //endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

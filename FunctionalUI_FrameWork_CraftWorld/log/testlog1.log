@@ -325,3 +325,80 @@
 2022-11-15 17:52:05,832 [main] INFO craftBet - Browser closed
 2022-11-15 17:52:05,834 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
 2022-11-15 17:52:05,886 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 13:48:54,749 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 13:49:03,927 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 13:49:03,946 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 13:49:06,281 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 13:49:08,985 [main] INFO craftBet - Browser closed
+2022-12-02 13:49:08,986 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 13:49:09,003 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 13:54:37,920 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 13:54:43,796 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 13:54:44,231 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 13:54:45,570 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 13:54:48,712 [main] INFO craftBet - Browser closed
+2022-12-02 13:54:48,713 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 13:54:48,760 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 13:55:03,810 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 13:55:07,428 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 13:55:07,443 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 13:55:09,256 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 13:55:11,562 [main] INFO craftBet - Browser closed
+2022-12-02 13:55:11,562 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 13:55:11,575 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 13:58:41,680 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 13:58:45,846 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 13:58:45,858 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 13:58:47,841 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 13:58:50,503 [main] INFO craftBet - Browser closed
+2022-12-02 13:58:50,503 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 13:58:50,517 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 14:05:50,565 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 14:05:56,720 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 14:05:57,312 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 14:05:58,955 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 14:06:01,666 [main] INFO craftBet - Browser closed
+2022-12-02 14:06:01,666 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 14:06:01,679 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 14:10:31,827 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 14:10:35,912 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 14:10:35,923 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 14:10:37,812 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 14:10:40,417 [main] INFO craftBet - Browser closed
+2022-12-02 14:10:40,435 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 14:10:40,476 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 14:11:03,227 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 14:11:06,925 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 14:11:06,936 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 14:11:08,653 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 14:11:11,348 [main] INFO craftBet - Browser closed
+2022-12-02 14:11:11,348 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 14:11:11,361 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 14:11:55,936 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 14:11:59,584 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 14:11:59,596 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 14:12:01,445 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 14:12:04,035 [main] INFO craftBet - Browser closed
+2022-12-02 14:12:04,035 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 14:12:04,048 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 15:35:39,885 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 15:35:49,031 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 15:35:49,604 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 15:35:51,055 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 15:35:53,601 [main] INFO craftBet - Browser closed
+2022-12-02 15:35:53,602 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 15:35:53,624 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 15:44:20,651 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 15:44:25,891 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 15:44:25,906 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 15:44:27,473 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 15:44:32,365 [main] INFO craftBet - Browser closed
+2022-12-02 15:44:32,365 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 15:44:32,385 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-02 15:53:57,194 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-02 15:54:03,200 [main] INFO craftBet - All Page elements are initialized
+2022-12-02 15:54:03,214 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-02 15:54:04,993 [main] INFO craftBet - Log In Button was clicked
+2022-12-02 15:54:07,956 [main] INFO craftBet - Browser closed
+2022-12-02 15:54:07,957 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-02 15:54:07,996 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
