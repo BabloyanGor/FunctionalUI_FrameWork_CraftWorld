@@ -16,6 +16,7 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import testCases.BaseTest;
 import utilities.ReadConfig;
 
 import java.awt.*;
@@ -27,6 +28,8 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Set;
 
 public class BasePage {
 
@@ -51,7 +54,6 @@ public class BasePage {
     }
 
 
-
     ReadConfig readConfig = new ReadConfig();
     public String baseURL = readConfig.getApplicationURL();
 
@@ -62,7 +64,6 @@ public class BasePage {
                 .asString();
         return response;
     }
-
 
 
     //region <HeaderPanel1Links >
@@ -396,11 +397,6 @@ public class BasePage {
                     String ItemType = footerItemJson.get("Type").toString();
 
 
-
-
-
-
-
                     if (ItemTitle.equals("SocialNetworks") || ItemTitle.equals("Follow us")) {
                         subMenuArray = footerItemJson.getJSONArray("SubMenu");
                         if (subMenuArray.length() != 0) {
@@ -438,14 +434,6 @@ public class BasePage {
                     }
 
 
-
-
-
-
-
-
-
-
                     if (ItemType.equals("ft-menu-item")) {
 
                         String menuTitle = footerItemJson.get("Title").toString();
@@ -481,7 +469,6 @@ public class BasePage {
                                 menuSubFooterPath.add(subMenuHref);
 
 
-
                                 if (subMenuHref.contains("https://")) {
                                     menuSubFooterHref.add(subMenuHref);
                                 } else {
@@ -505,17 +492,6 @@ public class BasePage {
     //endregion
 
 
-
-
-
-
-
-
-
-
-
-
-
     //region <Check version.js CorePlatform >
 
     public String generateRandomKeyCorePlatform() {
@@ -527,18 +503,20 @@ public class BasePage {
 
     public int versionJSCorePlatform() throws UnirestException {
         int version = 0;
+        String request = baseURL + "/assets/js/version.js?=" + generateRandomKeyCorePlatform();
+        BaseTest.logger.info("Request:  " + request);
         Unirest.setTimeouts(0, 0);
-        HttpResponse<String> response = Unirest.get(baseURL + "/assets/js/version.js?=" + generateRandomKeyCorePlatform())
+        HttpResponse<String> response = Unirest.get(request)
                 .asString();
-        try{
+        try {
             int statusCod = response.getStatus();
-            if (statusCod==200) {
+            if (statusCod == 200) {
                 String responseBody = response.getBody();
+                BaseTest.logger.info("Response: " + responseBody);
                 version = Integer.parseInt(responseBody.substring(17, 20));
             }
-        }
-        catch (Exception e){
-            System.out.println("Exception: " + e);
+        } catch (Exception e) {
+            BaseTest.logger.info("Exception: " + e);
         }
 
         return version;
@@ -556,20 +534,22 @@ public class BasePage {
 
     public int versionJSSportsBook() throws UnirestException {
         int version = 0;
-        String httpPart = baseURL.substring(0,8);
+        String httpPart = baseURL.substring(0, 8);
         String urlPart = baseURL.substring(8);
-        Unirest.setTimeouts(0, 0);
-        HttpResponse<String> response = Unirest.get(httpPart + "sportsbookwebsite." + urlPart + "/website/assets/js/version.js?=" + generateRandomKeySportsBook())
-                .asString();
-        try{
+        try {
+            String request = httpPart + "sportsbookwebsite." + urlPart + "/website/assets/js/version.js?=" + generateRandomKeySportsBook();
+            BaseTest.logger.info("Request: " + request);
+            Unirest.setTimeouts(0, 0);
+            HttpResponse<String> response = Unirest.get(request)
+                    .asString();
             int statusCod = response.getStatus();
-            if (statusCod==200) {
+            if (statusCod == 200) {
                 String responseBody = response.getBody();
+                BaseTest.logger.info("Response: " + responseBody);
                 version = Integer.parseInt(responseBody.substring(17, 20));
             }
-        }
-        catch (Exception e){
-            System.out.println("Exception: " + e);
+        } catch (Exception e) {
+            BaseTest.logger.info("Exception: " + e);
         }
 
         return version;
@@ -579,94 +559,109 @@ public class BasePage {
     //endregion
 
 
-
     //region <Config.json CorePlatform>
     public String generateRandomKeyConfig() {
         String randomKey;
         randomKey = "QaTest" + RandomStringUtils.randomAlphanumeric(15);
         return randomKey;
     }
+
+    public static ArrayList<String> language_key_Array = new ArrayList<>();
+    public static ArrayList<String> language_value_Array = new ArrayList<>();
+
     public void getLanguages() throws UnirestException {
         Unirest.setTimeouts(0, 0);
-        HttpResponse<String> response = Unirest.get(baseURL + "/assets/json/config.json?=" + generateRandomKeyConfig())
+        String request = baseURL + "/assets/json/config.json?=" + versionJSCorePlatform();
+        BaseTest.logger.info("Request: " + request);
+        HttpResponse<String> response = Unirest.get(request)
                 .asString();
+        BaseTest.logger.info("Response: " + response.getBody());
         JSONObject jsonObjectBody;
         JSONArray LanguagesListArray;
         jsonObjectBody = new JSONObject(response.getBody());
         LanguagesListArray = jsonObjectBody.getJSONArray("Languages");
 
-        System.out.println("Languages are : " + LanguagesListArray.length());
+        BaseTest.logger.info("Languages are : " + LanguagesListArray.length());
 
-        for (int i = 0; i<LanguagesListArray.length(); i++){
+
+        for (int i = 0; i < LanguagesListArray.length(); i++) {
             String languages = LanguagesListArray.get(i).toString();
             JSONObject language = new JSONObject(languages);
 
             String language_key = language.get("key").toString();
             String language_value = language.get("value").toString();
+            BaseTest.logger.info(language_value + " _ " + language_key);
+            language_key_Array.add(language_key);
+            language_value_Array.add(language_value);
         }
-
-
     }
 
-
     //endregion
-    //region <Config.json SportsBook>
+    //<Config.json SportsBook>
     //endregion
 
 
     //region <en.json CorePlatform>
+    public void catchTranslation(String languageKey) throws UnirestException {
+        try {
+
+
+//            String requestTranslationLanguage = baseURL + "/assets/json/translations/" + languageKey + ".json?=" + versionJSCorePlatform();
+//            BaseTest.logger.info("Request: " + requestTranslationLanguage);
+//            Unirest.setTimeouts(0, 0);
+//            HttpResponse<String> responseTranslationLanguage = Unirest.get(requestTranslationLanguage)
+//                    .asString();
+//            int statusCodeEnTranslationLanguage = responseTranslationLanguage.getStatus();
+
+
+
+            String requestTranslationEn = baseURL + "/assets/json/translations/es.json?=" + versionJSCorePlatform();
+            BaseTest.logger.info("Request en.json: " + requestTranslationEn);
+            Unirest.setTimeouts(0, 0);
+            HttpResponse<String> responseTranslationEn = Unirest.get(requestTranslationEn)
+                    .asString();
+
+            int statusCodeEn = responseTranslationEn.getStatus();
+            if (statusCodeEn == 200) {
+
+                String BodyEn = responseTranslationEn.getBody();
+                BaseTest.logger.info("BodyEn ---> " + BodyEn);
+                JSONObject jsonObjectBodyEn = new JSONObject(BodyEn);
+                BaseTest.logger.info("BodyEnJson ---> " + jsonObjectBodyEn);
+
+                Set<String> keys = jsonObjectBodyEn.keySet();
+
+                for (String key:keys){
+                    System.out.println("key >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + key);
+                }
+
+                JSONArray ArrBodyEn = jsonObjectBodyEn.toJSONArray(jsonObjectBodyEn.names());
+                BaseTest.logger.info("ArrBodyEn ---> " + ArrBodyEn);
+
+                for (int i = 1; i <= ArrBodyEn.length(); i++) {
+                    BaseTest.logger.info(i + "  " + ArrBodyEn.get(i - 1));
+
+                    String ValuesStringEn = String.valueOf(ArrBodyEn.get(i - 1));
+                    JSONObject ValuesEn = new JSONObject(ValuesStringEn);
+                    BaseTest.logger.info(i + "  ValuesEn   ---> " + ValuesEn);
+
+                    JSONArray ArrValuesEn = ValuesEn.toJSONArray(ValuesEn.names());
+                    BaseTest.logger.info("ArrValuesEn ---> " + ArrValuesEn);
+
+                }
+
+            } else {
+                BaseTest.logger.info("Response status cod " + responseTranslationEn.getStatus());
+            }
+        } catch (Exception e) {
+            BaseTest.logger.info("Exception  !!!!!!!!!!!!!!!!!!!!!!!!!" + e);
+        }
+
+
+    }
     //endregion
     //region <en.json SportsBook>
     //endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /* this method will be used for validate webElements visibility */

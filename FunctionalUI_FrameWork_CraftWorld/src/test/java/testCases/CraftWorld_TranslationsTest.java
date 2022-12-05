@@ -60,10 +60,12 @@ public class CraftWorld_TranslationsTest extends BaseTest{
     @Test(priority = 20, description = "Validate on Footer Social Links presence")
     @Description("Validate on Footer Social Links presence")
     @Severity(SeverityLevel.NORMAL)
-    public void footerSocialLinksPresenceTest() throws UnirestException {
-        System.out.println(craftBet_01_header_pageLogInUser.versionJSCorePlatform());
-        System.out.println(craftBet_01_header_pageLogInUser.versionJSSportsBook());
+    public void translationTest() throws UnirestException {
+//        logger.info(craftBet_01_header_pageLogInUser.versionJSCorePlatform());
+//        logger.info(craftBet_01_header_pageLogInUser.versionJSSportsBook());
         craftBet_01_header_pageLogInUser.getLanguages();
+//        craftBet_01_header_pageLogInUser.catchTranslation(craftBet_01_header_pageLogInUser.language_key_Array.get(0));
+        craftBet_01_header_pageLogInUser.catchTranslation("en");
     }
 
 
