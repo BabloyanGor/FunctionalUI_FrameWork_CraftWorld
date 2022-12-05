@@ -615,7 +615,7 @@ public class BasePage {
 
 
 
-            String requestTranslationEn = baseURL + "/assets/json/translations/es.json?=" + versionJSCorePlatform();
+            String requestTranslationEn = baseURL + "/assets/json/translations/en.json?=" + versionJSCorePlatform();
             BaseTest.logger.info("Request en.json: " + requestTranslationEn);
             Unirest.setTimeouts(0, 0);
             HttpResponse<String> responseTranslationEn = Unirest.get(requestTranslationEn)
@@ -629,24 +629,31 @@ public class BasePage {
                 JSONObject jsonObjectBodyEn = new JSONObject(BodyEn);
                 BaseTest.logger.info("BodyEnJson ---> " + jsonObjectBodyEn);
 
-                Set<String> keys = jsonObjectBodyEn.keySet();
 
-                for (String key:keys){
-                    System.out.println("key >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + key);
-                }
+
+                Set<String> keys = jsonObjectBodyEn.keySet();
+                Object[] TitleKeysEn = keys.toArray();
+//
+//                for (String key:keys){
+//                    System.out.println("key >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + key);
+//                }
 
                 JSONArray ArrBodyEn = jsonObjectBodyEn.toJSONArray(jsonObjectBodyEn.names());
                 BaseTest.logger.info("ArrBodyEn ---> " + ArrBodyEn);
 
                 for (int i = 1; i <= ArrBodyEn.length(); i++) {
-                    BaseTest.logger.info(i + "  " + ArrBodyEn.get(i - 1));
+//                    BaseTest.logger.info(i + "  " + ArrBodyEn.get(i - 1));
+                    String title = (String) TitleKeysEn[i-1];
+                    System.out.println("Title  " + title);
+
 
                     String ValuesStringEn = String.valueOf(ArrBodyEn.get(i - 1));
                     JSONObject ValuesEn = new JSONObject(ValuesStringEn);
-                    BaseTest.logger.info(i + "  ValuesEn   ---> " + ValuesEn);
+
+//                    BaseTest.logger.info(i + "  ValuesEn   ---> " + ValuesEn);
 
                     JSONArray ArrValuesEn = ValuesEn.toJSONArray(ValuesEn.names());
-                    BaseTest.logger.info("ArrValuesEn ---> " + ArrValuesEn);
+                    BaseTest.logger.info(i + "  ArrValuesEn ---> " + ArrValuesEn);
 
                 }
 
