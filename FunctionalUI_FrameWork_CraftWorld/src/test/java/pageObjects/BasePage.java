@@ -7,6 +7,9 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.*;
@@ -25,6 +28,7 @@ import utilities.ReadConfig;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -609,7 +613,10 @@ public class BasePage {
 
 
     //region <en.json CorePlatform>
-    public void catchTranslation(String languageKey) throws UnirestException {
+
+    public static ArrayList<String> translationMissingLines = new ArrayList<>();
+
+    public void catchTranslation(String languageKey) throws UnirestException, IOException {
         SoftAssert softAssert = new SoftAssert();
 //        try {
 
@@ -663,15 +670,22 @@ public class BasePage {
 //                    BaseTest.logger.info(valueEn);
                     String valueTranslationLanguage = String.valueOf(titleObjectTranslationLanguage.get(Key.toString()));
 //                    BaseTest.logger.info(valueTranslationLanguage);
-                    if (valueEn.equals(valueTranslationLanguage)) {
+                    if (valueTranslationLanguage.equals(valueEn) || valueTranslationLanguage.equals(Key)) {
                         if (!valueEn.isEmpty()){
                             sumError ++;
-                            BaseTest.logger.info(n + " Header: " + TitleKey + "  Key: " + Key +  "  " + languageKey + ": " + valueTranslationLanguage);
+                            String missingTranslation = n+1 + " Header: " + TitleKey + "  Key: " + Key +  "  " + languageKey + ": " + valueTranslationLanguage;
+                            String missingTranslationTitleKey = TitleKey + ": " + Key ;
+                            BaseTest.logger.info(missingTranslation);
+                            translationMissingLines.add(missingTranslationTitleKey);
                         }
                     }
                 }
             }
+            String partner = baseURL.substring(8);
             BaseTest.logger.info("Translations are: "+ sumTranslation + "  Not Translated lines are: " + sumError);
+            writeInExel(translationMissingLines, "/src/test/java/BrokenData/" + readConfig.getTranslationLanguage() + "_MissingTranslationsCorePlatform_" + partner +".xlsx", "MissingTranslations");
+
+            Assert.assertEquals(sumError,0,"Errors are :" + sumError + " of " + sumTranslation);
 
 //                String BodyEn = responseTranslationEn.getBody();
 //                BaseTest.logger.info("BodyEn ---> " + BodyEn);
@@ -719,7 +733,26 @@ public class BasePage {
     //endregion
     //region <en.json SportsBook>
     //endregion
-
+    public void writeInExel(ArrayList<String> errorSrcXl , String src, String shitName) throws IOException {
+        String target = System.getProperty("user.dir") +src;
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        FileOutputStream file = new FileOutputStream(target);
+        XSSFSheet sheet = workbook.createSheet(shitName);
+        sheet.setColumnWidth(0, 20000);
+        int l = 0;
+        for (String err : errorSrcXl) {
+            XSSFRow row = sheet.createRow(l);
+//            try{
+                row.createCell(0).setCellValue(err);
+//            }
+//            catch(Exception e){
+//                BaseTest.logger.info("Exception : "+ e);
+//            }
+            l++;
+        }
+        workbook.write(file);
+        workbook.close();
+    }
 
     /* this method will be used for validate webElements visibility */
     public void waitElementToBeVisible(WebElement element) {
