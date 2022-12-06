@@ -22,7 +22,8 @@ public class BaseTest extends DriverFactory {
 
     BasePage basePage = new BasePage();
     ReadConfig readConfig = new ReadConfig();
-    public String baseURL = readConfig.getApplicationURL();
+    public String baseURL = readConfig.getBaseURL();
+    public String translationLanguage = readConfig.getTranslationLanguage();
     public String isHeadless = readConfig.isHeadless();
     public String browser = readConfig.getBrowser();
     public String username = readConfig.getUsername();

@@ -31,10 +31,16 @@ public class ReadConfig {
         return isHeadless;
     }
 
-    public String getApplicationURL()
+    public String getBaseURL()
     {
         String url=pro.getProperty("baseURL");
         return url;
+    }
+
+    public String getTranslationLanguage()
+    {
+        String translationLanguage=pro.getProperty("TranslationCheckLanguage");
+        return translationLanguage;
     }
 
     public String getUsername()

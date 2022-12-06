@@ -52,7 +52,7 @@ public class CraftWorld_TranslationsTest extends BaseTest{
                 firstTime = true;
             }
         }
-        craftWorld_02_footer_page.footerMenuLinksAPI();
+//        craftWorld_02_footer_page.footerMenuLinksAPI();
     }
 
 
@@ -64,8 +64,7 @@ public class CraftWorld_TranslationsTest extends BaseTest{
 //        logger.info(craftBet_01_header_pageLogInUser.versionJSCorePlatform());
 //        logger.info(craftBet_01_header_pageLogInUser.versionJSSportsBook());
         craftBet_01_header_pageLogInUser.getLanguages();
-//        craftBet_01_header_pageLogInUser.catchTranslation(craftBet_01_header_pageLogInUser.language_key_Array.get(0));
-        craftBet_01_header_pageLogInUser.catchTranslation("en");
+        craftBet_01_header_pageLogInUser.catchTranslation(readConfig.getTranslationLanguage());
     }
 
 

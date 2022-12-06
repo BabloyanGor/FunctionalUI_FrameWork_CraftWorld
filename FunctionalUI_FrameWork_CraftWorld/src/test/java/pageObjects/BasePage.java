@@ -2,6 +2,7 @@ package pageObjects;
 
 
 import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.apache.commons.io.FileUtils;
@@ -16,6 +17,8 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import testCases.BaseTest;
 import utilities.ReadConfig;
 
@@ -28,8 +31,6 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.Set;
 
 public class BasePage {
 
@@ -55,7 +56,8 @@ public class BasePage {
 
 
     ReadConfig readConfig = new ReadConfig();
-    public String baseURL = readConfig.getApplicationURL();
+    public String baseURL = readConfig.getBaseURL();
+    public String translationLanguage = readConfig.getTranslationLanguage();
 
 
     public HttpResponse<String> menuListAPI() throws UnirestException {
@@ -492,6 +494,11 @@ public class BasePage {
     //endregion
 
 
+
+
+
+
+
     //region <Check version.js CorePlatform >
 
     public String generateRandomKeyCorePlatform() {
@@ -559,7 +566,7 @@ public class BasePage {
     //endregion
 
 
-    //region <Config.json CorePlatform>
+    //region <Config.json CorePlatform getLanguages>
     public String generateRandomKeyConfig() {
         String randomKey;
         randomKey = "QaTest" + RandomStringUtils.randomAlphanumeric(15);
@@ -603,68 +610,111 @@ public class BasePage {
 
     //region <en.json CorePlatform>
     public void catchTranslation(String languageKey) throws UnirestException {
-        try {
+        SoftAssert softAssert = new SoftAssert();
+//        try {
 
 
-//            String requestTranslationLanguage = baseURL + "/assets/json/translations/" + languageKey + ".json?=" + versionJSCorePlatform();
-//            BaseTest.logger.info("Request: " + requestTranslationLanguage);
-//            Unirest.setTimeouts(0, 0);
-//            HttpResponse<String> responseTranslationLanguage = Unirest.get(requestTranslationLanguage)
-//                    .asString();
-//            int statusCodeEnTranslationLanguage = responseTranslationLanguage.getStatus();
+        String requestTranslationLanguage = baseURL + "/assets/json/translations/" + languageKey + ".json?=" + versionJSCorePlatform();
+        BaseTest.logger.info("Request: " + requestTranslationLanguage);
+        Unirest.setTimeouts(0, 0);
+        HttpResponse<JsonNode> responseTranslationLanguage = Unirest.get(requestTranslationLanguage)
+                .asJson();
+        int statusCodeEnTranslationLanguage = responseTranslationLanguage.getStatus();
 
 
+        String requestTranslationEn = baseURL + "/assets/json/translations/en.json?=" + versionJSCorePlatform();
+        BaseTest.logger.info("Request en.json: " + requestTranslationEn);
+        Unirest.setTimeouts(0, 0);
+        HttpResponse<JsonNode> responseTranslationEn = Unirest.get(requestTranslationEn)
+                .asJson();
+        int statusCodeEn = responseTranslationEn.getStatus();
 
-            String requestTranslationEn = baseURL + "/assets/json/translations/en.json?=" + versionJSCorePlatform();
-            BaseTest.logger.info("Request en.json: " + requestTranslationEn);
-            Unirest.setTimeouts(0, 0);
-            HttpResponse<String> responseTranslationEn = Unirest.get(requestTranslationEn)
-                    .asString();
+        if (statusCodeEn == 200 && statusCodeEnTranslationLanguage == 200) {
 
-            int statusCodeEn = responseTranslationEn.getStatus();
-            if (statusCodeEn == 200) {
+            JsonNode EnBody = responseTranslationEn.getBody();
+            Object[] TitleKeysEn = EnBody.getObject().keySet().toArray();
 
-                String BodyEn = responseTranslationEn.getBody();
-                BaseTest.logger.info("BodyEn ---> " + BodyEn);
-                JSONObject jsonObjectBodyEn = new JSONObject(BodyEn);
-                BaseTest.logger.info("BodyEnJson ---> " + jsonObjectBodyEn);
+            JsonNode TranslationLanguageBody = responseTranslationLanguage.getBody();
+            Object[] TitleKeysTranslationLanguage = TranslationLanguageBody.getObject().keySet().toArray();
 
+            Assert.assertEquals(TitleKeysEn, TitleKeysTranslationLanguage, "Json TitleKeys are not same");   //Compare Json TitleKeys Containing Arrays
 
+            int sumError = 0;
+            int sumTranslation = 0;
+            for (int m= 0; m<TitleKeysEn.length; m++){
 
-                Set<String> keys = jsonObjectBodyEn.keySet();
-                Object[] TitleKeysEn = keys.toArray();
-//
-//                for (String key:keys){
-//                    System.out.println("key >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + key);
-//                }
+//                BaseTest.logger.info(TitleKey);
+                Object TitleKey = TitleKeysEn[m];
+                JSONObject titleObjectEn = EnBody.getObject().getJSONObject(TitleKey.toString());   //For English
+//                BaseTest.logger.info(titleObjectEn);
+                JSONObject titleObjectTranslationLanguage = TranslationLanguageBody.getObject().getJSONObject(TitleKey.toString());   //For TranslationLanguage
+//                BaseTest.logger.info(titleObjectTranslationLanguage);
 
-                JSONArray ArrBodyEn = jsonObjectBodyEn.toJSONArray(jsonObjectBodyEn.names());
-                BaseTest.logger.info("ArrBodyEn ---> " + ArrBodyEn);
+                Object[] keysEn = titleObjectEn.keySet().toArray();
+                Object[] keysTranslationLanguage = titleObjectTranslationLanguage.keySet().toArray();
+                Assert.assertEquals(keysEn, keysTranslationLanguage, "Json Keys are not same");   //Compare Json Keys Containing Arrays
+                BaseTest.logger.info("Translation Keys for " + TitleKey +" are:  " + keysEn.length);
+                sumTranslation +=   keysEn.length;
+                for (int n= 0; n<keysEn.length;n++){
 
-                for (int i = 1; i <= ArrBodyEn.length(); i++) {
-//                    BaseTest.logger.info(i + "  " + ArrBodyEn.get(i - 1));
-                    String title = (String) TitleKeysEn[i-1];
-                    System.out.println("Title  " + title);
-
-
-                    String ValuesStringEn = String.valueOf(ArrBodyEn.get(i - 1));
-                    JSONObject ValuesEn = new JSONObject(ValuesStringEn);
-
-//                    BaseTest.logger.info(i + "  ValuesEn   ---> " + ValuesEn);
-
-                    JSONArray ArrValuesEn = ValuesEn.toJSONArray(ValuesEn.names());
-                    BaseTest.logger.info(i + "  ArrValuesEn ---> " + ArrValuesEn);
-
+//                   BaseTest.logger.info(Key);
+                    Object Key = keysEn[n];
+                    String valueEn = String.valueOf(titleObjectEn.get(Key.toString()));
+//                    BaseTest.logger.info(valueEn);
+                    String valueTranslationLanguage = String.valueOf(titleObjectTranslationLanguage.get(Key.toString()));
+//                    BaseTest.logger.info(valueTranslationLanguage);
+                    if (valueEn.equals(valueTranslationLanguage)) {
+                        if (!valueEn.isEmpty()){
+                            sumError ++;
+                            BaseTest.logger.info(n + " Header: " + TitleKey + "  Key: " + Key +  "  " + languageKey + ": " + valueTranslationLanguage);
+                        }
+                    }
                 }
-
-            } else {
-                BaseTest.logger.info("Response status cod " + responseTranslationEn.getStatus());
             }
-        } catch (Exception e) {
-            BaseTest.logger.info("Exception  !!!!!!!!!!!!!!!!!!!!!!!!!" + e);
+            BaseTest.logger.info("Translations are: "+ sumTranslation + "  Not Translated lines are: " + sumError);
+
+//                String BodyEn = responseTranslationEn.getBody();
+//                BaseTest.logger.info("BodyEn ---> " + BodyEn);
+//                JSONObject jsonObjectBodyEn = new JSONObject(BodyEn);
+//                BaseTest.logger.info("BodyEnJson ---> " + jsonObjectBodyEn);
+//
+//
+//
+//                Set<String> keys = jsonObjectBodyEn.keySet();
+//                Object[] TitleKeysEn = keys.toArray();
+////
+////                for (String key:keys){
+////                    System.out.println("key >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + key);
+////                }
+//
+//                JSONArray ArrBodyEn = jsonObjectBodyEn.toJSONArray(jsonObjectBodyEn.names());
+//                BaseTest.logger.info("ArrBodyEn ---> " + ArrBodyEn);
+//
+//                for (int i = 1; i <= ArrBodyEn.length(); i++) {
+////                    BaseTest.logger.info(i + "  " + ArrBodyEn.get(i - 1));
+//                    String title = (String) TitleKeysEn[i-1];
+//                    System.out.println("Title  " + title);
+//
+//
+//                    String ValuesStringEn = String.valueOf(ArrBodyEn.get(i - 1));
+//                    JSONObject ValuesEn = new JSONObject(ValuesStringEn);
+//
+////                    BaseTest.logger.info(i + "  ValuesEn   ---> " + ValuesEn);
+//
+//                    JSONArray ArrValuesEn = ValuesEn.toJSONArray(ValuesEn.names());
+//                    BaseTest.logger.info(i + "  ArrValuesEn ---> " + ArrValuesEn);
+//
+//                }
+//
+//            } else {
+//                BaseTest.logger.info("Response status cod " + responseTranslationEn.getStatus());
+//            }
+//        } catch (Exception e) {
+//            BaseTest.logger.info("Exception  !!!!!!!!!!!!!!!!!!!!!!!!!" + e);
+//        }
+
+
         }
-
-
     }
     //endregion
     //region <en.json SportsBook>
