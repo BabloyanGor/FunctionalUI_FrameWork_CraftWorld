@@ -614,9 +614,9 @@ public class BasePage {
 
     //region <en.json CorePlatform>
 
-    public static ArrayList<String> translationMissingLines = new ArrayList<>();
+    public static ArrayList<String> translationMissingLinesCore = new ArrayList<>();
 
-    public void catchTranslation(String languageKey) throws UnirestException, IOException {
+    public void catchTranslationCore(String languageKey) throws UnirestException, IOException {
         SoftAssert softAssert = new SoftAssert();
 //        try {
 
@@ -676,14 +676,14 @@ public class BasePage {
                             String missingTranslation = n+1 + " Header: " + TitleKey + "  Key: " + Key +  "  " + languageKey + ": " + valueTranslationLanguage;
                             String missingTranslationTitleKey = TitleKey + ": " + Key ;
                             BaseTest.logger.info(missingTranslation);
-                            translationMissingLines.add(missingTranslationTitleKey);
+                            translationMissingLinesCore.add(missingTranslationTitleKey);
                         }
                     }
                 }
             }
             String partner = baseURL.substring(8);
             BaseTest.logger.info("Translations are: "+ sumTranslation + "  Not Translated lines are: " + sumError);
-            writeInExel(translationMissingLines, "/src/test/java/BrokenData/" + readConfig.getTranslationLanguage() + "_MissingTranslationsCorePlatform_" + partner +".xlsx", "MissingTranslations");
+            writeInExel(translationMissingLinesCore, "/src/test/java/BrokenData/" + readConfig.getTranslationLanguage() + "_MissingTranslationsCorePlatform_" + partner +".xlsx", "MissingTranslations");
 
             Assert.assertEquals(sumError,0,"Errors are :" + sumError + " of " + sumTranslation);
 
@@ -731,7 +731,98 @@ public class BasePage {
         }
     }
     //endregion
+
+
     //region <en.json SportsBook>
+    public static ArrayList<String> translationMissingLinesSport = new ArrayList<>();
+
+    public void catchTranslationSport(String languageKey) throws UnirestException, IOException {
+        String httpPart = baseURL.substring(0, 8);
+        String urlPart = baseURL.substring(8);
+
+        String requestTranslationLanguage = httpPart + "sportsbookwebsite." + urlPart +"/website/assets/json/translations/"+languageKey+".json?=" + versionJSCorePlatform();
+        BaseTest.logger.info("Request Translation language: " + requestTranslationLanguage);
+        Unirest.setTimeouts(0, 0);
+        HttpResponse<JsonNode> responseTranslationLanguage = Unirest.get(requestTranslationLanguage)
+                .asJson();
+        int statusCodeEnTranslationLanguage = responseTranslationLanguage.getStatus();
+
+
+        String requestTranslationEn = httpPart + "sportsbookwebsite." + urlPart +"/website/assets/json/translations/en.json?=" + versionJSCorePlatform();
+        BaseTest.logger.info("Request en.json: " + requestTranslationEn);
+        Unirest.setTimeouts(0, 0);
+        HttpResponse<JsonNode> responseTranslationEn = Unirest.get(requestTranslationEn)
+                .asJson();
+        int statusCodeEn = responseTranslationEn.getStatus();
+
+        if (statusCodeEn == 200 && statusCodeEnTranslationLanguage == 200) {
+
+            JsonNode EnBody = responseTranslationEn.getBody();
+            Object[] KeysEn = EnBody.getObject().keySet().toArray();
+
+            JsonNode TranslationLanguageBody = responseTranslationLanguage.getBody();
+            Object[] KeysTranslationLanguage = TranslationLanguageBody.getObject().keySet().toArray();
+
+            //Assert.assertEquals(TitleKeysEn, TitleKeysTranslationLanguage, "Json TitleKeys are not same ");   //Compare Json TitleKeys Containing Arrays
+
+            for (int i = 0; i<KeysEn.length;i++){
+                Object Key = KeysEn[i];
+                System.out.println(Key);
+
+                String valueEn = String.valueOf(EnBody.getObject().get(Key.toString()));
+                String valueTranslationLanguage = String.valueOf(TranslationLanguageBody.getObject().get(Key.toString()));
+                System.out.println(valueEn);
+                System.out.println(valueTranslationLanguage);
+            }
+
+
+
+            int sumError = 0;
+            int sumTranslation = 0;
+//            for (int m= 0; m<TitleKeysEn.length; m++){
+//
+////                BaseTest.logger.info(TitleKey);
+//                Object TitleKey = TitleKeysEn[m];
+//                JSONObject titleObjectEn = EnBody.getObject().getJSONObject(TitleKey.toString());   //For English
+////                BaseTest.logger.info(titleObjectEn);
+//                JSONObject titleObjectTranslationLanguage = TranslationLanguageBody.getObject().getJSONObject(TitleKey.toString());   //For TranslationLanguage
+////                BaseTest.logger.info(titleObjectTranslationLanguage);
+//
+//                Object[] keysEn = titleObjectEn.keySet().toArray();
+//                Object[] keysTranslationLanguage = titleObjectTranslationLanguage.keySet().toArray();
+//                Assert.assertEquals(keysEn, keysTranslationLanguage, "Json Keys are not same");   //Compare Json Keys Containing Arrays
+//                BaseTest.logger.info("Translation Keys for " + TitleKey +" are:  " + keysEn.length);
+//                sumTranslation +=   keysEn.length;
+//                for (int n= 0; n<keysEn.length;n++){
+//
+////                   BaseTest.logger.info(Key);
+//                    Object Key = keysEn[n];
+//                    String valueEn = String.valueOf(titleObjectEn.get(Key.toString()));
+////                    BaseTest.logger.info(valueEn);
+//                    String valueTranslationLanguage = String.valueOf(titleObjectTranslationLanguage.get(Key.toString()));
+////                    BaseTest.logger.info(valueTranslationLanguage);
+//                    if (valueTranslationLanguage.equals(valueEn) || valueTranslationLanguage.equals(Key)) {
+//                        if (!valueEn.isEmpty()){
+//                            sumError ++;
+//                            String missingTranslation = n+1 + " Header: " + TitleKey + "  Key: " + Key +  "  " + languageKey + ": " + valueTranslationLanguage;
+//                            String missingTranslationTitleKey = TitleKey + ": " + Key ;
+//                            BaseTest.logger.info(missingTranslation);
+//                            translationMissingLinesSport.add(missingTranslationTitleKey);
+//                        }
+//                    }
+//                }
+//            }
+            String partner = baseURL.substring(8);
+            BaseTest.logger.info("Translations are: "+ sumTranslation + "  Not Translated lines are: " + sumError);
+            writeInExel(translationMissingLinesSport, "/src/test/java/BrokenData/" + readConfig.getTranslationLanguage() + "_MissingTranslationsSportBook_" + partner +".xlsx", "MissingTranslations");
+
+            Assert.assertEquals(sumError,0,"Errors are :" + sumError + " of " + sumTranslation);
+
+
+        }
+    }
+
+
     //endregion
     public void writeInExel(ArrayList<String> errorSrcXl , String src, String shitName) throws IOException {
         String target = System.getProperty("user.dir") +src;

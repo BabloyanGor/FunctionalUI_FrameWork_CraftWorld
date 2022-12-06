@@ -64,7 +64,8 @@ public class CraftWorld_TranslationsTest extends BaseTest{
 //        logger.info(craftBet_01_header_pageLogInUser.versionJSCorePlatform());
 //        logger.info(craftBet_01_header_pageLogInUser.versionJSSportsBook());
 //        craftBet_01_header_pageLogInUser.getLanguages();
-        craftBet_01_header_pageLogInUser.catchTranslation(readConfig.getTranslationLanguage());
+//        craftBet_01_header_pageLogInUser.catchTranslationCore(readConfig.getTranslationLanguage());
+        craftBet_01_header_pageLogInUser.catchTranslationSport(readConfig.getTranslationLanguage());
     }
 
 
