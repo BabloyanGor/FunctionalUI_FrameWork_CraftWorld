@@ -617,17 +617,13 @@ public class BasePage {
 
     //region <en.json CorePlatform>
 
-    public String serverLoad() throws UnirestException {
-
-        Unirest.setTimeouts(0, 0);
+    public HttpResponse<String> serverLoad() throws UnirestException {
+        Unirest.setTimeouts(20000, 20000);
         HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
                 .header("Content-Type", "application/json")
                 .asString();
 
-        String responseBody =  response.getBody();
-        System.out.println(responseBody);
-
-        return responseBody;
+        return response;
     }
 
 
@@ -824,6 +820,87 @@ public class BasePage {
 
 
     //endregion
+    public void writeInExelSixArrayList(ArrayList<String> errorSrc1 ,ArrayList<String> errorSrc2 ,ArrayList<String> errorSrc3 ,ArrayList<String> errorSrc4 ,ArrayList<String> errorSrc5 ,ArrayList<String> errorSrc6 , String src, String shitName) throws IOException {
+        String target = System.getProperty("user.dir") +src;
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        FileOutputStream file = new FileOutputStream(target);
+        XSSFSheet sheet = workbook.createSheet(shitName);
+        sheet.setColumnWidth(0, 8000);
+        sheet.setColumnWidth(1, 8000);
+        sheet.setColumnWidth(2, 8000);
+        sheet.setColumnWidth(3, 8000);
+        sheet.setColumnWidth(4, 8000);
+        sheet.setColumnWidth(5, 8000);
+
+        for (String err : errorSrc1) {
+            int l = 1;
+            XSSFRow row = sheet.createRow(l);
+//            try{
+                row.createCell(0).setCellValue(err);
+//            }
+//            catch(Exception e){
+//                BaseTest.logger.info("Exception : "+ e);
+//            }
+            l++;
+        }
+        for (String err : errorSrc2) {
+            int l = 1;
+            XSSFRow row = sheet.createRow(l);
+//            try{
+            row.createCell(1).setCellValue(err);
+//            }
+//            catch(Exception e){
+//                BaseTest.logger.info("Exception : "+ e);
+//            }
+            l++;
+        }
+        for (String err : errorSrc3) {
+            int l = 1;
+            XSSFRow row = sheet.createRow(l);
+//            try{
+            row.createCell(2).setCellValue(err);
+//            }
+//            catch(Exception e){
+//                BaseTest.logger.info("Exception : "+ e);
+//            }
+            l++;
+        }
+        for (String err : errorSrc4) {
+            int l = 1;
+            XSSFRow row = sheet.createRow(l);
+//            try{
+            row.createCell(3).setCellValue(err);
+//            }
+//            catch(Exception e){
+//                BaseTest.logger.info("Exception : "+ e);
+//            }
+            l++;
+        }
+        for (String err : errorSrc5) {
+            int l = 1;
+            XSSFRow row = sheet.createRow(l);
+//            try{
+            row.createCell(4).setCellValue(err);
+//            }
+//            catch(Exception e){
+//                BaseTest.logger.info("Exception : "+ e);
+//            }
+            l++;
+        }
+        for (String err : errorSrc6) {
+            int l = 1;
+            XSSFRow row = sheet.createRow(l);
+//            try{
+            row.createCell(5).setCellValue(err);
+//            }
+//            catch(Exception e){
+//                BaseTest.logger.info("Exception : "+ e);
+//            }
+            l++;
+        }
+        workbook.write(file);
+        workbook.close();
+    }
     public void writeInExel(ArrayList<String> errorSrcXl , String src, String shitName) throws IOException {
         String target = System.getProperty("user.dir") +src;
         XSSFWorkbook workbook = new XSSFWorkbook();
@@ -833,12 +910,7 @@ public class BasePage {
         int l = 0;
         for (String err : errorSrcXl) {
             XSSFRow row = sheet.createRow(l);
-//            try{
-                row.createCell(0).setCellValue(err);
-//            }
-//            catch(Exception e){
-//                BaseTest.logger.info("Exception : "+ e);
-//            }
+            row.createCell(0).setCellValue(err);
             l++;
         }
         workbook.write(file);
