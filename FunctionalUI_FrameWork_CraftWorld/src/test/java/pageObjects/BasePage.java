@@ -825,88 +825,49 @@ public class BasePage {
         XSSFWorkbook workbook = new XSSFWorkbook();
         FileOutputStream file = new FileOutputStream(target);
         XSSFSheet sheet = workbook.createSheet(shitName);
-        sheet.setColumnWidth(0, 8000);
-        sheet.setColumnWidth(1, 8000);
-        sheet.setColumnWidth(2, 8000);
-        sheet.setColumnWidth(3, 8000);
-        sheet.setColumnWidth(4, 8000);
-        sheet.setColumnWidth(5, 8000);
+        sheet.setColumnWidth(0, 12000);
+        sheet.setColumnWidth(1, 12000);
+        sheet.setColumnWidth(2, 12000);
+        sheet.setColumnWidth(3, 12000);
+        sheet.setColumnWidth(4, 12000);
+        sheet.setColumnWidth(5, 12000);
 
-        for (String err : errorSrc1) {
-            int l = 1;
-            XSSFRow row = sheet.createRow(l);
+        XSSFRow row1 = sheet.createRow(0);
 //            try{
-                row.createCell(0).setCellValue(err);
+        row1.createCell(0).setCellValue("SportsBook Slave");
+        row1.createCell(1).setCellValue("SportsBook Master");
+        row1.createCell(2).setCellValue("SportsBook DB");
+        row1.createCell(3).setCellValue("CorePlatform Slave");
+        row1.createCell(4).setCellValue("CorePlatform Master");
+        row1.createCell(5).setCellValue("CorePlatform DB");
+        int l = 1;
+        for (int n=0; n<errorSrc1.size();n++) {
+
+            row1 = sheet.createRow(l);
+//            try{
+            row1.createCell(0).setCellValue(errorSrc1.get(n));
+            row1.createCell(1).setCellValue(errorSrc2.get(n));
+            row1.createCell(2).setCellValue(errorSrc3.get(n));
+            row1.createCell(3).setCellValue(errorSrc4.get(n));
+            row1.createCell(4).setCellValue(errorSrc5.get(n));
+            row1.createCell(5).setCellValue(errorSrc6.get(n));
 //            }
 //            catch(Exception e){
 //                BaseTest.logger.info("Exception : "+ e);
 //            }
             l++;
         }
-        for (String err : errorSrc2) {
-            int l = 1;
-            XSSFRow row = sheet.createRow(l);
-//            try{
-            row.createCell(1).setCellValue(err);
-//            }
-//            catch(Exception e){
-//                BaseTest.logger.info("Exception : "+ e);
-//            }
-            l++;
-        }
-        for (String err : errorSrc3) {
-            int l = 1;
-            XSSFRow row = sheet.createRow(l);
-//            try{
-            row.createCell(2).setCellValue(err);
-//            }
-//            catch(Exception e){
-//                BaseTest.logger.info("Exception : "+ e);
-//            }
-            l++;
-        }
-        for (String err : errorSrc4) {
-            int l = 1;
-            XSSFRow row = sheet.createRow(l);
-//            try{
-            row.createCell(3).setCellValue(err);
-//            }
-//            catch(Exception e){
-//                BaseTest.logger.info("Exception : "+ e);
-//            }
-            l++;
-        }
-        for (String err : errorSrc5) {
-            int l = 1;
-            XSSFRow row = sheet.createRow(l);
-//            try{
-            row.createCell(4).setCellValue(err);
-//            }
-//            catch(Exception e){
-//                BaseTest.logger.info("Exception : "+ e);
-//            }
-            l++;
-        }
-        for (String err : errorSrc6) {
-            int l = 1;
-            XSSFRow row = sheet.createRow(l);
-//            try{
-            row.createCell(5).setCellValue(err);
-//            }
-//            catch(Exception e){
-//                BaseTest.logger.info("Exception : "+ e);
-//            }
-            l++;
-        }
+
         workbook.write(file);
         workbook.close();
     }
+
     public void writeInExel(ArrayList<String> errorSrcXl , String src, String shitName) throws IOException {
         String target = System.getProperty("user.dir") +src;
         XSSFWorkbook workbook = new XSSFWorkbook();
         FileOutputStream file = new FileOutputStream(target);
         XSSFSheet sheet = workbook.createSheet(shitName);
-        sheet.setColumnWidth(0, 20000);
+        sheet.setColumnWidth(0, 1000);
         int l = 0;
         for (String err : errorSrcXl) {
             XSSFRow row = sheet.createRow(l);

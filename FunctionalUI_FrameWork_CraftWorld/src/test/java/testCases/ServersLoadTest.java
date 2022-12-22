@@ -32,7 +32,7 @@ public class ServersLoadTest extends BaseTest {
     @Test
     public void test() throws UnirestException, IOException {
 
-        for (int g = 0; g < 3; g++) {
+        for (int g = 0; g < 10; g++) {
 
 
             JSONArray responseArray;
@@ -61,15 +61,15 @@ public class ServersLoadTest extends BaseTest {
                         break;
                     }
                     case "Core Platform Slave": {
-                        corePlatformSlave.add("SystemMemory: " + systemMemory + "  Cpu:" + cpu);
+                        corePlatformSlave.add("Ram: " + systemMemory + "  Cpu:" + cpu);
                         break;
                     }
                     case "Core Platform Master": {
-                        corePlatformMaster.add("SystemMemory: " + systemMemory + "  Cpu:" + cpu);
+                        corePlatformMaster.add("Ram: " + systemMemory + "  Cpu:" + cpu);
                         break;
                     }
                     case "Core Platform DB": {
-                        corePlatformDB.add("SystemMemory: " + systemMemory + "  Cpu:" + cpu);
+                        corePlatformDB.add("Ram: " + systemMemory + "  Cpu:" + cpu);
                         break;
                     }
                     default: {
