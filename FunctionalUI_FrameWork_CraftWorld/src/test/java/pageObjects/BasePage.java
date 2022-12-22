@@ -612,7 +612,34 @@ public class BasePage {
     //endregion
 
 
+
+
+
     //region <en.json CorePlatform>
+
+    public String serverLoad() throws UnirestException {
+
+        Unirest.setTimeouts(0, 0);
+        HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
+                .header("Content-Type", "application/json")
+                .asString();
+
+        String responseBody =  response.getBody();
+        System.out.println(responseBody);
+
+        return responseBody;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     public static ArrayList<String> translationMissingLinesCore = new ArrayList<>();
 
@@ -740,7 +767,7 @@ public class BasePage {
         String httpPart = baseURL.substring(0, 8);
         String urlPart = baseURL.substring(8);
 
-        String requestTranslationLanguage = httpPart + "sportsbookwebsite." + urlPart +"/website/assets/json/translations/"+languageKey+".json?=" + versionJSCorePlatform();
+        String requestTranslationLanguage = httpPart + "sportsbookwebsite." + urlPart +"/website/assets/json/translations/"+languageKey+".json?=" + versionJSSportsBook();
         BaseTest.logger.info("Request Translation language: " + requestTranslationLanguage);
         Unirest.setTimeouts(0, 0);
         HttpResponse<JsonNode> responseTranslationLanguage = Unirest.get(requestTranslationLanguage)
@@ -748,7 +775,7 @@ public class BasePage {
         int statusCodeEnTranslationLanguage = responseTranslationLanguage.getStatus();
 
 
-        String requestTranslationEn = httpPart + "sportsbookwebsite." + urlPart +"/website/assets/json/translations/en.json?=" + versionJSCorePlatform();
+        String requestTranslationEn = httpPart + "sportsbookwebsite." + urlPart +"/website/assets/json/translations/en.json?=" + versionJSSportsBook();
         BaseTest.logger.info("Request en.json: " + requestTranslationEn);
         Unirest.setTimeouts(0, 0);
         HttpResponse<JsonNode> responseTranslationEn = Unirest.get(requestTranslationEn)
@@ -763,61 +790,34 @@ public class BasePage {
             JsonNode TranslationLanguageBody = responseTranslationLanguage.getBody();
             Object[] KeysTranslationLanguage = TranslationLanguageBody.getObject().keySet().toArray();
 
-            //Assert.assertEquals(TitleKeysEn, TitleKeysTranslationLanguage, "Json TitleKeys are not same ");   //Compare Json TitleKeys Containing Arrays
-
+            Assert.assertEquals(KeysEn, KeysTranslationLanguage, "Json Keys are not same ");   //Compare Json Keys Containing Arrays
+            int sumError = 0;
+            int sumTranslation = 0;
             for (int i = 0; i<KeysEn.length;i++){
                 Object Key = KeysEn[i];
-                System.out.println(Key);
 
                 String valueEn = String.valueOf(EnBody.getObject().get(Key.toString()));
                 String valueTranslationLanguage = String.valueOf(TranslationLanguageBody.getObject().get(Key.toString()));
-                System.out.println(valueEn);
-                System.out.println(valueTranslationLanguage);
+                sumTranslation++;
+
+                BaseTest.logger.info("Key: "+Key+ " English Value: " + valueEn + " Translated Value: " + valueTranslationLanguage);
+
+                if (valueTranslationLanguage.equals(valueEn) || valueTranslationLanguage.equals(Key)) {
+                    if (!valueEn.isEmpty()) {
+                        sumError++;
+                        String missingTranslation = i + 1 + " Title: " + Key +  "  En: " + valueEn + " Translation: " + valueTranslationLanguage;
+                        String missingTranslationTitleKey = Key + ": " + valueTranslationLanguage;
+                        BaseTest.logger.info(missingTranslation);
+                        translationMissingLinesSport.add(missingTranslationTitleKey);
+                    }
+                }
             }
 
-
-
-            int sumError = 0;
-            int sumTranslation = 0;
-//            for (int m= 0; m<TitleKeysEn.length; m++){
-//
-////                BaseTest.logger.info(TitleKey);
-//                Object TitleKey = TitleKeysEn[m];
-//                JSONObject titleObjectEn = EnBody.getObject().getJSONObject(TitleKey.toString());   //For English
-////                BaseTest.logger.info(titleObjectEn);
-//                JSONObject titleObjectTranslationLanguage = TranslationLanguageBody.getObject().getJSONObject(TitleKey.toString());   //For TranslationLanguage
-////                BaseTest.logger.info(titleObjectTranslationLanguage);
-//
-//                Object[] keysEn = titleObjectEn.keySet().toArray();
-//                Object[] keysTranslationLanguage = titleObjectTranslationLanguage.keySet().toArray();
-//                Assert.assertEquals(keysEn, keysTranslationLanguage, "Json Keys are not same");   //Compare Json Keys Containing Arrays
-//                BaseTest.logger.info("Translation Keys for " + TitleKey +" are:  " + keysEn.length);
-//                sumTranslation +=   keysEn.length;
-//                for (int n= 0; n<keysEn.length;n++){
-//
-////                   BaseTest.logger.info(Key);
-//                    Object Key = keysEn[n];
-//                    String valueEn = String.valueOf(titleObjectEn.get(Key.toString()));
-////                    BaseTest.logger.info(valueEn);
-//                    String valueTranslationLanguage = String.valueOf(titleObjectTranslationLanguage.get(Key.toString()));
-////                    BaseTest.logger.info(valueTranslationLanguage);
-//                    if (valueTranslationLanguage.equals(valueEn) || valueTranslationLanguage.equals(Key)) {
-//                        if (!valueEn.isEmpty()){
-//                            sumError ++;
-//                            String missingTranslation = n+1 + " Header: " + TitleKey + "  Key: " + Key +  "  " + languageKey + ": " + valueTranslationLanguage;
-//                            String missingTranslationTitleKey = TitleKey + ": " + Key ;
-//                            BaseTest.logger.info(missingTranslation);
-//                            translationMissingLinesSport.add(missingTranslationTitleKey);
-//                        }
-//                    }
-//                }
-//            }
             String partner = baseURL.substring(8);
             BaseTest.logger.info("Translations are: "+ sumTranslation + "  Not Translated lines are: " + sumError);
             writeInExel(translationMissingLinesSport, "/src/test/java/BrokenData/" + readConfig.getTranslationLanguage() + "_MissingTranslationsSportBook_" + partner +".xlsx", "MissingTranslations");
 
             Assert.assertEquals(sumError,0,"Errors are :" + sumError + " of " + sumTranslation);
-
 
         }
     }

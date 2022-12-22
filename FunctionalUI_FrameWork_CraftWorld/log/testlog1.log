@@ -1706,3 +1706,837 @@
 2022-12-06 18:03:24,917 [main] INFO craftBet - Browser closed
 2022-12-06 18:03:24,917 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
 2022-12-06 18:03:24,969 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-07 09:23:34,685 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-07 09:23:43,196 [main] INFO craftBet - All Page elements are initialized
+2022-12-07 09:23:43,211 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-07 09:23:45,122 [main] INFO craftBet - Log In Button was clicked
+2022-12-07 09:23:46,937 [main] INFO craftBet - Request: https://sportsbookwebsite.play.baqto.com/website/assets/js/version.js?=QaTestpqRDEQuo6LqlxpO
+2022-12-07 09:23:47,493 [main] INFO craftBet - Response: window.VERSION = 576;
+2022-12-07 09:23:47,493 [main] INFO craftBet - Request Translation language: https://sportsbookwebsite.play.baqto.com/website/assets/json/translations/ja.json?=576
+2022-12-07 09:23:47,797 [main] INFO craftBet - Request: https://sportsbookwebsite.play.baqto.com/website/assets/js/version.js?=QaTestm8ddWzbpcC5bwgv
+2022-12-07 09:23:48,082 [main] INFO craftBet - Response: window.VERSION = 576;
+2022-12-07 09:23:48,082 [main] INFO craftBet - Request en.json: https://sportsbookwebsite.play.baqto.com/website/assets/json/translations/en.json?=576
+2022-12-07 09:23:48,460 [main] INFO craftBet - Translations are: 0  Not Translated lines are: 0
+2022-12-07 09:23:50,868 [main] INFO craftBet - Browser closed
+2022-12-07 09:23:50,869 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-07 09:23:50,937 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-07 09:32:57,802 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-07 09:33:01,776 [main] INFO craftBet - All Page elements are initialized
+2022-12-07 09:33:02,412 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-07 09:33:03,903 [main] INFO craftBet - Log In Button was clicked
+2022-12-07 09:33:05,606 [main] INFO craftBet - Request: https://sportsbookwebsite.play.baqto.com/website/assets/js/version.js?=QaTestM8tuYkLJ5utxhCG
+2022-12-07 09:33:05,899 [main] INFO craftBet - Response: window.VERSION = 576;
+2022-12-07 09:33:05,899 [main] INFO craftBet - Request Translation language: https://sportsbookwebsite.play.baqto.com/website/assets/json/translations/ja.json?=576
+2022-12-07 09:33:06,201 [main] INFO craftBet - Request: https://sportsbookwebsite.play.baqto.com/website/assets/js/version.js?=QaTestHjfixDXy33RSvjk
+2022-12-07 09:33:06,489 [main] INFO craftBet - Response: window.VERSION = 576;
+2022-12-07 09:33:06,489 [main] INFO craftBet - Request en.json: https://sportsbookwebsite.play.baqto.com/website/assets/json/translations/en.json?=576
+2022-12-07 09:33:06,789 [main] INFO craftBet - 1 Title: PRINT  En: PRINT Translation: PRINT
+2022-12-07 09:33:06,790 [main] INFO craftBet - 2 Title: Are You Sure  En: Are You Sure? Translation: Are You Sure?
+2022-12-07 09:33:06,790 [main] INFO craftBet - 3 Title: No items found  En: No items found Translation: No items found
+2022-12-07 09:33:06,790 [main] INFO craftBet - 4 Title: Edit  En: Edit Translation: Edit
+2022-12-07 09:33:06,790 [main] INFO craftBet - 5 Title: Best quick games  En: Best quick games Translation: Best quick games
+2022-12-07 09:33:06,790 [main] INFO craftBet - 6 Title: Premacth  En: Prematch Translation: Prematch
+2022-12-07 09:33:06,791 [main] INFO craftBet - 7 Title: Coefficients  En: Coefficients Translation: Coefficients
+2022-12-07 09:33:06,791 [main] INFO craftBet - 8 Title: Saturday  En: Saturday Translation: Saturday
+2022-12-07 09:33:06,791 [main] INFO craftBet - 9 Title: List View  En: List View Translation: List View
+2022-12-07 09:33:06,791 [main] INFO craftBet - 10 Title: Decimal  En: Decimal Translation: Decimal
+2022-12-07 09:33:06,792 [main] INFO craftBet - 11 Title: Open Bets  En: Open Bets Translation: Open Bets
+2022-12-07 09:33:06,792 [main] INFO craftBet - 12 Title: Fractional  En: Fractional Translation: Fractional
+2022-12-07 09:33:06,792 [main] INFO craftBet - 13 Title: July  En: July Translation: July
+2022-12-07 09:33:06,792 [main] INFO craftBet - 14 Title: Conditional Cashout  En: Conditional Cashout Translation: Conditional Cashout
+2022-12-07 09:33:06,792 [main] INFO craftBet - 15 Title: How To Place Bet Tooltip  En: To add a bet to "Bet slip", click on the odds for the selected event. Translation: To add a bet to "Bet slip", click on the odds for the selected event.
+2022-12-07 09:33:06,792 [main] INFO craftBet - 16 Title: No results, please try later.  En: No results, please try later. Translation: No results, please try later.
+2022-12-07 09:33:06,792 [main] INFO craftBet - 17 Title: Get 5000 no deposit bonus after  En: Get 5000 no deposit bonus after Translation: Get 5000 no deposit bonus after
+2022-12-07 09:33:06,793 [main] INFO craftBet - 18 Title: January  En: January Translation: January
+2022-12-07 09:33:06,793 [main] INFO craftBet - 19 Title: There are not events.  En: There are not events. Translation: There are not events.
+2022-12-07 09:33:06,793 [main] INFO craftBet - 20 Title: Sports betting  En: Sports Betting Translation: Sports Betting
+2022-12-07 09:33:06,793 [main] INFO craftBet - 21 Title: SPORT TYPE  En: SPORT TYPE Translation: SPORT TYPE
+2022-12-07 09:33:06,793 [main] INFO craftBet - 22 Title: Please log in or register now.  En: Please log in or register now. Translation: Please log in or register now.
+2022-12-07 09:33:06,793 [main] INFO craftBet - 23 Title: OpenBets  En: Open Bets Translation: Open Bets
+2022-12-07 09:33:06,793 [main] INFO craftBet - 24 Title: Game  En: Game Translation: Game
+2022-12-07 09:33:06,793 [main] INFO craftBet - 25 Title: Min  En: min Translation: min
+2022-12-07 09:33:06,794 [main] INFO craftBet - 26 Title: Tree View  En: Tree View Translation: Tree View
+2022-12-07 09:33:06,794 [main] INFO craftBet - 27 Title: World Cup  En: World Cup Translation: World Cup
+2022-12-07 09:33:06,794 [main] INFO craftBet - 28 Title: Partial Cashout  En: Partial Cashout Translation: Partial Cashout
+2022-12-07 09:33:06,795 [main] INFO craftBet - 29 Title: Close  En: Close Translation: Close
+2022-12-07 09:33:06,796 [main] INFO craftBet - 30 Title: Get 100% on your deposit after  En: Get 100% on your deposit after Translation: Get 100% on your deposit after
+2022-12-07 09:33:06,796 [main] INFO craftBet - 31 Title: June  En: June Translation: June
+2022-12-07 09:33:06,797 [main] INFO craftBet - 32 Title: C  En: C Translation: C
+2022-12-07 09:33:06,797 [main] INFO craftBet - 33 Title: F  En: F Translation: F
+2022-12-07 09:33:06,797 [main] INFO craftBet - 34 Title: March  En: March Translation: March
+2022-12-07 09:33:06,798 [main] INFO craftBet - 36 Title: Print Line  En: Print Line Translation: Print Line
+2022-12-07 09:33:06,798 [main] INFO craftBet - 37 Title: Delete All  En: Delete All Translation: Delete All
+2022-12-07 09:33:06,798 [main] INFO craftBet - 38 Title: O  En: O Translation: O
+2022-12-07 09:33:06,798 [main] INFO craftBet - 39 Title: October  En: October Translation: October
+2022-12-07 09:33:06,798 [main] INFO craftBet - 40 Title: All Sports  En: All Sports Translation: All Sports
+2022-12-07 09:33:06,798 [main] INFO craftBet - 41 Title: U  En: U Translation: U
+2022-12-07 09:33:06,798 [main] INFO craftBet - 42 Title: X  En: X Translation: X
+2022-12-07 09:33:06,799 [main] INFO craftBet - 43 Title: Search team, competition  En: Search team, competition Translation: Search team, competition
+2022-12-07 09:33:06,799 [main] INFO craftBet - 44 Title: Selected  En: Selected Translation: Selected
+2022-12-07 09:33:06,799 [main] INFO craftBet - 45 Title: Any Odds  En: Any Odds Translation: Any Odds
+2022-12-07 09:33:06,799 [main] INFO craftBet - 46 Title: Replace this event  En: Replace this event Translation: Replace this event
+2022-12-07 09:33:06,799 [main] INFO craftBet - 47 Title: Bet Placed on  En: Bet Placed on Translation: Bet Placed on
+2022-12-07 09:33:06,799 [main] INFO craftBet - 48 Title: Higher Odds  En: Higher Odds Translation: Higher Odds
+2022-12-07 09:33:06,799 [main] INFO craftBet - 49 Title: Thursday  En: Thursday Translation: Thursday
+2022-12-07 09:33:06,800 [main] INFO craftBet - 50 Title: Event  En: Event Translation: Event
+2022-12-07 09:33:06,800 [main] INFO craftBet - 51 Title: Betting tutorial text  En: Need help to know how to bet? You can easily learn it only 5 minutes Translation: Need help to know how to bet? You can easily learn it only 5 minutes
+2022-12-07 09:33:06,800 [main] INFO craftBet - 52 Title: Other  En: Other Translation: Other
+2022-12-07 09:33:06,800 [main] INFO craftBet - 54 Title: Monday  En: Monday Translation: Monday
+2022-12-07 09:33:06,800 [main] INFO craftBet - 55 Title: INFO  En: INFO Translation: INFO
+2022-12-07 09:33:06,800 [main] INFO craftBet - 56 Title: Bets on sport  En: Bets on sport Translation: Bets on sport
+2022-12-07 09:33:06,801 [main] INFO craftBet - 57 Title: Friday  En: Friday Translation: Friday
+2022-12-07 09:33:06,801 [main] INFO craftBet - 58 Title: COMPETITION  En: COMPETITION Translation: COMPETITION
+2022-12-07 09:33:06,801 [main] INFO craftBet - 59 Title: Clear All  En: Clear All Translation: Clear All
+2022-12-07 09:33:06,801 [main] INFO craftBet - 60 Title: Select all  En: Select all Translation: Select all
+2022-12-07 09:33:06,801 [main] INFO craftBet - 61 Title: Login for using favorites  En: Login for using favorites Translation: Login for using favorites
+2022-12-07 09:33:06,801 [main] INFO craftBet - 62 Title: Show Regions  En: Show Regions Translation: Show Regions
+2022-12-07 09:33:06,801 [main] INFO craftBet - 63 Title: Select event from left side  En: Select event from left side Translation: Select event from left side
+2022-12-07 09:33:06,801 [main] INFO craftBet - 65 Title: SEE MORE 30 SPORTS  En: SEE MORE 30 SPORTS Translation: SEE MORE 30 SPORTS
+2022-12-07 09:33:06,802 [main] INFO craftBet - 66 Title: Play quick games  En: Play quick games Translation: Play quick games
+2022-12-07 09:33:06,802 [main] INFO craftBet - 67 Title: Markets  En: Markets Translation: Markets
+2022-12-07 09:33:06,802 [main] INFO craftBet - 68 Title: Quick links  En: Quick links Translation: Quick links
+2022-12-07 09:33:06,802 [main] INFO craftBet - 69 Title: Real Account  En: Real Account Translation: Real Account
+2022-12-07 09:33:06,802 [main] INFO craftBet - 70 Title: Hide Regions  En: Hide Regions Translation: Hide Regions
+2022-12-07 09:33:06,802 [main] INFO craftBet - 71 Title: Please  En: Please Translation: Please
+2022-12-07 09:33:06,802 [main] INFO craftBet - 72 Title: Indo  En: Indo Translation: Indo
+2022-12-07 09:33:06,802 [main] INFO craftBet - 73 Title: opt  En: opt Translation: opt
+2022-12-07 09:33:06,803 [main] INFO craftBet - 74 Title: Back to Sports  En: Back to Sports Translation: Back to Sports
+2022-12-07 09:33:06,803 [main] INFO craftBet - 75 Title: Search teams  En: Search teams Translation: Search teams
+2022-12-07 09:33:06,803 [main] INFO craftBet - 76 Title: W1  En: W1 Translation: W1
+2022-12-07 09:33:06,803 [main] INFO craftBet - 77 Title: W2  En: W2 Translation: W2
+2022-12-07 09:33:06,803 [main] INFO craftBet - 78 Title: Confirmation  En: Confirm Cashout out Translation: Confirm Cashout out
+2022-12-07 09:33:06,803 [main] INFO craftBet - 79 Title: Us  En: Us Translation: Us
+2022-12-07 09:33:06,803 [main] INFO craftBet - 80 Title: Search Results  En: Search Result Translation: Search Result
+2022-12-07 09:33:06,803 [main] INFO craftBet - 81 Title: September  En: September Translation: September
+2022-12-07 09:33:06,803 [main] INFO craftBet - 82 Title: Possible winnings  En: Possible winnings Translation: Possible winnings
+2022-12-07 09:33:06,804 [main] INFO craftBet - 83 Title: Yes  En: Yes Translation: Yes
+2022-12-07 09:33:06,804 [main] INFO craftBet - 84 Title: Time  En: Time Translation: Time
+2022-12-07 09:33:06,804 [main] INFO craftBet - 85 Title: Search Result  En: Search Result Translation: Search Result
+2022-12-07 09:33:06,804 [main] INFO craftBet - 86 Title: System  En: System Translation: System
+2022-12-07 09:33:06,804 [main] INFO craftBet - 87 Title: Bets on  En: Bets on Translation: Bets on
+2022-12-07 09:33:06,804 [main] INFO craftBet - 88 Title: Welcome register bonus  En: Welcome register bonus! Translation: Welcome register bonus!
+2022-12-07 09:33:06,804 [main] INFO craftBet - 89 Title: Number  En: Number Translation: Number
+2022-12-07 09:33:06,804 [main] INFO craftBet - 90 Title: register now.  En: register now Translation: register now
+2022-12-07 09:33:06,804 [main] INFO craftBet - 91 Title: Tuesday  En: Tuesday Translation: Tuesday
+2022-12-07 09:33:06,804 [main] INFO craftBet - 92 Title: Home  En: Home Translation: Home
+2022-12-07 09:33:06,805 [main] INFO craftBet - 93 Title: Unpin  En: Unpin Translation: Unpin
+2022-12-07 09:33:06,805 [main] INFO craftBet - 94 Title: Accept any odds change  En: Accept any odds change Translation: Accept any odds change
+2022-12-07 09:33:06,805 [main] INFO craftBet - 95 Title: More sports  En: More sports Translation: More sports
+2022-12-07 09:33:06,805 [main] INFO craftBet - 96 Title: November  En: November Translation: November
+2022-12-07 09:33:06,805 [main] INFO craftBet - 97 Title: hours  En: H Translation: H
+2022-12-07 09:33:06,805 [main] INFO craftBet - 98 Title: Max Bet  En: Max Bet Translation: Max Bet
+2022-12-07 09:33:06,805 [main] INFO craftBet - 99 Title: Full cashout  En: Full cashout Translation: Full cashout
+2022-12-07 09:33:06,805 [main] INFO craftBet - 101 Title: Single can only contain one match  En: Single bet can only contain one match. Please remove other. Translation: Single bet can only contain one match. Please remove other.
+2022-12-07 09:33:06,805 [main] INFO craftBet - 102 Title: Place bets  En: Place bets Translation: Place bets
+2022-12-07 09:33:06,806 [main] INFO craftBet - 103 Title: Current Odd  En: Current Odds Translation: Current Odds
+2022-12-07 09:33:06,806 [main] INFO craftBet - 104 Title: Combinations count  En: Combinations count Translation: Combinations count
+2022-12-07 09:33:06,806 [main] INFO craftBet - 106 Title: Previous  En: Previous Translation: Previous
+2022-12-07 09:33:06,806 [main] INFO craftBet - 107 Title: Add to favorites  En: Add to favorites Translation: Add to favorites
+2022-12-07 09:33:06,806 [main] INFO craftBet - 108 Title: Team Name  En: Team Name Translation: Team Name
+2022-12-07 09:33:06,806 [main] INFO craftBet - 109 Title: HK  En: HK Translation: HK
+2022-12-07 09:33:06,806 [main] INFO craftBet - 110 Title: Go  En: Go Translation: Go
+2022-12-07 09:33:06,806 [main] INFO craftBet - 111 Title: Remove  En: Remove Translation: Remove
+2022-12-07 09:33:06,806 [main] INFO craftBet - 112 Title: Best live games  En: Best live games Translation: Best live games
+2022-12-07 09:33:06,806 [main] INFO craftBet - 113 Title: Bet types  En: Bet types Translation: Bet types
+2022-12-07 09:33:06,806 [main] INFO craftBet - 114 Title: All Events  En: All Events Translation: All Events
+2022-12-07 09:33:06,806 [main] INFO craftBet - 115 Title: December  En: December Translation: December
+2022-12-07 09:33:06,807 [main] INFO craftBet - 116 Title: Match win  En: Match win Translation: Match win
+2022-12-07 09:33:06,807 [main] INFO craftBet - 117 Title: All Sport  En: All Sports Translation: All Sports
+2022-12-07 09:33:06,807 [main] INFO craftBet - 118 Title: Number of events  En: Number of events Translation: Number of events
+2022-12-07 09:33:06,807 [main] INFO craftBet - 119 Title: log in  En: Login Translation: Login
+2022-12-07 09:33:06,807 [main] INFO craftBet - 120 Title: Back  En: Back Translation: Back
+2022-12-07 09:33:06,807 [main] INFO craftBet - 121 Title: Malay  En: Malay Translation: Malay
+2022-12-07 09:33:06,807 [main] INFO craftBet - 123 Title: Settings  En: Settings Translation: Settings
+2022-12-07 09:33:06,807 [main] INFO craftBet - 125 Title: tomorrow  En: Tomorrow Translation: Tomorrow
+2022-12-07 09:33:06,807 [main] INFO craftBet - 126 Title: matches  En: matches Translation: matches
+2022-12-07 09:33:06,807 [main] INFO craftBet - 127 Title: Popular competitions  En: Popular competitions Translation: Popular competitions
+2022-12-07 09:33:06,807 [main] INFO craftBet - 128 Title: Search by sport, region, match and ID  En: Search by sport, region, match and ID Translation: Search by sport, region, match and ID
+2022-12-07 09:33:06,807 [main] INFO craftBet - 129 Title: REGION  En: REGION Translation: REGION
+2022-12-07 09:33:06,808 [main] INFO craftBet - 130 Title: Bet placed  En: Bet placed Translation: Bet placed
+2022-12-07 09:33:06,808 [main] INFO craftBet - 131 Title: Next  En: Next Translation: Next
+2022-12-07 09:33:06,808 [main] INFO craftBet - 132 Title: Show  En: Show Translation: Show
+2022-12-07 09:33:06,808 [main] INFO craftBet - 134 Title: Play racing  En: Play racing Translation: Play racing
+2022-12-07 09:33:06,808 [main] INFO craftBet - 135 Title: Get 100% deposit  En: Get 100% deposit Translation: Get 100% deposit
+2022-12-07 09:33:06,808 [main] INFO craftBet - 136 Title: May  En: May Translation: May
+2022-12-07 09:33:06,808 [main] INFO craftBet - 137 Title: Cancel  En: Cancel Translation: Cancel
+2022-12-07 09:33:06,808 [main] INFO craftBet - 138 Title: Max  En: max Translation: max
+2022-12-07 09:33:06,808 [main] INFO craftBet - 139 Title: Long version  En: Long version Translation: Long version
+2022-12-07 09:33:06,808 [main] INFO craftBet - 140 Title: System calculator  En: System calculator Translation: System calculator
+2022-12-07 09:33:06,808 [main] INFO craftBet - 142 Title: Lost  En: Lost Translation: Lost
+2022-12-07 09:33:06,809 [main] INFO craftBet - 143 Title: CashOut Confirm Message  En: You are Cashing out Translation: You are Cashing out
+2022-12-07 09:33:06,809 [main] INFO craftBet - 144 Title: Market selected  En: Market Selected Translation: Market Selected
+2022-12-07 09:33:06,809 [main] INFO craftBet - 145 Title: BetSlip  En: Bet Slip Translation: Bet Slip
+2022-12-07 09:33:06,809 [main] INFO craftBet - 146 Title: One combination amount  En: One combination amount Translation: One combination amount
+2022-12-07 09:33:06,810 [main] INFO craftBet - 147 Title: Please enter valid email or username  En: Please enter valid email or username Translation: Please enter valid email or username
+2022-12-07 09:33:06,811 [main] INFO craftBet - 148 Title: Live betting  En: Live betting Translation: Live betting
+2022-12-07 09:33:06,811 [main] INFO craftBet - 149 Title: Pin  En: Pin Translation: Pin
+2022-12-07 09:33:06,811 [main] INFO craftBet - 151 Title: Team, country, competition  En: Team, country, competition Translation: Team, country, competition
+2022-12-07 09:33:06,811 [main] INFO craftBet - 152 Title: None  En: None Translation: None
+2022-12-07 09:33:06,811 [main] INFO craftBet - 153 Title: Bonus Account  En: Bonus Account Translation: Bonus Account
+2022-12-07 09:33:06,811 [main] INFO craftBet - 154 Title: All  En: All Translation: All
+2022-12-07 09:33:06,811 [main] INFO craftBet - 155 Title: EVENTS  En: EVENTS Translation: EVENTS
+2022-12-07 09:33:06,812 [main] INFO craftBet - 156 Title: Sport  En: Sport Translation: Sport
+2022-12-07 09:33:06,812 [main] INFO craftBet - 157 Title: Registration  En: registration Translation: registration
+2022-12-07 09:33:06,812 [main] INFO craftBet - 158 Title: Live events  En: Live Events Translation: Live Events
+2022-12-07 09:33:06,812 [main] INFO craftBet - 159 Title: day  En: D Translation: D
+2022-12-07 09:33:06,812 [main] INFO craftBet - 160 Title: Odds Type  En: Odds Type Translation: Odds Type
+2022-12-07 09:33:06,812 [main] INFO craftBet - 161 Title: Stake  En: Stake Translation: Stake
+2022-12-07 09:33:06,812 [main] INFO craftBet - 162 Title: Chanel  En: Chanel Translation: Chanel
+2022-12-07 09:33:06,812 [main] INFO craftBet - 163 Title: Calculate  En: Calculate Translation: Calculate
+2022-12-07 09:33:06,812 [main] INFO craftBet - 164 Title: April  En: April Translation: April
+2022-12-07 09:33:06,812 [main] INFO craftBet - 165 Title: August  En: August Translation: August
+2022-12-07 09:33:06,813 [main] INFO craftBet - 166 Title: DATE  En: DATE Translation: DATE
+2022-12-07 09:33:06,813 [main] INFO craftBet - 167 Title: Short version  En: Short version Translation: Short version
+2022-12-07 09:33:06,813 [main] INFO craftBet - 168 Title: There are not markets  En: There are not markets Translation: There are not markets
+2022-12-07 09:33:06,813 [main] INFO craftBet - 169 Title: Automatically accept price changes  En: Automatically accept price changes Translation: Automatically accept price changes
+2022-12-07 09:33:06,813 [main] INFO craftBet - 170 Title: Sunday  En: Sunday Translation: Sunday
+2022-12-07 09:33:06,813 [main] INFO craftBet - 171 Title: Wednesday  En: Wednesday Translation: Wednesday
+2022-12-07 09:33:06,813 [main] INFO craftBet - 172 Title: Find out more  En: Find out more Translation: Find out more
+2022-12-07 09:33:06,813 [main] INFO craftBet - 173 Title: Save  En: Save Translation: Save
+2022-12-07 09:33:06,813 [main] INFO craftBet - 174 Title: COEFF.  En: COEFF. Translation: COEFF.
+2022-12-07 09:33:06,813 [main] INFO craftBet - 175 Title: Live Games  En: Live Games Translation: Live Games
+2022-12-07 09:33:06,814 [main] INFO craftBet - 176 Title: Win  En: Win Translation: Win
+2022-12-07 09:33:06,814 [main] INFO craftBet - 177 Title: Play poker  En: Play poker Translation: Play poker
+2022-12-07 09:33:06,814 [main] INFO craftBet - 178 Title: week  En: week Translation: week
+2022-12-07 09:33:06,814 [main] INFO craftBet - 179 Title: Show events Id  En: Show events Id Translation: Show events Id
+2022-12-07 09:33:06,814 [main] INFO craftBet - 180 Title: Cash Out  En: Cashout Translation: Cashout
+2022-12-07 09:33:06,814 [main] INFO craftBet - 181 Title: Monitor  En: Monitor Translation: Monitor
+2022-12-07 09:33:06,814 [main] INFO craftBet - 182 Title: hour  En: H Translation: H
+2022-12-07 09:33:06,815 [main] INFO craftBet - 183 Title: Upcoming Events  En: Upcoming Events Translation: Upcoming Events
+2022-12-07 09:33:06,815 [main] INFO craftBet - 184 Title: There are not favorites.  En: There are not favorites. Translation: There are not favorites.
+2022-12-07 09:33:06,815 [main] INFO craftBet - 185 Title: today  En: Today Translation: Today
+2022-12-07 09:33:06,815 [main] INFO craftBet - 186 Title: February  En: February Translation: February
+2022-12-07 09:33:06,815 [main] INFO craftBet - 187 Title: No  En: No Translation: No
+2022-12-07 09:33:06,815 [main] INFO craftBet - 188 Title: Duplicated  En: Duplicated Translation: Duplicated
+2022-12-07 09:33:06,815 [main] INFO craftBet - 189 Title: or  En: or Translation: or
+2022-12-07 09:33:06,815 [main] INFO craftBet - 190 Title: All_Sports  En: All Sports Translation: All Sports
+2022-12-07 09:33:06,816 [main] INFO craftBet - 191 Title: Add condition  En: Add condition Translation: Add condition
+2022-12-07 09:33:06,816 [main] INFO craftBet - 192 Title: Data  En: Data Translation: Data
+2022-12-07 09:33:06,816 [main] INFO craftBet - 193 Title: Play keno  En: Play keno Translation: Play keno
+2022-12-07 09:33:06,816 [main] INFO craftBet - 194 Title: Play live poker  En: Play live poker Translation: Play live poker
+2022-12-07 09:33:06,816 [main] INFO craftBet - 195 Title: Rebet  En: Rebet Translation: Rebet
+2022-12-07 09:33:06,816 [main] INFO craftBet - 196 Title: Team1 - Team2  En: Team1 - Team2 Translation: Team1 - Team2
+2022-12-07 09:33:06,817 [main] INFO craftBet - 197 Title: Total  En: Total Translation: Total
+2022-12-07 09:33:06,817 [main] INFO craftBet - 198 Title: Top Events  En: Top Events Translation: Top Events
+2022-12-07 09:33:06,817 [main] INFO craftBet - 199 Title: Ok  En: OK Translation: OK
+2022-12-07 09:33:06,817 [main] INFO craftBet - Translations are: 0  Not Translated lines are: 189
+2022-12-07 09:33:08,934 [main] INFO craftBet - Browser closed
+2022-12-07 09:33:08,935 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-07 09:33:08,970 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-07 09:37:29,688 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-07 09:37:36,458 [main] INFO craftBet - All Page elements are initialized
+2022-12-07 09:37:36,475 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-07 09:37:38,955 [main] INFO craftBet - Log In Button was clicked
+2022-12-07 09:37:40,679 [main] INFO craftBet - Request: https://sportsbookwebsite.play.baqto.com/website/assets/js/version.js?=QaTesteEK3JY3lVdUA0k5
+2022-12-07 09:37:40,968 [main] INFO craftBet - Response: window.VERSION = 576;
+2022-12-07 09:37:40,968 [main] INFO craftBet - Request Translation language: https://sportsbookwebsite.play.baqto.com/website/assets/json/translations/ja.json?=576
+2022-12-07 09:37:41,267 [main] INFO craftBet - Request: https://sportsbookwebsite.play.baqto.com/website/assets/js/version.js?=QaTestgyMBFwPz1RsSVBl
+2022-12-07 09:37:41,401 [main] INFO craftBet - Response: window.VERSION = 576;
+2022-12-07 09:37:41,402 [main] INFO craftBet - Request en.json: https://sportsbookwebsite.play.baqto.com/website/assets/json/translations/en.json?=576
+2022-12-07 09:37:41,886 [main] INFO craftBet - 1 Title: PRINT  En: PRINT Translation: PRINT
+2022-12-07 09:37:41,886 [main] INFO craftBet - 2 Title: Are You Sure  En: Are You Sure? Translation: Are You Sure?
+2022-12-07 09:37:41,887 [main] INFO craftBet - 3 Title: No items found  En: No items found Translation: No items found
+2022-12-07 09:37:41,887 [main] INFO craftBet - 4 Title: Edit  En: Edit Translation: Edit
+2022-12-07 09:37:41,887 [main] INFO craftBet - 5 Title: Best quick games  En: Best quick games Translation: Best quick games
+2022-12-07 09:37:41,887 [main] INFO craftBet - 6 Title: Premacth  En: Prematch Translation: Prematch
+2022-12-07 09:37:41,888 [main] INFO craftBet - 7 Title: Coefficients  En: Coefficients Translation: Coefficients
+2022-12-07 09:37:41,888 [main] INFO craftBet - 8 Title: Saturday  En: Saturday Translation: Saturday
+2022-12-07 09:37:41,888 [main] INFO craftBet - 9 Title: List View  En: List View Translation: List View
+2022-12-07 09:37:41,888 [main] INFO craftBet - 10 Title: Decimal  En: Decimal Translation: Decimal
+2022-12-07 09:37:41,888 [main] INFO craftBet - 11 Title: Open Bets  En: Open Bets Translation: Open Bets
+2022-12-07 09:37:41,888 [main] INFO craftBet - 12 Title: Fractional  En: Fractional Translation: Fractional
+2022-12-07 09:37:41,889 [main] INFO craftBet - 13 Title: July  En: July Translation: July
+2022-12-07 09:37:41,889 [main] INFO craftBet - 14 Title: Conditional Cashout  En: Conditional Cashout Translation: Conditional Cashout
+2022-12-07 09:37:41,889 [main] INFO craftBet - 15 Title: How To Place Bet Tooltip  En: To add a bet to "Bet slip", click on the odds for the selected event. Translation: To add a bet to "Bet slip", click on the odds for the selected event.
+2022-12-07 09:37:41,889 [main] INFO craftBet - 16 Title: No results, please try later.  En: No results, please try later. Translation: No results, please try later.
+2022-12-07 09:37:41,889 [main] INFO craftBet - 17 Title: Get 5000 no deposit bonus after  En: Get 5000 no deposit bonus after Translation: Get 5000 no deposit bonus after
+2022-12-07 09:37:41,889 [main] INFO craftBet - 18 Title: January  En: January Translation: January
+2022-12-07 09:37:41,890 [main] INFO craftBet - 19 Title: There are not events.  En: There are not events. Translation: There are not events.
+2022-12-07 09:37:41,890 [main] INFO craftBet - 20 Title: Sports betting  En: Sports Betting Translation: Sports Betting
+2022-12-07 09:37:41,890 [main] INFO craftBet - 21 Title: SPORT TYPE  En: SPORT TYPE Translation: SPORT TYPE
+2022-12-07 09:37:41,890 [main] INFO craftBet - 22 Title: Please log in or register now.  En: Please log in or register now. Translation: Please log in or register now.
+2022-12-07 09:37:41,891 [main] INFO craftBet - 23 Title: OpenBets  En: Open Bets Translation: Open Bets
+2022-12-07 09:37:41,891 [main] INFO craftBet - 24 Title: Game  En: Game Translation: Game
+2022-12-07 09:37:41,891 [main] INFO craftBet - 25 Title: Min  En: min Translation: min
+2022-12-07 09:37:41,891 [main] INFO craftBet - 26 Title: Tree View  En: Tree View Translation: Tree View
+2022-12-07 09:37:41,891 [main] INFO craftBet - 27 Title: World Cup  En: World Cup Translation: World Cup
+2022-12-07 09:37:41,891 [main] INFO craftBet - 28 Title: Partial Cashout  En: Partial Cashout Translation: Partial Cashout
+2022-12-07 09:37:41,892 [main] INFO craftBet - 29 Title: Close  En: Close Translation: Close
+2022-12-07 09:37:41,892 [main] INFO craftBet - 30 Title: Get 100% on your deposit after  En: Get 100% on your deposit after Translation: Get 100% on your deposit after
+2022-12-07 09:37:41,892 [main] INFO craftBet - 31 Title: June  En: June Translation: June
+2022-12-07 09:37:41,892 [main] INFO craftBet - 32 Title: C  En: C Translation: C
+2022-12-07 09:37:41,892 [main] INFO craftBet - 33 Title: F  En: F Translation: F
+2022-12-07 09:37:41,892 [main] INFO craftBet - 34 Title: March  En: March Translation: March
+2022-12-07 09:37:41,892 [main] INFO craftBet - 36 Title: Print Line  En: Print Line Translation: Print Line
+2022-12-07 09:37:41,893 [main] INFO craftBet - 37 Title: Delete All  En: Delete All Translation: Delete All
+2022-12-07 09:37:41,893 [main] INFO craftBet - 38 Title: O  En: O Translation: O
+2022-12-07 09:37:41,893 [main] INFO craftBet - 39 Title: October  En: October Translation: October
+2022-12-07 09:37:41,893 [main] INFO craftBet - 40 Title: All Sports  En: All Sports Translation: All Sports
+2022-12-07 09:37:41,893 [main] INFO craftBet - 41 Title: U  En: U Translation: U
+2022-12-07 09:37:41,893 [main] INFO craftBet - 42 Title: X  En: X Translation: X
+2022-12-07 09:37:41,893 [main] INFO craftBet - 43 Title: Search team, competition  En: Search team, competition Translation: Search team, competition
+2022-12-07 09:37:41,894 [main] INFO craftBet - 44 Title: Selected  En: Selected Translation: Selected
+2022-12-07 09:37:41,894 [main] INFO craftBet - 45 Title: Any Odds  En: Any Odds Translation: Any Odds
+2022-12-07 09:37:41,894 [main] INFO craftBet - 46 Title: Replace this event  En: Replace this event Translation: Replace this event
+2022-12-07 09:37:41,894 [main] INFO craftBet - 47 Title: Bet Placed on  En: Bet Placed on Translation: Bet Placed on
+2022-12-07 09:37:41,894 [main] INFO craftBet - 48 Title: Higher Odds  En: Higher Odds Translation: Higher Odds
+2022-12-07 09:37:41,894 [main] INFO craftBet - 49 Title: Thursday  En: Thursday Translation: Thursday
+2022-12-07 09:37:41,894 [main] INFO craftBet - 50 Title: Event  En: Event Translation: Event
+2022-12-07 09:37:41,894 [main] INFO craftBet - 51 Title: Betting tutorial text  En: Need help to know how to bet? You can easily learn it only 5 minutes Translation: Need help to know how to bet? You can easily learn it only 5 minutes
+2022-12-07 09:37:41,894 [main] INFO craftBet - 52 Title: Other  En: Other Translation: Other
+2022-12-07 09:37:41,895 [main] INFO craftBet - 54 Title: Monday  En: Monday Translation: Monday
+2022-12-07 09:37:41,895 [main] INFO craftBet - 55 Title: INFO  En: INFO Translation: INFO
+2022-12-07 09:37:41,895 [main] INFO craftBet - 56 Title: Bets on sport  En: Bets on sport Translation: Bets on sport
+2022-12-07 09:37:41,895 [main] INFO craftBet - 57 Title: Friday  En: Friday Translation: Friday
+2022-12-07 09:37:41,895 [main] INFO craftBet - 58 Title: COMPETITION  En: COMPETITION Translation: COMPETITION
+2022-12-07 09:37:41,895 [main] INFO craftBet - 59 Title: Clear All  En: Clear All Translation: Clear All
+2022-12-07 09:37:41,895 [main] INFO craftBet - 60 Title: Select all  En: Select all Translation: Select all
+2022-12-07 09:37:41,896 [main] INFO craftBet - 61 Title: Login for using favorites  En: Login for using favorites Translation: Login for using favorites
+2022-12-07 09:37:41,896 [main] INFO craftBet - 62 Title: Show Regions  En: Show Regions Translation: Show Regions
+2022-12-07 09:37:41,896 [main] INFO craftBet - 63 Title: Select event from left side  En: Select event from left side Translation: Select event from left side
+2022-12-07 09:37:41,896 [main] INFO craftBet - 65 Title: SEE MORE 30 SPORTS  En: SEE MORE 30 SPORTS Translation: SEE MORE 30 SPORTS
+2022-12-07 09:37:41,896 [main] INFO craftBet - 66 Title: Play quick games  En: Play quick games Translation: Play quick games
+2022-12-07 09:37:41,896 [main] INFO craftBet - 67 Title: Markets  En: Markets Translation: Markets
+2022-12-07 09:37:41,896 [main] INFO craftBet - 68 Title: Quick links  En: Quick links Translation: Quick links
+2022-12-07 09:37:41,896 [main] INFO craftBet - 69 Title: Real Account  En: Real Account Translation: Real Account
+2022-12-07 09:37:41,897 [main] INFO craftBet - 70 Title: Hide Regions  En: Hide Regions Translation: Hide Regions
+2022-12-07 09:37:41,897 [main] INFO craftBet - 71 Title: Please  En: Please Translation: Please
+2022-12-07 09:37:41,897 [main] INFO craftBet - 72 Title: Indo  En: Indo Translation: Indo
+2022-12-07 09:37:41,897 [main] INFO craftBet - 73 Title: opt  En: opt Translation: opt
+2022-12-07 09:37:41,897 [main] INFO craftBet - 74 Title: Back to Sports  En: Back to Sports Translation: Back to Sports
+2022-12-07 09:37:41,897 [main] INFO craftBet - 75 Title: Search teams  En: Search teams Translation: Search teams
+2022-12-07 09:37:41,897 [main] INFO craftBet - 76 Title: W1  En: W1 Translation: W1
+2022-12-07 09:37:41,897 [main] INFO craftBet - 77 Title: W2  En: W2 Translation: W2
+2022-12-07 09:37:41,897 [main] INFO craftBet - 78 Title: Confirmation  En: Confirm Cashout out Translation: Confirm Cashout out
+2022-12-07 09:37:41,898 [main] INFO craftBet - 79 Title: Us  En: Us Translation: Us
+2022-12-07 09:37:41,898 [main] INFO craftBet - 80 Title: Search Results  En: Search Result Translation: Search Result
+2022-12-07 09:37:41,898 [main] INFO craftBet - 81 Title: September  En: September Translation: September
+2022-12-07 09:37:41,898 [main] INFO craftBet - 82 Title: Possible winnings  En: Possible winnings Translation: Possible winnings
+2022-12-07 09:37:41,898 [main] INFO craftBet - 83 Title: Yes  En: Yes Translation: Yes
+2022-12-07 09:37:41,898 [main] INFO craftBet - 84 Title: Time  En: Time Translation: Time
+2022-12-07 09:37:41,898 [main] INFO craftBet - 85 Title: Search Result  En: Search Result Translation: Search Result
+2022-12-07 09:37:41,898 [main] INFO craftBet - 86 Title: System  En: System Translation: System
+2022-12-07 09:37:41,899 [main] INFO craftBet - 87 Title: Bets on  En: Bets on Translation: Bets on
+2022-12-07 09:37:41,899 [main] INFO craftBet - 88 Title: Welcome register bonus  En: Welcome register bonus! Translation: Welcome register bonus!
+2022-12-07 09:37:41,899 [main] INFO craftBet - 89 Title: Number  En: Number Translation: Number
+2022-12-07 09:37:41,899 [main] INFO craftBet - 90 Title: register now.  En: register now Translation: register now
+2022-12-07 09:37:41,899 [main] INFO craftBet - 91 Title: Tuesday  En: Tuesday Translation: Tuesday
+2022-12-07 09:37:41,899 [main] INFO craftBet - 92 Title: Home  En: Home Translation: Home
+2022-12-07 09:37:41,900 [main] INFO craftBet - 93 Title: Unpin  En: Unpin Translation: Unpin
+2022-12-07 09:37:41,900 [main] INFO craftBet - 94 Title: Accept any odds change  En: Accept any odds change Translation: Accept any odds change
+2022-12-07 09:37:41,900 [main] INFO craftBet - 95 Title: More sports  En: More sports Translation: More sports
+2022-12-07 09:37:41,900 [main] INFO craftBet - 96 Title: November  En: November Translation: November
+2022-12-07 09:37:41,900 [main] INFO craftBet - 97 Title: hours  En: H Translation: H
+2022-12-07 09:37:41,900 [main] INFO craftBet - 98 Title: Max Bet  En: Max Bet Translation: Max Bet
+2022-12-07 09:37:41,900 [main] INFO craftBet - 99 Title: Full cashout  En: Full cashout Translation: Full cashout
+2022-12-07 09:37:41,900 [main] INFO craftBet - 101 Title: Single can only contain one match  En: Single bet can only contain one match. Please remove other. Translation: Single bet can only contain one match. Please remove other.
+2022-12-07 09:37:41,900 [main] INFO craftBet - 102 Title: Place bets  En: Place bets Translation: Place bets
+2022-12-07 09:37:41,901 [main] INFO craftBet - 103 Title: Current Odd  En: Current Odds Translation: Current Odds
+2022-12-07 09:37:41,901 [main] INFO craftBet - 104 Title: Combinations count  En: Combinations count Translation: Combinations count
+2022-12-07 09:37:41,901 [main] INFO craftBet - 106 Title: Previous  En: Previous Translation: Previous
+2022-12-07 09:37:41,901 [main] INFO craftBet - 107 Title: Add to favorites  En: Add to favorites Translation: Add to favorites
+2022-12-07 09:37:41,901 [main] INFO craftBet - 108 Title: Team Name  En: Team Name Translation: Team Name
+2022-12-07 09:37:41,901 [main] INFO craftBet - 109 Title: HK  En: HK Translation: HK
+2022-12-07 09:37:41,901 [main] INFO craftBet - 110 Title: Go  En: Go Translation: Go
+2022-12-07 09:37:41,901 [main] INFO craftBet - 111 Title: Remove  En: Remove Translation: Remove
+2022-12-07 09:37:41,901 [main] INFO craftBet - 112 Title: Best live games  En: Best live games Translation: Best live games
+2022-12-07 09:37:41,901 [main] INFO craftBet - 113 Title: Bet types  En: Bet types Translation: Bet types
+2022-12-07 09:37:41,902 [main] INFO craftBet - 114 Title: All Events  En: All Events Translation: All Events
+2022-12-07 09:37:41,902 [main] INFO craftBet - 115 Title: December  En: December Translation: December
+2022-12-07 09:37:41,902 [main] INFO craftBet - 116 Title: Match win  En: Match win Translation: Match win
+2022-12-07 09:37:41,902 [main] INFO craftBet - 117 Title: All Sport  En: All Sports Translation: All Sports
+2022-12-07 09:37:41,902 [main] INFO craftBet - 118 Title: Number of events  En: Number of events Translation: Number of events
+2022-12-07 09:37:41,902 [main] INFO craftBet - 119 Title: log in  En: Login Translation: Login
+2022-12-07 09:37:41,902 [main] INFO craftBet - 120 Title: Back  En: Back Translation: Back
+2022-12-07 09:37:41,902 [main] INFO craftBet - 121 Title: Malay  En: Malay Translation: Malay
+2022-12-07 09:37:41,902 [main] INFO craftBet - 123 Title: Settings  En: Settings Translation: Settings
+2022-12-07 09:37:41,902 [main] INFO craftBet - 125 Title: tomorrow  En: Tomorrow Translation: Tomorrow
+2022-12-07 09:37:41,902 [main] INFO craftBet - 126 Title: matches  En: matches Translation: matches
+2022-12-07 09:37:41,903 [main] INFO craftBet - 127 Title: Popular competitions  En: Popular competitions Translation: Popular competitions
+2022-12-07 09:37:41,903 [main] INFO craftBet - 128 Title: Search by sport, region, match and ID  En: Search by sport, region, match and ID Translation: Search by sport, region, match and ID
+2022-12-07 09:37:41,903 [main] INFO craftBet - 129 Title: REGION  En: REGION Translation: REGION
+2022-12-07 09:37:41,903 [main] INFO craftBet - 130 Title: Bet placed  En: Bet placed Translation: Bet placed
+2022-12-07 09:37:41,903 [main] INFO craftBet - 131 Title: Next  En: Next Translation: Next
+2022-12-07 09:37:41,903 [main] INFO craftBet - 132 Title: Show  En: Show Translation: Show
+2022-12-07 09:37:41,903 [main] INFO craftBet - 134 Title: Play racing  En: Play racing Translation: Play racing
+2022-12-07 09:37:41,903 [main] INFO craftBet - 135 Title: Get 100% deposit  En: Get 100% deposit Translation: Get 100% deposit
+2022-12-07 09:37:41,904 [main] INFO craftBet - 136 Title: May  En: May Translation: May
+2022-12-07 09:37:41,904 [main] INFO craftBet - 137 Title: Cancel  En: Cancel Translation: Cancel
+2022-12-07 09:37:41,904 [main] INFO craftBet - 138 Title: Max  En: max Translation: max
+2022-12-07 09:37:41,904 [main] INFO craftBet - 139 Title: Long version  En: Long version Translation: Long version
+2022-12-07 09:37:41,904 [main] INFO craftBet - 140 Title: System calculator  En: System calculator Translation: System calculator
+2022-12-07 09:37:41,904 [main] INFO craftBet - 142 Title: Lost  En: Lost Translation: Lost
+2022-12-07 09:37:41,905 [main] INFO craftBet - 143 Title: CashOut Confirm Message  En: You are Cashing out Translation: You are Cashing out
+2022-12-07 09:37:41,905 [main] INFO craftBet - 144 Title: Market selected  En: Market Selected Translation: Market Selected
+2022-12-07 09:37:41,905 [main] INFO craftBet - 145 Title: BetSlip  En: Bet Slip Translation: Bet Slip
+2022-12-07 09:37:41,905 [main] INFO craftBet - 146 Title: One combination amount  En: One combination amount Translation: One combination amount
+2022-12-07 09:37:41,905 [main] INFO craftBet - 147 Title: Please enter valid email or username  En: Please enter valid email or username Translation: Please enter valid email or username
+2022-12-07 09:37:41,906 [main] INFO craftBet - 148 Title: Live betting  En: Live betting Translation: Live betting
+2022-12-07 09:37:41,906 [main] INFO craftBet - 149 Title: Pin  En: Pin Translation: Pin
+2022-12-07 09:37:41,906 [main] INFO craftBet - 151 Title: Team, country, competition  En: Team, country, competition Translation: Team, country, competition
+2022-12-07 09:37:41,906 [main] INFO craftBet - 152 Title: None  En: None Translation: None
+2022-12-07 09:37:41,906 [main] INFO craftBet - 153 Title: Bonus Account  En: Bonus Account Translation: Bonus Account
+2022-12-07 09:37:41,906 [main] INFO craftBet - 154 Title: All  En: All Translation: All
+2022-12-07 09:37:41,906 [main] INFO craftBet - 155 Title: EVENTS  En: EVENTS Translation: EVENTS
+2022-12-07 09:37:41,906 [main] INFO craftBet - 156 Title: Sport  En: Sport Translation: Sport
+2022-12-07 09:37:41,906 [main] INFO craftBet - 157 Title: Registration  En: registration Translation: registration
+2022-12-07 09:37:41,906 [main] INFO craftBet - 158 Title: Live events  En: Live Events Translation: Live Events
+2022-12-07 09:37:41,907 [main] INFO craftBet - 159 Title: day  En: D Translation: D
+2022-12-07 09:37:41,907 [main] INFO craftBet - 160 Title: Odds Type  En: Odds Type Translation: Odds Type
+2022-12-07 09:37:41,907 [main] INFO craftBet - 161 Title: Stake  En: Stake Translation: Stake
+2022-12-07 09:37:41,907 [main] INFO craftBet - 162 Title: Chanel  En: Chanel Translation: Chanel
+2022-12-07 09:37:41,907 [main] INFO craftBet - 163 Title: Calculate  En: Calculate Translation: Calculate
+2022-12-07 09:37:41,907 [main] INFO craftBet - 164 Title: April  En: April Translation: April
+2022-12-07 09:37:41,907 [main] INFO craftBet - 165 Title: August  En: August Translation: August
+2022-12-07 09:37:41,908 [main] INFO craftBet - 166 Title: DATE  En: DATE Translation: DATE
+2022-12-07 09:37:41,908 [main] INFO craftBet - 167 Title: Short version  En: Short version Translation: Short version
+2022-12-07 09:37:41,908 [main] INFO craftBet - 168 Title: There are not markets  En: There are not markets Translation: There are not markets
+2022-12-07 09:37:41,908 [main] INFO craftBet - 169 Title: Automatically accept price changes  En: Automatically accept price changes Translation: Automatically accept price changes
+2022-12-07 09:37:41,908 [main] INFO craftBet - 170 Title: Sunday  En: Sunday Translation: Sunday
+2022-12-07 09:37:41,909 [main] INFO craftBet - 171 Title: Wednesday  En: Wednesday Translation: Wednesday
+2022-12-07 09:37:41,909 [main] INFO craftBet - 172 Title: Find out more  En: Find out more Translation: Find out more
+2022-12-07 09:37:41,909 [main] INFO craftBet - 173 Title: Save  En: Save Translation: Save
+2022-12-07 09:37:41,909 [main] INFO craftBet - 174 Title: COEFF.  En: COEFF. Translation: COEFF.
+2022-12-07 09:37:41,909 [main] INFO craftBet - 175 Title: Live Games  En: Live Games Translation: Live Games
+2022-12-07 09:37:41,909 [main] INFO craftBet - 176 Title: Win  En: Win Translation: Win
+2022-12-07 09:37:41,909 [main] INFO craftBet - 177 Title: Play poker  En: Play poker Translation: Play poker
+2022-12-07 09:37:41,909 [main] INFO craftBet - 178 Title: week  En: week Translation: week
+2022-12-07 09:37:41,909 [main] INFO craftBet - 179 Title: Show events Id  En: Show events Id Translation: Show events Id
+2022-12-07 09:37:41,910 [main] INFO craftBet - 180 Title: Cash Out  En: Cashout Translation: Cashout
+2022-12-07 09:37:41,910 [main] INFO craftBet - 181 Title: Monitor  En: Monitor Translation: Monitor
+2022-12-07 09:37:41,910 [main] INFO craftBet - 182 Title: hour  En: H Translation: H
+2022-12-07 09:37:41,910 [main] INFO craftBet - 183 Title: Upcoming Events  En: Upcoming Events Translation: Upcoming Events
+2022-12-07 09:37:41,910 [main] INFO craftBet - 184 Title: There are not favorites.  En: There are not favorites. Translation: There are not favorites.
+2022-12-07 09:37:41,910 [main] INFO craftBet - 185 Title: today  En: Today Translation: Today
+2022-12-07 09:37:41,910 [main] INFO craftBet - 186 Title: February  En: February Translation: February
+2022-12-07 09:37:41,910 [main] INFO craftBet - 187 Title: No  En: No Translation: No
+2022-12-07 09:37:41,910 [main] INFO craftBet - 188 Title: Duplicated  En: Duplicated Translation: Duplicated
+2022-12-07 09:37:41,910 [main] INFO craftBet - 189 Title: or  En: or Translation: or
+2022-12-07 09:37:41,910 [main] INFO craftBet - 190 Title: All_Sports  En: All Sports Translation: All Sports
+2022-12-07 09:37:41,911 [main] INFO craftBet - 191 Title: Add condition  En: Add condition Translation: Add condition
+2022-12-07 09:37:41,911 [main] INFO craftBet - 192 Title: Data  En: Data Translation: Data
+2022-12-07 09:37:41,911 [main] INFO craftBet - 193 Title: Play keno  En: Play keno Translation: Play keno
+2022-12-07 09:37:41,911 [main] INFO craftBet - 194 Title: Play live poker  En: Play live poker Translation: Play live poker
+2022-12-07 09:37:41,911 [main] INFO craftBet - 195 Title: Rebet  En: Rebet Translation: Rebet
+2022-12-07 09:37:41,911 [main] INFO craftBet - 196 Title: Team1 - Team2  En: Team1 - Team2 Translation: Team1 - Team2
+2022-12-07 09:37:41,911 [main] INFO craftBet - 197 Title: Total  En: Total Translation: Total
+2022-12-07 09:37:41,911 [main] INFO craftBet - 198 Title: Top Events  En: Top Events Translation: Top Events
+2022-12-07 09:37:41,911 [main] INFO craftBet - 199 Title: Ok  En: OK Translation: OK
+2022-12-07 09:37:41,912 [main] INFO craftBet - Translations are: 199  Not Translated lines are: 189
+2022-12-07 09:37:44,469 [main] INFO craftBet - Browser closed
+2022-12-07 09:37:44,469 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-07 09:37:44,481 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-07 09:40:43,180 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-07 09:40:47,704 [main] INFO craftBet - All Page elements are initialized
+2022-12-07 09:40:47,722 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-07 09:40:50,006 [main] INFO craftBet - Log In Button was clicked
+2022-12-07 09:40:51,693 [main] INFO craftBet - Request: https://sportsbookwebsite.play.baqto.com/website/assets/js/version.js?=QaTestDVLOyKVdrrG1yO5
+2022-12-07 09:40:52,009 [main] INFO craftBet - Response: window.VERSION = 576;
+2022-12-07 09:40:52,009 [main] INFO craftBet - Request Translation language: https://sportsbookwebsite.play.baqto.com/website/assets/json/translations/ja.json?=576
+2022-12-07 09:40:52,326 [main] INFO craftBet - Request: https://sportsbookwebsite.play.baqto.com/website/assets/js/version.js?=QaTestWe7clsFxae1RpDc
+2022-12-07 09:40:52,612 [main] INFO craftBet - Response: window.VERSION = 576;
+2022-12-07 09:40:52,613 [main] INFO craftBet - Request en.json: https://sportsbookwebsite.play.baqto.com/website/assets/json/translations/en.json?=576
+2022-12-07 09:40:52,916 [main] INFO craftBet - Key: PRINT English Value: PRINT Translated Value: PRINT
+2022-12-07 09:40:52,917 [main] INFO craftBet - 1 Title: PRINT  En: PRINT Translation: PRINT
+2022-12-07 09:40:52,917 [main] INFO craftBet - Key: Are You Sure English Value: Are You Sure? Translated Value: Are You Sure?
+2022-12-07 09:40:52,917 [main] INFO craftBet - 2 Title: Are You Sure  En: Are You Sure? Translation: Are You Sure?
+2022-12-07 09:40:52,917 [main] INFO craftBet - Key: No items found English Value: No items found Translated Value: No items found
+2022-12-07 09:40:52,917 [main] INFO craftBet - 3 Title: No items found  En: No items found Translation: No items found
+2022-12-07 09:40:52,918 [main] INFO craftBet - Key: Edit English Value: Edit Translated Value: Edit
+2022-12-07 09:40:52,918 [main] INFO craftBet - 4 Title: Edit  En: Edit Translation: Edit
+2022-12-07 09:40:52,918 [main] INFO craftBet - Key: Best quick games English Value: Best quick games Translated Value: Best quick games
+2022-12-07 09:40:52,918 [main] INFO craftBet - 5 Title: Best quick games  En: Best quick games Translation: Best quick games
+2022-12-07 09:40:52,918 [main] INFO craftBet - Key: Premacth English Value: Prematch Translated Value: Prematch
+2022-12-07 09:40:52,918 [main] INFO craftBet - 6 Title: Premacth  En: Prematch Translation: Prematch
+2022-12-07 09:40:52,918 [main] INFO craftBet - Key: Coefficients English Value: Coefficients Translated Value: Coefficients
+2022-12-07 09:40:52,918 [main] INFO craftBet - 7 Title: Coefficients  En: Coefficients Translation: Coefficients
+2022-12-07 09:40:52,918 [main] INFO craftBet - Key: Saturday English Value: Saturday Translated Value: Saturday
+2022-12-07 09:40:52,919 [main] INFO craftBet - 8 Title: Saturday  En: Saturday Translation: Saturday
+2022-12-07 09:40:52,919 [main] INFO craftBet - Key: List View English Value: List View Translated Value: List View
+2022-12-07 09:40:52,919 [main] INFO craftBet - 9 Title: List View  En: List View Translation: List View
+2022-12-07 09:40:52,919 [main] INFO craftBet - Key: Decimal English Value: Decimal Translated Value: Decimal
+2022-12-07 09:40:52,919 [main] INFO craftBet - 10 Title: Decimal  En: Decimal Translation: Decimal
+2022-12-07 09:40:52,919 [main] INFO craftBet - Key: Open Bets English Value: Open Bets Translated Value: Open Bets
+2022-12-07 09:40:52,919 [main] INFO craftBet - 11 Title: Open Bets  En: Open Bets Translation: Open Bets
+2022-12-07 09:40:52,919 [main] INFO craftBet - Key: Fractional English Value: Fractional Translated Value: Fractional
+2022-12-07 09:40:52,919 [main] INFO craftBet - 12 Title: Fractional  En: Fractional Translation: Fractional
+2022-12-07 09:40:52,919 [main] INFO craftBet - Key: July English Value: July Translated Value: July
+2022-12-07 09:40:52,919 [main] INFO craftBet - 13 Title: July  En: July Translation: July
+2022-12-07 09:40:52,919 [main] INFO craftBet - Key: Conditional Cashout English Value: Conditional Cashout Translated Value: Conditional Cashout
+2022-12-07 09:40:52,920 [main] INFO craftBet - 14 Title: Conditional Cashout  En: Conditional Cashout Translation: Conditional Cashout
+2022-12-07 09:40:52,920 [main] INFO craftBet - Key: How To Place Bet Tooltip English Value: To add a bet to "Bet slip", click on the odds for the selected event. Translated Value: To add a bet to "Bet slip", click on the odds for the selected event.
+2022-12-07 09:40:52,920 [main] INFO craftBet - 15 Title: How To Place Bet Tooltip  En: To add a bet to "Bet slip", click on the odds for the selected event. Translation: To add a bet to "Bet slip", click on the odds for the selected event.
+2022-12-07 09:40:52,920 [main] INFO craftBet - Key: No results, please try later. English Value: No results, please try later. Translated Value: No results, please try later.
+2022-12-07 09:40:52,920 [main] INFO craftBet - 16 Title: No results, please try later.  En: No results, please try later. Translation: No results, please try later.
+2022-12-07 09:40:52,920 [main] INFO craftBet - Key: Get 5000 no deposit bonus after English Value: Get 5000 no deposit bonus after Translated Value: Get 5000 no deposit bonus after
+2022-12-07 09:40:52,920 [main] INFO craftBet - 17 Title: Get 5000 no deposit bonus after  En: Get 5000 no deposit bonus after Translation: Get 5000 no deposit bonus after
+2022-12-07 09:40:52,921 [main] INFO craftBet - Key: January English Value: January Translated Value: January
+2022-12-07 09:40:52,921 [main] INFO craftBet - 18 Title: January  En: January Translation: January
+2022-12-07 09:40:52,921 [main] INFO craftBet - Key: There are not events. English Value: There are not events. Translated Value: There are not events.
+2022-12-07 09:40:52,921 [main] INFO craftBet - 19 Title: There are not events.  En: There are not events. Translation: There are not events.
+2022-12-07 09:40:52,921 [main] INFO craftBet - Key: Sports betting English Value: Sports Betting Translated Value: Sports Betting
+2022-12-07 09:40:52,921 [main] INFO craftBet - 20 Title: Sports betting  En: Sports Betting Translation: Sports Betting
+2022-12-07 09:40:52,921 [main] INFO craftBet - Key: SPORT TYPE English Value: SPORT TYPE Translated Value: SPORT TYPE
+2022-12-07 09:40:52,921 [main] INFO craftBet - 21 Title: SPORT TYPE  En: SPORT TYPE Translation: SPORT TYPE
+2022-12-07 09:40:52,922 [main] INFO craftBet - Key: Please log in or register now. English Value: Please log in or register now. Translated Value: Please log in or register now.
+2022-12-07 09:40:52,922 [main] INFO craftBet - 22 Title: Please log in or register now.  En: Please log in or register now. Translation: Please log in or register now.
+2022-12-07 09:40:52,922 [main] INFO craftBet - Key: OpenBets English Value: Open Bets Translated Value: Open Bets
+2022-12-07 09:40:52,922 [main] INFO craftBet - 23 Title: OpenBets  En: Open Bets Translation: Open Bets
+2022-12-07 09:40:52,922 [main] INFO craftBet - Key: Game English Value: Game Translated Value: Game
+2022-12-07 09:40:52,922 [main] INFO craftBet - 24 Title: Game  En: Game Translation: Game
+2022-12-07 09:40:52,923 [main] INFO craftBet - Key: Min English Value: min Translated Value: min
+2022-12-07 09:40:52,923 [main] INFO craftBet - 25 Title: Min  En: min Translation: min
+2022-12-07 09:40:52,923 [main] INFO craftBet - Key: Tree View English Value: Tree View Translated Value: Tree View
+2022-12-07 09:40:52,923 [main] INFO craftBet - 26 Title: Tree View  En: Tree View Translation: Tree View
+2022-12-07 09:40:52,923 [main] INFO craftBet - Key: World Cup English Value: World Cup Translated Value: World Cup
+2022-12-07 09:40:52,923 [main] INFO craftBet - 27 Title: World Cup  En: World Cup Translation: World Cup
+2022-12-07 09:40:52,924 [main] INFO craftBet - Key: Partial Cashout English Value: Partial Cashout Translated Value: Partial Cashout
+2022-12-07 09:40:52,924 [main] INFO craftBet - 28 Title: Partial Cashout  En: Partial Cashout Translation: Partial Cashout
+2022-12-07 09:40:52,924 [main] INFO craftBet - Key: Close English Value: Close Translated Value: Close
+2022-12-07 09:40:52,924 [main] INFO craftBet - 29 Title: Close  En: Close Translation: Close
+2022-12-07 09:40:52,924 [main] INFO craftBet - Key: Get 100% on your deposit after English Value: Get 100% on your deposit after Translated Value: Get 100% on your deposit after
+2022-12-07 09:40:52,924 [main] INFO craftBet - 30 Title: Get 100% on your deposit after  En: Get 100% on your deposit after Translation: Get 100% on your deposit after
+2022-12-07 09:40:52,924 [main] INFO craftBet - Key: June English Value: June Translated Value: June
+2022-12-07 09:40:52,924 [main] INFO craftBet - 31 Title: June  En: June Translation: June
+2022-12-07 09:40:52,924 [main] INFO craftBet - Key: C English Value: C Translated Value: C
+2022-12-07 09:40:52,924 [main] INFO craftBet - 32 Title: C  En: C Translation: C
+2022-12-07 09:40:52,924 [main] INFO craftBet - Key: F English Value: F Translated Value: F
+2022-12-07 09:40:52,924 [main] INFO craftBet - 33 Title: F  En: F Translation: F
+2022-12-07 09:40:52,925 [main] INFO craftBet - Key: March English Value: March Translated Value: March
+2022-12-07 09:40:52,925 [main] INFO craftBet - 34 Title: March  En: March Translation: March
+2022-12-07 09:40:52,925 [main] INFO craftBet - Key: Prematch English Value: Prematch Translated Value: プレマッチ
+2022-12-07 09:40:52,925 [main] INFO craftBet - Key: Print Line English Value: Print Line Translated Value: Print Line
+2022-12-07 09:40:52,925 [main] INFO craftBet - 36 Title: Print Line  En: Print Line Translation: Print Line
+2022-12-07 09:40:52,925 [main] INFO craftBet - Key: Delete All English Value: Delete All Translated Value: Delete All
+2022-12-07 09:40:52,925 [main] INFO craftBet - 37 Title: Delete All  En: Delete All Translation: Delete All
+2022-12-07 09:40:52,926 [main] INFO craftBet - Key: O English Value: O Translated Value: O
+2022-12-07 09:40:52,926 [main] INFO craftBet - 38 Title: O  En: O Translation: O
+2022-12-07 09:40:52,926 [main] INFO craftBet - Key: October English Value: October Translated Value: October
+2022-12-07 09:40:52,926 [main] INFO craftBet - 39 Title: October  En: October Translation: October
+2022-12-07 09:40:52,926 [main] INFO craftBet - Key: All Sports English Value: All Sports Translated Value: All Sports
+2022-12-07 09:40:52,926 [main] INFO craftBet - 40 Title: All Sports  En: All Sports Translation: All Sports
+2022-12-07 09:40:52,926 [main] INFO craftBet - Key: U English Value: U Translated Value: U
+2022-12-07 09:40:52,927 [main] INFO craftBet - 41 Title: U  En: U Translation: U
+2022-12-07 09:40:52,927 [main] INFO craftBet - Key: X English Value: X Translated Value: X
+2022-12-07 09:40:52,927 [main] INFO craftBet - 42 Title: X  En: X Translation: X
+2022-12-07 09:40:52,927 [main] INFO craftBet - Key: Search team, competition English Value: Search team, competition Translated Value: Search team, competition
+2022-12-07 09:40:52,927 [main] INFO craftBet - 43 Title: Search team, competition  En: Search team, competition Translation: Search team, competition
+2022-12-07 09:40:52,927 [main] INFO craftBet - Key: Selected English Value: Selected Translated Value: Selected
+2022-12-07 09:40:52,927 [main] INFO craftBet - 44 Title: Selected  En: Selected Translation: Selected
+2022-12-07 09:40:52,927 [main] INFO craftBet - Key: Any Odds English Value: Any Odds Translated Value: Any Odds
+2022-12-07 09:40:52,927 [main] INFO craftBet - 45 Title: Any Odds  En: Any Odds Translation: Any Odds
+2022-12-07 09:40:52,928 [main] INFO craftBet - Key: Replace this event English Value: Replace this event Translated Value: Replace this event
+2022-12-07 09:40:52,928 [main] INFO craftBet - 46 Title: Replace this event  En: Replace this event Translation: Replace this event
+2022-12-07 09:40:52,928 [main] INFO craftBet - Key: Bet Placed on English Value: Bet Placed on Translated Value: Bet Placed on
+2022-12-07 09:40:52,928 [main] INFO craftBet - 47 Title: Bet Placed on  En: Bet Placed on Translation: Bet Placed on
+2022-12-07 09:40:52,928 [main] INFO craftBet - Key: Higher Odds English Value: Higher Odds Translated Value: Higher Odds
+2022-12-07 09:40:52,928 [main] INFO craftBet - 48 Title: Higher Odds  En: Higher Odds Translation: Higher Odds
+2022-12-07 09:40:52,928 [main] INFO craftBet - Key: Thursday English Value: Thursday Translated Value: Thursday
+2022-12-07 09:40:52,928 [main] INFO craftBet - 49 Title: Thursday  En: Thursday Translation: Thursday
+2022-12-07 09:40:52,929 [main] INFO craftBet - Key: Event English Value: Event Translated Value: Event
+2022-12-07 09:40:52,929 [main] INFO craftBet - 50 Title: Event  En: Event Translation: Event
+2022-12-07 09:40:52,929 [main] INFO craftBet - Key: Betting tutorial text English Value: Need help to know how to bet? You can easily learn it only 5 minutes Translated Value: Need help to know how to bet? You can easily learn it only 5 minutes
+2022-12-07 09:40:52,929 [main] INFO craftBet - 51 Title: Betting tutorial text  En: Need help to know how to bet? You can easily learn it only 5 minutes Translation: Need help to know how to bet? You can easily learn it only 5 minutes
+2022-12-07 09:40:52,929 [main] INFO craftBet - Key: Other English Value: Other Translated Value: Other
+2022-12-07 09:40:52,929 [main] INFO craftBet - 52 Title: Other  En: Other Translation: Other
+2022-12-07 09:40:52,929 [main] INFO craftBet - Key: Upcoming English Value: Upcoming Translated Value: 今後の
+2022-12-07 09:40:52,929 [main] INFO craftBet - Key: Monday English Value: Monday Translated Value: Monday
+2022-12-07 09:40:52,929 [main] INFO craftBet - 54 Title: Monday  En: Monday Translation: Monday
+2022-12-07 09:40:52,929 [main] INFO craftBet - Key: INFO English Value: INFO Translated Value: INFO
+2022-12-07 09:40:52,930 [main] INFO craftBet - 55 Title: INFO  En: INFO Translation: INFO
+2022-12-07 09:40:52,930 [main] INFO craftBet - Key: Bets on sport English Value: Bets on sport Translated Value: Bets on sport
+2022-12-07 09:40:52,930 [main] INFO craftBet - 56 Title: Bets on sport  En: Bets on sport Translation: Bets on sport
+2022-12-07 09:40:52,930 [main] INFO craftBet - Key: Friday English Value: Friday Translated Value: Friday
+2022-12-07 09:40:52,930 [main] INFO craftBet - 57 Title: Friday  En: Friday Translation: Friday
+2022-12-07 09:40:52,930 [main] INFO craftBet - Key: COMPETITION English Value: COMPETITION Translated Value: COMPETITION
+2022-12-07 09:40:52,930 [main] INFO craftBet - 58 Title: COMPETITION  En: COMPETITION Translation: COMPETITION
+2022-12-07 09:40:52,930 [main] INFO craftBet - Key: Clear All English Value: Clear All Translated Value: Clear All
+2022-12-07 09:40:52,930 [main] INFO craftBet - 59 Title: Clear All  En: Clear All Translation: Clear All
+2022-12-07 09:40:52,930 [main] INFO craftBet - Key: Select all English Value: Select all Translated Value: Select all
+2022-12-07 09:40:52,931 [main] INFO craftBet - 60 Title: Select all  En: Select all Translation: Select all
+2022-12-07 09:40:52,931 [main] INFO craftBet - Key: Login for using favorites English Value: Login for using favorites Translated Value: Login for using favorites
+2022-12-07 09:40:52,931 [main] INFO craftBet - 61 Title: Login for using favorites  En: Login for using favorites Translation: Login for using favorites
+2022-12-07 09:40:52,931 [main] INFO craftBet - Key: Show Regions English Value: Show Regions Translated Value: Show Regions
+2022-12-07 09:40:52,931 [main] INFO craftBet - 62 Title: Show Regions  En: Show Regions Translation: Show Regions
+2022-12-07 09:40:52,931 [main] INFO craftBet - Key: Select event from left side English Value: Select event from left side Translated Value: Select event from left side
+2022-12-07 09:40:52,931 [main] INFO craftBet - 63 Title: Select event from left side  En: Select event from left side Translation: Select event from left side
+2022-12-07 09:40:52,931 [main] INFO craftBet - Key: Multi View English Value: Multi View Translated Value: マルチビュー
+2022-12-07 09:40:52,932 [main] INFO craftBet - Key: SEE MORE 30 SPORTS English Value: SEE MORE 30 SPORTS Translated Value: SEE MORE 30 SPORTS
+2022-12-07 09:40:52,932 [main] INFO craftBet - 65 Title: SEE MORE 30 SPORTS  En: SEE MORE 30 SPORTS Translation: SEE MORE 30 SPORTS
+2022-12-07 09:40:52,932 [main] INFO craftBet - Key: Play quick games English Value: Play quick games Translated Value: Play quick games
+2022-12-07 09:40:52,932 [main] INFO craftBet - 66 Title: Play quick games  En: Play quick games Translation: Play quick games
+2022-12-07 09:40:52,932 [main] INFO craftBet - Key: Markets English Value: Markets Translated Value: Markets
+2022-12-07 09:40:52,932 [main] INFO craftBet - 67 Title: Markets  En: Markets Translation: Markets
+2022-12-07 09:40:52,933 [main] INFO craftBet - Key: Quick links English Value: Quick links Translated Value: Quick links
+2022-12-07 09:40:52,933 [main] INFO craftBet - 68 Title: Quick links  En: Quick links Translation: Quick links
+2022-12-07 09:40:52,933 [main] INFO craftBet - Key: Real Account English Value: Real Account Translated Value: Real Account
+2022-12-07 09:40:52,934 [main] INFO craftBet - 69 Title: Real Account  En: Real Account Translation: Real Account
+2022-12-07 09:40:52,934 [main] INFO craftBet - Key: Hide Regions English Value: Hide Regions Translated Value: Hide Regions
+2022-12-07 09:40:52,934 [main] INFO craftBet - 70 Title: Hide Regions  En: Hide Regions Translation: Hide Regions
+2022-12-07 09:40:52,934 [main] INFO craftBet - Key: Please English Value: Please Translated Value: Please
+2022-12-07 09:40:52,934 [main] INFO craftBet - 71 Title: Please  En: Please Translation: Please
+2022-12-07 09:40:52,934 [main] INFO craftBet - Key: Indo English Value: Indo Translated Value: Indo
+2022-12-07 09:40:52,934 [main] INFO craftBet - 72 Title: Indo  En: Indo Translation: Indo
+2022-12-07 09:40:52,934 [main] INFO craftBet - Key: opt English Value: opt Translated Value: opt
+2022-12-07 09:40:52,935 [main] INFO craftBet - 73 Title: opt  En: opt Translation: opt
+2022-12-07 09:40:52,935 [main] INFO craftBet - Key: Back to Sports English Value: Back to Sports Translated Value: Back to Sports
+2022-12-07 09:40:52,935 [main] INFO craftBet - 74 Title: Back to Sports  En: Back to Sports Translation: Back to Sports
+2022-12-07 09:40:52,935 [main] INFO craftBet - Key: Search teams English Value: Search teams Translated Value: Search teams
+2022-12-07 09:40:52,935 [main] INFO craftBet - 75 Title: Search teams  En: Search teams Translation: Search teams
+2022-12-07 09:40:52,935 [main] INFO craftBet - Key: W1 English Value: W1 Translated Value: W1
+2022-12-07 09:40:52,935 [main] INFO craftBet - 76 Title: W1  En: W1 Translation: W1
+2022-12-07 09:40:52,935 [main] INFO craftBet - Key: W2 English Value: W2 Translated Value: W2
+2022-12-07 09:40:52,935 [main] INFO craftBet - 77 Title: W2  En: W2 Translation: W2
+2022-12-07 09:40:52,935 [main] INFO craftBet - Key: Confirmation English Value: Confirm Cashout out Translated Value: Confirm Cashout out
+2022-12-07 09:40:52,935 [main] INFO craftBet - 78 Title: Confirmation  En: Confirm Cashout out Translation: Confirm Cashout out
+2022-12-07 09:40:52,935 [main] INFO craftBet - Key: Us English Value: Us Translated Value: Us
+2022-12-07 09:40:52,936 [main] INFO craftBet - 79 Title: Us  En: Us Translation: Us
+2022-12-07 09:40:52,936 [main] INFO craftBet - Key: Search Results English Value: Search Result Translated Value: Search Result
+2022-12-07 09:40:52,936 [main] INFO craftBet - 80 Title: Search Results  En: Search Result Translation: Search Result
+2022-12-07 09:40:52,936 [main] INFO craftBet - Key: September English Value: September Translated Value: September
+2022-12-07 09:40:52,936 [main] INFO craftBet - 81 Title: September  En: September Translation: September
+2022-12-07 09:40:52,936 [main] INFO craftBet - Key: Possible winnings English Value: Possible winnings Translated Value: Possible winnings
+2022-12-07 09:40:52,936 [main] INFO craftBet - 82 Title: Possible winnings  En: Possible winnings Translation: Possible winnings
+2022-12-07 09:40:52,936 [main] INFO craftBet - Key: Yes English Value: Yes Translated Value: Yes
+2022-12-07 09:40:52,936 [main] INFO craftBet - 83 Title: Yes  En: Yes Translation: Yes
+2022-12-07 09:40:52,936 [main] INFO craftBet - Key: Time English Value: Time Translated Value: Time
+2022-12-07 09:40:52,936 [main] INFO craftBet - 84 Title: Time  En: Time Translation: Time
+2022-12-07 09:40:52,936 [main] INFO craftBet - Key: Search Result English Value: Search Result Translated Value: Search Result
+2022-12-07 09:40:52,936 [main] INFO craftBet - 85 Title: Search Result  En: Search Result Translation: Search Result
+2022-12-07 09:40:52,936 [main] INFO craftBet - Key: System English Value: System Translated Value: System
+2022-12-07 09:40:52,937 [main] INFO craftBet - 86 Title: System  En: System Translation: System
+2022-12-07 09:40:52,937 [main] INFO craftBet - Key: Bets on English Value: Bets on Translated Value: Bets on
+2022-12-07 09:40:52,937 [main] INFO craftBet - 87 Title: Bets on  En: Bets on Translation: Bets on
+2022-12-07 09:40:52,937 [main] INFO craftBet - Key: Welcome register bonus English Value: Welcome register bonus! Translated Value: Welcome register bonus!
+2022-12-07 09:40:52,937 [main] INFO craftBet - 88 Title: Welcome register bonus  En: Welcome register bonus! Translation: Welcome register bonus!
+2022-12-07 09:40:52,937 [main] INFO craftBet - Key: Number English Value: Number Translated Value: Number
+2022-12-07 09:40:52,937 [main] INFO craftBet - 89 Title: Number  En: Number Translation: Number
+2022-12-07 09:40:52,937 [main] INFO craftBet - Key: register now. English Value: register now Translated Value: register now
+2022-12-07 09:40:52,938 [main] INFO craftBet - 90 Title: register now.  En: register now Translation: register now
+2022-12-07 09:40:52,938 [main] INFO craftBet - Key: Tuesday English Value: Tuesday Translated Value: Tuesday
+2022-12-07 09:40:52,938 [main] INFO craftBet - 91 Title: Tuesday  En: Tuesday Translation: Tuesday
+2022-12-07 09:40:52,938 [main] INFO craftBet - Key: Home English Value: Home Translated Value: Home
+2022-12-07 09:40:52,938 [main] INFO craftBet - 92 Title: Home  En: Home Translation: Home
+2022-12-07 09:40:52,938 [main] INFO craftBet - Key: Unpin English Value: Unpin Translated Value: Unpin
+2022-12-07 09:40:52,938 [main] INFO craftBet - 93 Title: Unpin  En: Unpin Translation: Unpin
+2022-12-07 09:40:52,938 [main] INFO craftBet - Key: Accept any odds change English Value: Accept any odds change Translated Value: Accept any odds change
+2022-12-07 09:40:52,938 [main] INFO craftBet - 94 Title: Accept any odds change  En: Accept any odds change Translation: Accept any odds change
+2022-12-07 09:40:52,938 [main] INFO craftBet - Key: More sports English Value: More sports Translated Value: More sports
+2022-12-07 09:40:52,938 [main] INFO craftBet - 95 Title: More sports  En: More sports Translation: More sports
+2022-12-07 09:40:52,939 [main] INFO craftBet - Key: November English Value: November Translated Value: November
+2022-12-07 09:40:52,939 [main] INFO craftBet - 96 Title: November  En: November Translation: November
+2022-12-07 09:40:52,939 [main] INFO craftBet - Key: hours English Value: H Translated Value: H
+2022-12-07 09:40:52,939 [main] INFO craftBet - 97 Title: hours  En: H Translation: H
+2022-12-07 09:40:52,939 [main] INFO craftBet - Key: Max Bet English Value: Max Bet Translated Value: Max Bet
+2022-12-07 09:40:52,939 [main] INFO craftBet - 98 Title: Max Bet  En: Max Bet Translation: Max Bet
+2022-12-07 09:40:52,939 [main] INFO craftBet - Key: Full cashout English Value: Full cashout Translated Value: Full cashout
+2022-12-07 09:40:52,939 [main] INFO craftBet - 99 Title: Full cashout  En: Full cashout Translation: Full cashout
+2022-12-07 09:40:52,939 [main] INFO craftBet - Key: Overview English Value: Live Translated Value: 概要
+2022-12-07 09:40:52,940 [main] INFO craftBet - Key: Single can only contain one match English Value: Single bet can only contain one match. Please remove other. Translated Value: Single bet can only contain one match. Please remove other.
+2022-12-07 09:40:52,940 [main] INFO craftBet - 101 Title: Single can only contain one match  En: Single bet can only contain one match. Please remove other. Translation: Single bet can only contain one match. Please remove other.
+2022-12-07 09:40:52,940 [main] INFO craftBet - Key: Place bets English Value: Place bets Translated Value: Place bets
+2022-12-07 09:40:52,940 [main] INFO craftBet - 102 Title: Place bets  En: Place bets Translation: Place bets
+2022-12-07 09:40:52,940 [main] INFO craftBet - Key: Current Odd English Value: Current Odds Translated Value: Current Odds
+2022-12-07 09:40:52,940 [main] INFO craftBet - 103 Title: Current Odd  En: Current Odds Translation: Current Odds
+2022-12-07 09:40:52,940 [main] INFO craftBet - Key: Combinations count English Value: Combinations count Translated Value: Combinations count
+2022-12-07 09:40:52,940 [main] INFO craftBet - 104 Title: Combinations count  En: Combinations count Translation: Combinations count
+2022-12-07 09:40:52,940 [main] INFO craftBet - Key: Schedule English Value: Schedule Translated Value: スケジュール
+2022-12-07 09:40:52,941 [main] INFO craftBet - Key: Previous English Value: Previous Translated Value: Previous
+2022-12-07 09:40:52,941 [main] INFO craftBet - 106 Title: Previous  En: Previous Translation: Previous
+2022-12-07 09:40:52,941 [main] INFO craftBet - Key: Add to favorites English Value: Add to favorites Translated Value: Add to favorites
+2022-12-07 09:40:52,941 [main] INFO craftBet - 107 Title: Add to favorites  En: Add to favorites Translation: Add to favorites
+2022-12-07 09:40:52,941 [main] INFO craftBet - Key: Team Name English Value: Team Name Translated Value: Team Name
+2022-12-07 09:40:52,942 [main] INFO craftBet - 108 Title: Team Name  En: Team Name Translation: Team Name
+2022-12-07 09:40:52,942 [main] INFO craftBet - Key: HK English Value: HK Translated Value: HK
+2022-12-07 09:40:52,942 [main] INFO craftBet - 109 Title: HK  En: HK Translation: HK
+2022-12-07 09:40:52,942 [main] INFO craftBet - Key: Go English Value: Go Translated Value: Go
+2022-12-07 09:40:52,942 [main] INFO craftBet - 110 Title: Go  En: Go Translation: Go
+2022-12-07 09:40:52,942 [main] INFO craftBet - Key: Remove English Value: Remove Translated Value: Remove
+2022-12-07 09:40:52,942 [main] INFO craftBet - 111 Title: Remove  En: Remove Translation: Remove
+2022-12-07 09:40:52,942 [main] INFO craftBet - Key: Best live games English Value: Best live games Translated Value: Best live games
+2022-12-07 09:40:52,942 [main] INFO craftBet - 112 Title: Best live games  En: Best live games Translation: Best live games
+2022-12-07 09:40:52,942 [main] INFO craftBet - Key: Bet types English Value: Bet types Translated Value: Bet types
+2022-12-07 09:40:52,942 [main] INFO craftBet - 113 Title: Bet types  En: Bet types Translation: Bet types
+2022-12-07 09:40:52,942 [main] INFO craftBet - Key: All Events English Value: All Events Translated Value: All Events
+2022-12-07 09:40:52,943 [main] INFO craftBet - 114 Title: All Events  En: All Events Translation: All Events
+2022-12-07 09:40:52,943 [main] INFO craftBet - Key: December English Value: December Translated Value: December
+2022-12-07 09:40:52,943 [main] INFO craftBet - 115 Title: December  En: December Translation: December
+2022-12-07 09:40:52,943 [main] INFO craftBet - Key: Match win English Value: Match win Translated Value: Match win
+2022-12-07 09:40:52,943 [main] INFO craftBet - 116 Title: Match win  En: Match win Translation: Match win
+2022-12-07 09:40:52,943 [main] INFO craftBet - Key: All Sport English Value: All Sports Translated Value: All Sports
+2022-12-07 09:40:52,943 [main] INFO craftBet - 117 Title: All Sport  En: All Sports Translation: All Sports
+2022-12-07 09:40:52,943 [main] INFO craftBet - Key: Number of events English Value: Number of events Translated Value: Number of events
+2022-12-07 09:40:52,943 [main] INFO craftBet - 118 Title: Number of events  En: Number of events Translation: Number of events
+2022-12-07 09:40:52,943 [main] INFO craftBet - Key: log in English Value: Login Translated Value: Login
+2022-12-07 09:40:52,943 [main] INFO craftBet - 119 Title: log in  En: Login Translation: Login
+2022-12-07 09:40:52,944 [main] INFO craftBet - Key: Back English Value: Back Translated Value: Back
+2022-12-07 09:40:52,944 [main] INFO craftBet - 120 Title: Back  En: Back Translation: Back
+2022-12-07 09:40:52,944 [main] INFO craftBet - Key: Malay English Value: Malay Translated Value: Malay
+2022-12-07 09:40:52,944 [main] INFO craftBet - 121 Title: Malay  En: Malay Translation: Malay
+2022-12-07 09:40:52,944 [main] INFO craftBet - Key: Live Calendar English Value: Live Calendar Translated Value: ライブカレンダー
+2022-12-07 09:40:52,944 [main] INFO craftBet - Key: Settings English Value: Settings Translated Value: Settings
+2022-12-07 09:40:52,944 [main] INFO craftBet - 123 Title: Settings  En: Settings Translation: Settings
+2022-12-07 09:40:52,944 [main] INFO craftBet - Key: Live English Value: Live Translated Value: ライブ
+2022-12-07 09:40:52,944 [main] INFO craftBet - Key: tomorrow English Value: Tomorrow Translated Value: Tomorrow
+2022-12-07 09:40:52,944 [main] INFO craftBet - 125 Title: tomorrow  En: Tomorrow Translation: Tomorrow
+2022-12-07 09:40:52,945 [main] INFO craftBet - Key: matches English Value: matches Translated Value: matches
+2022-12-07 09:40:52,945 [main] INFO craftBet - 126 Title: matches  En: matches Translation: matches
+2022-12-07 09:40:52,945 [main] INFO craftBet - Key: Popular competitions English Value: Popular competitions Translated Value: Popular competitions
+2022-12-07 09:40:52,945 [main] INFO craftBet - 127 Title: Popular competitions  En: Popular competitions Translation: Popular competitions
+2022-12-07 09:40:52,945 [main] INFO craftBet - Key: Search by sport, region, match and ID English Value: Search by sport, region, match and ID Translated Value: Search by sport, region, match and ID
+2022-12-07 09:40:52,945 [main] INFO craftBet - 128 Title: Search by sport, region, match and ID  En: Search by sport, region, match and ID Translation: Search by sport, region, match and ID
+2022-12-07 09:40:52,945 [main] INFO craftBet - Key: REGION English Value: REGION Translated Value: REGION
+2022-12-07 09:40:52,945 [main] INFO craftBet - 129 Title: REGION  En: REGION Translation: REGION
+2022-12-07 09:40:52,946 [main] INFO craftBet - Key: Bet placed English Value: Bet placed Translated Value: Bet placed
+2022-12-07 09:40:52,946 [main] INFO craftBet - 130 Title: Bet placed  En: Bet placed Translation: Bet placed
+2022-12-07 09:40:52,946 [main] INFO craftBet - Key: Next English Value: Next Translated Value: Next
+2022-12-07 09:40:52,946 [main] INFO craftBet - 131 Title: Next  En: Next Translation: Next
+2022-12-07 09:40:52,946 [main] INFO craftBet - Key: Show English Value: Show Translated Value: Show
+2022-12-07 09:40:52,946 [main] INFO craftBet - 132 Title: Show  En: Show Translation: Show
+2022-12-07 09:40:52,946 [main] INFO craftBet - Key: Favorites English Value: Favorites Translated Value: お気に入り
+2022-12-07 09:40:52,946 [main] INFO craftBet - Key: Play racing English Value: Play racing Translated Value: Play racing
+2022-12-07 09:40:52,946 [main] INFO craftBet - 134 Title: Play racing  En: Play racing Translation: Play racing
+2022-12-07 09:40:52,947 [main] INFO craftBet - Key: Get 100% deposit English Value: Get 100% deposit Translated Value: Get 100% deposit
+2022-12-07 09:40:52,947 [main] INFO craftBet - 135 Title: Get 100% deposit  En: Get 100% deposit Translation: Get 100% deposit
+2022-12-07 09:40:52,947 [main] INFO craftBet - Key: May English Value: May Translated Value: May
+2022-12-07 09:40:52,947 [main] INFO craftBet - 136 Title: May  En: May Translation: May
+2022-12-07 09:40:52,947 [main] INFO craftBet - Key: Cancel English Value: Cancel Translated Value: Cancel
+2022-12-07 09:40:52,947 [main] INFO craftBet - 137 Title: Cancel  En: Cancel Translation: Cancel
+2022-12-07 09:40:52,947 [main] INFO craftBet - Key: Max English Value: max Translated Value: max
+2022-12-07 09:40:52,947 [main] INFO craftBet - 138 Title: Max  En: max Translation: max
+2022-12-07 09:40:52,947 [main] INFO craftBet - Key: Long version English Value: Long version Translated Value: Long version
+2022-12-07 09:40:52,948 [main] INFO craftBet - 139 Title: Long version  En: Long version Translation: Long version
+2022-12-07 09:40:52,948 [main] INFO craftBet - Key: System calculator English Value: System calculator Translated Value: System calculator
+2022-12-07 09:40:52,948 [main] INFO craftBet - 140 Title: System calculator  En: System calculator Translation: System calculator
+2022-12-07 09:40:52,948 [main] INFO craftBet - Key: Event View English Value: Event View Translated Value: イベントビュー
+2022-12-07 09:40:52,948 [main] INFO craftBet - Key: Lost English Value: Lost Translated Value: Lost
+2022-12-07 09:40:52,948 [main] INFO craftBet - 142 Title: Lost  En: Lost Translation: Lost
+2022-12-07 09:40:52,948 [main] INFO craftBet - Key: CashOut Confirm Message English Value: You are Cashing out Translated Value: You are Cashing out
+2022-12-07 09:40:52,949 [main] INFO craftBet - 143 Title: CashOut Confirm Message  En: You are Cashing out Translation: You are Cashing out
+2022-12-07 09:40:52,949 [main] INFO craftBet - Key: Market selected English Value: Market Selected Translated Value: Market Selected
+2022-12-07 09:40:52,949 [main] INFO craftBet - 144 Title: Market selected  En: Market Selected Translation: Market Selected
+2022-12-07 09:40:52,949 [main] INFO craftBet - Key: BetSlip English Value: Bet Slip Translated Value: Bet Slip
+2022-12-07 09:40:52,949 [main] INFO craftBet - 145 Title: BetSlip  En: Bet Slip Translation: Bet Slip
+2022-12-07 09:40:52,949 [main] INFO craftBet - Key: One combination amount English Value: One combination amount Translated Value: One combination amount
+2022-12-07 09:40:52,949 [main] INFO craftBet - 146 Title: One combination amount  En: One combination amount Translation: One combination amount
+2022-12-07 09:40:52,949 [main] INFO craftBet - Key: Please enter valid email or username English Value: Please enter valid email or username Translated Value: Please enter valid email or username
+2022-12-07 09:40:52,949 [main] INFO craftBet - 147 Title: Please enter valid email or username  En: Please enter valid email or username Translation: Please enter valid email or username
+2022-12-07 09:40:52,949 [main] INFO craftBet - Key: Live betting English Value: Live betting Translated Value: Live betting
+2022-12-07 09:40:52,949 [main] INFO craftBet - 148 Title: Live betting  En: Live betting Translation: Live betting
+2022-12-07 09:40:52,949 [main] INFO craftBet - Key: Pin English Value: Pin Translated Value: Pin
+2022-12-07 09:40:52,949 [main] INFO craftBet - 149 Title: Pin  En: Pin Translation: Pin
+2022-12-07 09:40:52,949 [main] INFO craftBet - Key: Results English Value: Results Translated Value: 結果
+2022-12-07 09:40:52,950 [main] INFO craftBet - Key: Team, country, competition English Value: Team, country, competition Translated Value: Team, country, competition
+2022-12-07 09:40:52,950 [main] INFO craftBet - 151 Title: Team, country, competition  En: Team, country, competition Translation: Team, country, competition
+2022-12-07 09:40:52,950 [main] INFO craftBet - Key: None English Value: None Translated Value: None
+2022-12-07 09:40:52,950 [main] INFO craftBet - 152 Title: None  En: None Translation: None
+2022-12-07 09:40:52,950 [main] INFO craftBet - Key: Bonus Account English Value: Bonus Account Translated Value: Bonus Account
+2022-12-07 09:40:52,950 [main] INFO craftBet - 153 Title: Bonus Account  En: Bonus Account Translation: Bonus Account
+2022-12-07 09:40:52,950 [main] INFO craftBet - Key: All English Value: All Translated Value: All
+2022-12-07 09:40:52,950 [main] INFO craftBet - 154 Title: All  En: All Translation: All
+2022-12-07 09:40:52,950 [main] INFO craftBet - Key: EVENTS English Value: EVENTS Translated Value: EVENTS
+2022-12-07 09:40:52,950 [main] INFO craftBet - 155 Title: EVENTS  En: EVENTS Translation: EVENTS
+2022-12-07 09:40:52,950 [main] INFO craftBet - Key: Sport English Value: Sport Translated Value: Sport
+2022-12-07 09:40:52,950 [main] INFO craftBet - 156 Title: Sport  En: Sport Translation: Sport
+2022-12-07 09:40:52,950 [main] INFO craftBet - Key: Registration English Value: registration Translated Value: registration
+2022-12-07 09:40:52,950 [main] INFO craftBet - 157 Title: Registration  En: registration Translation: registration
+2022-12-07 09:40:52,950 [main] INFO craftBet - Key: Live events English Value: Live Events Translated Value: Live Events
+2022-12-07 09:40:52,951 [main] INFO craftBet - 158 Title: Live events  En: Live Events Translation: Live Events
+2022-12-07 09:40:52,951 [main] INFO craftBet - Key: day English Value: D Translated Value: D
+2022-12-07 09:40:52,951 [main] INFO craftBet - 159 Title: day  En: D Translation: D
+2022-12-07 09:40:52,951 [main] INFO craftBet - Key: Odds Type English Value: Odds Type Translated Value: Odds Type
+2022-12-07 09:40:52,951 [main] INFO craftBet - 160 Title: Odds Type  En: Odds Type Translation: Odds Type
+2022-12-07 09:40:52,951 [main] INFO craftBet - Key: Stake English Value: Stake Translated Value: Stake
+2022-12-07 09:40:52,951 [main] INFO craftBet - 161 Title: Stake  En: Stake Translation: Stake
+2022-12-07 09:40:52,951 [main] INFO craftBet - Key: Chanel English Value: Chanel Translated Value: Chanel
+2022-12-07 09:40:52,951 [main] INFO craftBet - 162 Title: Chanel  En: Chanel Translation: Chanel
+2022-12-07 09:40:52,951 [main] INFO craftBet - Key: Calculate English Value: Calculate Translated Value: Calculate
+2022-12-07 09:40:52,951 [main] INFO craftBet - 163 Title: Calculate  En: Calculate Translation: Calculate
+2022-12-07 09:40:52,951 [main] INFO craftBet - Key: April English Value: April Translated Value: April
+2022-12-07 09:40:52,951 [main] INFO craftBet - 164 Title: April  En: April Translation: April
+2022-12-07 09:40:52,951 [main] INFO craftBet - Key: August English Value: August Translated Value: August
+2022-12-07 09:40:52,952 [main] INFO craftBet - 165 Title: August  En: August Translation: August
+2022-12-07 09:40:52,952 [main] INFO craftBet - Key: DATE English Value: DATE Translated Value: DATE
+2022-12-07 09:40:52,952 [main] INFO craftBet - 166 Title: DATE  En: DATE Translation: DATE
+2022-12-07 09:40:52,952 [main] INFO craftBet - Key: Short version English Value: Short version Translated Value: Short version
+2022-12-07 09:40:52,952 [main] INFO craftBet - 167 Title: Short version  En: Short version Translation: Short version
+2022-12-07 09:40:52,952 [main] INFO craftBet - Key: There are not markets English Value: There are not markets Translated Value: There are not markets
+2022-12-07 09:40:52,952 [main] INFO craftBet - 168 Title: There are not markets  En: There are not markets Translation: There are not markets
+2022-12-07 09:40:52,952 [main] INFO craftBet - Key: Automatically accept price changes English Value: Automatically accept price changes Translated Value: Automatically accept price changes
+2022-12-07 09:40:52,952 [main] INFO craftBet - 169 Title: Automatically accept price changes  En: Automatically accept price changes Translation: Automatically accept price changes
+2022-12-07 09:40:52,952 [main] INFO craftBet - Key: Sunday English Value: Sunday Translated Value: Sunday
+2022-12-07 09:40:52,952 [main] INFO craftBet - 170 Title: Sunday  En: Sunday Translation: Sunday
+2022-12-07 09:40:52,952 [main] INFO craftBet - Key: Wednesday English Value: Wednesday Translated Value: Wednesday
+2022-12-07 09:40:52,953 [main] INFO craftBet - 171 Title: Wednesday  En: Wednesday Translation: Wednesday
+2022-12-07 09:40:52,953 [main] INFO craftBet - Key: Find out more English Value: Find out more Translated Value: Find out more
+2022-12-07 09:40:52,953 [main] INFO craftBet - 172 Title: Find out more  En: Find out more Translation: Find out more
+2022-12-07 09:40:52,953 [main] INFO craftBet - Key: Save English Value: Save Translated Value: Save
+2022-12-07 09:40:52,953 [main] INFO craftBet - 173 Title: Save  En: Save Translation: Save
+2022-12-07 09:40:52,953 [main] INFO craftBet - Key: COEFF. English Value: COEFF. Translated Value: COEFF.
+2022-12-07 09:40:52,953 [main] INFO craftBet - 174 Title: COEFF.  En: COEFF. Translation: COEFF.
+2022-12-07 09:40:52,953 [main] INFO craftBet - Key: Live Games English Value: Live Games Translated Value: Live Games
+2022-12-07 09:40:52,953 [main] INFO craftBet - 175 Title: Live Games  En: Live Games Translation: Live Games
+2022-12-07 09:40:52,954 [main] INFO craftBet - Key: Win English Value: Win Translated Value: Win
+2022-12-07 09:40:52,954 [main] INFO craftBet - 176 Title: Win  En: Win Translation: Win
+2022-12-07 09:40:52,954 [main] INFO craftBet - Key: Play poker English Value: Play poker Translated Value: Play poker
+2022-12-07 09:40:52,954 [main] INFO craftBet - 177 Title: Play poker  En: Play poker Translation: Play poker
+2022-12-07 09:40:52,954 [main] INFO craftBet - Key: week English Value: week Translated Value: week
+2022-12-07 09:40:52,954 [main] INFO craftBet - 178 Title: week  En: week Translation: week
+2022-12-07 09:40:52,954 [main] INFO craftBet - Key: Show events Id English Value: Show events Id Translated Value: Show events Id
+2022-12-07 09:40:52,954 [main] INFO craftBet - 179 Title: Show events Id  En: Show events Id Translation: Show events Id
+2022-12-07 09:40:52,954 [main] INFO craftBet - Key: Cash Out English Value: Cashout Translated Value: Cashout
+2022-12-07 09:40:52,954 [main] INFO craftBet - 180 Title: Cash Out  En: Cashout Translation: Cashout
+2022-12-07 09:40:52,955 [main] INFO craftBet - Key: Monitor English Value: Monitor Translated Value: Monitor
+2022-12-07 09:40:52,955 [main] INFO craftBet - 181 Title: Monitor  En: Monitor Translation: Monitor
+2022-12-07 09:40:52,955 [main] INFO craftBet - Key: hour English Value: H Translated Value: H
+2022-12-07 09:40:52,955 [main] INFO craftBet - 182 Title: hour  En: H Translation: H
+2022-12-07 09:40:52,955 [main] INFO craftBet - Key: Upcoming Events English Value: Upcoming Events Translated Value: Upcoming Events
+2022-12-07 09:40:52,955 [main] INFO craftBet - 183 Title: Upcoming Events  En: Upcoming Events Translation: Upcoming Events
+2022-12-07 09:40:52,955 [main] INFO craftBet - Key: There are not favorites. English Value: There are not favorites. Translated Value: There are not favorites.
+2022-12-07 09:40:52,955 [main] INFO craftBet - 184 Title: There are not favorites.  En: There are not favorites. Translation: There are not favorites.
+2022-12-07 09:40:52,955 [main] INFO craftBet - Key: today English Value: Today Translated Value: Today
+2022-12-07 09:40:52,955 [main] INFO craftBet - 185 Title: today  En: Today Translation: Today
+2022-12-07 09:40:52,955 [main] INFO craftBet - Key: February English Value: February Translated Value: February
+2022-12-07 09:40:52,955 [main] INFO craftBet - 186 Title: February  En: February Translation: February
+2022-12-07 09:40:52,955 [main] INFO craftBet - Key: No English Value: No Translated Value: No
+2022-12-07 09:40:52,956 [main] INFO craftBet - 187 Title: No  En: No Translation: No
+2022-12-07 09:40:52,956 [main] INFO craftBet - Key: Duplicated English Value: Duplicated Translated Value: Duplicated
+2022-12-07 09:40:52,956 [main] INFO craftBet - 188 Title: Duplicated  En: Duplicated Translation: Duplicated
+2022-12-07 09:40:52,956 [main] INFO craftBet - Key: or English Value: or Translated Value: or
+2022-12-07 09:40:52,956 [main] INFO craftBet - 189 Title: or  En: or Translation: or
+2022-12-07 09:40:52,956 [main] INFO craftBet - Key: All_Sports English Value: All Sports Translated Value: All Sports
+2022-12-07 09:40:52,956 [main] INFO craftBet - 190 Title: All_Sports  En: All Sports Translation: All Sports
+2022-12-07 09:40:52,956 [main] INFO craftBet - Key: Add condition English Value: Add condition Translated Value: Add condition
+2022-12-07 09:40:52,956 [main] INFO craftBet - 191 Title: Add condition  En: Add condition Translation: Add condition
+2022-12-07 09:40:52,956 [main] INFO craftBet - Key: Data English Value: Data Translated Value: Data
+2022-12-07 09:40:52,956 [main] INFO craftBet - 192 Title: Data  En: Data Translation: Data
+2022-12-07 09:40:52,956 [main] INFO craftBet - Key: Play keno English Value: Play keno Translated Value: Play keno
+2022-12-07 09:40:52,956 [main] INFO craftBet - 193 Title: Play keno  En: Play keno Translation: Play keno
+2022-12-07 09:40:52,956 [main] INFO craftBet - Key: Play live poker English Value: Play live poker Translated Value: Play live poker
+2022-12-07 09:40:52,956 [main] INFO craftBet - 194 Title: Play live poker  En: Play live poker Translation: Play live poker
+2022-12-07 09:40:52,957 [main] INFO craftBet - Key: Rebet English Value: Rebet Translated Value: Rebet
+2022-12-07 09:40:52,957 [main] INFO craftBet - 195 Title: Rebet  En: Rebet Translation: Rebet
+2022-12-07 09:40:52,957 [main] INFO craftBet - Key: Team1 - Team2 English Value: Team1 - Team2 Translated Value: Team1 - Team2
+2022-12-07 09:40:52,957 [main] INFO craftBet - 196 Title: Team1 - Team2  En: Team1 - Team2 Translation: Team1 - Team2
+2022-12-07 09:40:52,957 [main] INFO craftBet - Key: Total English Value: Total Translated Value: Total
+2022-12-07 09:40:52,957 [main] INFO craftBet - 197 Title: Total  En: Total Translation: Total
+2022-12-07 09:40:52,957 [main] INFO craftBet - Key: Top Events English Value: Top Events Translated Value: Top Events
+2022-12-07 09:40:52,957 [main] INFO craftBet - 198 Title: Top Events  En: Top Events Translation: Top Events
+2022-12-07 09:40:52,957 [main] INFO craftBet - Key: Ok English Value: OK Translated Value: OK
+2022-12-07 09:40:52,957 [main] INFO craftBet - 199 Title: Ok  En: OK Translation: OK
+2022-12-07 09:40:52,957 [main] INFO craftBet - Translations are: 199  Not Translated lines are: 189
+2022-12-07 09:40:54,702 [main] INFO craftBet - Browser closed
+2022-12-07 09:40:54,702 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-07 09:40:54,713 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-22 15:38:40,924 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-22 15:38:51,455 [main] INFO craftBet - All Page elements are initialized
+2022-12-22 15:38:51,470 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-22 15:38:51,849 [main] INFO craftBet - Browser closed
+2022-12-22 15:38:51,849 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-22 15:38:51,940 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-22 15:39:25,041 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-22 15:39:30,620 [main] INFO craftBet - All Page elements are initialized
+2022-12-22 15:39:31,240 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-22 15:39:39,712 [main] INFO craftBet - Browser closed
+2022-12-22 15:39:39,713 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-22 15:39:39,764 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
