@@ -32,6 +32,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Timestamp;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
@@ -618,12 +619,29 @@ public class BasePage {
     //region <en.json CorePlatform>
 
     public HttpResponse<String> serverLoad() throws UnirestException {
-        Unirest.setTimeouts(20000, 20000);
-        HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
-                .header("Content-Type", "application/json")
-                .asString();
+        try {
+            Unirest.setTimeouts(35000, 25000);
+            HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
+                    .header("Content-Type", "application/json")
+                    .asString();
 
-        return response;
+            return response;
+        }
+        catch (Exception e){
+            try {
+                Unirest.setTimeouts(35000, 25000);
+                HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
+                        .header("Content-Type", "application/json")
+                        .asString();
+
+                return response;
+            }
+            catch (Exception k){
+                return null;
+            }
+        }
+
+
     }
 
 
@@ -831,6 +849,9 @@ public class BasePage {
         sheet.setColumnWidth(3, 12000);
         sheet.setColumnWidth(4, 12000);
         sheet.setColumnWidth(5, 12000);
+        sheet.setColumnWidth(6, 12000);
+
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         XSSFRow row1 = sheet.createRow(0);
 //            try{
@@ -840,7 +861,8 @@ public class BasePage {
         row1.createCell(3).setCellValue("CorePlatform Slave");
         row1.createCell(4).setCellValue("CorePlatform Master");
         row1.createCell(5).setCellValue("CorePlatform DB");
-        int l = 1;
+        row1.createCell(6).setCellValue("Timestamp");
+        int l = 2;
         for (int n=0; n<errorSrc1.size();n++) {
 
             row1 = sheet.createRow(l);
@@ -851,6 +873,9 @@ public class BasePage {
             row1.createCell(3).setCellValue(errorSrc4.get(n));
             row1.createCell(4).setCellValue(errorSrc5.get(n));
             row1.createCell(5).setCellValue(errorSrc6.get(n));
+            row1.createCell(6).setCellValue(errorSrc6.get(n));
+
+
 //            }
 //            catch(Exception e){
 //                BaseTest.logger.info("Exception : "+ e);

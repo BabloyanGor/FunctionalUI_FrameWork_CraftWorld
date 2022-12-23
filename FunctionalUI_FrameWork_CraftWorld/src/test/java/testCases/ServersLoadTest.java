@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class ServersLoadTest extends BaseTest {
 
@@ -30,64 +31,59 @@ public class ServersLoadTest extends BaseTest {
     public static ArrayList<String> corePlatformDB = new ArrayList<>();
 
     @Test
-    public void test() throws UnirestException, IOException {
+    public void test() throws UnirestException, IOException, InterruptedException {
 
-        for (int g = 0; g < 10; g++) {
-
+        for (int g = 0; g < 5; g++) {
 
             JSONArray responseArray;
             HttpResponse<String> response = craftBet_01_header_pageLogInUser.serverLoad();
-            responseArray = new JSONArray(response.getBody());
-            for (int i = 0; i < responseArray.length(); i++) {
-                String serverPC = responseArray.get(i).toString();
-                JSONObject firstArray = new JSONObject(serverPC);
-                String pcInformations = firstArray.get("pcInformations").toString();
-                JSONObject pcInformationsJson = new JSONObject(pcInformations);
-                String serverName = pcInformationsJson.get("name").toString();
-                String systemMemory = pcInformationsJson.get("systemMemory").toString();
-                String cpu = pcInformationsJson.get("cpu").toString();
-                switch (serverName) {
+            if (response!=null){
+                responseArray = new JSONArray(response.getBody());
+                for (int i = 0; i < responseArray.length(); i++) {
+                    String serverPC = responseArray.get(i).toString();
+                    JSONObject firstArray = new JSONObject(serverPC);
+                    String pcInformations = firstArray.get("pcInformations").toString();
+                    JSONObject pcInformationsJson = new JSONObject(pcInformations);
+                    String serverName = pcInformationsJson.get("name").toString();
+                    String systemMemory = pcInformationsJson.get("systemMemory").toString();
+                    String cpu = pcInformationsJson.get("cpu").toString();
+                    switch (serverName) {
 
-                    case "Sportsbook Slave": {
-                        sportsBookSlave.add("SystemMemory: " + systemMemory + "  Cpu:" + cpu);
-                        break;
-                    }
-                    case "Sportsbook Master": {
-                        sportsBookMaster.add("SystemMemory: " + systemMemory + "  Cpu:" + cpu);
-                        break;
-                    }
-                    case "Sportsbook DB": {
-                        sportsBookDB.add("SystemMemory: " + systemMemory + "  Cpu:" + cpu);
-                        break;
-                    }
-                    case "Core Platform Slave": {
-                        corePlatformSlave.add("Ram: " + systemMemory + "  Cpu:" + cpu);
-                        break;
-                    }
-                    case "Core Platform Master": {
-                        corePlatformMaster.add("Ram: " + systemMemory + "  Cpu:" + cpu);
-                        break;
-                    }
-                    case "Core Platform DB": {
-                        corePlatformDB.add("Ram: " + systemMemory + "  Cpu:" + cpu);
-                        break;
-                    }
-                    default: {
+                        case "Sportsbook Slave": {
+                            sportsBookSlave.add("SystemMemory: " + systemMemory + "  Cpu:" + cpu);
+                            break;
+                        }
+                        case "Sportsbook Master": {
+                            sportsBookMaster.add("SystemMemory: " + systemMemory + "  Cpu:" + cpu);
+                            break;
+                        }
+                        case "Sportsbook DB": {
+                            sportsBookDB.add("SystemMemory: " + systemMemory + "  Cpu:" + cpu);
+                            break;
+                        }
+                        case "Core Platform Slave": {
+                            corePlatformSlave.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                            break;
+                        }
+                        case "Core Platform Master": {
+                            corePlatformMaster.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                            break;
+                        }
+                        case "Core Platform DB": {
+                            corePlatformDB.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                            break;
+                        }
+                        default: {
+                        }
                     }
                 }
+                TimeUnit.SECONDS.sleep(2);
             }
-            craftBet_01_header_pageLogInUser.waitAction(2000);
-
-
         }
 
         craftBet_01_header_pageLogInUser.writeInExelSixArrayList(sportsBookSlave,sportsBookMaster,sportsBookDB,corePlatformSlave,corePlatformMaster,corePlatformDB,
                 "/src/test/java/testData/ServerReport.xlsx", "ServerInfo");
-//        craftBet_01_header_pageLogInUser.writeInExel(sportsBookMaster, "/src/test/java/testData/ServerReport.xlsx", "Sportsbook Master");
-//        craftBet_01_header_pageLogInUser.writeInExel(sportsBookDB, "/src/test/java/testData/ServerReport.xlsx", "Sportsbook DB");
-//        craftBet_01_header_pageLogInUser.writeInExel(corePlatformSlave, "/src/test/java/testData/ServerReport.xlsx", "Core Platform Slave");
-//        craftBet_01_header_pageLogInUser.writeInExel(corePlatformMaster, "/src/test/java/testData/ServerReport.xlsx", "Core Platform Master");
-//        craftBet_01_header_pageLogInUser.writeInExel(corePlatformDB, "/src/test/java/testData/ServerReport.xlsx", "Core Platform DB");
+
     }
 
 
