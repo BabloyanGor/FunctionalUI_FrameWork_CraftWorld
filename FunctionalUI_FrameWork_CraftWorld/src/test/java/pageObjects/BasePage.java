@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
@@ -618,31 +619,7 @@ public class BasePage {
 
     //region <en.json CorePlatform>
 
-    public HttpResponse<String> serverLoad() throws UnirestException {
-        try {
-            Unirest.setTimeouts(35000, 25000);
-            HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
-                    .header("Content-Type", "application/json")
-                    .asString();
 
-            return response;
-        }
-        catch (Exception e){
-            try {
-                Unirest.setTimeouts(35000, 25000);
-                HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
-                        .header("Content-Type", "application/json")
-                        .asString();
-
-                return response;
-            }
-            catch (Exception k){
-                return null;
-            }
-        }
-
-
-    }
 
 
 
@@ -837,6 +814,50 @@ public class BasePage {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    Date timestamp;
+    public static ArrayList<String> timestampArr = new ArrayList<>();
+
+    public HttpResponse<String> serverLoad() throws UnirestException {
+        timestamp = new Date(System.currentTimeMillis());
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+        timestampArr.add(formatter.format(timestamp));
+        try {
+            Unirest.setTimeouts(35000, 25000);
+            HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
+                    .header("Content-Type", "application/json")
+                    .asString();
+
+            return response;
+        }
+        catch (Exception e){
+            try {
+                Unirest.setTimeouts(35000, 25000);
+                HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
+                        .header("Content-Type", "application/json")
+                        .asString();
+
+                return response;
+            }
+            catch (Exception k){
+                return null;
+            }
+        }
+
+
+    }
+
     //endregion
     public void writeInExelSixArrayList(ArrayList<String> errorSrc1 ,ArrayList<String> errorSrc2 ,ArrayList<String> errorSrc3 ,ArrayList<String> errorSrc4 ,ArrayList<String> errorSrc5 ,ArrayList<String> errorSrc6 , String src, String shitName) throws IOException {
         String target = System.getProperty("user.dir") +src;
@@ -851,7 +872,7 @@ public class BasePage {
         sheet.setColumnWidth(5, 12000);
         sheet.setColumnWidth(6, 12000);
 
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+//        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         XSSFRow row1 = sheet.createRow(0);
 //            try{
@@ -863,23 +884,23 @@ public class BasePage {
         row1.createCell(5).setCellValue("CorePlatform DB");
         row1.createCell(6).setCellValue("Timestamp");
         int l = 2;
-        for (int n=0; n<errorSrc1.size();n++) {
+        for (int n=0; n<timestampArr.size();n++) {
 
             row1 = sheet.createRow(l);
-//            try{
+            try{
             row1.createCell(0).setCellValue(errorSrc1.get(n));
             row1.createCell(1).setCellValue(errorSrc2.get(n));
             row1.createCell(2).setCellValue(errorSrc3.get(n));
             row1.createCell(3).setCellValue(errorSrc4.get(n));
             row1.createCell(4).setCellValue(errorSrc5.get(n));
             row1.createCell(5).setCellValue(errorSrc6.get(n));
-            row1.createCell(6).setCellValue(errorSrc6.get(n));
+            row1.createCell(6).setCellValue(timestampArr.get(n));
 
 
-//            }
-//            catch(Exception e){
-//                BaseTest.logger.info("Exception : "+ e);
-//            }
+            }
+            catch(Exception e){
+                System.out.println(("Exception : "+ e));
+            }
             l++;
         }
 

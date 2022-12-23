@@ -2666,6 +2666,24 @@
 2022-12-22 17:58:45,629 [main] INFO craftBet - Browser closed
 2022-12-22 17:58:45,629 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
 2022-12-22 17:58:45,642 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-22 18:01:52,486 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-22 18:01:57,702 [main] INFO craftBet - All Page elements are initialized
+2022-12-22 18:01:58,335 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-22 18:03:20,746 [main] INFO craftBet - Browser closed
+2022-12-22 18:03:20,747 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-22 18:03:20,780 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-22 18:03:32,156 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-22 18:03:37,033 [main] INFO craftBet - All Page elements are initialized
+2022-12-22 18:03:37,047 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-22 18:05:26,884 [main] INFO craftBet - Browser closed
+2022-12-22 18:05:26,884 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-22 18:05:26,898 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-22 18:06:50,425 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-22 18:06:55,194 [main] INFO craftBet - All Page elements are initialized
+2022-12-22 18:06:55,207 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-22 18:08:37,269 [main] INFO craftBet - Browser closed
+2022-12-22 18:08:37,270 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-22 18:08:37,296 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
 2022-12-22 21:23:00,327 [main] INFO craftBet - Browser for test will be chrome as chosen
 2022-12-22 21:23:01,480 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 108.0.5359.71 (resolved driver for Chrome 108)
 2022-12-22 21:23:01,518 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
@@ -2685,3 +2703,9 @@
 2022-12-22 21:33:09,746 [main] INFO craftBet - Browser closed
 2022-12-22 21:33:09,746 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
 2022-12-22 21:33:09,773 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2022-12-23 09:13:41,840 [main] INFO craftBet - Browser for test will be chrome as chosen
+2022-12-23 09:13:52,108 [main] INFO craftBet - All Page elements are initialized
+2022-12-23 09:13:52,750 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2022-12-23 09:14:58,662 [main] INFO craftBet - Browser closed
+2022-12-23 09:14:58,662 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2022-12-23 09:14:58,676 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
