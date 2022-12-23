@@ -36,7 +36,7 @@ public class ServersLoadTest {
     @Test
     public void test() throws UnirestException, IOException, InterruptedException {
 
-        for (int g = 0; g < 5; g++) {
+        for (int g = 0; g <135; g++) {
 
             JSONArray responseArray;
             HttpResponse<String> response = basePage.serverLoad();
@@ -50,41 +50,75 @@ public class ServersLoadTest {
                         String pcInformations = firstArray.get("pcInformations").toString();
                         JSONObject pcInformationsJson = new JSONObject(pcInformations);
                         String serverName = pcInformationsJson.get("name").toString();
+                        String serverServiceText = pcInformationsJson.get("serviceText").toString();
                         String systemMemory = pcInformationsJson.get("systemMemory").toString();
                         String cpu = pcInformationsJson.get("cpu").toString();
                         switch (serverName) {
 
                             case "Sportsbook Slave": {
-                                sportsBookSlave.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                                try {
+                                    sportsBookSlave.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                                }
+                                catch(Exception a){
+                                    System.out.println("Sportsbook Slave Exception " + pcInformations);
+                                }
+
                                 break;
                             }
                             case "Sportsbook Master": {
-                                sportsBookMaster.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                                try {
+                                    sportsBookMaster.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                                }
+                                catch(Exception b){
+                                    System.out.println("Sportsbook Master Exception " + pcInformations);
+                                }
                                 break;
                             }
                             case "Sportsbook DB": {
-                                sportsBookDB.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                                try {
+                                    sportsBookDB.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                                }
+                                catch(Exception c){
+                                    System.out.println("Sportsbook DB Exception " + pcInformations);
+                                }
                                 break;
                             }
                             case "Core Platform Slave": {
-                                corePlatformSlave.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                                try {
+                                    corePlatformSlave.add("Ram: " + systemMemory + "  Cpu:" + cpu);                                }
+                                catch(Exception d){
+                                    System.out.println("Core Platform Slave Exception " + pcInformations);
+                                }
                                 break;
                             }
                             case "Core Platform Master": {
-                                corePlatformMaster.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                                try {
+                                    corePlatformMaster.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                                }
+                                catch(Exception e){
+                                    System.out.println("Core Platform Master Exception " + pcInformations);
+                                }
                                 break;
                             }
                             case "Core Platform DB": {
-                                corePlatformDB.add("Ram: " + systemMemory + "  Cpu:" + cpu);
+                                try {
+                                    corePlatformDB.add("Ram: " + systemMemory + "  Cpu:" + cpu);                                }
+                                catch(Exception f){
+                                    System.out.println("Core Platform DB Exception " + pcInformations);
+                                }
+
                                 break;
                             }
+
                             default: {
+                                System.out.println("TestCase switch default: " + serverName + "Error message " + serverServiceText );
+
                             }
                         }
                     }
                 }
                 catch (Exception e){
-                    System.out.println("Exception " + e);
+                    System.out.println("TestCase Exception Main" + e);
                 }
 
                 TimeUnit.SECONDS.sleep(2);

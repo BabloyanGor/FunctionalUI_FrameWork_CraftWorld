@@ -851,6 +851,7 @@ public class BasePage {
                 return response;
             }
             catch (Exception k){
+                System.out.println("Exception ServerLoad method" + k);
                 return null;
             }
         }
@@ -864,13 +865,13 @@ public class BasePage {
         XSSFWorkbook workbook = new XSSFWorkbook();
         FileOutputStream file = new FileOutputStream(target);
         XSSFSheet sheet = workbook.createSheet(shitName);
-        sheet.setColumnWidth(0, 12000);
-        sheet.setColumnWidth(1, 12000);
-        sheet.setColumnWidth(2, 12000);
-        sheet.setColumnWidth(3, 12000);
-        sheet.setColumnWidth(4, 12000);
-        sheet.setColumnWidth(5, 12000);
-        sheet.setColumnWidth(6, 12000);
+        sheet.setColumnWidth(0, 9000);
+        sheet.setColumnWidth(1, 9000);
+        sheet.setColumnWidth(2, 9000);
+        sheet.setColumnWidth(3, 9000);
+        sheet.setColumnWidth(4, 9000);
+        sheet.setColumnWidth(5, 9000);
+        sheet.setColumnWidth(6, 9000);
 
 //        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
@@ -888,19 +889,61 @@ public class BasePage {
 
             row1 = sheet.createRow(l);
             try{
-            row1.createCell(0).setCellValue(errorSrc1.get(n));
-            row1.createCell(1).setCellValue(errorSrc2.get(n));
-            row1.createCell(2).setCellValue(errorSrc3.get(n));
-            row1.createCell(3).setCellValue(errorSrc4.get(n));
-            row1.createCell(4).setCellValue(errorSrc5.get(n));
-            row1.createCell(5).setCellValue(errorSrc6.get(n));
-            row1.createCell(6).setCellValue(timestampArr.get(n));
+                row1.createCell(0).setCellValue(errorSrc1.get(n));
+            }
+            catch (Exception a){
+                System.out.println("Exception sell 0");
+            }
+            try{
+                row1.createCell(1).setCellValue(errorSrc2.get(n));
+            }
+            catch (Exception a){
+                System.out.println("Exception sell 1");
+            }
+            try{
+                row1.createCell(2).setCellValue(errorSrc3.get(n));            }
+            catch (Exception a){
+                System.out.println("Exception sell 2");
+            }
+            try{
+                row1.createCell(3).setCellValue(errorSrc4.get(n));
+            }
+            catch (Exception a){
+                System.out.println("Exception sell 3");
+            }
+            try{
+                row1.createCell(4).setCellValue(errorSrc5.get(n));
+            }
+            catch (Exception a){
+                System.out.println("Exception sell 4");
+            }
+            try{
+                row1.createCell(5).setCellValue(errorSrc6.get(n));
+            }
+            catch (Exception a){
+                System.out.println("Exception sell 5");
+            }
+            try{
+                row1.createCell(6).setCellValue(timestampArr.get(n));
+            }
+            catch (Exception a){
+                System.out.println("Exception sell Timestamp");
+            }
+
+//            try{
+//            row1.createCell(0).setCellValue(errorSrc1.get(n));
+//            row1.createCell(1).setCellValue(errorSrc2.get(n));
+//            row1.createCell(2).setCellValue(errorSrc3.get(n));
+//            row1.createCell(3).setCellValue(errorSrc4.get(n));
+//            row1.createCell(4).setCellValue(errorSrc5.get(n));
+//            row1.createCell(5).setCellValue(errorSrc6.get(n));
+//            row1.createCell(6).setCellValue(timestampArr.get(n));
 
 
-            }
-            catch(Exception e){
-                System.out.println(("Exception : "+ e));
-            }
+//            }
+//            catch(Exception e){
+//                System.out.println(("Exception write in excel sheet: "+ e));
+//            }
             l++;
         }
 
