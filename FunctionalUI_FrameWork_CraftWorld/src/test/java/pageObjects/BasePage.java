@@ -898,37 +898,56 @@ public class BasePage {
                 row1.createCell(0).setCellValue(errorSrc1.get(n));
             }
             catch (Exception a){
+                row1.createCell(0).setCellValue("------");
                 System.out.println("Exception sell 0");
             }
+
+
             try{
                 row1.createCell(1).setCellValue(errorSrc2.get(n));
             }
             catch (Exception a){
+                row1.createCell(1).setCellValue("------");
                 System.out.println("Exception sell 1");
             }
+
+
             try{
-                row1.createCell(2).setCellValue(errorSrc3.get(n));            }
+                row1.createCell(2).setCellValue(errorSrc3.get(n));
+            }
             catch (Exception a){
+                row1.createCell(2).setCellValue("------");
                 System.out.println("Exception sell 2");
             }
+
+
             try{
                 row1.createCell(3).setCellValue(errorSrc4.get(n));
             }
             catch (Exception a){
+                row1.createCell(3).setCellValue("------");
                 System.out.println("Exception sell 3");
             }
+
+
             try{
                 row1.createCell(4).setCellValue(errorSrc5.get(n));
             }
             catch (Exception a){
+                row1.createCell(4).setCellValue("------");
                 System.out.println("Exception sell 4");
             }
+
+
             try{
                 row1.createCell(5).setCellValue(errorSrc6.get(n));
             }
             catch (Exception a){
+                row1.createCell(5).setCellValue("------");
                 System.out.println("Exception sell 5");
             }
+
+
             try{
                 row1.createCell(6).setCellValue(timestampArr.get(n));
             }

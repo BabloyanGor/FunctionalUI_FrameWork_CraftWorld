@@ -36,7 +36,7 @@ public class ServersLoadTest {
     @Test
     public void test() throws UnirestException, IOException, InterruptedException {
 
-        for (int g = 0; g <130; g++) {
+        for (int g = 0; g <50; g++) {
 
             JSONArray responseArray;
             HttpResponse<String> response = basePage.serverLoad();
@@ -122,7 +122,7 @@ public class ServersLoadTest {
                     System.out.println("TestCase Exception Main" + e);
                 }
 
-                TimeUnit.SECONDS.sleep(2);
+//                TimeUnit.SECONDS.sleep(2);
             }
         }
 
