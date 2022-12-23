@@ -830,14 +830,16 @@ public class BasePage {
     public static ArrayList<String> timestampArr = new ArrayList<>();
 
     public HttpResponse<String> serverLoad() throws UnirestException {
-        timestamp = new Date(System.currentTimeMillis());
-        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
-        timestampArr.add(formatter.format(timestamp));
+
         try {
             Unirest.setTimeouts(35000, 25000);
             HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
                     .header("Content-Type", "application/json")
                     .asString();
+
+            timestamp = new Date(System.currentTimeMillis());
+            SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+            timestampArr.add(formatter.format(timestamp));
 
             return response;
         }
@@ -847,6 +849,10 @@ public class BasePage {
                 HttpResponse<String> response = Unirest.get("http://135.181.5.31:8088/api/CallWindowsService/GetAllData")
                         .header("Content-Type", "application/json")
                         .asString();
+
+                timestamp = new Date(System.currentTimeMillis());
+                SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+                timestampArr.add(formatter.format(timestamp));
 
                 return response;
             }
@@ -938,8 +944,6 @@ public class BasePage {
 //            row1.createCell(4).setCellValue(errorSrc5.get(n));
 //            row1.createCell(5).setCellValue(errorSrc6.get(n));
 //            row1.createCell(6).setCellValue(timestampArr.get(n));
-
-
 //            }
 //            catch(Exception e){
 //                System.out.println(("Exception write in excel sheet: "+ e));

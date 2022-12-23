@@ -36,7 +36,7 @@ public class ServersLoadTest {
     @Test
     public void test() throws UnirestException, IOException, InterruptedException {
 
-        for (int g = 0; g <135; g++) {
+        for (int g = 0; g <130; g++) {
 
             JSONArray responseArray;
             HttpResponse<String> response = basePage.serverLoad();
@@ -60,7 +60,7 @@ public class ServersLoadTest {
                                     sportsBookSlave.add("Ram: " + systemMemory + "  Cpu:" + cpu);
                                 }
                                 catch(Exception a){
-                                    System.out.println("Sportsbook Slave Exception " + pcInformations);
+                                    System.out.println("Sportsbook Slave Exception: " + pcInformations);
                                 }
 
                                 break;
@@ -70,7 +70,7 @@ public class ServersLoadTest {
                                     sportsBookMaster.add("Ram: " + systemMemory + "  Cpu:" + cpu);
                                 }
                                 catch(Exception b){
-                                    System.out.println("Sportsbook Master Exception " + pcInformations);
+                                    System.out.println("Sportsbook Master Exception: " + pcInformations);
                                 }
                                 break;
                             }
@@ -79,7 +79,7 @@ public class ServersLoadTest {
                                     sportsBookDB.add("Ram: " + systemMemory + "  Cpu:" + cpu);
                                 }
                                 catch(Exception c){
-                                    System.out.println("Sportsbook DB Exception " + pcInformations);
+                                    System.out.println("Sportsbook DB Exception: " + pcInformations);
                                 }
                                 break;
                             }
@@ -87,7 +87,7 @@ public class ServersLoadTest {
                                 try {
                                     corePlatformSlave.add("Ram: " + systemMemory + "  Cpu:" + cpu);                                }
                                 catch(Exception d){
-                                    System.out.println("Core Platform Slave Exception " + pcInformations);
+                                    System.out.println("Core Platform Slave Exception: " + pcInformations);
                                 }
                                 break;
                             }
@@ -96,7 +96,8 @@ public class ServersLoadTest {
                                     corePlatformMaster.add("Ram: " + systemMemory + "  Cpu:" + cpu);
                                 }
                                 catch(Exception e){
-                                    System.out.println("Core Platform Master Exception " + pcInformations);
+                                    System.out.println("Core Platform Master Exception: " + pcInformations);
+                                    corePlatformMaster.add("serverServiceText: " + serverServiceText);
                                 }
                                 break;
                             }
@@ -111,7 +112,7 @@ public class ServersLoadTest {
                             }
 
                             default: {
-                                System.out.println("TestCase switch default: " + serverName + "Error message " + serverServiceText );
+                                System.out.println("TestCase switch default >>> ServerName: " + serverName + " Error message: " + serverServiceText );
 
                             }
                         }
