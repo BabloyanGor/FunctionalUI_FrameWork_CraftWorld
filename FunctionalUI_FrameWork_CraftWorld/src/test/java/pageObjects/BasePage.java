@@ -875,7 +875,7 @@ public class BasePage {
         sheet.setColumnWidth(1, 9000);
         sheet.setColumnWidth(2, 9000);
         sheet.setColumnWidth(3, 9000);
-        sheet.setColumnWidth(4, 9000);
+        sheet.setColumnWidth(4, 1400);
         sheet.setColumnWidth(5, 9000);
         sheet.setColumnWidth(6, 9000);
 

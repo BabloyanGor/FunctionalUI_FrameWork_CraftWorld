@@ -36,7 +36,7 @@ public class ServersLoadTest {
     @Test
     public void test() throws UnirestException, IOException, InterruptedException {
 
-        for (int g = 0; g <50; g++) {
+        for (int g = 0; g <100; g++) {
 
             JSONArray responseArray;
             HttpResponse<String> response = basePage.serverLoad();
@@ -113,6 +113,7 @@ public class ServersLoadTest {
 
                             default: {
                                 System.out.println("TestCase switch default >>> ServerName: " + serverName + " Error message: " + serverServiceText );
+                                corePlatformMaster.add( serverServiceText);
 
                             }
                         }
