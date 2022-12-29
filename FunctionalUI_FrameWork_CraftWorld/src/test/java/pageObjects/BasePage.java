@@ -633,11 +633,10 @@ public class BasePage {
 
 
     public static ArrayList<String> translationMissingLinesCore = new ArrayList<>();
+    public static ArrayList<String> translationTranslatedLinesCore = new ArrayList<>();
 
     public void catchTranslationCore(String languageKey) throws UnirestException, IOException {
-        SoftAssert softAssert = new SoftAssert();
 //        try {
-
 
         String requestTranslationLanguage = baseURL + "/assets/json/translations/" + languageKey + ".json?=" + versionJSCorePlatform();
         BaseTest.logger.info("Request: " + requestTranslationLanguage);
@@ -660,9 +659,9 @@ public class BasePage {
             Object[] TitleKeysEn = EnBody.getObject().keySet().toArray();
 
             JsonNode TranslationLanguageBody = responseTranslationLanguage.getBody();
-            Object[] TitleKeysTranslationLanguage = TranslationLanguageBody.getObject().keySet().toArray();
+            Object[] TitleKeysTranslatedLanguage = TranslationLanguageBody.getObject().keySet().toArray();
 
-            Assert.assertEquals(TitleKeysEn, TitleKeysTranslationLanguage, "Json TitleKeys are not same");   //Compare Json TitleKeys Containing Arrays
+            Assert.assertEquals(TitleKeysEn, TitleKeysTranslatedLanguage, "Json TitleKeys are not same");   //Compare Json TitleKeys Containing Arrays
 
             int sumError = 0;
             int sumTranslation = 0;
@@ -697,11 +696,16 @@ public class BasePage {
                             translationMissingLinesCore.add(missingTranslationTitleKey);
                         }
                     }
+                    else{
+                        String translatedTranslationTitleKey = TitleKey + ":   " + Key  +  ":     " + valueEn + "      /      " + valueTranslationLanguage;
+                        translationTranslatedLinesCore.add(translatedTranslationTitleKey);
+                    }
                 }
             }
             String partner = baseURL.substring(8);
             BaseTest.logger.info("Translations are: "+ sumTranslation + "  Not Translated lines are: " + sumError);
-            writeInExel(translationMissingLinesCore, "/src/test/java/BrokenData/" + readConfig.getTranslationLanguage() + "_MissingTranslationsCorePlatform_" + partner +".xlsx", "MissingTranslations");
+            writeInExel(translationMissingLinesCore, "/src/test/java/TranslationBrokenData/" + readConfig.getTranslationLanguage() + "_MissingTranslationsCorePlatform_" + partner +".xlsx", "MissingTranslations");
+            writeInExel(translationTranslatedLinesCore, "/src/test/java/TranslatedTranslation/" + readConfig.getTranslationLanguage() + "_translatedDataCorePlatform_" + partner +".xlsx", "TranslatedTranslations");
 
             Assert.assertEquals(sumError,0,"Errors are :" + sumError + " of " + sumTranslation);
 
@@ -753,6 +757,7 @@ public class BasePage {
 
     //region <en.json SportsBook>
     public static ArrayList<String> translationMissingLinesSport = new ArrayList<>();
+    public static ArrayList<String> translationTranslatedLinesSport = new ArrayList<>();
 
     public void catchTranslationSport(String languageKey) throws UnirestException, IOException {
         String httpPart = baseURL.substring(0, 8);
@@ -802,11 +807,16 @@ public class BasePage {
                         translationMissingLinesSport.add(missingTranslationTitleKey);
                     }
                 }
+                else{
+                    String translatedTranslationTitleKey =  Key  +  ":     " + valueEn + "      /      " + valueTranslationLanguage;
+                    translationTranslatedLinesSport.add(translatedTranslationTitleKey);
+                }
             }
 
             String partner = baseURL.substring(8);
             BaseTest.logger.info("Translations are: "+ sumTranslation + "  Not Translated lines are: " + sumError);
-            writeInExel(translationMissingLinesSport, "/src/test/java/BrokenData/" + readConfig.getTranslationLanguage() + "_MissingTranslationsSportBook_" + partner +".xlsx", "MissingTranslations");
+            writeInExel(translationMissingLinesSport, "/src/test/java/TranslationBrokenData/" + readConfig.getTranslationLanguage() + "_MissingTranslationsSportBook_" + partner +".xlsx", "MissingTranslations");
+            writeInExel(translationTranslatedLinesSport, "/src/test/java/TranslatedTranslation/" + readConfig.getTranslationLanguage() + "_translatedDataSportBook_" + partner +".xlsx", "TranslatedTranslations");
 
             Assert.assertEquals(sumError,0,"Errors are :" + sumError + " of " + sumTranslation);
 
@@ -875,7 +885,7 @@ public class BasePage {
         sheet.setColumnWidth(1, 9000);
         sheet.setColumnWidth(2, 9000);
         sheet.setColumnWidth(3, 9000);
-        sheet.setColumnWidth(4, 1400);
+        sheet.setColumnWidth(4, 14000);
         sheet.setColumnWidth(5, 9000);
         sheet.setColumnWidth(6, 9000);
 
@@ -979,11 +989,17 @@ public class BasePage {
         XSSFWorkbook workbook = new XSSFWorkbook();
         FileOutputStream file = new FileOutputStream(target);
         XSSFSheet sheet = workbook.createSheet(shitName);
-        sheet.setColumnWidth(0, 1000);
+        sheet.setColumnWidth(0, 14000);
+
         int l = 0;
         for (String err : errorSrcXl) {
-            XSSFRow row = sheet.createRow(l);
-            row.createCell(0).setCellValue(err);
+            try{
+                XSSFRow row = sheet.createRow(l);
+                row.createCell(0).setCellValue(err);
+            }
+          catch (Exception e){
+              System.out.println(e);
+          }
             l++;
         }
         workbook.write(file);

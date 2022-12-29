@@ -97,7 +97,7 @@ public class ServersLoadTest {
                                 }
                                 catch(Exception e){
                                     System.out.println("Core Platform Master Exception: " + pcInformations);
-                                    corePlatformMaster.add("serverServiceText: " + serverServiceText);
+                                    corePlatformMaster.add(i + "serverServiceText: " + serverServiceText);
                                 }
                                 break;
                             }
