@@ -1,1 +1,0 @@
-{"uuid":"be79e678-0fb3-4dde-9d33-e2c2caa489b1","name":"testCases.ServersLoadTest","children":["65bad339-2f0a-41f9-b841-1525ba846e4e"],"befores":[{"name":"logIn","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1671799996197,"stop":1671799996204}],"afters":[],"start":1671799996134,"stop":1671802271803}

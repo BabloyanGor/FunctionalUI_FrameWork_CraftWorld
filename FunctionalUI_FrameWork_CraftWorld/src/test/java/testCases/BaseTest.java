@@ -32,7 +32,7 @@ public class BaseTest extends DriverFactory {
 
     //region <Page Class Instances  >
     public API_ConfigJson APIConfigJson;
-
+    public API_MenusJson APIMenusJson;
 
 
     public CraftWorld_01_Header_Page_LogInUser craftBet_01_header_pageLogInUser;
@@ -91,7 +91,7 @@ public class BaseTest extends DriverFactory {
 
         //region <Page Class Instance Initialization >
         APIConfigJson = PageFactory.initElements(this.driver, API_ConfigJson.class);
-
+        APIMenusJson= PageFactory.initElements(this.driver, API_MenusJson.class);
 
 
 

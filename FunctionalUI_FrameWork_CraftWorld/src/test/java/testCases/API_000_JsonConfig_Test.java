@@ -5,10 +5,10 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 
-public class API_000_JsonConfig extends BaseTest{
+public class API_000_JsonConfig_Test extends BaseTest{
 
 
-    public API_000_JsonConfig() throws AWTException {
+    public API_000_JsonConfig_Test() throws AWTException {
     }
 
 
