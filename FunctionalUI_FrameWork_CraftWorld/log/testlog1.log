@@ -9950,3 +9950,43 @@
 2022-12-28 13:15:14,595 [main] INFO craftBet - Browser closed
 2022-12-28 13:15:14,595 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
 2022-12-28 13:15:14,605 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2023-01-09 12:32:07,950 [main] INFO craftBet - Browser for test will be chrome as chosen
+2023-01-09 12:32:17,554 [main] INFO craftBet - All Page elements are initialized
+2023-01-09 12:32:17,960 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2023-01-09 12:32:18,238 [main] INFO craftBet - Request:  https://bet2win.vip/assets/js/version.js?=QaTest35oKbrHxyyHyqo4
+2023-01-09 12:32:18,609 [main] INFO craftBet - Response: window.VERSION = 876;
+2023-01-09 12:32:18,950 [main] INFO craftBet - Browser closed
+2023-01-09 12:32:18,951 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2023-01-09 12:32:18,992 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2023-01-09 12:33:52,707 [main] INFO craftBet - Browser for test will be chrome as chosen
+2023-01-09 12:33:56,237 [main] INFO craftBet - All Page elements are initialized
+2023-01-09 12:33:56,249 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2023-01-09 12:33:56,519 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest6Z9Bm2gEha3uRTO
+2023-01-09 12:33:56,872 [main] INFO craftBet - Response: window.VERSION = 413;
+2023-01-09 12:33:57,187 [main] INFO craftBet - Browser closed
+2023-01-09 12:33:57,188 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2023-01-09 12:33:57,202 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2023-01-09 13:10:28,320 [main] INFO craftBet - Browser for test will be chrome as chosen
+2023-01-09 13:10:35,474 [main] INFO craftBet - All Page elements are initialized
+2023-01-09 13:10:35,485 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2023-01-09 13:10:35,778 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestqniRJA22q9C44As
+2023-01-09 13:10:36,194 [main] INFO craftBet - Response: window.VERSION = 413;
+2023-01-09 13:10:36,613 [main] INFO craftBet - Browser closed
+2023-01-09 13:10:36,614 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2023-01-09 13:10:36,631 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2023-01-09 13:40:09,536 [main] INFO craftBet - Browser for test will be chrome as chosen
+2023-01-09 13:40:17,026 [main] INFO craftBet - All Page elements are initialized
+2023-01-09 13:40:17,594 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2023-01-09 13:40:17,875 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestfR2EV7nHF40kawF
+2023-01-09 13:40:18,154 [main] INFO craftBet - Response: window.VERSION = 413;
+2023-01-09 13:40:18,631 [main] INFO craftBet - Browser closed
+2023-01-09 13:40:18,632 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2023-01-09 13:40:18,726 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2023-01-09 13:53:32,324 [main] INFO craftBet - Browser for test will be chrome as chosen
+2023-01-09 13:53:37,984 [main] INFO craftBet - All Page elements are initialized
+2023-01-09 13:53:37,998 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2023-01-09 13:53:38,287 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestvqXuSlCdWt0eXPe
+2023-01-09 13:53:38,640 [main] INFO craftBet - Response: window.VERSION = 413;
+2023-01-09 13:53:39,025 [main] INFO craftBet - Browser closed
+2023-01-09 13:53:39,026 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2023-01-09 13:53:39,070 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  

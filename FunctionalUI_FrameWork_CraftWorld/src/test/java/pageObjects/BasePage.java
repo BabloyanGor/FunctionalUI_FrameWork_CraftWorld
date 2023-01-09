@@ -1,6 +1,5 @@
 package pageObjects;
 
-
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
@@ -32,7 +31,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -64,6 +62,87 @@ public class BasePage {
     ReadConfig readConfig = new ReadConfig();
     public String baseURL = readConfig.getBaseURL();
     public String translationLanguage = readConfig.getTranslationLanguage();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public HttpResponse<String> menuListAPI() throws UnirestException {
@@ -212,8 +291,6 @@ public class BasePage {
 
                             String subStyleType = linkInfoJson.get("StyleType").toString();
                             subHeaderPanel1StyleType.add(subStyleType);
-
-
                         }
                     }
                 }
@@ -514,14 +591,15 @@ public class BasePage {
     }
 
 
-    public int versionJSCorePlatform() throws UnirestException {
+    public int versionJSCorePlatform() {
         int version = 0;
         String request = baseURL + "/assets/js/version.js?=" + generateRandomKeyCorePlatform();
-        BaseTest.logger.info("Request:  " + request);
-        Unirest.setTimeouts(0, 0);
-        HttpResponse<String> response = Unirest.get(request)
-                .asString();
+
         try {
+            BaseTest.logger.info("Request:  " + request);
+            Unirest.setTimeouts(0, 0);
+            HttpResponse<String> response = Unirest.get(request)
+                    .asString();
             int statusCod = response.getStatus();
             if (statusCod == 200) {
                 String responseBody = response.getBody();
@@ -545,7 +623,7 @@ public class BasePage {
     }
 
 
-    public int versionJSSportsBook() throws UnirestException {
+    public int versionJSSportsBook() {
         int version = 0;
         String httpPart = baseURL.substring(0, 8);
         String urlPart = baseURL.substring(8);
@@ -615,21 +693,7 @@ public class BasePage {
 
 
 
-
-
     //region <en.json CorePlatform>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     public static ArrayList<String> translationMissingLinesCore = new ArrayList<>();

@@ -1,9 +1,5 @@
 package testCases;
 
-import com.google.gson.Gson;
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.Dimension;
@@ -14,7 +10,6 @@ import utilities.DriverFactory;
 import utilities.ReadConfig;
 
 import java.awt.*;
-import java.io.IOException;
 import java.time.Duration;
 
 
@@ -36,6 +31,9 @@ public class BaseTest extends DriverFactory {
 
 
     //region <Page Class Instances  >
+    public API_ConfigJson APIConfigJson;
+
+
 
     public CraftWorld_01_Header_Page_LogInUser craftBet_01_header_pageLogInUser;
     public CraftWorld_01_Header_Page_LogOutUser craftWorld_01_header_page_logOutUser;
@@ -92,6 +90,11 @@ public class BaseTest extends DriverFactory {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         //region <Page Class Instance Initialization >
+        APIConfigJson = PageFactory.initElements(this.driver, API_ConfigJson.class);
+
+
+
+
         craftBet_01_header_pageLogInUser = PageFactory.initElements(this.driver, CraftWorld_01_Header_Page_LogInUser.class);
         craftWorld_01_header_page_logOutUser = PageFactory.initElements(this.driver, CraftWorld_01_Header_Page_LogOutUser.class);
         craftWorld_02_footer_page = PageFactory.initElements(this.driver, CraftWorld_02_Footer_Page.class);
