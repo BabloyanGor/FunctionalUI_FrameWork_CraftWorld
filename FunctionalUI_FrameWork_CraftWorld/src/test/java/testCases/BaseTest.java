@@ -58,7 +58,7 @@ public class BaseTest extends DriverFactory {
     public CraftWorld_25_MobileApps_Page craftWorld_25_mobileApps_page;
     public CraftWorld_06_Deposit_Page craftWorld_06_deposit_page;
 
-
+    public CraftWorld0_0001_Header_1 craftWorld0_0001_header_1;
 
 
 
@@ -92,6 +92,18 @@ public class BaseTest extends DriverFactory {
         //region <Page Class Instance Initialization >
         APIConfigJson = PageFactory.initElements(this.driver, API_ConfigJson.class);
         APIMenusJson= PageFactory.initElements(this.driver, API_MenusJson.class);
+
+
+        craftWorld0_0001_header_1 = PageFactory.initElements(this.driver, CraftWorld0_0001_Header_1.class);
+
+
+
+
+
+
+
+
+
 
 
 

@@ -6,6 +6,8 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -46,8 +48,12 @@ public class BasePage {
     Robot robot;
     public int i = 1;
 
+    public static Logger logger;
+
 
     public BasePage(WebDriver driver) throws AWTException {
+        logger = Logger.getLogger("craftBet");
+        PropertyConfigurator.configure("Log4j.properties");
         this.driver = driver;
         actions = new Actions(driver);
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5));

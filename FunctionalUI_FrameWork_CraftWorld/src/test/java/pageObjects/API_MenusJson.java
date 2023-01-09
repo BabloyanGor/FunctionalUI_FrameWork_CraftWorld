@@ -126,6 +126,23 @@ public class API_MenusJson extends BasePage{
 
     }
 
+    public void registration(){
+        JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
+        JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
+        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+            String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
+            JSONObject jsonObject = new JSONObject(jsonObjectString);
+            String Type = String.valueOf(jsonObject.get("Type"));
+            if (Type.equals("Registration")){
+                JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
+                System.out.println(i +"-------->  " +  jsonArrayItems);
+            }
+
+
+        }
+
+    }
+
 
     public void footerMenu(){
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
@@ -259,22 +276,6 @@ public class API_MenusJson extends BasePage{
     }
 
 
-    public void registration(){
-        JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
-        JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
-            String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
-            JSONObject jsonObject = new JSONObject(jsonObjectString);
-            String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("Registration")){
-                JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
-            }
-
-
-        }
-
-    }
 
 
 
