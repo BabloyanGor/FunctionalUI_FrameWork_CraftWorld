@@ -6,8 +6,6 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-import pageObjects.BasePage;
 
 import java.awt.*;
 import java.io.IOException;
@@ -34,7 +32,7 @@ public class CraftWorld_TranslationsTest extends BaseTest{
     @Severity(SeverityLevel.NORMAL)
     public void translationTestCore() throws UnirestException, IOException {
 
-        craftWorld0_0001_header_1.catchTranslationCore(readConfig.getTranslationLanguage());
+        craftWorld_0001_header_1.catchTranslationCore(readConfig.getTranslationLanguage());
 
     }
 
@@ -43,7 +41,7 @@ public class CraftWorld_TranslationsTest extends BaseTest{
     @Severity(SeverityLevel.NORMAL)
     public void translationTestSport() throws UnirestException, IOException {
 
-        craftWorld0_0001_header_1.catchTranslationSport(readConfig.getTranslationLanguage());
+        craftWorld_0001_header_1.catchTranslationSport(readConfig.getTranslationLanguage());
     }
 
 

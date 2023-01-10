@@ -199,7 +199,7 @@
 ////    public void SignUpPopUpLogInLinkFunctionality() {
 ////        craftWorld_05_signUp_popUp_page.clickOnLinkLogIn();
 ////        logger.info("LogIn  link was clicked");
-////        Assert.assertEquals(craftWorld_03_login_popUp_page.loginPopUpLogoPresence(), true);
+////        Assert.assertEquals(craftWorld_0000_login_popUp_page.loginPopUpLogoPresence(), true);
 ////    }
 //
 //    @Test(priority = 8, description = "Validate on Sign Up Pop Up Quick/Full Register button functionality")

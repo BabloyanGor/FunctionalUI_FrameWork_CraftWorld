@@ -1,5 +1,6 @@
 package pageObjects;
 
+import com.google.gson.Gson;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import org.json.JSONArray;
@@ -83,8 +84,26 @@ public class API_MenusJson extends BasePage{
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("HeaderPanel1Menu")){
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println("Menus are ------------> "+jsonArrayMenuList.length());
-                System.out.println(i + "-------->  " +  jsonArrayItems);
+                for (int j = 0; j<jsonArrayItems.length(); j++){
+                    String HeaderPanel1MenuItemString = String.valueOf(jsonArrayItems.get(j));
+                    JSONObject jsonObjectHeaderPanel1MenuItemString = new JSONObject(HeaderPanel1MenuItemString);
+                    String Title = String.valueOf(jsonObjectHeaderPanel1MenuItemString.get("Title"));
+
+                    System.out.println("Title: "+ Title);
+                    if (Title.equals("Login Button")){
+                        Gson gson = new Gson();
+                        String HeaderPanel1LoginButtonStyleType = String.valueOf(jsonObjectHeaderPanel1MenuItemString.get("StyleType"));
+                        System.out.println("HeaderPanel1LoginButtonStyleType " + HeaderPanel1LoginButtonStyleType);
+
+//                        String jsonObjectHeaderPanel1LoginButtonStyleType = gson.fromJson(HeaderPanel1LoginButtonStyleType);
+//                        System.out.println("jsonObjectHeaderPanel1LoginButtonStyleType " + jsonObjectHeaderPanel1LoginButtonStyleType);
+//                        JSONObject style = new JSONObject(jsonObjectHeaderPanel1LoginButtonStyleType);
+//                        System.out.println("style " + style);
+//                        String HeaderPanel1LoginButtonStyleTypeStyle = String.valueOf(jsonObjectHeaderPanel1MenuItemString.get("style"));
+//                        System.out.println("HeaderPanel1LoginButtonStyleTypeStyle " + HeaderPanel1LoginButtonStyleTypeStyle);
+                    }
+                }
+
             }
         }
 

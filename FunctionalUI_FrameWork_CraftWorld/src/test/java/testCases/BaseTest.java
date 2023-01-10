@@ -35,17 +35,17 @@ public class BaseTest extends DriverFactory {
     public API_MenusJson APIMenusJson;
 
 
-    public CraftWorld0_0001_Header_1 craftWorld0_0001_header_1;
-    public CraftWorld0_0001_Header_2 craftWorld0_0001_header_2;
+    public CraftWorld_0001_Header_1 craftWorld_0001_header_1;
+    public CraftWorld_0001_Header_2 craftWorld_0001_header_2;
+    public CraftWorld_0000_Login_PopUp_Page craftWorld_0000_login_popUp_page;
 
 
 
 
 
 
-//    public CraftWorld_01_Header_Page_LogInUser craftBet_01_header_pageLogInUser;
-//    public CraftWorld_01_Header_Page_LogOutUser craftWorld_01_header_page_logOutUser;
-//    public CraftWorld_03_Login_PopUp_Page craftWorld_03_login_popUp_page;
+//    public CraftWorld_101_Header_Page_LogInUser craftBet_01_header_pageLogInUser;
+//    public CraftWorld_101_Header_Page_LogOutUser craftWorld_01_header_page_logOutUser;
 //    public CraftWorld_02_Footer_Page craftWorld_02_footer_page;
 //    public CraftWorld_04_PasswordRecovery_Page craftWorld_04_passwordRecovery_page;
 //    public CraftWorld_05_SignUp_PopUp_Page craftWorld_05_signUp_popUp_page;
@@ -82,6 +82,28 @@ public class BaseTest extends DriverFactory {
 
         logger = Logger.getLogger("craftBet");
         PropertyConfigurator.configure("Log4j.properties");
+//        APIConfigJson.configJsonApiJsonParse();
+
+//        APIMenusJson.headerPanel1Menu();
+//        APIMenusJson.headerPanel2Menu();
+//        APIMenusJson.headerGroup1Menu();
+//        APIMenusJson.registration();
+//        APIMenusJson.footerMenu();
+//        APIMenusJson.casinoMenu();
+//        APIMenusJson.newsMenu();
+//        APIMenusJson.accountTabsList();
+//        APIMenusJson.homeMenu();
+//        APIMenusJson.assets();
+//        APIMenusJson.liveCasinoMenu();
+//
+//
+//        APIMenusJson.mobileBottomMenu();
+//        APIMenusJson.mobileFooterMenu();
+//        APIMenusJson.mobileCentralMenu();
+//        APIMenusJson.mobileHomeMenu();
+//        APIMenusJson.mobileHeaderPanel();
+//        APIMenusJson.mobileRightSidebar();
+//        APIMenusJson.mobileMenu();
 
         try {
             super.initDriver(baseURL, browser, isHeadless);
@@ -102,8 +124,9 @@ public class BaseTest extends DriverFactory {
         APIMenusJson= PageFactory.initElements(this.driver, API_MenusJson.class);
 
 
-        craftWorld0_0001_header_1 = PageFactory.initElements(this.driver, CraftWorld0_0001_Header_1.class);
-        craftWorld0_0001_header_2 = PageFactory.initElements(this.driver, CraftWorld0_0001_Header_2.class);
+        craftWorld_0001_header_1 = PageFactory.initElements(this.driver, CraftWorld_0001_Header_1.class);
+        craftWorld_0001_header_2 = PageFactory.initElements(this.driver, CraftWorld_0001_Header_2.class);
+        craftWorld_0000_login_popUp_page = PageFactory.initElements(this.driver, CraftWorld_0000_Login_PopUp_Page.class);
 
 
 
@@ -115,13 +138,12 @@ public class BaseTest extends DriverFactory {
 
 
 
-//        craftBet_01_header_pageLogInUser = PageFactory.initElements(this.driver, CraftWorld_01_Header_Page_LogInUser.class);
-//        craftWorld_01_header_page_logOutUser = PageFactory.initElements(this.driver, CraftWorld_01_Header_Page_LogOutUser.class);
+//        craftBet_01_header_pageLogInUser = PageFactory.initElements(this.driver, CraftWorld_101_Header_Page_LogInUser.class);
+//        craftWorld_01_header_page_logOutUser = PageFactory.initElements(this.driver, CraftWorld_101_Header_Page_LogOutUser.class);
 //        craftWorld_02_footer_page = PageFactory.initElements(this.driver, CraftWorld_02_Footer_Page.class);
 //
 //
 //
-//        craftWorld_03_login_popUp_page = PageFactory.initElements(this.driver, CraftWorld_03_Login_PopUp_Page.class);
 //        craftWorld_04_passwordRecovery_page = PageFactory.initElements(this.driver, CraftWorld_04_PasswordRecovery_Page.class);
 //        craftWorld_05_signUp_popUp_page = PageFactory.initElements(this.driver, CraftWorld_05_SignUp_PopUp_Page.class);
 //        craftWorld_11_sports_page = PageFactory.initElements(this.driver, CraftWorld_11_Sports_Page.class);
@@ -148,8 +170,8 @@ public class BaseTest extends DriverFactory {
         logger.info("All Page elements are initialized");
         //endregion
 
-        craftWorld0_0001_header_1.setItem("lang", language);
-        craftWorld0_0001_header_1.navigateRefresh();
+        craftWorld_0001_header_1.setItem("lang", language);
+        craftWorld_0001_header_1.navigateRefresh();
 //        craftBet_header_page.selectEnglishLanguageFromDropDown();
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started ");
     }

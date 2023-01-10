@@ -36,7 +36,7 @@
 //            craftBet_01_header_pageLogInUser.navigateRefresh();
 //            logger.info("page was refreshed");
 //        } else {
-//            craftWorld_03_login_popUp_page.headerPanel1BottomLinks();
+//            craftWorld_0000_login_popUp_page.headerPanel1BottomLinks();
 //            for (int i = 0; i< BasePage.HeaderPanel1Title.size(); i++){
 //                String title = BasePage.HeaderPanel1Title.get(i);
 //                if (title.equals("Login Button")){
@@ -44,9 +44,9 @@
 //                    if (type.equals("loginBtn_button")){
 //                        craftWorld_01_header_page_logOutUser.clickOnHeader1LoginButton();
 //                    }
-//                    craftWorld_03_login_popUp_page.sendKeysLoginPopUpEmailInputField(username);
-//                    craftWorld_03_login_popUp_page.sendKeysLoginPopUpPasswordInputField(password);
-//                    craftWorld_03_login_popUp_page.clickOnLLoginPopUpLoginButtonOnPopUp();
+//                    craftWorld_0000_login_popUp_page.sendKeysLoginPopUpEmailInputField(username);
+//                    craftWorld_0000_login_popUp_page.sendKeysLoginPopUpPasswordInputField(password);
+//                    craftWorld_0000_login_popUp_page.clickOnLLoginPopUpLoginButtonOnPopUp();
 //                }
 //            }
 //            logger.info("Log In Button was clicked");
