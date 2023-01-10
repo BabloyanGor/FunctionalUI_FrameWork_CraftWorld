@@ -35,30 +35,38 @@ public class BaseTest extends DriverFactory {
     public API_MenusJson APIMenusJson;
 
 
-    public CraftWorld_01_Header_Page_LogInUser craftBet_01_header_pageLogInUser;
-    public CraftWorld_01_Header_Page_LogOutUser craftWorld_01_header_page_logOutUser;
-    public CraftWorld_03_Login_PopUp_Page craftWorld_03_login_popUp_page;
-    public CraftWorld_02_Footer_Page craftWorld_02_footer_page;
-    public CraftWorld_04_PasswordRecovery_Page craftWorld_04_passwordRecovery_page;
-    public CraftWorld_05_SignUp_PopUp_Page craftWorld_05_signUp_popUp_page;
-    public CraftWorld_11_Sports_Page craftWorld_11_sports_page;
-    public CraftWorld_12_Life_Page craftWorld_12_life_page;
-    public CraftWorld_13_AsianSport_Page craftWorld_13_asianSport_page;
-    public CraftWorld_14_VirtualSport_Page craftWorld_14_virtualSport_page;
-    public CraftWorld_15_Casino_Page craftWorld_15_casino_page;
-    public CraftWorld_16_LifeCasino_Page craftWorld_16_lifeCasino_page;
-    public CraftWorld_17_VirtualGames_Page craftWorld_17_virtualGames_page;
-    public CraftWorld_18_SkillGames_Page craftWorld_18_skillGames_page;
-    public CraftWorld_19_Keno_Page craftWorld_19_keno_page;
-    public CraftWorld_20_HighLow_Page craftWorld_20_highLow_page;
-    public CraftWorld_21_Crash_Page craftWorld_21_crash_page;
-    public CraftWorld_22_Lottery_Page craftWorld_22_lottery_page;
-    public CraftWorld_23_Promotions_Page craftWorld_23_promotions_page;
-    public CraftWorld_24_News_Page craftWorld_24_news_page;
-    public CraftWorld_25_MobileApps_Page craftWorld_25_mobileApps_page;
-    public CraftWorld_06_Deposit_Page craftWorld_06_deposit_page;
-
     public CraftWorld0_0001_Header_1 craftWorld0_0001_header_1;
+    public CraftWorld0_0001_Header_2 craftWorld0_0001_header_2;
+
+
+
+
+
+
+//    public CraftWorld_01_Header_Page_LogInUser craftBet_01_header_pageLogInUser;
+//    public CraftWorld_01_Header_Page_LogOutUser craftWorld_01_header_page_logOutUser;
+//    public CraftWorld_03_Login_PopUp_Page craftWorld_03_login_popUp_page;
+//    public CraftWorld_02_Footer_Page craftWorld_02_footer_page;
+//    public CraftWorld_04_PasswordRecovery_Page craftWorld_04_passwordRecovery_page;
+//    public CraftWorld_05_SignUp_PopUp_Page craftWorld_05_signUp_popUp_page;
+//    public CraftWorld_11_Sports_Page craftWorld_11_sports_page;
+//    public CraftWorld_12_Life_Page craftWorld_12_life_page;
+//    public CraftWorld_13_AsianSport_Page craftWorld_13_asianSport_page;
+//    public CraftWorld_14_VirtualSport_Page craftWorld_14_virtualSport_page;
+//    public CraftWorld_15_Casino_Page craftWorld_15_casino_page;
+//    public CraftWorld_16_LifeCasino_Page craftWorld_16_lifeCasino_page;
+//    public CraftWorld_17_VirtualGames_Page craftWorld_17_virtualGames_page;
+//    public CraftWorld_18_SkillGames_Page craftWorld_18_skillGames_page;
+//    public CraftWorld_19_Keno_Page craftWorld_19_keno_page;
+//    public CraftWorld_20_HighLow_Page craftWorld_20_highLow_page;
+//    public CraftWorld_21_Crash_Page craftWorld_21_crash_page;
+//    public CraftWorld_22_Lottery_Page craftWorld_22_lottery_page;
+//    public CraftWorld_23_Promotions_Page craftWorld_23_promotions_page;
+//    public CraftWorld_24_News_Page craftWorld_24_news_page;
+//    public CraftWorld_25_MobileApps_Page craftWorld_25_mobileApps_page;
+//    public CraftWorld_06_Deposit_Page craftWorld_06_deposit_page;
+
+
 
 
 
@@ -95,6 +103,7 @@ public class BaseTest extends DriverFactory {
 
 
         craftWorld0_0001_header_1 = PageFactory.initElements(this.driver, CraftWorld0_0001_Header_1.class);
+        craftWorld0_0001_header_2 = PageFactory.initElements(this.driver, CraftWorld0_0001_Header_2.class);
 
 
 
@@ -106,32 +115,31 @@ public class BaseTest extends DriverFactory {
 
 
 
-
-        craftBet_01_header_pageLogInUser = PageFactory.initElements(this.driver, CraftWorld_01_Header_Page_LogInUser.class);
-        craftWorld_01_header_page_logOutUser = PageFactory.initElements(this.driver, CraftWorld_01_Header_Page_LogOutUser.class);
-        craftWorld_02_footer_page = PageFactory.initElements(this.driver, CraftWorld_02_Footer_Page.class);
-
-
-
-        craftWorld_03_login_popUp_page = PageFactory.initElements(this.driver, CraftWorld_03_Login_PopUp_Page.class);
-        craftWorld_04_passwordRecovery_page = PageFactory.initElements(this.driver, CraftWorld_04_PasswordRecovery_Page.class);
-        craftWorld_05_signUp_popUp_page = PageFactory.initElements(this.driver, CraftWorld_05_SignUp_PopUp_Page.class);
-        craftWorld_11_sports_page = PageFactory.initElements(this.driver, CraftWorld_11_Sports_Page.class);
-        craftWorld_12_life_page = PageFactory.initElements(this.driver, CraftWorld_12_Life_Page.class);
-        craftWorld_13_asianSport_page = PageFactory.initElements(this.driver, CraftWorld_13_AsianSport_Page.class);
-        craftWorld_14_virtualSport_page = PageFactory.initElements(this.driver, CraftWorld_14_VirtualSport_Page.class);
-        craftWorld_15_casino_page = PageFactory.initElements(this.driver, CraftWorld_15_Casino_Page.class);
-        craftWorld_16_lifeCasino_page = PageFactory.initElements(this.driver, CraftWorld_16_LifeCasino_Page.class);
-        craftWorld_17_virtualGames_page = PageFactory.initElements(this.driver, CraftWorld_17_VirtualGames_Page.class);
-        craftWorld_18_skillGames_page = PageFactory.initElements(this.driver, CraftWorld_18_SkillGames_Page.class);
-        craftWorld_19_keno_page = PageFactory.initElements(this.driver, CraftWorld_19_Keno_Page.class);
-        craftWorld_20_highLow_page = PageFactory.initElements(this.driver, CraftWorld_20_HighLow_Page.class);
-        craftWorld_21_crash_page = PageFactory.initElements(this.driver, CraftWorld_21_Crash_Page.class);
-        craftWorld_22_lottery_page = PageFactory.initElements(this.driver, CraftWorld_22_Lottery_Page.class);
-        craftWorld_23_promotions_page = PageFactory.initElements(this.driver, CraftWorld_23_Promotions_Page.class);
-        craftWorld_24_news_page = PageFactory.initElements(this.driver, CraftWorld_24_News_Page.class);
-        craftWorld_25_mobileApps_page = PageFactory.initElements(this.driver, CraftWorld_25_MobileApps_Page.class);
-        craftWorld_06_deposit_page = PageFactory.initElements(this.driver, CraftWorld_06_Deposit_Page.class);
+//        craftBet_01_header_pageLogInUser = PageFactory.initElements(this.driver, CraftWorld_01_Header_Page_LogInUser.class);
+//        craftWorld_01_header_page_logOutUser = PageFactory.initElements(this.driver, CraftWorld_01_Header_Page_LogOutUser.class);
+//        craftWorld_02_footer_page = PageFactory.initElements(this.driver, CraftWorld_02_Footer_Page.class);
+//
+//
+//
+//        craftWorld_03_login_popUp_page = PageFactory.initElements(this.driver, CraftWorld_03_Login_PopUp_Page.class);
+//        craftWorld_04_passwordRecovery_page = PageFactory.initElements(this.driver, CraftWorld_04_PasswordRecovery_Page.class);
+//        craftWorld_05_signUp_popUp_page = PageFactory.initElements(this.driver, CraftWorld_05_SignUp_PopUp_Page.class);
+//        craftWorld_11_sports_page = PageFactory.initElements(this.driver, CraftWorld_11_Sports_Page.class);
+//        craftWorld_12_life_page = PageFactory.initElements(this.driver, CraftWorld_12_Life_Page.class);
+//        craftWorld_13_asianSport_page = PageFactory.initElements(this.driver, CraftWorld_13_AsianSport_Page.class);
+//        craftWorld_14_virtualSport_page = PageFactory.initElements(this.driver, CraftWorld_14_VirtualSport_Page.class);
+//        craftWorld_15_casino_page = PageFactory.initElements(this.driver, CraftWorld_15_Casino_Page.class);
+//        craftWorld_16_lifeCasino_page = PageFactory.initElements(this.driver, CraftWorld_16_LifeCasino_Page.class);
+//        craftWorld_17_virtualGames_page = PageFactory.initElements(this.driver, CraftWorld_17_VirtualGames_Page.class);
+//        craftWorld_18_skillGames_page = PageFactory.initElements(this.driver, CraftWorld_18_SkillGames_Page.class);
+//        craftWorld_19_keno_page = PageFactory.initElements(this.driver, CraftWorld_19_Keno_Page.class);
+//        craftWorld_20_highLow_page = PageFactory.initElements(this.driver, CraftWorld_20_HighLow_Page.class);
+//        craftWorld_21_crash_page = PageFactory.initElements(this.driver, CraftWorld_21_Crash_Page.class);
+//        craftWorld_22_lottery_page = PageFactory.initElements(this.driver, CraftWorld_22_Lottery_Page.class);
+//        craftWorld_23_promotions_page = PageFactory.initElements(this.driver, CraftWorld_23_Promotions_Page.class);
+//        craftWorld_24_news_page = PageFactory.initElements(this.driver, CraftWorld_24_News_Page.class);
+//        craftWorld_25_mobileApps_page = PageFactory.initElements(this.driver, CraftWorld_25_MobileApps_Page.class);
+//        craftWorld_06_deposit_page = PageFactory.initElements(this.driver, CraftWorld_06_Deposit_Page.class);
 
 
 
@@ -140,8 +148,8 @@ public class BaseTest extends DriverFactory {
         logger.info("All Page elements are initialized");
         //endregion
 
-        craftBet_01_header_pageLogInUser.setItem("lang", language);
-        craftBet_01_header_pageLogInUser.navigateRefresh();
+        craftWorld0_0001_header_1.setItem("lang", language);
+        craftWorld0_0001_header_1.navigateRefresh();
 //        craftBet_header_page.selectEnglishLanguageFromDropDown();
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started ");
     }

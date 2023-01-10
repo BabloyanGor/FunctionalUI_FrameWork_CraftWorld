@@ -34,7 +34,7 @@ public class CraftWorld_TranslationsTest extends BaseTest{
     @Severity(SeverityLevel.NORMAL)
     public void translationTestCore() throws UnirestException, IOException {
 
-        craftBet_01_header_pageLogInUser.catchTranslationCore(readConfig.getTranslationLanguage());
+        craftWorld0_0001_header_1.catchTranslationCore(readConfig.getTranslationLanguage());
 
     }
 
@@ -43,7 +43,7 @@ public class CraftWorld_TranslationsTest extends BaseTest{
     @Severity(SeverityLevel.NORMAL)
     public void translationTestSport() throws UnirestException, IOException {
 
-        craftBet_01_header_pageLogInUser.catchTranslationSport(readConfig.getTranslationLanguage());
+        craftWorld0_0001_header_1.catchTranslationSport(readConfig.getTranslationLanguage());
     }
 
 
