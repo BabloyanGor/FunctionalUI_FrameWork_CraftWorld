@@ -6,9 +6,8 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pageObjects.BasePage;
-
 import java.awt.*;
 import java.io.IOException;
 import java.time.Duration;
@@ -16,52 +15,142 @@ import java.time.Duration;
 public class
 
 CraftWorld_01_LoginTest extends BaseTest {
-    int waitTime = 1000;
-
     public CraftWorld_01_LoginTest() throws AWTException {
     }
 
+
+    int waitTime = 1000;
+    int isLoginHasPopUp = 0;   // 1-PopUp , 2-InPage, 0-UnknownType
     @BeforeMethod
     public void goToLoginPopUp() throws UnirestException, IOException {
+        api_menusJson.headerPanel1Menu();
+        if (api_menusJson.loginPageType.equals("loginBtn_button")) {
+            isLoginHasPopUp= 1;
+        }
+        else if (api_menusJson.loginPageType.equals("loginScn_section")) {
+            isLoginHasPopUp= 2;
+        }
+        else{
+            logger.error("Login button has unknown Type");
+        }
 
-        craftWorld_0000_login_popUp_page.headerPanel1BottomLinks();
-        craftWorld_0000_login_popUp_page.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        craftWorld_0000_login_popUp_page.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
-
-
 
 
     @Test(priority = 20, description = "Validate LogIn functionality Positive test")
     @Description("Validate LogIn functionality Positive test")
     @Severity(SeverityLevel.BLOCKER)
-    public void loginFunctionalityTest()  {
-        for (int i = 0; i< BasePage.HeaderPanel1Title.size(); i++){
-            String title = BasePage.HeaderPanel1Title.get(i);
+    public void loginFunctionalityPositiveTest() {
 
-            if (title.equals("Login Button")){
-                String type = BasePage.HeaderPanel1Type.get(i);
+        if (isLoginHasPopUp==1) {                                                       //Check login page have PopUp or Not
+            craftWorld_0001_header_1.clickOnHeader1LoginButton();
+            craftWorld_0000_login_popUp_page.sendKeysLoginEmailInputField(username);
+            craftWorld_0000_login_popUp_page.sendKeysLoginPasswordInputField(password);
+            craftWorld_0000_login_popUp_page.clickOnLLoginButton();
+            craftWorld_0000_login_popUp_page.waitAction(waitTime);
+            craftWorld_0000_login_popUp_page.navigateRefresh();
+            Assert.assertTrue(craftWorld_0001_header_1.balanceIsVisible(),
+                    "Username: [" + username + "] Password: [" + password + "]");
 
-                if (type.equals("loginBtn_button")){
-                    craftWorld_0001_header_1.clickOnHeader1LoginButton();
-                    craftWorld_0000_login_popUp_page.sendKeysLoginPopUpEmailInputField(username);
-                    craftWorld_0000_login_popUp_page.sendKeysLoginPopUpPasswordInputField(password);
-                    craftWorld_0000_login_popUp_page.clickOnLLoginPopUpLoginButtonOnPopUp();
-                    craftWorld_0000_login_popUp_page.waitAction(waitTime);
-                    craftWorld_0000_login_popUp_page.navigateRefresh();
-                    Assert.assertTrue(craftWorld_0001_header_1.balanceIsVisible());
+        } else if (isLoginHasPopUp==2) {
+            craftWorld_0000_login_popUp_page.sendKeysLoginEmailInputField(username);
+            craftWorld_0000_login_popUp_page.sendKeysLoginPasswordInputField(password);
+            craftWorld_0000_login_popUp_page.clickOnLLoginButton();
+            craftWorld_0000_login_popUp_page.waitAction(waitTime);
+            craftWorld_0000_login_popUp_page.navigateRefresh();
+            Assert.assertTrue(craftWorld_0001_header_1.balanceIsVisible(),
+                    "Username: [" + username + "] Password: [" + password + "]");
+        } else{
+            Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
+        }
+    }
 
-                } else if (type.equals("loginScn_section")) {
-                    craftWorld_0000_login_popUp_page.sendKeysLoginPopUpEmailInputField(username);
-                    craftWorld_0000_login_popUp_page.sendKeysLoginPopUpPasswordInputField(password);
-                    craftWorld_0000_login_popUp_page.clickOnLLoginPopUpLoginButtonOnPopUp();
-                    craftWorld_0000_login_popUp_page.waitAction(waitTime);
-                    craftWorld_0000_login_popUp_page.navigateRefresh();
-                    Assert.assertTrue(craftWorld_0001_header_1.balanceIsVisible());
-                }
-                else {
-                    Assert.fail("Unknown Login button style");
-                }
-            }
+
+    @Test(dataProvider = "invalidLoginData", priority = 21, description = "Validate LogIn functionality Negative test")
+    @Description("Validate LogIn functionality Negative test")
+    @Severity(SeverityLevel.BLOCKER)
+    public void loginFunctionalityNegativeTest(String invalidUsername, String invalidPassword) {
+
+        if (isLoginHasPopUp==1) {  //Check login page have PopUp or Not
+            craftWorld_0001_header_1.clickOnHeader1LoginButton();
+            craftWorld_0000_login_popUp_page.sendKeysLoginEmailInputField(invalidUsername);
+            craftWorld_0000_login_popUp_page.sendKeysLoginPasswordInputField(invalidPassword);
+            craftWorld_0000_login_popUp_page.clickOnLLoginButton();
+            craftWorld_0000_login_popUp_page.waitAction(2500);
+            Assert.assertTrue(craftWorld_0000_login_popUp_page.LoginErrorMessageTextIsNotEmpty(),
+                    "Error Message: " + craftWorld_0000_login_popUp_page.loginErrorMessageGetText());
+
+        } else if (isLoginHasPopUp==2) {
+            craftWorld_0000_login_popUp_page.sendKeysLoginEmailInputField(invalidUsername);
+            craftWorld_0000_login_popUp_page.sendKeysLoginPasswordInputField(invalidPassword);
+            craftWorld_0000_login_popUp_page.clickOnLLoginButton();
+            craftWorld_0000_login_popUp_page.waitAction(2500);
+            Assert.assertTrue(craftWorld_0000_login_popUp_page.LoginErrorMessageTextIsNotEmpty(),
+                    "Error Message: " + craftWorld_0000_login_popUp_page.loginErrorMessageGetText());
+        } else{
+            Assert.fail("Unknown Login button style");
+        }
+        craftWorld_0000_login_popUp_page.waitAction(5000);
+    }
+
+
+    @DataProvider(name = "invalidLoginData")
+    Object[][] invalidLoginData()  {
+        String[][] arr = {{username+"a",password},{username,password+"a"},{"1","1"},{username,password+"   "},{username,"   "+password}};
+        return arr;
+    }
+
+
+
+    @Test(priority = 22, description = "Validate forgot password link functionality")
+    @Description("Validate forgot password link functionality")
+    @Severity(SeverityLevel.BLOCKER)
+    public void ForgotPasswordLinkTest() {
+
+        if (isLoginHasPopUp==1) {
+            craftWorld_0001_header_1.clickOnHeader1LoginButton();
+            craftWorld_0000_login_popUp_page.clickLoginForgotPasswordLink();
+            craftWorld_0000_login_popUp_page.waitAction(waitTime);
+            String url = craftWorld_0000_login_popUp_page.getUrl();
+            Assert.assertEquals(  url , baseURL+"/forgot-password",
+                    "Forgot Password Url: " + url);
+
+        } else if (isLoginHasPopUp==2) {
+            craftWorld_0000_login_popUp_page.clickLoginForgotPasswordLink();
+            craftWorld_0000_login_popUp_page.waitAction(waitTime);
+            String url = craftWorld_0000_login_popUp_page.getUrl();
+            Assert.assertEquals(  url , baseURL+"/forgot-password",
+                    "Forgot Password Url: " + url);
+        } else{
+            Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
+        }
+    }
+
+
+    @Test(priority = 24, description = "Validate password type attribute")
+    @Description("Validate password type attribute")
+    @Severity(SeverityLevel.BLOCKER)
+    public void passwordTypeAttributesCheck() {
+
+        if (isLoginHasPopUp==1) {
+            craftWorld_0001_header_1.clickOnHeader1LoginButton();
+            craftWorld_0000_login_popUp_page.waitAction(waitTime);
+            String passwordTypeAttribute = craftWorld_0000_login_popUp_page.getAttributeTypePasswordInput();
+
+
+            String url = craftWorld_0000_login_popUp_page.getUrl();
+            Assert.assertEquals(  url , baseURL+"/forgot-password",
+                    "Forgot Password Url: " + url);
+
+        } else if (isLoginHasPopUp==2) {
+            craftWorld_0000_login_popUp_page.clickLoginForgotPasswordLink();
+            craftWorld_0000_login_popUp_page.waitAction(waitTime);
+            String url = craftWorld_0000_login_popUp_page.getUrl();
+            Assert.assertEquals(  url , baseURL+"/forgot-password",
+                    "Forgot Password Url: " + url);
+        } else{
+            Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
         }
     }
 
@@ -70,9 +159,25 @@ CraftWorld_01_LoginTest extends BaseTest {
 
 
 
-
-
-
-
-
 }
+
+
+//    @DataProvider(name = "invalidLoginData")
+//    Object[][] invalidLoginData() throws IOException {
+//        String invalidData = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\InvalidData.xlsx";
+//        FileInputStream file = new FileInputStream(invalidData);
+//        XSSFWorkbook workbook = new XSSFWorkbook(file);
+//        XSSFSheet sheet = workbook.getSheet("SignUpQuickInvalidEmail");
+//        //XSSFSheet sheet = workbook.getSheetAt(0);
+//        int numberOfRow = sheet.getLastRowNum();
+//        int numberOfCol = sheet.getRow(0).getLastCellNum();
+//
+//        String[][] arr = new String[numberOfRow][numberOfCol];
+//        for (int i = 1; i <= numberOfRow; i++) {
+//            for (int j = 0; j < numberOfCol; j++) {
+//                arr[i - 1][j] = sheet.getRow(i).getCell(j).toString();//1 0 0
+//            }
+//        }
+//        file.close();
+//        return arr;
+//    }

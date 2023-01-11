@@ -31,8 +31,8 @@ public class BaseTest extends DriverFactory {
 
 
     //region <Page Class Instances  >
-    public API_ConfigJson APIConfigJson;
-    public API_MenusJson APIMenusJson;
+    public API_ConfigJson api_configJson;
+    public API_MenusJson api_menusJson;
 
 
     public CraftWorld_0001_Header_1 craftWorld_0001_header_1;
@@ -77,7 +77,7 @@ public class BaseTest extends DriverFactory {
     public BaseTest() throws AWTException {
     }
 
-    @BeforeClass
+    @BeforeMethod
     public void setup()  {
 
         logger = Logger.getLogger("craftBet");
@@ -120,8 +120,8 @@ public class BaseTest extends DriverFactory {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         //region <Page Class Instance Initialization >
-        APIConfigJson = PageFactory.initElements(this.driver, API_ConfigJson.class);
-        APIMenusJson= PageFactory.initElements(this.driver, API_MenusJson.class);
+        api_configJson = PageFactory.initElements(this.driver, API_ConfigJson.class);
+        api_menusJson= PageFactory.initElements(this.driver, API_MenusJson.class);
 
 
         craftWorld_0001_header_1 = PageFactory.initElements(this.driver, CraftWorld_0001_Header_1.class);
@@ -176,7 +176,7 @@ public class BaseTest extends DriverFactory {
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started ");
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
         try {
             this.driver.quit();

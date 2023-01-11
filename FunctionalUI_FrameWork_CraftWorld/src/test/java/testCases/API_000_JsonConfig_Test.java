@@ -15,7 +15,7 @@ public class API_000_JsonConfig_Test extends BaseTest{
 
     @Test
     public void test() throws UnirestException {
-        APIConfigJson.configJsonApiJsonParse();
+        api_configJson.configJsonApiJsonParse();
 
 
 

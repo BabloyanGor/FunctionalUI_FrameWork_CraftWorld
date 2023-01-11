@@ -15,111 +15,256 @@ public class CraftWorld_0000_Login_PopUp_Page extends BasePage {
         basePage = new BasePage(driver);
     }
 
-    public String getCurrentUrl() {
-        return basePage.getUrl();
-    }
-    public void goToUrl() {
-         basePage.navigateToUrl("https://craftbet.com/home");
-    }
-
 
     @FindBy(xpath = "//div[contains (@class, 'email')]//input")
     @CacheLookup
-    WebElement loginPopUpEmailInputField;
-    public boolean isVisibleLoginPopUpEmailInputField(){
-       return waitElementToBeVisibleBoolean(loginPopUpEmailInputField);
-    }
-    public void sendKeysLoginPopUpEmailInputField(String keys){
-        try{
-            sendKeysIfElementVisible(loginPopUpEmailInputField,keys);
-        }
-        catch(Exception e){
+    WebElement loginEmailInputField;
 
+    public boolean isVisibleLoginPopUpEmailInputField() {
+        try {
+            return waitElementToBeVisibleBoolean(loginEmailInputField);
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
+
+    public void sendKeysLoginEmailInputField(String keys) {
+        try {
+            sendKeysIfElementVisible(loginEmailInputField, keys);
+        } catch (Exception e) {
+            logger.error("sendKeysLoginEmailInputField(String keys) method has an Exception: " + e);
         }
     }
-    public String getAttributePlaceHolderLoginPopUpEmailInputField(){
-        try{
-           return getAttribute(loginPopUpEmailInputField,"placeholder");
+
+    public String getAttributePlaceHolderLoginEmailInputField() {
+        try {
+            return getAttribute(loginEmailInputField, "placeholder");
+        } catch (Exception e) {
+            logger.error("Login Email field: There is no placeholder attribute: getAttributePlaceHolderLoginEmailInputField()" + e);
+            return "Login Email field: There is no placeholder attribute";
         }
-        catch(Exception e){
-            return "There is no placeholder attribute";
+    }
+
+    public String getAttributeTypeEmailInput() {
+        try {
+            return basePage.getAttribute(loginEmailInputField, "type");
+        } catch (Exception e) {
+            logger.error("Login Email field: There is no type attribute: getAttributeTypeEmailInput()" + e);
+            return "Login Email field: There is no type attribute";
         }
     }
 
 
     @FindBy(xpath = "//div[contains (@class, 'password')]//input")
     @CacheLookup
-    WebElement loginPopUpPasswordInputField;
-    public boolean isVisibleLoginPopUpPasswordInputField(){
-        return waitElementToBeVisibleBoolean(loginPopUpPasswordInputField);
-    }
-    public void sendKeysLoginPopUpPasswordInputField(String keys){
-        try{
-            sendKeysIfElementVisible(loginPopUpPasswordInputField,keys);
-        }
-        catch(Exception e){
+    WebElement loginPasswordInputField;
 
+    public boolean isVisibleLoginPasswordInputField() {
+        try {
+            return waitElementToBeVisibleBoolean(loginPasswordInputField);
+        } catch (Exception e) {
+            return false;
         }
     }
-    public String getAttributePlaceHolderLoginPopUpPasswordInputField(){
-        try{
-            return getAttribute(loginPopUpPasswordInputField,"placeholder");
+
+    public void sendKeysLoginPasswordInputField(String keys) {
+        try {
+            sendKeysIfElementVisible(loginPasswordInputField, keys);
+        } catch (Exception e) {
+            logger.error("sendKeysLoginPasswordInputField(String keys) method has an Exception: " + e);
         }
-        catch(Exception e){
+    }
+
+    public String getAttributePlaceHolderLoginPasswordInputField() {
+        try {
+            return getAttribute(loginPasswordInputField, "placeholder");
+        } catch (Exception e) {
+            logger.error("Login Email field: There is no placeholder attribute: getAttributePlaceHolderLoginPasswordInputField()" + e);
             return "There is no placeholder attribute";
+        }
+    }
+
+    public String getAttributeTypePasswordInput() {
+        try {
+            return basePage.getAttribute(loginPasswordInputField, "type");
+        } catch (Exception e) {
+            logger.error("Login Password field: There is no type attribute: getAttributeTypePasswordInput()" + e);
+            return "Login Password field: There is no type attribute";
         }
     }
 
 
     @FindBy(xpath = "//button[contains (@class, 'login_btn')]")
     @CacheLookup
-    WebElement loginPopUpLoginButtonOnPopUp;
-    public void clickOnLLoginPopUpLoginButtonOnPopUp() {
-        try{
-            basePage.waitElementToBeVisible(loginPopUpLoginButtonOnPopUp);
-            basePage.clickOnElementIfClickable(loginPopUpLoginButtonOnPopUp);
+    WebElement LoginButton;
+
+    public void clickOnLLoginButton() {
+        try {
+            basePage.waitElementToBeVisible(LoginButton);
+            basePage.clickOnElementIfClickable(LoginButton);
+        } catch (Exception e) {
+            logger.error("clickOnLLoginButton()  method has an Exception: " + e);
+
         }
-        catch(Exception e){
+    }
+
+    public void clickOnLoginButtonJS() {
+        try {
+            basePage.waitElementToBeVisible(LoginButton);
+            basePage.javaScriptClick(LoginButton);
+        } catch (Exception e) {
+            logger.error("clickOnLoginButtonJS() method has an Exception: " + e);
+
+        }
+    }
+
+
+    @FindBy(xpath = "//*[@class='login-title']")
+    @CacheLookup
+    WebElement loginPopUpHeader;
+
+    public String getLoginPopUpHeader() {
+        try {
+            return basePage.getText(loginPopUpHeader);
+        } catch (Exception e) {
+            logger.error("Login Header : There is no Header element:getLoginPopUpHeader()" + e);
+            return "Login Header : There is no Header element:getLoginPopUpHeader()" + e;
+        }
+    }
+
+    @FindBy(xpath = "//*[@class='icon-close-modal']")
+    @CacheLookup
+    WebElement loginPopUpCloseButton;
+
+    public boolean checkLoginPopUpCloseButtonVisibility() {
+        try {
+            basePage.waitElementToBeVisible(loginPopUpCloseButton);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void clickOnLoginPopUpCloseButton() {
+        try {
+            basePage.waitElementToBeVisible(loginPopUpCloseButton);
+            basePage.clickOnElementIfClickable(loginPopUpCloseButton);
+        } catch (Exception e) {
+            logger.error("clickOnLoginPopUpCloseButton() method has an Exception: " + e);
+        }
+    }
+
+    @FindBy(xpath = "//img[@class='login-logo']")
+    @CacheLookup
+    WebElement loginPopUpLogo;
+
+    public boolean loginPopUpLogoPresence() {
+        try {
+            return basePage.waitElementToBeVisibleBoolean(loginPopUpLogo);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
+    @FindBy(xpath = "//span[@class='icon-eye-password-close']")
+    @CacheLookup
+    WebElement loginEyeShowPassword;
+
+    public boolean checkLoginEyeButtonVisibility() {
+        try {
+            basePage.waitElementToBeVisible(loginEyeShowPassword);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void clickLoginEyeShowPassword() {
+        try {
+            basePage.waitElementToBeVisible(loginEyeShowPassword);
+            basePage.clickOnElementIfClickable(loginEyeShowPassword);
+        } catch (Exception e) {
+            logger.error("clickLoginPopUpEyeShowPassword() method has an Exception: " + e);
+        }
+    }
+
+
+    @FindBy(xpath = "//a[@class='forgot_password login-section-forgot_password']")
+    @CacheLookup
+    WebElement loginForgotPasswordLink;
+
+    public boolean checkLoginForgotPasswordLinkVisibility() {
+        try {
+            basePage.waitElementToBeVisible(loginForgotPasswordLink);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void clickLoginForgotPasswordLink() {
+        try {
+            basePage.waitElementToBeVisible(loginForgotPasswordLink);
+            basePage.clickOnElementIfClickable(loginForgotPasswordLink);
+        } catch (Exception e) {
+            logger.error("clickLoginPopUpForgotPassword() method has an Exception: " + e);
+
+        }
+    }
+
+    @FindBy(xpath = "//div[@class='login_PSection_redirect']//child::a")
+    @CacheLookup
+    WebElement loginPopUpSignUpLink;
+
+    public boolean checkLoginPopUpSignUpLinkVisibility() {
+        try {
+            basePage.waitElementToBeVisible(loginPopUpSignUpLink);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void clickLoginPopUpSignUpLink() {
+        try {
+            basePage.waitElementToBeVisible(loginPopUpSignUpLink);
+            basePage.clickOnElementIfClickable(loginPopUpSignUpLink);
+        } catch (Exception e) {
+            logger.error("clickLoginPopUpSignUpLink() method has an Exception: " + e);
+
+        }
+    }
+
+    @FindBy(xpath = "//*[@class='error_message']")
+    @CacheLookup
+    WebElement loginErrorMessage;
+
+    public String loginErrorMessageGetText() {
+        try {
+            return basePage.getText(loginErrorMessage);
+        } catch (Exception e) {
+            return "There is no loginErrorMessage element";
+        }
+    }
+
+    public boolean LoginErrorMessageTextIsNotEmpty() {
+        try {
+            basePage.waitElementToBeVisible(loginErrorMessage);
+            if (basePage.getText(loginErrorMessage).isEmpty()) {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (Exception e) {
+            logger.error("checkLoginErrorMessageVisibility() method has an Exception: " + e);
+            return false;
         }
     }
 
 
 
-
-
-
-
-
-
-
-
-//    @FindBy(xpath = "//*[@class='login-title']")
-//    @CacheLookup
-//    WebElement loginPopUpHeader;
-//    @FindBy(xpath = "//*[@class='icon-close-modal']")
-//    @CacheLookup
-//    WebElement loginPopUpCloseButton;
-//    @FindBy(xpath = "//img[@class='login-logo']")
-//    @CacheLookup
-//    WebElement loginPopUpLogo;
-//    @FindBy(xpath = "//div[@class='login-section_field form_field distans-right email']//child::span")
-//    @CacheLookup
-//    WebElement loginPopUpEmailOrUsernameLabel;
-//    @FindBy(xpath = "//*[@name='username']")
-//    @CacheLookup
-//    WebElement loginPopUpEmailOrUsernameInput;
-//    @FindBy(xpath = "//input[@formcontrolname='Password']//following::span[@class='floating-label']")
-//    @CacheLookup
-//    WebElement loginPopUpPasswordLabel;
-//    @FindBy(xpath = "//input[@formcontrolname='Password']")
-//    @CacheLookup
-//    WebElement loginPopUpPasswordInput;
-//    @FindBy(xpath = "//span[@class='icon-eye-password-close']")
-//    @CacheLookup
-//    WebElement loginPopUpEyeShowPassword;
-//    @FindBy(xpath = "//a[@class='forgot_password login-section-forgot_password']")
-//    @CacheLookup
-//    WebElement loginPopUpForgotPassword;
 //    @FindBy(xpath = "//input[@id='remeberMe']")
 //    @CacheLookup
 //    WebElement loginPopUpRememberMeCheckbox;
@@ -141,142 +286,17 @@ public class CraftWorld_0000_Login_PopUp_Page extends BasePage {
 //    @FindBy(xpath = "/html/body/app-root/simple-modal-holder/simple-modal-wrapper/div/app-app-confirm/div/div[2]/div/app-login/div/form/ul/li[4]")
 //    @CacheLookup
 //    WebElement loginPopUpYouCanSignUpWithInstagram;
-////    @FindBy(xpath = "//button[@class='craft_btn login_btn -btn']")
-//    @FindBy(xpath = "//button[contains (@class, 'craft_btn login_btn')]")
-//    @CacheLookup
-//    WebElement loginPopUpLogInButton;
+
 //    @FindBy(xpath = "//*[@class = 'login_PSection_redirect']//child::div")
 //    @CacheLookup
 //    WebElement loginPopUpDoNotHaveAccountLabel;
-//    @FindBy(xpath = "//div[@class='login_PSection_redirect']//child::a")
-//    @CacheLookup
-//    WebElement loginPopUpSignUpLink;
+
+
 //    @FindBy(xpath = "//span[@class='login-safety-text']")
 //    @CacheLookup
 //    WebElement loginPopUpSaveAndSecureLabel;
-//    @FindBy(xpath = "//*[@class='error_message']")
-//    @CacheLookup
-//    WebElement loginPopUpErrorMessage;
-//
-//
-//    public String getLoginPopUpHeader() {
-//        try{
-//            return basePage.getText(loginPopUpHeader);
-//        }
-//        catch(Exception e){
-//            return "There is no loginPopUpHeader element";
-//        }
-//    }
-//
-//    public void clickOnLoginPopUpCloseButton() {
-//        try{
-//            basePage.waitElementToBeVisible(loginPopUpCloseButton);
-//            basePage.clickOnElementIfClickable(loginPopUpCloseButton);
-//        }
-//        catch(Exception e){
-//        }
-//    }
-//    public boolean loginPopUpLogoPresence() {
-//        try {
-//            basePage.waitElementToBeVisible(loginPopUpLogo);
-//            return true;
-//        } catch (Exception e) {
-//            return false;
-//        }
-//    }
-//    public String getLoginPopUpEmailOrUsernameLabel() {
-//        try{
-//            return basePage.getText(loginPopUpEmailOrUsernameLabel);
-//        }
-//        catch(Exception e){
-//            return "There is no loginPopUpEmailOrUsernameLabel element";
-//        }
-//    }
-//
-//    public void loginPopUpEmailOrUsernameSendKeys(String username) {
-//        try{
-//            basePage.sendKeysIfElementVisible(loginPopUpEmailOrUsernameInput, username);
-//        }
-//        catch(Exception e){
-//
-//        }
-//    }
-//    public String getLoginPopUpPasswordLabel() {
-//        try{
-//            return basePage.getText(loginPopUpPasswordLabel);
-//        }
-//        catch(Exception e){
-//            return "There is no loginPopUpPasswordLabel element";
-//        }
-//
-//    }
-//
-//    public void loginPopUpPasswordSendKeys(String password) {
-//        try{
-//            basePage.sendKeysIfElementVisible(loginPopUpPasswordInput, password);
-//        }
-//        catch(Exception e){
-//
-//        }
-//    }
-//
-//    public WebElement getLoginPopUpPasswordInput() {
-//        return loginPopUpPasswordInput;
-//    }
-//
-//
-//
-//
-//
-//    public String getPasswordInputTypeAttribute() {
-//        try{
-//            return basePage.getAttribute(loginPopUpPasswordInput, "type");
-//        }
-//        catch(Exception e){
-//            return "There is no type attribute";
-//        }
-//    }
-//
-//    public String loginPopUpPasswordGetText() {
-//        try{
-//            return basePage.getText(loginPopUpPasswordInput);
-//        }
-//        catch(Exception e){
-//            return "There is no loginPopUpPasswordInput element";
-//        }
-//
-//    }
-//
-//
-//    public void clickLoginPopUpEyeShowPassword() {
-//        try{
-//            basePage.waitElementToBeVisible(loginPopUpEyeShowPassword);
-//            basePage.clickOnElementIfClickable(loginPopUpEyeShowPassword);
-//        }
-//        catch(Exception e){
-//        }
-//    }
-//
-//
-//    public void clickLoginPopUpForgotPassword() {
-//        try{
-//            basePage.waitElementToBeVisible(loginPopUpForgotPassword);
-//            basePage.clickOnElementIfClickable(loginPopUpForgotPassword);
-//        }
-//        catch(Exception e){
-//        }
-//    }
-//
-//
-//    public void clickLoginPopUpRememberMeCheckbox() {
-//        try{
-//            basePage.waitElementToBeVisible(loginPopUpRememberMeCheckbox);
-//            basePage.clickOnElementIfClickable(loginPopUpRememberMeCheckbox);
-//        }
-//        catch(Exception e){
-//        }
-//    }
-//
+
+
 //    public boolean loginPopUpRememberMeCheckboxIsSelected() {
 //        try{
 //            basePage.waitElementToBeVisible(loginPopUpRememberMeCheckbox);
@@ -414,15 +434,6 @@ public class CraftWorld_0000_Login_PopUp_Page extends BasePage {
 //            return "There is no loginPopUpSaveAndSecureLabel element";
 //        }
 //    }
-//
-//    public String loginPopUpErrorMessageGetText() {
-//        try{
-//            return basePage.getText(loginPopUpErrorMessage);
-//        }
-//        catch(Exception e){
-//            return "There is no loginPopUpErrorMessage element";
-//        }
-//    }
-//
+
 
 }

@@ -16,7 +16,7 @@ public class API_001_JsonMenus_Test extends BaseTest{
     @Test
     public void test() {
 
-        APIMenusJson.headerPanel1Menu();
+        api_menusJson.headerPanel1Menu();
 //        APIMenusJson.headerPanel2Menu();
 //        APIMenusJson.headerGroup1Menu();
 //        APIMenusJson.registration();

@@ -1,6 +1,7 @@
 package pageObjects;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import org.json.JSONArray;
@@ -9,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
 
-public class API_MenusJson extends BasePage{
+public class API_MenusJson extends BasePage {
 
     private final BasePage basePage;
 
@@ -19,14 +20,14 @@ public class API_MenusJson extends BasePage{
     }
 
 
-    private String  MenusJsonApi() {
-        try{
+    private String MenusJsonApi() {
+        try {
             int statusCod;
             String menusJsonApiBody;
             HttpResponse<String> responseConfigJson;
 
             Unirest.setTimeouts(0, 0);
-            responseConfigJson = Unirest.get(baseURL+"/assets/json/menu.json?="+versionJSCorePlatform())
+            responseConfigJson = Unirest.get(baseURL + "/assets/json/menu.json?=" + versionJSCorePlatform())
                     .header("content-type", "application/json")
                     .asString();
 
@@ -37,20 +38,19 @@ public class API_MenusJson extends BasePage{
 
             if (statusCod != 200) {
                 Unirest.setTimeouts(0, 0);
-                responseConfigJson = Unirest.get(baseURL+"/assets/json/menu.json?="+versionJSCorePlatform())
+                responseConfigJson = Unirest.get(baseURL + "/assets/json/menu.json?=" + versionJSCorePlatform())
                         .header("content-type", "application/json")
                         .asString();
                 menusJsonApiBody = responseConfigJson.getBody();
             }
             return menusJsonApiBody;
-        }
-        catch(Exception e){
-            try{
+        } catch (Exception e) {
+            try {
                 int statusCod;
                 String menusJsonApiBody;
                 HttpResponse<String> responseConfigJson;
                 Unirest.setTimeouts(0, 0);
-                responseConfigJson = Unirest.get(baseURL+"/assets/json/menu.json?="+versionJSCorePlatform())
+                responseConfigJson = Unirest.get(baseURL + "/assets/json/menu.json?=" + versionJSCorePlatform())
                         .header("content-type", "application/json")
                         .asString();
                 statusCod = responseConfigJson.getStatus();
@@ -59,14 +59,13 @@ public class API_MenusJson extends BasePage{
 
                 if (statusCod != 200) {
                     Unirest.setTimeouts(0, 0);
-                    responseConfigJson = Unirest.get(baseURL+"/assets/json/menu.json?="+versionJSCorePlatform())
+                    responseConfigJson = Unirest.get(baseURL + "/assets/json/menu.json?=" + versionJSCorePlatform())
                             .header("content-type", "application/json")
                             .asString();
                     menusJsonApiBody = responseConfigJson.getBody();
                 }
                 return menusJsonApiBody;
-            }
-            catch(Exception k){
+            } catch (Exception k) {
                 System.out.println("menusJsonApiBody call has exception: " + k);
                 return "APIMenusJsonApi API call has exception: " + k;
 
@@ -75,50 +74,42 @@ public class API_MenusJson extends BasePage{
     }
 
 
-    public void headerPanel1Menu(){
+    public String loginPageStyle = null;
+    public String loginPageType=null;
+    public void headerPanel1Menu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("HeaderPanel1Menu")){
+            if (Type.equals("HeaderPanel1Menu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                for (int j = 0; j<jsonArrayItems.length(); j++){
+                for (int j = 0; j < jsonArrayItems.length(); j++) {
                     String HeaderPanel1MenuItemString = String.valueOf(jsonArrayItems.get(j));
                     JSONObject jsonObjectHeaderPanel1MenuItemString = new JSONObject(HeaderPanel1MenuItemString);
                     String Title = String.valueOf(jsonObjectHeaderPanel1MenuItemString.get("Title"));
 
-                    System.out.println("Title: "+ Title);
-                    if (Title.equals("Login Button")){
-                        Gson gson = new Gson();
-                        String HeaderPanel1LoginButtonStyleType = String.valueOf(jsonObjectHeaderPanel1MenuItemString.get("StyleType"));
-                        System.out.println("HeaderPanel1LoginButtonStyleType " + HeaderPanel1LoginButtonStyleType);
-
-//                        String jsonObjectHeaderPanel1LoginButtonStyleType = gson.fromJson(HeaderPanel1LoginButtonStyleType);
-//                        System.out.println("jsonObjectHeaderPanel1LoginButtonStyleType " + jsonObjectHeaderPanel1LoginButtonStyleType);
-//                        JSONObject style = new JSONObject(jsonObjectHeaderPanel1LoginButtonStyleType);
-//                        System.out.println("style " + style);
-//                        String HeaderPanel1LoginButtonStyleTypeStyle = String.valueOf(jsonObjectHeaderPanel1MenuItemString.get("style"));
-//                        System.out.println("HeaderPanel1LoginButtonStyleTypeStyle " + HeaderPanel1LoginButtonStyleTypeStyle);
+                    if (Title.equals("Login Button")) {
+                        loginPageStyle = String.valueOf(jsonObjectHeaderPanel1MenuItemString.get("StyleType"));
+                        loginPageType = String.valueOf(jsonObjectHeaderPanel1MenuItemString.get("Type"));
+//
                     }
                 }
-
             }
         }
-
     }
 
-    public void headerPanel2Menu(){
+    public void headerPanel2Menu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("HeaderPanel2Menu")){
+            if (Type.equals("HeaderPanel2Menu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -127,17 +118,16 @@ public class API_MenusJson extends BasePage{
     }
 
 
-
-    public void headerGroup1Menu(){
+    public void headerGroup1Menu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("HeaderGroup1Menu")){
+            if (Type.equals("HeaderGroup1Menu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -145,16 +135,16 @@ public class API_MenusJson extends BasePage{
 
     }
 
-    public void registration(){
+    public void registration() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("Registration")){
+            if (Type.equals("Registration")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -163,16 +153,16 @@ public class API_MenusJson extends BasePage{
     }
 
 
-    public void footerMenu(){
+    public void footerMenu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("FooterMenu")){
+            if (Type.equals("FooterMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -181,17 +171,16 @@ public class API_MenusJson extends BasePage{
     }
 
 
-
-    public void casinoMenu(){
+    public void casinoMenu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("CasinoMenu")){
+            if (Type.equals("CasinoMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -200,17 +189,16 @@ public class API_MenusJson extends BasePage{
     }
 
 
-
-    public void newsMenu(){
+    public void newsMenu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("NewsMenu")){
+            if (Type.equals("NewsMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -219,19 +207,16 @@ public class API_MenusJson extends BasePage{
     }
 
 
-
-
-
-    public void accountTabsList(){
+    public void accountTabsList() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("AccountTabsList")){
+            if (Type.equals("AccountTabsList")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -240,17 +225,16 @@ public class API_MenusJson extends BasePage{
     }
 
 
-
-    public void homeMenu(){
+    public void homeMenu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("HomeMenu")){
+            if (Type.equals("HomeMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -259,16 +243,16 @@ public class API_MenusJson extends BasePage{
     }
 
 
-    public void assets(){
+    public void assets() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("Assets")){
+            if (Type.equals("Assets")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -277,40 +261,37 @@ public class API_MenusJson extends BasePage{
     }
 
 
-    public void liveCasinoMenu(){
+    public void liveCasinoMenu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("LiveCasinoMenu")){
+            if (Type.equals("LiveCasinoMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
         }
 
     }
-
-
-
 
 
     ///////////////////////////////////////////////////////   Mobile_Part   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
-    public void mobileRightSidebar(){
+    public void mobileRightSidebar() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("MobileRightSidebar")){
+            if (Type.equals("MobileRightSidebar")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -318,16 +299,16 @@ public class API_MenusJson extends BasePage{
 
     }
 
-    public void mobileFooterMenu(){
+    public void mobileFooterMenu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("MobileFooterMenu")){
+            if (Type.equals("MobileFooterMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -335,16 +316,16 @@ public class API_MenusJson extends BasePage{
 
     }
 
-    public void mobileHomeMenu(){
+    public void mobileHomeMenu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("MobileHomeMenu")){
+            if (Type.equals("MobileHomeMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -352,16 +333,16 @@ public class API_MenusJson extends BasePage{
 
     }
 
-    public void mobileHeaderPanel(){
+    public void mobileHeaderPanel() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("MobileHeaderPanel")){
+            if (Type.equals("MobileHeaderPanel")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -369,16 +350,16 @@ public class API_MenusJson extends BasePage{
 
     }
 
-    public void mobileCentralMenu(){
+    public void mobileCentralMenu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("MobileCentralMenu")){
+            if (Type.equals("MobileCentralMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -386,16 +367,16 @@ public class API_MenusJson extends BasePage{
 
     }
 
-    public void mobileBottomMenu(){
+    public void mobileBottomMenu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("MobileBottomMenu")){
+            if (Type.equals("MobileBottomMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -404,23 +385,22 @@ public class API_MenusJson extends BasePage{
     }
 
 
-    public void mobileMenu(){
+    public void mobileMenu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");
-        for (int i = 0; i<jsonArrayMenuList.length(); i++ ){
+        for (int i = 0; i < jsonArrayMenuList.length(); i++) {
             String jsonObjectString = String.valueOf(jsonArrayMenuList.get(i));
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
-            if (Type.equals("MobileMenu")){
+            if (Type.equals("MobileMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i +"-------->  " +  jsonArrayItems);
+                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
         }
 
     }
-
 
 
 }
