@@ -16,8 +16,8 @@ import java.time.Duration;
 
 public class
 
-CraftWorld_01_LoginTest extends BaseTest {
-    public CraftWorld_01_LoginTest() throws AWTException {
+CraftWorld_002_LoginTest extends BaseTest {
+    public CraftWorld_002_LoginTest() throws AWTException {
     }
 
 
@@ -26,7 +26,7 @@ CraftWorld_01_LoginTest extends BaseTest {
 
     @BeforeMethod
     public void goToLoginPopUp() throws UnirestException, IOException {
-        api_menusJson.headerPanel1Menu();
+//        api_menusJson.headerPanel1Menu();
         if (api_menusJson.loginPageType.equals("loginBtn_button")) {
             isLoginHasPopUp = 1;
         } else if (api_menusJson.loginPageType.equals("loginScn_section")) {

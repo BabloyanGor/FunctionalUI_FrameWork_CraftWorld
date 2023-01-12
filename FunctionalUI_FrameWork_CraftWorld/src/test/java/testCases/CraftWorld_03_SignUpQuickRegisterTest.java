@@ -1,34 +1,33 @@
-//package testCases;
-//
-//import io.qameta.allure.Description;
-//import io.qameta.allure.Severity;
-//import io.qameta.allure.SeverityLevel;
-//import org.apache.commons.lang3.RandomStringUtils;
-//import org.apache.poi.xssf.usermodel.XSSFSheet;
-//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-//import org.testng.Assert;
-//import org.testng.annotations.BeforeMethod;
-//import org.testng.annotations.DataProvider;
-//import org.testng.annotations.Test;
-//import org.testng.asserts.SoftAssert;
-//
-//import java.awt.*;
-//import java.io.FileInputStream;
-//import java.io.IOException;
-//
-//public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
-//
-//
-//    public CraftWorld_03_SignUpQuickRegisterTest() throws AWTException {
-//    }
-//
-//    @BeforeMethod
-//    public void goToLoginPopUp() {
-//        craftWorld_01_header_page_logOutUser.clickOnSignUp();
-//        craftWorld_05_signUp_popUp_page.clickOnButtonQuickRegistration();
-//    }
-//
-//
+package testCases;
+
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import java.awt.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
+
+
+    public CraftWorld_03_SignUpQuickRegisterTest() throws AWTException {
+    }
+
+    @BeforeMethod
+    public void goToLoginPopUp() {
+        craftWorld_0001_header_1.clickOnHeader1SignUpButton();
+    }
+
+
 //    @Test(priority = 1, description = "Validate SignUp PopUps labels")
 //    @Description("Validate SignUp PopUps labels")
 //    @Severity(SeverityLevel.MINOR)
@@ -260,37 +259,37 @@
 //        logger.info("Error message captured");
 //        Assert.assertEquals(errorMessage, "Invalid email address");
 //    }
-//
+
+    @DataProvider(name = "invalidData")
+    Object[][] invalidSignUpDataEmail() throws IOException {
+        String invalidData = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\InvalidData.xlsx";
+        FileInputStream file = new FileInputStream(invalidData);
+        XSSFWorkbook workbook = new XSSFWorkbook(file);
+        XSSFSheet sheet = workbook.getSheet("SignUpQuickInvalidEmail");
+        //XSSFSheet sheet = workbook.getSheetAt(0);
+        int numberOfRow = sheet.getLastRowNum();
+        int numberOfCol = sheet.getRow(0).getLastCellNum();
+
+        String[][] arr = new String[numberOfRow][numberOfCol];
+        for (int i = 1; i <= numberOfRow; i++) {
+            for (int j = 0; j < numberOfCol; j++) {
+                arr[i - 1][j] = sheet.getRow(i).getCell(j).toString();//1 0 0
+            }
+        }
+        file.close();
+        return arr;
+    }
+
 //    @DataProvider(name = "invalidData")
-//    Object[][] invalidSignUpDataEmail() throws IOException {
-//        String invalidData = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\InvalidData.xlsx";
-//        FileInputStream file = new FileInputStream(invalidData);
-//        XSSFWorkbook workbook = new XSSFWorkbook(file);
-//        XSSFSheet sheet = workbook.getSheet("SignUpQuickInvalidEmail");
-//        //XSSFSheet sheet = workbook.getSheetAt(0);
-//        int numberOfRow = sheet.getLastRowNum();
-//        int numberOfCol = sheet.getRow(0).getLastCellNum();
+//    public Object[][] invalidSignUpDataEmail() {
 //
-//        String[][] arr = new String[numberOfRow][numberOfCol];
-//        for (int i = 1; i <= numberOfRow; i++) {
-//            for (int j = 0; j < numberOfCol; j++) {
-//                arr[i - 1][j] = sheet.getRow(i).getCell(j).toString();//1 0 0
-//            }
-//        }
-//        file.close();
-//        return arr;
+//            Object invalidLoginData[][] = {{generateRandomEmailInValid1()},{generateRandomEmailInValid2()},
+//                                           {generateRandomEmailInValid3()},{generateRandomEmailInValid4()},
+//                                           {generateRandomEmailInValid5()},{generateRandomEmailInValid6()}};
+//            return invalidLoginData;
 //    }
-//
-////    @DataProvider(name = "invalidData")
-////    public Object[][] invalidSignUpDataEmail() {
-////
-////            Object invalidLoginData[][] = {{generateRandomEmailInValid1()},{generateRandomEmailInValid2()},
-////                                           {generateRandomEmailInValid3()},{generateRandomEmailInValid4()},
-////                                           {generateRandomEmailInValid5()},{generateRandomEmailInValid6()}};
-////            return invalidLoginData;
-////    }
-//
-//
+
+
 //    @Test(priority = 30, description = "Validate on Sign Up Pop Up sign up with valid Phone number")
 //    @Description("Validate on Sign Up Pop Up sign up with valid Phone number")
 //    @Severity(SeverityLevel.BLOCKER)
@@ -327,97 +326,97 @@
 //        Assert.assertEquals(craftWorld_05_signUp_popUp_page.getAttributeClassButtonRegisterQ(), "craft_btn reg_btn not_active");
 //        //softAssert.assertEquals(craftBet_signUp_popUp_page.getAttributeClassButtonRegisterQ(), "craft_btn reg_btn active-item");
 //    }
-//
+
+    @DataProvider(name = "invalidMobileData")
+    Object[][] invalidSignUpDataMobile() throws IOException {
+        String invalidData = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\InvalidData.xlsx";
+        FileInputStream file = new FileInputStream(invalidData);
+        XSSFWorkbook workbook = new XSSFWorkbook(file);
+        XSSFSheet sheet = workbook.getSheet("SignUpQuickInvalidNumber");
+        //XSSFSheet sheet = workbook.getSheetAt(0);
+        int numberOfRow = sheet.getLastRowNum();
+        int numberOfCol = sheet.getRow(0).getLastCellNum();
+
+        String[][] arr = new String[numberOfRow][numberOfCol];
+        for (int i = 1; i <= numberOfRow; i++) {
+            for (int j = 0; j < numberOfCol; j++) {
+                arr[i - 1][j] = sheet.getRow(i).getCell(j).toString();//1 0 0
+                try {
+                    double invalidDoubleData = Double.parseDouble(arr[i - 1][j]);
+                    int invalidIntData = (int) invalidDoubleData;
+                    //invalidStringData = String.valueOf(invalidIntData);
+                    arr[i - 1][j] = String.valueOf(invalidIntData);
+                } catch (Exception e) {
+                    arr[i - 1][j] = sheet.getRow(i).getCell(j).toString();
+                }
+            }
+        }
+        file.close();
+        return arr;
+    }
+
 //    @DataProvider(name = "invalidMobileData")
-//    Object[][] invalidSignUpDataMobile() throws IOException {
-//        String invalidData = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\InvalidData.xlsx";
-//        FileInputStream file = new FileInputStream(invalidData);
-//        XSSFWorkbook workbook = new XSSFWorkbook(file);
-//        XSSFSheet sheet = workbook.getSheet("SignUpQuickInvalidNumber");
-//        //XSSFSheet sheet = workbook.getSheetAt(0);
-//        int numberOfRow = sheet.getLastRowNum();
-//        int numberOfCol = sheet.getRow(0).getLastCellNum();
+//    public Object[][] invalidSignUpDataMobile() {
 //
-//        String[][] arr = new String[numberOfRow][numberOfCol];
-//        for (int i = 1; i <= numberOfRow; i++) {
-//            for (int j = 0; j < numberOfCol; j++) {
-//                arr[i - 1][j] = sheet.getRow(i).getCell(j).toString();//1 0 0
-//                try {
-//                    double invalidDoubleData = Double.parseDouble(arr[i - 1][j]);
-//                    int invalidIntData = (int) invalidDoubleData;
-//                    //invalidStringData = String.valueOf(invalidIntData);
-//                    arr[i - 1][j] = String.valueOf(invalidIntData);
-//                } catch (Exception e) {
-//                    arr[i - 1][j] = sheet.getRow(i).getCell(j).toString();
-//                }
-//            }
-//        }
-//        file.close();
-//        return arr;
+//        Object invalidLoginData[][] = {{"123 45 6"},{"123/45/6"},{"123456  "},
+//                                       {"123+45-6"},{"123456"},  {" 1 2 3 4 5 6 7 "}};
+//        return invalidLoginData;
 //    }
-//
-////    @DataProvider(name = "invalidMobileData")
-////    public Object[][] invalidSignUpDataMobile() {
-////
-////        Object invalidLoginData[][] = {{"123 45 6"},{"123/45/6"},{"123456  "},
-////                                       {"123+45-6"},{"123456"},  {" 1 2 3 4 5 6 7 "}};
-////        return invalidLoginData;
-////    }
-//
-//
-//    //Abc.example.com no @ character
-//    public String generateRandomEmailInValid1() {
-//        String randomEmail;
-//        String generatedString = RandomStringUtils.randomAlphanumeric(10);
-//        randomEmail = generatedString + ".gmail.com";
-//        return randomEmail;
-//    }
-//
-//    //A@b@c@example.com   only one @ is allowed outside quotation marks
-//    public String generateRandomEmailInValid2() {
-//        String randomEmail;
-//        String generatedString1 = RandomStringUtils.randomAlphanumeric(5);
-//        String generatedString2 = RandomStringUtils.randomAlphanumeric(5);
-//        randomEmail = generatedString1 + "@" + generatedString2 + "@gmail.com";
-//        return randomEmail;
-//    }
-//
-//    //a"b(c)d,e:f;g<h>i[j\k]l@example.com    ( "  none of the special characters in this local-part are allowed outside quotation marks )
-//    public String generateRandomEmailInValid3() {
-//        String randomEmail;
-//        String generatedString1 = RandomStringUtils.randomAlphanumeric(2);
-//        String generatedString2 = RandomStringUtils.randomAlphanumeric(2);
-//        randomEmail = generatedString1 + "\\" + generatedString2 + "@gmail.com";
-//        return randomEmail;
-//    }
-//
-//    // just"not"right@example.com (quoted strings must be dot separated or the only element making up the local-part)
-//    public String generateRandomEmailInValid4() {
-//        String randomEmail;
-//        String generatedString1 = RandomStringUtils.randomAlphanumeric(2);
-//        String generatedString2 = RandomStringUtils.randomAlphanumeric(2);
-//        randomEmail = generatedString1 + "\"" + generatedString2 + "@gmail.com";
-//        return randomEmail;
-//    }
-//
-//    //this is"not\allowed@example.com (spaces, quotes, and backslashes may only exist when within quoted strings and preceded by a backslash)
-//    public String generateRandomEmailInValid5() {
-//        String randomEmail;
-//        String generatedString1 = RandomStringUtils.randomAlphanumeric(2);
-//        String generatedString2 = RandomStringUtils.randomAlphanumeric(2);
-//        randomEmail = generatedString1 + " " + generatedString2 + "@gmail.com";
-//        return randomEmail;
-//    }
-//
-//    //i_like_underscore@but_its_not_allowed_in_this_part.example.com (Underscore is not allowed in domain part)
-//    public String generateRandomEmailInValid6() {
-//        String randomEmail;
-//        String generatedString1 = RandomStringUtils.randomAlphanumeric(2);
-//        String generatedString2 = RandomStringUtils.randomAlphanumeric(2);
-//        randomEmail = generatedString1 + "_" + generatedString2 + "@gmail.com";
-//        return randomEmail;
-//    }
-//}
-//
-//
-//
+
+
+    //Abc.example.com no @ character
+    public String generateRandomEmailInValid1() {
+        String randomEmail;
+        String generatedString = RandomStringUtils.randomAlphanumeric(10);
+        randomEmail = generatedString + ".gmail.com";
+        return randomEmail;
+    }
+
+    //A@b@c@example.com   only one @ is allowed outside quotation marks
+    public String generateRandomEmailInValid2() {
+        String randomEmail;
+        String generatedString1 = RandomStringUtils.randomAlphanumeric(5);
+        String generatedString2 = RandomStringUtils.randomAlphanumeric(5);
+        randomEmail = generatedString1 + "@" + generatedString2 + "@gmail.com";
+        return randomEmail;
+    }
+
+    //a"b(c)d,e:f;g<h>i[j\k]l@example.com    ( "  none of the special characters in this local-part are allowed outside quotation marks )
+    public String generateRandomEmailInValid3() {
+        String randomEmail;
+        String generatedString1 = RandomStringUtils.randomAlphanumeric(2);
+        String generatedString2 = RandomStringUtils.randomAlphanumeric(2);
+        randomEmail = generatedString1 + "\\" + generatedString2 + "@gmail.com";
+        return randomEmail;
+    }
+
+    // just"not"right@example.com (quoted strings must be dot separated or the only element making up the local-part)
+    public String generateRandomEmailInValid4() {
+        String randomEmail;
+        String generatedString1 = RandomStringUtils.randomAlphanumeric(2);
+        String generatedString2 = RandomStringUtils.randomAlphanumeric(2);
+        randomEmail = generatedString1 + "\"" + generatedString2 + "@gmail.com";
+        return randomEmail;
+    }
+
+    //this is"not\allowed@example.com (spaces, quotes, and backslashes may only exist when within quoted strings and preceded by a backslash)
+    public String generateRandomEmailInValid5() {
+        String randomEmail;
+        String generatedString1 = RandomStringUtils.randomAlphanumeric(2);
+        String generatedString2 = RandomStringUtils.randomAlphanumeric(2);
+        randomEmail = generatedString1 + " " + generatedString2 + "@gmail.com";
+        return randomEmail;
+    }
+
+    //i_like_underscore@but_its_not_allowed_in_this_part.example.com (Underscore is not allowed in domain part)
+    public String generateRandomEmailInValid6() {
+        String randomEmail;
+        String generatedString1 = RandomStringUtils.randomAlphanumeric(2);
+        String generatedString2 = RandomStringUtils.randomAlphanumeric(2);
+        randomEmail = generatedString1 + "_" + generatedString2 + "@gmail.com";
+        return randomEmail;
+    }
+}
+
+
+

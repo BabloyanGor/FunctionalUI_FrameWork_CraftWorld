@@ -19,49 +19,81 @@ public class API_ConfigJson extends BasePage{
 
         //ConfigJsonApi call Vars
 
-    private int PartnerId=0;
-    private String PartnerName = null;
-    private String WebApiUrl = null;
-    private String DefaultCurrency = null;
-    private String Domain = null;
-    private int AllowedAge=0;
-    private String DefaultLanguage = null;
-    private  boolean ShowGameNames = false;
-    private  boolean ShowInfoPopup = false;
-    private String ReCaptchaKey = null;
-    private  boolean IsReCaptcha = false;
-    private String HomePageType = null;
-    private String CashierPageUrl = null;
-    private String RedirectUrl = null;
-    private String ShowMobileNavPanel = null;
-    private String EmailAddress = null;
-    private JSONArray LanguagesConfigJson = new JSONArray();
-    private JSONArray Currencies = new JSONArray();
-    private JSONArray ProductsWithTransfer = new JSONArray();
-    private JSONArray MobileCodes = new JSONArray();
-    private JSONArray RegisterType = new JSONArray();
-    private JSONArray QuickRegisterType = new JSONArray();
-    private JSONArray SocialNetworkProviders = new JSONArray();
-    private JSONArray ExternalBalance = new JSONArray();
-    private String LicenseUrl = null;
-    private JSONArray FooterVisibility = new JSONArray();
-    private String HomeBGImage = null;
-    private JSONArray GameLayouts = new JSONArray();
-    private String TimeZone = null;
-    private String SelfExclusionPeriod = null;
-    private String ErrorDisplayTime = null;
-    private String AccountTemplateType = null;
-    private String SportOpenMode = null;
-    private String ShowLogoutInfoPopup = null;
-    private String PassRegEx = null;
-    private String CheckPortrait = null;
-    private JSONArray WebFragments = new JSONArray();
+    private static int PartnerId=0;
+    private static String PartnerName = null;
+    private static String WebApiUrl = null;
+    private static String DefaultCurrency = null;
+    private static String Domain = null;
+    private static int AllowedAge=0;
+    private static String DefaultLanguage = null;
+    private static boolean ShowGameNames = false;
+    private static boolean ShowInfoPopup = false;
+    private static String ReCaptchaKey = null;
+    private static  boolean IsReCaptcha = false;
+    private static String HomePageType = null;
+    private static String CashierPageUrl = null;
+    private static String RedirectUrl = null;
+    private static String ShowMobileNavPanel = null;
+    private static String EmailAddress = null;
+    private static JSONArray LanguagesConfigJson = new JSONArray();
+    private static JSONArray Currencies = new JSONArray();
+    private static JSONArray ProductsWithTransfer = new JSONArray();
+    private static JSONArray MobileCodes = new JSONArray();
+    private static JSONArray RegisterType = new JSONArray();
+    private static JSONArray QuickRegisterType = new JSONArray();
+    private static JSONArray SocialNetworkProviders = new JSONArray();
+    private static JSONArray ExternalBalance = new JSONArray();
+    private static String LicenseUrl = null;
+    private static JSONArray FooterVisibility = new JSONArray();
+    private static String HomeBGImage = null;
+    private static JSONArray GameLayouts = new JSONArray();
+    private static String TimeZone = null;
+    private static String SelfExclusionPeriod = null;
+    private static String ErrorDisplayTime = null;
+    private static String AccountTemplateType = null;
+    private static String SportOpenMode = null;
+    private static String ShowLogoutInfoPopup = null;
+    private static String PassRegEx = null;
+    private static String CheckPortrait = null;
+    private static JSONArray WebFragments = new JSONArray();
     // MobileFragments
-    private int WinnersWidget=0;
-    private JSONArray RegExProperty = new JSONArray();
-    private String WebSlideMode = null;
-    private  boolean VerificationKeyFormat = false;
-    private String FormValidationType = null;
+    private static int WinnersWidget=0;
+    private static JSONArray RegExProperty = new JSONArray();
+    private static String WebSlideMode = null;
+    private static  boolean VerificationKeyFormat = false;
+    private static String FormValidationType = null;
+
+
+
+
+    private static int registrationTypesCount = 0;
+    private static String registrationTypesFirstRegFormName = null;
+    private static String registrationTypesSecondRegFormName = null;
+    private static boolean registrationTypeFirstIsAutologinOn = false;
+    private static boolean registrationTypeSecondIsAutologinOn = false;
+
+
+    //                 Registration  <Types>  <Order>  <AutoLogin>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static int getRegistrationTypesCount() {
+        return registrationTypesCount;
+    }
+    public static String getRegistrationTypesFirstRegFormName() {
+        return registrationTypesFirstRegFormName;
+    }
+    public static String getRegistrationTypesSecondRegFormName() {
+        return registrationTypesSecondRegFormName;
+    }
+    public static boolean isRegistrationTypeFirstIsAutologinOn() {
+        return registrationTypeFirstIsAutologinOn;
+    }
+    public static boolean isRegistrationTypeSecondIsAutologinOn() {
+        return registrationTypeSecondIsAutologinOn;
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
     public int getPartnerId() {
@@ -133,7 +165,7 @@ public class API_ConfigJson extends BasePage{
         return LanguagesConfigJson;
     }
 
-    public JSONArray getCurrencies() {
+                                            public JSONArray getCurrencies() {
         return Currencies;
     }
 
@@ -141,11 +173,11 @@ public class API_ConfigJson extends BasePage{
         return ProductsWithTransfer;
     }
 
-    public JSONArray getMobileCodes() {
+                                            public JSONArray getMobileCodes() {
         return MobileCodes;
     }
 
-    public JSONArray getRegisterType() {
+                                            public JSONArray getRegisterType() {
         return RegisterType;
     }
 
@@ -201,7 +233,7 @@ public class API_ConfigJson extends BasePage{
         return ShowLogoutInfoPopup;
     }
 
-    public String getPassRegEx() {
+                                                                public String getPassRegEx() {
         return PassRegEx;
     }
 
@@ -217,7 +249,7 @@ public class API_ConfigJson extends BasePage{
         return WinnersWidget;
     }
 
-    public JSONArray getRegExProperty() {
+                                                                public JSONArray getRegExProperty() {
         return RegExProperty;
     }
 
@@ -232,6 +264,10 @@ public class API_ConfigJson extends BasePage{
     public String getFormValidationType() {
         return FormValidationType;
     }
+
+
+
+
 
     private String configJsonApi() {
         try{
@@ -282,7 +318,6 @@ public class API_ConfigJson extends BasePage{
             }
         }
     }
-
 
     public void configJsonApiJsonParse(){
         JSONObject jsonObjectBody = new JSONObject(configJsonApi());
@@ -429,6 +464,43 @@ public class API_ConfigJson extends BasePage{
 
         try{
             RegisterType = jsonObjectBody.getJSONArray("RegisterType");
+            registrationTypesCount = RegisterType.length();
+            if (registrationTypesCount==2){
+                String firstReg = String.valueOf(RegisterType.get(0));
+                JSONObject jsonFirstReg = new JSONObject(firstReg);
+                registrationTypesFirstRegFormName = String.valueOf(jsonFirstReg.get("Title"));
+                String isAutologinOn1 = String.valueOf(jsonFirstReg.get("Settings"));
+                if (isAutologinOn1.contains("1")){
+                    registrationTypeFirstIsAutologinOn = true;
+                }
+
+
+                String secondReg = String.valueOf(RegisterType.get(1));
+                JSONObject jsonSecondReg = new JSONObject(secondReg);
+                registrationTypesSecondRegFormName = String.valueOf(jsonSecondReg.get("Title"));
+                String isAutologinOn2 = String.valueOf(jsonFirstReg.get("Settings"));
+                if (isAutologinOn2.contains("1")){
+                    registrationTypeSecondIsAutologinOn = true;
+                }
+
+            }
+            else{
+                String firstReg = String.valueOf(RegisterType.get(0));
+                JSONObject jsonFirstReg = new JSONObject(firstReg);
+                registrationTypesFirstRegFormName = String.valueOf(jsonFirstReg.get("Title"));
+                String isAutologinOn = String.valueOf(jsonFirstReg.get("Settings"));
+                if (isAutologinOn.contains("1")){
+                    registrationTypeFirstIsAutologinOn = true;
+                }
+
+            }
+
+
+
+
+
+
+
         }
         catch (Exception e){
             System.out.println("APIConfigJson --> RegisterType has an Exception: " + e);

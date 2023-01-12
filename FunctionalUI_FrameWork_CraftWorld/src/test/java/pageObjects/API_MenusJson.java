@@ -73,9 +73,8 @@ public class API_MenusJson extends BasePage {
         }
     }
 
-
-    public String loginPageStyle = null;
-    public String loginPageType=null;
+    public static String loginPageStyle = null;
+    public static String loginPageType=null;
     public void headerPanel1Menu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
         JSONArray jsonArrayMenuList = jsonObjectBody.getJSONArray("MenuList");

@@ -41,10 +41,6 @@ public class BaseTest extends DriverFactory {
     public CraftWorld_0001_SignUp_PopUp_Page craftWorld_0001_signUp_popUp_page;
 
 
-
-
-
-
 //    public CraftWorld_101_Header_Page_LogInUser craftBet_01_header_pageLogInUser;
 //    public CraftWorld_101_Header_Page_LogOutUser craftWorld_01_header_page_logOutUser;
 //    public CraftWorld_02_Footer_Page craftWorld_02_footer_page;
@@ -67,76 +63,83 @@ public class BaseTest extends DriverFactory {
 //    public CraftWorld_06_Deposit_Page craftWorld_06_deposit_page;
 
 
-
-
-
-
     //endregion
 
 
     public BaseTest() throws AWTException {
     }
 
-    @BeforeMethod
-    public void setup()  {
-
+    @BeforeSuite
+    public void setupBeforeAll() {
         logger = Logger.getLogger("craftBet");
         PropertyConfigurator.configure("Log4j.properties");
-//        APIConfigJson.configJsonApiJsonParse();
-
-//        APIMenusJson.headerPanel1Menu();
-//        APIMenusJson.headerPanel2Menu();
-//        APIMenusJson.headerGroup1Menu();
-//        APIMenusJson.registration();
-//        APIMenusJson.footerMenu();
-//        APIMenusJson.casinoMenu();
-//        APIMenusJson.newsMenu();
-//        APIMenusJson.accountTabsList();
-//        APIMenusJson.homeMenu();
-//        APIMenusJson.assets();
-//        APIMenusJson.liveCasinoMenu();
-//
-//
-//        APIMenusJson.mobileBottomMenu();
-//        APIMenusJson.mobileFooterMenu();
-//        APIMenusJson.mobileCentralMenu();
-//        APIMenusJson.mobileHomeMenu();
-//        APIMenusJson.mobileHeaderPanel();
-//        APIMenusJson.mobileRightSidebar();
-//        APIMenusJson.mobileMenu();
 
         try {
             super.initDriver(baseURL, browser, isHeadless);
+        } catch (org.openqa.selenium.TimeoutException exception) {
+            super.initDriver(baseURL, browser, isHeadless);
+        }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        api_configJson = PageFactory.initElements(this.driver, API_ConfigJson.class);
+        api_menusJson = PageFactory.initElements(this.driver, API_MenusJson.class);
+        logger.info("manu.json and config.json Page elements are initialized");
+
+        api_configJson.configJsonApiJsonParse();
+        api_menusJson.headerPanel1Menu();
+        api_menusJson.headerPanel2Menu();
+        api_menusJson.headerGroup1Menu();
+        api_menusJson.registration();
+        api_menusJson.footerMenu();
+        api_menusJson.casinoMenu();
+        api_menusJson.newsMenu();
+        api_menusJson.accountTabsList();
+        api_menusJson.homeMenu();
+        api_menusJson.assets();
+        api_menusJson.liveCasinoMenu();
+
+        api_menusJson.mobileBottomMenu();
+        api_menusJson.mobileFooterMenu();
+        api_menusJson.mobileCentralMenu();
+        api_menusJson.mobileHomeMenu();
+        api_menusJson.mobileHeaderPanel();
+        api_menusJson.mobileRightSidebar();
+        api_menusJson.mobileMenu();
+
+        try {
+            this.driver.quit();
+            logger.info("Browser closed");
+        } catch (Exception exception) {
+            this.driver.quit();
+            logger.info("Browser close_order has an exception");
+        }
+        logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test Suite started ");
+    }
+
+    @BeforeMethod
+    public void setup() {
+        try {
+            super.initDriver(baseURL, browser, isHeadless);
             Dimension d = new Dimension(DimensionWidth, DimensionHeight);  //
-            if (DimensionWidth > 1250  &&  DimensionHeight > 750){
+            if (DimensionWidth > 1250 && DimensionHeight > 750) {
                 driver.manage().window().setSize(d);
-                logger.info("Window size is: "+ DimensionWidth + " x " + DimensionHeight);
+                logger.info("Window size is: " + DimensionWidth + " x " + DimensionHeight);
             }
 
         } catch (org.openqa.selenium.TimeoutException exception) {
             super.initDriver(baseURL, browser, isHeadless);
-
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         //region <Page Class Instance Initialization >
         api_configJson = PageFactory.initElements(this.driver, API_ConfigJson.class);
-        api_menusJson= PageFactory.initElements(this.driver, API_MenusJson.class);
+        api_menusJson = PageFactory.initElements(this.driver, API_MenusJson.class);
 
 
         craftWorld_0001_header_1 = PageFactory.initElements(this.driver, CraftWorld_0001_Header_1.class);
         craftWorld_0001_header_2 = PageFactory.initElements(this.driver, CraftWorld_0001_Header_2.class);
         craftWorld_0000_login_popUp_page = PageFactory.initElements(this.driver, CraftWorld_0000_Login_PopUp_Page.class);
         craftWorld_0001_signUp_popUp_page = PageFactory.initElements(this.driver, CraftWorld_0001_SignUp_PopUp_Page.class);
-
-
-
-
-
-
-
-
-
 
 
 //        craftBet_01_header_pageLogInUser = PageFactory.initElements(this.driver, CraftWorld_101_Header_Page_LogInUser.class);
@@ -164,9 +167,6 @@ public class BaseTest extends DriverFactory {
 //        craftWorld_06_deposit_page = PageFactory.initElements(this.driver, CraftWorld_06_Deposit_Page.class);
 
 
-
-
-
         logger.info("All Page elements are initialized");
         //endregion
 
@@ -192,22 +192,6 @@ public class BaseTest extends DriverFactory {
     public void Finish() {
         logger.info("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  ");
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
