@@ -38,6 +38,7 @@ public class BaseTest extends DriverFactory {
     public CraftWorld_0001_Header_1 craftWorld_0001_header_1;
     public CraftWorld_0001_Header_2 craftWorld_0001_header_2;
     public CraftWorld_0000_Login_PopUp_Page craftWorld_0000_login_popUp_page;
+    public CraftWorld_0001_SignUp_PopUp_Page craftWorld_0001_signUp_popUp_page;
 
 
 
@@ -48,7 +49,6 @@ public class BaseTest extends DriverFactory {
 //    public CraftWorld_101_Header_Page_LogOutUser craftWorld_01_header_page_logOutUser;
 //    public CraftWorld_02_Footer_Page craftWorld_02_footer_page;
 //    public CraftWorld_04_PasswordRecovery_Page craftWorld_04_passwordRecovery_page;
-//    public CraftWorld_05_SignUp_PopUp_Page craftWorld_05_signUp_popUp_page;
 //    public CraftWorld_11_Sports_Page craftWorld_11_sports_page;
 //    public CraftWorld_12_Life_Page craftWorld_12_life_page;
 //    public CraftWorld_13_AsianSport_Page craftWorld_13_asianSport_page;
@@ -127,6 +127,7 @@ public class BaseTest extends DriverFactory {
         craftWorld_0001_header_1 = PageFactory.initElements(this.driver, CraftWorld_0001_Header_1.class);
         craftWorld_0001_header_2 = PageFactory.initElements(this.driver, CraftWorld_0001_Header_2.class);
         craftWorld_0000_login_popUp_page = PageFactory.initElements(this.driver, CraftWorld_0000_Login_PopUp_Page.class);
+        craftWorld_0001_signUp_popUp_page = PageFactory.initElements(this.driver, CraftWorld_0001_SignUp_PopUp_Page.class);
 
 
 
@@ -145,7 +146,6 @@ public class BaseTest extends DriverFactory {
 //
 //
 //        craftWorld_04_passwordRecovery_page = PageFactory.initElements(this.driver, CraftWorld_04_PasswordRecovery_Page.class);
-//        craftWorld_05_signUp_popUp_page = PageFactory.initElements(this.driver, CraftWorld_05_SignUp_PopUp_Page.class);
 //        craftWorld_11_sports_page = PageFactory.initElements(this.driver, CraftWorld_11_Sports_Page.class);
 //        craftWorld_12_life_page = PageFactory.initElements(this.driver, CraftWorld_12_Life_Page.class);
 //        craftWorld_13_asianSport_page = PageFactory.initElements(this.driver, CraftWorld_13_AsianSport_Page.class);

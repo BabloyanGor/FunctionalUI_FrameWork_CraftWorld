@@ -7,16 +7,63 @@ import org.openqa.selenium.support.FindBy;
 
 import java.awt.*;
 
-public class CraftWorld_05_SignUp_PopUp_Page extends BasePage {
+public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
 //    public CraftBet_SignUp_PopUp_Page( ) {
 //
 //    }
     private final BasePage basePage;
 
-    public CraftWorld_05_SignUp_PopUp_Page(WebDriver driver) throws AWTException {
+    public CraftWorld_0001_SignUp_PopUp_Page(WebDriver driver) throws AWTException {
         super(driver);
         basePage = new BasePage(driver);
     }
+
+
+
+    @FindBy(xpath = "//div[@class='registration-section']")
+    @CacheLookup
+    WebElement registrationPopUpForm;
+
+    public boolean registrationPopUpFormPresence() {
+        try {
+            basePage.waitElementToBeVisible(registrationPopUpForm);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @FindBy(xpath = "//a[@class='reg_item active']")
     @CacheLookup

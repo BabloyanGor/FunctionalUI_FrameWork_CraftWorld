@@ -8,6 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
 import java.awt.*;
 import java.io.IOException;
 import java.time.Duration;
@@ -21,16 +23,15 @@ CraftWorld_01_LoginTest extends BaseTest {
 
     int waitTime = 1000;
     int isLoginHasPopUp = 0;   // 1-PopUp , 2-InPage, 0-UnknownType
+
     @BeforeMethod
     public void goToLoginPopUp() throws UnirestException, IOException {
         api_menusJson.headerPanel1Menu();
         if (api_menusJson.loginPageType.equals("loginBtn_button")) {
-            isLoginHasPopUp= 1;
-        }
-        else if (api_menusJson.loginPageType.equals("loginScn_section")) {
-            isLoginHasPopUp= 2;
-        }
-        else{
+            isLoginHasPopUp = 1;
+        } else if (api_menusJson.loginPageType.equals("loginScn_section")) {
+            isLoginHasPopUp = 2;
+        } else {
             logger.error("Login button has unknown Type");
         }
 
@@ -43,7 +44,7 @@ CraftWorld_01_LoginTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     public void loginFunctionalityPositiveTest() {
 
-        if (isLoginHasPopUp==1) {                                                       //Check login page have PopUp or Not
+        if (isLoginHasPopUp == 1) {                                                       //Check login page have PopUp or Not
             craftWorld_0001_header_1.clickOnHeader1LoginButton();
             craftWorld_0000_login_popUp_page.sendKeysLoginEmailInputField(username);
             craftWorld_0000_login_popUp_page.sendKeysLoginPasswordInputField(password);
@@ -53,7 +54,7 @@ CraftWorld_01_LoginTest extends BaseTest {
             Assert.assertTrue(craftWorld_0001_header_1.balanceIsVisible(),
                     "Username: [" + username + "] Password: [" + password + "]");
 
-        } else if (isLoginHasPopUp==2) {
+        } else if (isLoginHasPopUp == 2) {
             craftWorld_0000_login_popUp_page.sendKeysLoginEmailInputField(username);
             craftWorld_0000_login_popUp_page.sendKeysLoginPasswordInputField(password);
             craftWorld_0000_login_popUp_page.clickOnLLoginButton();
@@ -61,7 +62,7 @@ CraftWorld_01_LoginTest extends BaseTest {
             craftWorld_0000_login_popUp_page.navigateRefresh();
             Assert.assertTrue(craftWorld_0001_header_1.balanceIsVisible(),
                     "Username: [" + username + "] Password: [" + password + "]");
-        } else{
+        } else {
             Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
         }
     }
@@ -72,7 +73,7 @@ CraftWorld_01_LoginTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     public void loginFunctionalityNegativeTest(String invalidUsername, String invalidPassword) {
 
-        if (isLoginHasPopUp==1) {  //Check login page have PopUp or Not
+        if (isLoginHasPopUp == 1) {  //Check login page have PopUp or Not
             craftWorld_0001_header_1.clickOnHeader1LoginButton();
             craftWorld_0000_login_popUp_page.sendKeysLoginEmailInputField(invalidUsername);
             craftWorld_0000_login_popUp_page.sendKeysLoginPasswordInputField(invalidPassword);
@@ -81,14 +82,14 @@ CraftWorld_01_LoginTest extends BaseTest {
             Assert.assertTrue(craftWorld_0000_login_popUp_page.LoginErrorMessageTextIsNotEmpty(),
                     "Error Message: " + craftWorld_0000_login_popUp_page.loginErrorMessageGetText());
 
-        } else if (isLoginHasPopUp==2) {
+        } else if (isLoginHasPopUp == 2) {
             craftWorld_0000_login_popUp_page.sendKeysLoginEmailInputField(invalidUsername);
             craftWorld_0000_login_popUp_page.sendKeysLoginPasswordInputField(invalidPassword);
             craftWorld_0000_login_popUp_page.clickOnLLoginButton();
             craftWorld_0000_login_popUp_page.waitAction(2500);
             Assert.assertTrue(craftWorld_0000_login_popUp_page.LoginErrorMessageTextIsNotEmpty(),
                     "Error Message: " + craftWorld_0000_login_popUp_page.loginErrorMessageGetText());
-        } else{
+        } else {
             Assert.fail("Unknown Login button style");
         }
         craftWorld_0000_login_popUp_page.waitAction(5000);
@@ -96,11 +97,10 @@ CraftWorld_01_LoginTest extends BaseTest {
 
 
     @DataProvider(name = "invalidLoginData")
-    Object[][] invalidLoginData()  {
-        String[][] arr = {{username+"a",password},{username,password+"a"},{"1","1"},{username,password+"   "},{username,"   "+password}};
+    Object[][] invalidLoginData() {
+        String[][] arr = {{username + "a", password}, {username, password + "a"}, {"1", "1"}, {username, password + "   "}, {username, "   " + password}};
         return arr;
     }
-
 
 
     @Test(priority = 22, description = "Validate forgot password link functionality")
@@ -108,53 +108,87 @@ CraftWorld_01_LoginTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     public void ForgotPasswordLinkTest() {
 
-        if (isLoginHasPopUp==1) {
+        if (isLoginHasPopUp == 1) {
             craftWorld_0001_header_1.clickOnHeader1LoginButton();
             craftWorld_0000_login_popUp_page.clickLoginForgotPasswordLink();
             craftWorld_0000_login_popUp_page.waitAction(waitTime);
             String url = craftWorld_0000_login_popUp_page.getUrl();
-            Assert.assertEquals(  url , baseURL+"/forgot-password",
+            Assert.assertEquals(url, baseURL + "/forgot-password",
                     "Forgot Password Url: " + url);
 
-        } else if (isLoginHasPopUp==2) {
+        } else if (isLoginHasPopUp == 2) {
             craftWorld_0000_login_popUp_page.clickLoginForgotPasswordLink();
             craftWorld_0000_login_popUp_page.waitAction(waitTime);
             String url = craftWorld_0000_login_popUp_page.getUrl();
-            Assert.assertEquals(  url , baseURL+"/forgot-password",
+            Assert.assertEquals(url, baseURL + "/forgot-password",
                     "Forgot Password Url: " + url);
-        } else{
+        } else {
             Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
         }
     }
 
 
-    @Test(priority = 24, description = "Validate password type attribute")
-    @Description("Validate password type attribute")
-    @Severity(SeverityLevel.BLOCKER)
-    public void passwordTypeAttributesCheck() {
-
-        if (isLoginHasPopUp==1) {
+    @Test(priority = 24, description = "Validate eye icon (if exist) functionality ")
+    @Description("Validate eye icon (if exist) functionality ")
+    @Severity(SeverityLevel.NORMAL)
+    public void eyeIconFunctionalityTest() {
+        SoftAssert softAssert = new SoftAssert();
+        if (isLoginHasPopUp == 1) {
             craftWorld_0001_header_1.clickOnHeader1LoginButton();
             craftWorld_0000_login_popUp_page.waitAction(waitTime);
-            String passwordTypeAttribute = craftWorld_0000_login_popUp_page.getAttributeTypePasswordInput();
+            if (craftWorld_0000_login_popUp_page.checkLoginEyeButtonVisibility()) {
+                String passwordTypeAttributeBeforeEyeClick = craftWorld_0000_login_popUp_page.getAttributeTypePasswordInput();
+                softAssert.assertEquals(passwordTypeAttributeBeforeEyeClick, "password",
+                        "Password input type attribute is: " + craftWorld_0000_login_popUp_page.getAttributeTypePasswordInput());
+                craftWorld_0000_login_popUp_page.clickLoginEyeShowPassword();
+                craftWorld_0000_login_popUp_page.waitAction(waitTime);
+                String passwordTypeAttributeAfterEyeClick = craftWorld_0000_login_popUp_page.getAttributeTypePasswordInput();
+                softAssert.assertEquals(passwordTypeAttributeAfterEyeClick, "text",
+                        "Password input type attribute is: " + craftWorld_0000_login_popUp_page.getAttributeTypePasswordInput());
+            } else {
+                softAssert.assertTrue(true);
+            }
 
-
-            String url = craftWorld_0000_login_popUp_page.getUrl();
-            Assert.assertEquals(  url , baseURL+"/forgot-password",
-                    "Forgot Password Url: " + url);
-
-        } else if (isLoginHasPopUp==2) {
-            craftWorld_0000_login_popUp_page.clickLoginForgotPasswordLink();
-            craftWorld_0000_login_popUp_page.waitAction(waitTime);
-            String url = craftWorld_0000_login_popUp_page.getUrl();
-            Assert.assertEquals(  url , baseURL+"/forgot-password",
-                    "Forgot Password Url: " + url);
-        } else{
+        } else if (isLoginHasPopUp == 2) {
+            if (craftWorld_0000_login_popUp_page.checkLoginEyeButtonVisibility()) {
+                String passwordTypeAttributeBeforeEyeClick = craftWorld_0000_login_popUp_page.getAttributeTypePasswordInput();
+                softAssert.assertEquals(passwordTypeAttributeBeforeEyeClick, "password",
+                        "Password input type attribute is: " + craftWorld_0000_login_popUp_page.getAttributeTypePasswordInput());
+                craftWorld_0000_login_popUp_page.clickLoginEyeShowPassword();
+                craftWorld_0000_login_popUp_page.waitAction(waitTime);
+                String passwordTypeAttributeAfterEyeClick = craftWorld_0000_login_popUp_page.getAttributeTypePasswordInput();
+                softAssert.assertEquals(passwordTypeAttributeAfterEyeClick, "text",
+                        "Password input type attribute is: " + craftWorld_0000_login_popUp_page.getAttributeTypePasswordInput());
+            } else {
+                softAssert.assertTrue(true);
+            }
+        } else {
             Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
         }
+
+        softAssert.assertAll();
     }
 
 
+    @Test(priority = 25, description = "Validate In LogIn PopUp page SignUp link functionality")
+    @Description("Validate In LogIn PopUp page SignUp link functionality")
+    @Severity(SeverityLevel.NORMAL)
+    public void loginPopUpSignUpLinkTest() {
+        if (isLoginHasPopUp == 1) {
+            craftWorld_0001_header_1.clickOnHeader1LoginButton();
+            craftWorld_0000_login_popUp_page.waitAction(waitTime);
+            craftWorld_0000_login_popUp_page.clickLoginPopUpSignUpLink();
+            craftWorld_0000_login_popUp_page.waitAction(waitTime);
+            boolean regFormIsVisible = craftWorld_0001_signUp_popUp_page.registrationPopUpFormPresence();
+
+            Assert.assertTrue(regFormIsVisible,"After clicking SignUp link on Login PopUp Registration form isn't visible");
+
+        } else if (isLoginHasPopUp == 2) {
+               Assert.assertTrue(true);
+        } else {
+            Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
+        }
+    }
 
 
 
