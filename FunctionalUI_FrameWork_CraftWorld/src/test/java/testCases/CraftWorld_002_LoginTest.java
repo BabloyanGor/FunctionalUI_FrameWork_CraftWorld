@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import pageObjects.API_MenusJson;
 
 import java.awt.*;
 import java.io.IOException;
@@ -27,9 +28,9 @@ CraftWorld_002_LoginTest extends BaseTest {
     @BeforeMethod
     public void goToLoginPopUp() throws UnirestException, IOException {
 //        api_menusJson.headerPanel1Menu();
-        if (api_menusJson.loginPageType.equals("loginBtn_button")) {
+        if (API_MenusJson.loginPageType.equals("loginBtn_button")) {
             isLoginHasPopUp = 1;
-        } else if (api_menusJson.loginPageType.equals("loginScn_section")) {
+        } else if (API_MenusJson.loginPageType.equals("loginScn_section")) {
             isLoginHasPopUp = 2;
         } else {
             logger.error("Login button has unknown Type");
@@ -63,7 +64,7 @@ CraftWorld_002_LoginTest extends BaseTest {
             Assert.assertTrue(craftWorld_0001_header_1.balanceIsVisible(),
                     "Username: [" + username + "] Password: [" + password + "]");
         } else {
-            Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
+            Assert.fail("Unknown Login button style" + API_MenusJson.loginPageType);
         }
     }
 
@@ -73,7 +74,7 @@ CraftWorld_002_LoginTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     public void loginFunctionalityNegativeTest(String invalidUsername, String invalidPassword) {
 
-        if (isLoginHasPopUp == 1) {  //Check login page have PopUp or Not
+        if (isLoginHasPopUp == 1) {                                                      //Check login page have PopUp or Not
             craftWorld_0001_header_1.clickOnHeader1LoginButton();
             craftWorld_0000_login_popUp_page.sendKeysLoginEmailInputField(invalidUsername);
             craftWorld_0000_login_popUp_page.sendKeysLoginPasswordInputField(invalidPassword);
@@ -123,7 +124,7 @@ CraftWorld_002_LoginTest extends BaseTest {
             Assert.assertEquals(url, baseURL + "/forgot-password",
                     "Forgot Password Url: " + url);
         } else {
-            Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
+            Assert.fail("Unknown Login button style" + API_MenusJson.loginPageType);
         }
     }
 
@@ -163,7 +164,7 @@ CraftWorld_002_LoginTest extends BaseTest {
                 softAssert.assertTrue(true);
             }
         } else {
-            Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
+            Assert.fail("Unknown Login button style" + API_MenusJson.loginPageType);
         }
 
         softAssert.assertAll();
@@ -186,9 +187,14 @@ CraftWorld_002_LoginTest extends BaseTest {
         } else if (isLoginHasPopUp == 2) {
                Assert.assertTrue(true);
         } else {
-            Assert.fail("Unknown Login button style" + api_menusJson.loginPageType);
+            Assert.fail("Unknown Login button style" + API_MenusJson.loginPageType);
         }
     }
+
+
+
+
+
 
 
 

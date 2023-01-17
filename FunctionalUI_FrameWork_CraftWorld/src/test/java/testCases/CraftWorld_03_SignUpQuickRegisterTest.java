@@ -36,9 +36,12 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
     private String Title = null;
     private String Type = null;
     private String Href = null;
+    private String hrefSize  = null;
+    private String hrefMandatory = null;
+    private String hrefHasLabel = null;
     private boolean OpenInRouting = false;
     private int Order = 0;
-    private String StyleType = null;
+//    private String StyleType = null;
 
 //    private String Icon2 = null;
 //    private String Title2 = null;
@@ -51,13 +54,19 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
     private int regType1SubmenusCount = 0;
     private int regType2SubmenusCount = 0;
 
-    private void parseRegisterSubmenuItem(JSONArray submenu, int submenuNum) {
+    private void parseRegisterSubmenuItem(int submenuNum) {
         String jsonSubmenu = String.valueOf(jsonArraySubmenu1.get(submenuNum));
         JSONObject jsonObject = new JSONObject(jsonSubmenu);
         Icon = jsonObject.getString("Icon");
         Title = jsonObject.getString("Title");
         Type = jsonObject.getString("Type");
         Href = jsonObject.getString("Href");
+        JSONObject jsonObjectHref =new JSONObject(Href);
+        hrefSize = jsonObjectHref.getString("size");
+        hrefMandatory = jsonObjectHref.getString("mandatory");
+        hrefHasLabel = jsonObjectHref.getString("hasLabel");
+
+
         OpenInRouting = jsonObject.getBoolean("OpenInRouting");
         Order = jsonObject.getInt("Order");
     }
@@ -107,8 +116,8 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
     private ArrayList currencies;
 
 
-    @Test(priority = 1, description = "Validate SignUp PopUps labels")
-    @Description("Validate SignUp PopUps labels")
+    @Test(priority = 1, description = "")
+    @Description("")
     @Severity(SeverityLevel.BLOCKER)
     public void test() {
         SoftAssert softAssert = new SoftAssert();
@@ -117,119 +126,136 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
 //        for (String i : api_configJson.getMobileTitlesCodesArrayList()){
 //            System.out.println(i);
 //        }
-        for (int j : api_configJson.getMobileMaskCountArrayList()){
-            System.out.println(j);
+//        for (int j : API_ConfigJson.getMobileMaskCountArrayList()){
+//            System.out.println(j);
+//        }
+
+
+
+        if (regTypesCount == 1 && firstRegFormNameByOrder.equals("Quick-Register"))
+        {
+            for (int i = 0; i < regType1SubmenusCount; i++) {
+                parseRegisterSubmenuItem(i);
+                switch (Type) {
+                    case "info": {
+                        logger.info("RegForm input field num: " + i + "  Type is info");
+
+                        break;
+                    }
+                    case "dropdown": {
+                        logger.info("RegForm input field num: " + i + "  Type is dropdown");
+                        if (Title.equals("RegisterTypes")){
+
+                        }
+                        else{
+                            logger.warn("regForm Unknown dropdown: " + Title);
+                        }
+
+
+
+
+                            System.out.println(Icon + Title + Type + Href + OpenInRouting + Order);
+
+                        break;
+                    }
+                    case "Email": {
+                        logger.info("RegForm input field num: " + i + "  Type is Email");
+
+                        break;
+                    }
+
+                    case "MobileData": {
+                        logger.info("RegForm input field num: " + i + "  Type is MobileData");
+
+                        break;
+                    }
+                    case "Currency": {
+                        logger.info("RegForm input field num: " + i + "  Type is Currency");
+
+                        break;
+                    }
+                    case "checkbox": {
+                        logger.info("RegForm input field num: " + i + "  Type is checkbox");
+
+                        break;
+                    }
+                    case "Gender": {
+                        logger.info("RegForm input field num: " + i + "  Type is Gender");
+
+                        break;
+                    }
+                    case "text": {
+                        logger.info("RegForm input field num: " + i + "  Type is text");
+
+                        break;
+                    }
+                    case "BirthDate": {
+                        logger.info("RegForm input field num: " + i + "  Type is BirthDate");
+
+                        break;
+                    }
+                    case "Region2": {
+                        logger.info("RegForm input field num: " + i + "  Type is Region2");
+
+                        break;
+                    }
+                    case "Region3": {
+                        logger.info("RegForm input field num: " + i + "  Type is Region3");
+
+                        break;
+                    }
+                    case "password": {
+                        logger.info("RegForm input field num: " + i + "  Type is password");
+
+                        break;
+                    }
+                    case "verify-sms": {
+                        logger.info("RegForm input field num: " + i + "  Type is verify-sms");
+
+                        break;
+                    }
+                    case "verify-email": {
+                        logger.info("RegForm input field num: " + i + "  Type is verify-email");
+
+                        break;
+                    }
+                    case "security-questions": {
+                        logger.info("RegForm input field num: " + i + "  Type is security-questions");
+
+                        break;
+                    }
+                    case "file": {
+                        logger.info("RegForm input field num: " + i + "  Type is file");
+
+                        break;
+                    }
+                    case "select": {
+                        logger.info("RegForm input field num: " + i + "  Type is select");
+
+                        break;
+                    }
+                    default: {
+                    }
+
+                }
+
+
+            }
+
         }
 
-//        Pattern pattern = Pattern.compile("[g]");
-//        Matcher matcher = pattern.matcher("engineering");
-//        int countCharacter = 0;
-//        while(matcher.find()) {
-//            countCharacter++;
-//        }
+        else if (regTypesCount == 1 && firstRegFormNameByOrder.equals("Full-Register")) {
 
 
+        } else if (regTypesCount == 2 && firstRegFormNameByOrder.equals("Quick-Register")) {
 
-//
-//        if (regTypesCount == 1 && firstRegFormNameByOrder.equals("Quick-Register"))
-//        {
-//            for (int i = 0; i < regType1SubmenusCount; i++) {
-//                parseRegisterSubmenuItem(jsonArraySubmenu1, i);
-//
-//                switch (Type) {
-//                    case "info": {
-//
-//                        break;
-//                    }
-//                    case "dropdown": {
-//
-//                        System.out.println(Icon + Title + Type + Href + OpenInRouting + Order);
-//
-//                        break;
-//                    }
-//                    case "Email": {
-//
-//                        break;
-//                    }
-//
-//                    case "MobileData": {
-//
-//                        break;
-//                    }
-//                    case "Currency": {
-//
-//                        break;
-//                    }
-//                    case "checkbox": {
-//
-//                        break;
-//                    }
-//                    case "Gender": {
-//
-//                        break;
-//                    }
-//                    case "text": {
-//
-//                        break;
-//                    }
-//                    case "BirthDate": {
-//
-//                        break;
-//                    }
-//                    case "Region2": {
-//
-//                        break;
-//                    }
-//                    case "Region3": {
-//
-//                        break;
-//                    }
-//                    case "password": {
-//
-//                        break;
-//                    }
-//                    case "verify-sms": {
-//
-//                        break;
-//                    }
-//                    case "verify-email": {
-//
-//                        break;
-//                    }
-//                    case "security-questions": {
-//
-//                        break;
-//                    }
-//                    case "file": {
-//
-//                        break;
-//                    }
-//                    case "select": {
-//
-//                        break;
-//                    }
-//                    default: {
-//                    }
-//
-//                }
-//
-//
-//            }
-//
-//        }
-//
-//        else if (regTypesCount == 1 && firstRegFormNameByOrder.equals("Full-Register")) {
-//
-//
-//        } else if (regTypesCount == 2 && firstRegFormNameByOrder.equals("Quick-Register")) {
-//
-//
-//        } else if (regTypesCount == 2 && firstRegFormNameByOrder.equals("Full-Register")) {
-//
-//
-//        }
 
-        parseRegisterSubmenuItem(jsonArraySubmenu1, 0);
+        } else if (regTypesCount == 2 && firstRegFormNameByOrder.equals("Full-Register")) {
+
+
+        }
+
+        parseRegisterSubmenuItem( 0);
         System.out.println("<<<<<  " + Icon + "  <<<<<  " + Title + "  <<<<<  " + Type + "  <<<<<  " + Href + "  <<<<<  " + OpenInRouting + "  <<<<<  " + Order);
     }
 
