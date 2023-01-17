@@ -6,11 +6,13 @@ import io.qameta.allure.SeverityLevel;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.Assert;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import pageObjects.API_ConfigJson;
 
 import java.awt.*;
 import java.io.FileInputStream;
@@ -22,9 +24,190 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
     public CraftWorld_03_SignUpQuickRegisterTest() throws AWTException {
     }
 
+
+    int k = 10;
+    private JSONArray jsonArraySubmenu1 = null;
+    private JSONArray jsonArraySubmenu2 = null;
+
+    private String Icon = null;
+    private String Title = null;
+    private String Type = null;
+    private String Href = null;
+    private boolean OpenInRouting = false;
+    private int Order = 0;
+    private String StyleType = null;
+
+//    private String Icon2 = null;
+//    private String Title2 = null;
+//    private String Type2 = null;
+//    private String Href2 = null;
+//    private boolean OpenInRouting2 = false;
+//    private int Order2 = 0;
+//    private String StyleType2 = null;
+
+    private int regType1SubmenusCount = 0;
+    private int regType2SubmenusCount = 0;
+
+    private void parseRegisterSubmenuItem(JSONArray submenu, int submenuNum) {
+        String jsonSubmenu = String.valueOf(jsonArraySubmenu1.get(submenuNum));
+        JSONObject jsonObject = new JSONObject(jsonSubmenu);
+        Icon = jsonObject.getString("Icon");
+        Title = jsonObject.getString("Title");
+        Type = jsonObject.getString("Type");
+        Href = jsonObject.getString("Href");
+        OpenInRouting = jsonObject.getBoolean("OpenInRouting");
+        Order = jsonObject.getInt("Order");
+    }
+
+
     @BeforeMethod
     public void goToLoginPopUp() {
+        api_menusJson.registration();
+
         craftWorld_0001_header_1.clickOnHeader1SignUpButton();
+
+        if (API_ConfigJson.getRegistrationTypesCount() == 1) {
+            String jsonObjectString = String.valueOf(api_menusJson.getJsonArrayRegistration().get(0));
+            JSONObject jsonObject = new JSONObject(jsonObjectString);
+            jsonArraySubmenu1 = jsonObject.getJSONArray("SubMenu"); // jsonArraySubmenu1 _ Array list all submenus firstRegForm
+            regType1SubmenusCount = jsonArraySubmenu1.length();  // regType1SubmenusCount _ how many fields have firstRegForm
+
+
+        } else if (API_ConfigJson.getRegistrationTypesCount() == 2) {
+            String jsonObjectString = String.valueOf(api_menusJson.getJsonArrayRegistration().get(0));
+            JSONObject jsonObject = new JSONObject(jsonObjectString);
+            jsonArraySubmenu1 = jsonObject.getJSONArray("SubMenu"); // jsonArraySubmenu1 _ Array list all submenus firstRegForm
+            regType1SubmenusCount = jsonArraySubmenu1.length();   // regType1SubmenusCount _ how many fields have firstRegForm
+
+
+            String jsonObjectString1 = String.valueOf(api_menusJson.getJsonArrayRegistration().get(1));
+            JSONObject jsonObject1 = new JSONObject(jsonObjectString1);
+            jsonArraySubmenu2 = jsonObject1.getJSONArray("SubMenu"); // jsonArraySubmenu2 _ Array list all submenus secondRegForm
+            regType2SubmenusCount = jsonArraySubmenu2.length();  // regType2SubmenusCount _ how many fields have secondRegForm
+
+        } else {
+            logger.info("Reg form has a additional reg form implemented");
+        }
+        regTypesCount = API_ConfigJson.getRegistrationTypesCount();
+        firstRegFormNameByOrder = API_ConfigJson.getRegistrationTypesFirstRegFormName();
+        secondRegFormNameByOrder = API_ConfigJson.getRegistrationTypesSecondRegFormName();
+        firstRegAutologinIsTrue = API_ConfigJson.isRegistrationTypeFirstIsAutologinOn();
+        secondRegAutologinIsTrue = API_ConfigJson.isRegistrationTypeSecondIsAutologinOn();
+    }
+
+    private int regTypesCount;
+    private String firstRegFormNameByOrder;
+    private String secondRegFormNameByOrder;
+    private boolean firstRegAutologinIsTrue;
+    private boolean secondRegAutologinIsTrue;
+
+    @Test(priority = 1, description = "Validate SignUp PopUps labels")
+    @Description("Validate SignUp PopUps labels")
+    @Severity(SeverityLevel.BLOCKER)
+    public void test() {
+        SoftAssert softAssert = new SoftAssert();
+        API_ConfigJson.getCurrenciesArrayList();
+        for (Object i: API_ConfigJson.getCurrenciesArrayList()){
+            System.out.println(i);
+        }
+
+//        if (regTypesCount == 1 && firstRegFormNameByOrder.equals("Quick-Register")) {
+//            for (int i = 0; i < regType1SubmenusCount; i++) {
+//                parseRegisterSubmenuItem(jsonArraySubmenu1, i);
+//
+//                switch (Type) {
+//                    case "info": {
+//
+//                        break;
+//                    }
+//                    case "dropdown": {
+//
+//                        System.out.println(Icon + Title + Type + Href + OpenInRouting + Order);
+//
+//                        break;
+//                    }
+//                    case "Email": {
+//
+//                        break;
+//                    }
+//
+//                    case "MobileData": {
+//
+//                        break;
+//                    }
+//                    case "Currency": {
+//
+//                        break;
+//                    }
+//                    case "checkbox": {
+//
+//                        break;
+//                    }
+//                    case "Gender": {
+//
+//                        break;
+//                    }
+//                    case "text": {
+//
+//                        break;
+//                    }
+//                    case "BirthDate": {
+//
+//                        break;
+//                    }
+//                    case "Region2": {
+//
+//                        break;
+//                    }
+//                    case "Region3": {
+//
+//                        break;
+//                    }
+//                    case "password": {
+//
+//                        break;
+//                    }
+//                    case "verify-sms": {
+//
+//                        break;
+//                    }
+//                    case "verify-email": {
+//
+//                        break;
+//                    }
+//                    case "security-questions": {
+//
+//                        break;
+//                    }
+//                    case "file": {
+//
+//                        break;
+//                    }
+//                    case "select": {
+//
+//                        break;
+//                    }
+//                    default: {
+//                    }
+//
+//                }
+//
+//
+//            }
+//
+//        } else if (regTypesCount == 1 && firstRegFormNameByOrder.equals("Full-Register")) {
+//
+//
+//        } else if (regTypesCount == 2 && firstRegFormNameByOrder.equals("Quick-Register")) {
+//
+//
+//        } else if (regTypesCount == 2 && firstRegFormNameByOrder.equals("Full-Register")) {
+//
+//
+//        }
+
+        parseRegisterSubmenuItem(jsonArraySubmenu1, 0);
+        System.out.println("<<<<<  " + Icon + "  <<<<<  " + Title + "  <<<<<  " + Type + "  <<<<<  " + Href + "  <<<<<  " + OpenInRouting + "  <<<<<  " + Order);
     }
 
 

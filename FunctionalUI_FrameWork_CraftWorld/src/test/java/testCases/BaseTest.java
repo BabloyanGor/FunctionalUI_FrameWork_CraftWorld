@@ -141,7 +141,6 @@ public class BaseTest extends DriverFactory {
         craftWorld_0000_login_popUp_page = PageFactory.initElements(this.driver, CraftWorld_0000_Login_PopUp_Page.class);
         craftWorld_0001_signUp_popUp_page = PageFactory.initElements(this.driver, CraftWorld_0001_SignUp_PopUp_Page.class);
 
-
 //        craftBet_01_header_pageLogInUser = PageFactory.initElements(this.driver, CraftWorld_101_Header_Page_LogInUser.class);
 //        craftWorld_01_header_page_logOutUser = PageFactory.initElements(this.driver, CraftWorld_101_Header_Page_LogOutUser.class);
 //        craftWorld_02_footer_page = PageFactory.initElements(this.driver, CraftWorld_02_Footer_Page.class);

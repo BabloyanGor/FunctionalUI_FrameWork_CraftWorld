@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class API_ConfigJson extends BasePage{
 
@@ -73,7 +74,7 @@ public class API_ConfigJson extends BasePage{
     private static boolean registrationTypeSecondIsAutologinOn = false;
 
 
-    //                 Registration  <Types>  <Order>  <AutoLogin>
+    //                 Registration  <TypesCount>  <Order>  <AutoLogin>
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static int getRegistrationTypesCount() {
         return registrationTypesCount;
@@ -90,6 +91,26 @@ public class API_ConfigJson extends BasePage{
     public static boolean isRegistrationTypeSecondIsAutologinOn() {
         return registrationTypeSecondIsAutologinOn;
     }
+//    public static ArrayList getMobileCodesArrayList(){
+//
+//    }
+
+    public static ArrayList getCurrenciesArrayList(){
+        ArrayList currencies = new ArrayList();
+        for (int i = 0; i < getCurrencies().length(); i++) {
+            String currency = String.valueOf(getCurrencies().get(i));
+            currencies.add(currency);
+        }
+        return currencies;
+    }
+
+//    public static ArrayList getLanguagesArrayList(){
+//
+//    }
+//    public static int getSocialNetworkProvidersCount() {
+//
+//    }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -165,7 +186,7 @@ public class API_ConfigJson extends BasePage{
         return LanguagesConfigJson;
     }
 
-                                            public JSONArray getCurrencies() {
+                                            public static JSONArray getCurrencies() {
         return Currencies;
     }
 
@@ -177,7 +198,7 @@ public class API_ConfigJson extends BasePage{
         return MobileCodes;
     }
 
-                                            public JSONArray getRegisterType() {
+    public JSONArray getRegisterType() {
         return RegisterType;
     }
 
@@ -312,7 +333,7 @@ public class API_ConfigJson extends BasePage{
                 return configJsonApiBody;
             }
             catch(Exception k){
-                System.out.println("configJsonApi call has exception: " + k);
+                logger.error("configJsonApi call has exception: " + k);
                 return "APIConfigJson API call has exception: " + k;
 
             }
@@ -326,140 +347,140 @@ public class API_ConfigJson extends BasePage{
             PartnerId = jsonObjectBody.getInt("PartnerId");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> PartnerId has an Exception: " + e);
+            logger.error("APIConfigJson --> PartnerId has an Exception: " + e);
         }
 
         try{
             PartnerName = jsonObjectBody.getString("PartnerName");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> PartnerName has an Exception: " + e);
+            logger.error("APIConfigJson --> PartnerName has an Exception: " + e);
         }
 
         try{
             WebApiUrl = jsonObjectBody.getString("WebApiUrl");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> WebApiUrl has an Exception: " + e);
+            logger.error("APIConfigJson --> WebApiUrl has an Exception: " + e);
         }
 
         try{
             DefaultCurrency = jsonObjectBody.getString("DefaultCurrency");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> DefaultCurrency has an Exception: " + e);
+            logger.error("APIConfigJson --> DefaultCurrency has an Exception: " + e);
         }
 
         try{
             Domain = jsonObjectBody.getString("Domain");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> Domain has an Exception: " + e);
+            logger.error("APIConfigJson --> Domain has an Exception: " + e);
         }
 
         try{
             AllowedAge = jsonObjectBody.getInt("AllowedAge");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> AllowedAge has an Exception: " + e);
+            logger.error("APIConfigJson --> AllowedAge has an Exception: " + e);
         }
 
         try{
             DefaultLanguage = jsonObjectBody.getString("DefaultLanguage");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> DefaultLanguage has an Exception: " + e);
+            logger.error("APIConfigJson --> DefaultLanguage has an Exception: " + e);
         }
 
         try{
             ShowGameNames = jsonObjectBody.getBoolean("ShowGameNames");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> ShowGameNames has an Exception: " + e);
+            logger.error("APIConfigJson --> ShowGameNames has an Exception: " + e);
         }
 
         try{
             ShowInfoPopup = jsonObjectBody.getBoolean("ShowInfoPopup");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> ShowInfoPopup has an Exception: " + e);
+            logger.error("APIConfigJson --> ShowInfoPopup has an Exception: " + e);
         }
 
         try{
             ReCaptchaKey = jsonObjectBody.getString("ReCaptchaKey");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> ReCaptchaKey has an Exception: " + e);
+            logger.error("APIConfigJson --> ReCaptchaKey has an Exception: " + e);
         }
 
         try{
             IsReCaptcha = jsonObjectBody.getBoolean("IsReCaptcha");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> IsReCaptcha has an Exception: " + e);
+            logger.error("APIConfigJson --> IsReCaptcha has an Exception: " + e);
         }
 
         try{
             HomePageType = jsonObjectBody.getString("HomePageType");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> HomePageType has an Exception: " + e);
+            logger.error("APIConfigJson --> HomePageType has an Exception: " + e);
         }
 
         try{
             CashierPageUrl = jsonObjectBody.getString("CashierPageUrl");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> CashierPageUrl has an Exception: " + e);
+            logger.error("APIConfigJson --> CashierPageUrl has an Exception: " + e);
         }
 
         try{
             RedirectUrl = jsonObjectBody.getString("RedirectUrl");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> RedirectUrl has an Exception: " + e);
+            logger.error("APIConfigJson --> RedirectUrl has an Exception: " + e);
         }
 
         try{
             ShowMobileNavPanel = jsonObjectBody.getString("ShowMobileNavPanel");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> ShowMobileNavPanel has an Exception: " + e);
+            logger.error("APIConfigJson --> ShowMobileNavPanel has an Exception: " + e);
         }
 
         try{
             EmailAddress = jsonObjectBody.getString("EmailAddress");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> EmailAddress has an Exception: " + e);
+            logger.error("APIConfigJson --> EmailAddress has an Exception: " + e);
         }
 
         try{
             LanguagesConfigJson = jsonObjectBody.getJSONArray("Languages");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> Languages has an Exception: " + e);
+            logger.error("APIConfigJson --> Languages has an Exception: " + e);
         }
 
         try{
             Currencies = jsonObjectBody.getJSONArray("Currencies");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> Currencies has an Exception: " + e);
+            logger.error("APIConfigJson --> Currencies has an Exception: " + e);
         }
 
         try{
             ProductsWithTransfer = jsonObjectBody.getJSONArray("ProductsWithTransfer");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> ProductsWithTransfer has an Exception: " + e);
+            logger.error("APIConfigJson --> ProductsWithTransfer has an Exception: " + e);
         }
 
         try{
             MobileCodes = jsonObjectBody.getJSONArray("MobileCodes");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> MobileCodes has an Exception: " + e);
+            logger.error("APIConfigJson --> MobileCodes has an Exception: " + e);
         }
 
         try{
@@ -503,84 +524,84 @@ public class API_ConfigJson extends BasePage{
 
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> RegisterType has an Exception: " + e);
+            logger.error("APIConfigJson --> RegisterType has an Exception: " + e);
         }
 
         try{
             QuickRegisterType = jsonObjectBody.getJSONArray("QuickRegisterType");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> QuickRegisterType has an Exception: " + e);
+            logger.error("APIConfigJson --> QuickRegisterType has an Exception: " + e);
         }
 
         try{
             SocialNetworkProviders = jsonObjectBody.getJSONArray("SocialNetworkProviders");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> SocialNetworkProviders has an Exception: " + e);
+            logger.error("APIConfigJson --> SocialNetworkProviders has an Exception: " + e);
         }
 
         try{
             ExternalBalance = jsonObjectBody.getJSONArray("ExternalBalance");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> ExternalBalance has an Exception: " + e);
+            logger.error("APIConfigJson --> ExternalBalance has an Exception: " + e);
         }
 
         try{
             LicenseUrl = jsonObjectBody.getString("LicenseUrl");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> LicenseUrl has an Exception: " + e);
+            logger.error("APIConfigJson --> LicenseUrl has an Exception: " + e);
         }
 
         try{
             FooterVisibility = jsonObjectBody.getJSONArray("FooterVisibility");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> FooterVisibility has an Exception: " + e);
+            logger.error("APIConfigJson --> FooterVisibility has an Exception: " + e);
         }
 
         try{
             HomeBGImage = jsonObjectBody.getString("HomeBGImage");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> HomeBGImage has an Exception: " + e);
+            logger.error("APIConfigJson --> HomeBGImage has an Exception: " + e);
         }
 
         try{
             GameLayouts = jsonObjectBody.getJSONArray("GameLayouts");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> GameLayouts has an Exception: " + e);
+            logger.error("APIConfigJson --> GameLayouts has an Exception: " + e);
         }
 
         try{
             TimeZone = jsonObjectBody.getString("TimeZone");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> TimeZone has an Exception: " + e);
+            logger.error("APIConfigJson --> TimeZone has an Exception: " + e);
         }
 
         try{
             SelfExclusionPeriod = jsonObjectBody.getString("SelfExclusionPeriod");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> SelfExclusionPeriod has an Exception: " + e);
+            logger.error("APIConfigJson --> SelfExclusionPeriod has an Exception: " + e);
         }
 
         try{
             ErrorDisplayTime = jsonObjectBody.getString("ErrorDisplayTime");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> ErrorDisplayTime has an Exception: " + e);
+            logger.error("APIConfigJson --> ErrorDisplayTime has an Exception: " + e);
         }
 
         try{
             AccountTemplateType = jsonObjectBody.getString("AccountTemplateType");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> AccountTemplateType has an Exception: " + e);
+            logger.error("APIConfigJson --> AccountTemplateType has an Exception: " + e);
         }
 
 
@@ -588,7 +609,7 @@ public class API_ConfigJson extends BasePage{
             SportOpenMode = jsonObjectBody.getString("SportOpenMode");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> SportOpenMode has an Exception: " + e);
+            logger.error("APIConfigJson --> SportOpenMode has an Exception: " + e);
         }
 
 
@@ -596,7 +617,7 @@ public class API_ConfigJson extends BasePage{
             ShowLogoutInfoPopup = jsonObjectBody.getString("ShowLogoutInfoPopup");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> ShowLogoutInfoPopup has an Exception: " + e);
+            logger.error("APIConfigJson --> ShowLogoutInfoPopup has an Exception: " + e);
         }
 
 
@@ -604,60 +625,60 @@ public class API_ConfigJson extends BasePage{
             PassRegEx = jsonObjectBody.getString("PassRegEx");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> PassRegEx has an Exception: " + e);
+            logger.error("APIConfigJson --> PassRegEx has an Exception: " + e);
         }
 
         try{
             CheckPortrait = jsonObjectBody.getString("CheckPortrait");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> CheckPortrait has an Exception: " + e);
+            logger.error("APIConfigJson --> CheckPortrait has an Exception: " + e);
         }
 
         try{
             WebFragments = jsonObjectBody.getJSONArray("WebFragments");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> WebFragments has an Exception: " + e);
+            logger.error("APIConfigJson --> WebFragments has an Exception: " + e);
         }
 
 //        try{
 //            MobileFragments = jsonObjectBody.getString("MobileFragments");
 //        }
 //        catch (Exception e){
-//            System.out.println("APIConfigJson --> MobileFragments has an Exception: " + e);
+//            logger.error("APIConfigJson --> MobileFragments has an Exception: " + e);
 //        }
 
         try {
             WinnersWidget = jsonObjectBody.getInt("WinnersWidget");
         } catch (Exception e) {
-            System.out.println("APIConfigJson --> WinnersWidget has an Exception: " + e);
+            logger.error("APIConfigJson --> WinnersWidget has an Exception: " + e);
         }
 
         try{
             RegExProperty = jsonObjectBody.getJSONArray("RegExProperty");
         }
         catch (Exception e){
-            System.out.println("APIConfigJson --> RegExProperty has an Exception: " + e);
+            logger.error("APIConfigJson --> RegExProperty has an Exception: " + e);
         }
 
         try {
             WebSlideMode = jsonObjectBody.getString("WebSlideMode");
         } catch (Exception e) {
-            System.out.println("APIConfigJson --> WebSlideMode has an Exception: " + e);
+            logger.error("APIConfigJson --> WebSlideMode has an Exception: " + e);
         }
 
         try {
             VerificationKeyFormat = jsonObjectBody.getBoolean("VerificationKeyFormat");
         } catch (Exception e) {
-            System.out.println("APIConfigJson --> VerificationKeyFormat has an Exception: " + e);
+            logger.error("APIConfigJson --> VerificationKeyFormat has an Exception: " + e);
         }
 
 
         try {
             FormValidationType = jsonObjectBody.getString("FormValidationType");
         } catch (Exception e) {
-            System.out.println("APIConfigJson --> FormValidationType has an Exception: " + e);
+            logger.error("APIConfigJson --> FormValidationType has an Exception: " + e);
         }
 
 

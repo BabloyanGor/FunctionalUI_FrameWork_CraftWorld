@@ -108,7 +108,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("HeaderPanel2Menu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -126,12 +126,17 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("HeaderGroup1Menu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
         }
 
+    }
+    private static JSONArray jsonArrayRegistration;
+
+    public  JSONArray getJsonArrayRegistration() {
+        return jsonArrayRegistration;
     }
 
     public void registration() {
@@ -142,13 +147,12 @@ public class API_MenusJson extends BasePage {
             JSONObject jsonObject = new JSONObject(jsonObjectString);
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("Registration")) {
-                JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+                jsonArrayRegistration= jsonObject.getJSONArray("Items");
+//                System.out.println(i + "-------->  " + jsonArrayRegistration);
             }
 
 
         }
-
     }
 
 
@@ -161,7 +165,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("FooterMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -179,7 +183,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("CasinoMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -197,7 +201,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("NewsMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -215,7 +219,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("AccountTabsList")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -233,7 +237,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("HomeMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -251,7 +255,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("Assets")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -269,13 +273,45 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("LiveCasinoMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
         }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     ///////////////////////////////////////////////////////   Mobile_Part   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -290,7 +326,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("MobileRightSidebar")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -307,7 +343,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("MobileFooterMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -324,7 +360,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("MobileHomeMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -341,7 +377,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("MobileHeaderPanel")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -358,7 +394,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("MobileCentralMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -375,7 +411,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("MobileBottomMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
@@ -393,7 +429,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("MobileMenu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-                System.out.println(i + "-------->  " + jsonArrayItems);
+//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
