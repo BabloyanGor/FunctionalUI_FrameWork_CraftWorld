@@ -17,6 +17,9 @@ import pageObjects.API_ConfigJson;
 import java.awt.*;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
 
@@ -93,6 +96,7 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
         secondRegFormNameByOrder = API_ConfigJson.getRegistrationTypesSecondRegFormName();
         firstRegAutologinIsTrue = API_ConfigJson.isRegistrationTypeFirstIsAutologinOn();
         secondRegAutologinIsTrue = API_ConfigJson.isRegistrationTypeSecondIsAutologinOn();
+        currencies = API_ConfigJson.getCurrenciesArrayList();
     }
 
     private int regTypesCount;
@@ -100,6 +104,8 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
     private String secondRegFormNameByOrder;
     private boolean firstRegAutologinIsTrue;
     private boolean secondRegAutologinIsTrue;
+    private ArrayList currencies;
+
 
     @Test(priority = 1, description = "Validate SignUp PopUps labels")
     @Description("Validate SignUp PopUps labels")
@@ -107,11 +113,26 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
     public void test() {
         SoftAssert softAssert = new SoftAssert();
         API_ConfigJson.getCurrenciesArrayList();
-        for (Object i: API_ConfigJson.getCurrenciesArrayList()){
-            System.out.println(i);
+
+//        for (String i : api_configJson.getMobileTitlesCodesArrayList()){
+//            System.out.println(i);
+//        }
+        for (int j : api_configJson.getMobileMaskCountArrayList()){
+            System.out.println(j);
         }
 
-//        if (regTypesCount == 1 && firstRegFormNameByOrder.equals("Quick-Register")) {
+//        Pattern pattern = Pattern.compile("[g]");
+//        Matcher matcher = pattern.matcher("engineering");
+//        int countCharacter = 0;
+//        while(matcher.find()) {
+//            countCharacter++;
+//        }
+
+
+
+//
+//        if (regTypesCount == 1 && firstRegFormNameByOrder.equals("Quick-Register"))
+//        {
 //            for (int i = 0; i < regType1SubmenusCount; i++) {
 //                parseRegisterSubmenuItem(jsonArraySubmenu1, i);
 //
@@ -195,7 +216,9 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
 //
 //            }
 //
-//        } else if (regTypesCount == 1 && firstRegFormNameByOrder.equals("Full-Register")) {
+//        }
+//
+//        else if (regTypesCount == 1 && firstRegFormNameByOrder.equals("Full-Register")) {
 //
 //
 //        } else if (regTypesCount == 2 && firstRegFormNameByOrder.equals("Quick-Register")) {

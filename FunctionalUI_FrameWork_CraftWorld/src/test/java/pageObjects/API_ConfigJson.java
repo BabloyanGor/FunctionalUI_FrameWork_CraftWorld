@@ -2,6 +2,7 @@ package pageObjects;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
@@ -91,12 +92,34 @@ public class API_ConfigJson extends BasePage{
     public static boolean isRegistrationTypeSecondIsAutologinOn() {
         return registrationTypeSecondIsAutologinOn;
     }
-//    public static ArrayList getMobileCodesArrayList(){
-//
-//    }
+    public static ArrayList<String> getMobileTitlesCodesArrayList(){
+        ArrayList <String> mobileTitlesCodesArrayList = new ArrayList();
+        for (int i = 0; i < getMobileCodes().length(); i++) {
+            String mobCod = String.valueOf(getMobileCodes().get(i));
+            JSONObject jsonObject = new JSONObject(mobCod);
+            String Title = String.valueOf(jsonObject.get("Title"));
+            String Type = String.valueOf(jsonObject.get("Type"));
+            mobileTitlesCodesArrayList.add(Title+"(" +Type + ")" );
+        }
+        return mobileTitlesCodesArrayList;
 
-    public static ArrayList getCurrenciesArrayList(){
-        ArrayList currencies = new ArrayList();
+    }
+
+    public static ArrayList<Integer> getMobileMaskCountArrayList(){
+        ArrayList <Integer> mobileMaskCountArrayList = new ArrayList();
+        for (int i = 0; i < getMobileCodes().length(); i++) {
+            String mobCod = String.valueOf(getMobileCodes().get(i));
+            JSONObject jsonObject = new JSONObject(mobCod);
+            String Mask = String.valueOf(jsonObject.get("Mask"));
+            int count = StringUtils.countMatches(Mask, "0");
+            mobileMaskCountArrayList.add(count);
+        }
+        return mobileMaskCountArrayList;
+
+    }
+
+    public static ArrayList <String> getCurrenciesArrayList(){
+        ArrayList <String> currencies = new ArrayList();
         for (int i = 0; i < getCurrencies().length(); i++) {
             String currency = String.valueOf(getCurrencies().get(i));
             currencies.add(currency);
@@ -194,7 +217,7 @@ public class API_ConfigJson extends BasePage{
         return ProductsWithTransfer;
     }
 
-                                            public JSONArray getMobileCodes() {
+                                            public static JSONArray getMobileCodes() {
         return MobileCodes;
     }
 

@@ -904,3 +904,107 @@
 2023-01-17 13:21:50,261 [main] INFO craftBet - Browser closed
 2023-01-17 13:21:50,261 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
 2023-01-17 13:21:50,270 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2023-01-17 15:14:20,874 [main] INFO craftBet - Browser for test will be chrome as chosen
+2023-01-17 15:14:26,848 [main] INFO craftBet - manu.json and config.json Page elements are initialized
+2023-01-17 15:14:27,034 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest2erB1f5whty64Fe
+2023-01-17 15:14:27,311 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:27,408 [main] ERROR craftBet - APIConfigJson --> WebFragments has an Exception: org.json.JSONException: JSONObject["WebFragments"] is not a JSONArray.
+2023-01-17 15:14:27,408 [main] ERROR craftBet - APIConfigJson --> RegExProperty has an Exception: org.json.JSONException: JSONObject["RegExProperty"] is not a JSONArray.
+2023-01-17 15:14:27,414 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest0SBoZMWexlqnuu8
+2023-01-17 15:14:27,598 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:27,950 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest6GB6X8rErq2Vk62
+2023-01-17 15:14:28,109 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:28,207 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestaYDPfNkjXXuTYfA
+2023-01-17 15:14:28,402 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:28,552 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestLzxWHxCc714SAlQ
+2023-01-17 15:14:28,714 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:29,054 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestqIYWtqQa7l87bzP
+2023-01-17 15:14:29,229 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:29,441 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestzEW3krK2K5TO3ir
+2023-01-17 15:14:29,598 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:29,686 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestSaT6yW4Kcmx1UTK
+2023-01-17 15:14:30,081 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:30,347 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest5GG5btdR4Mvx12h
+2023-01-17 15:14:30,499 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:30,585 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestuSxc6QUmkrVeeGo
+2023-01-17 15:14:30,739 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:30,882 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTesttDgDHeWLxyuiRWd
+2023-01-17 15:14:31,038 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:31,182 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest34EYTUACY0zWLA3
+2023-01-17 15:14:31,561 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:31,648 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestq6BUVUZfRZ0w4Lk
+2023-01-17 15:14:31,807 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:31,901 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestsLJNQT3vF8vRljJ
+2023-01-17 15:14:32,045 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:32,189 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest6ap7lJsEjC1S7oA
+2023-01-17 15:14:32,340 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:32,429 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestj1HLtWQczovh1bh
+2023-01-17 15:14:32,581 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:32,667 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestSrXYtj4MgOE24vE
+2023-01-17 15:14:33,056 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:33,146 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestTArSWvTgJUmKyr4
+2023-01-17 15:14:33,530 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:33,618 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest0uhcMzUAGZoqlPV
+2023-01-17 15:14:34,005 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:34,222 [main] INFO craftBet - Browser closed
+2023-01-17 15:14:34,222 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test Suite started 
+2023-01-17 15:14:34,278 [main] INFO craftBet - Browser for test will be chrome as chosen
+2023-01-17 15:14:35,887 [main] INFO craftBet - All Page elements are initialized
+2023-01-17 15:14:36,210 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2023-01-17 15:14:36,297 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestFGMMR6iTaOZ8HBK
+2023-01-17 15:14:36,456 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:14:37,059 [main] INFO craftBet - Browser closed
+2023-01-17 15:14:37,059 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2023-01-17 15:14:37,089 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+2023-01-17 15:24:12,706 [main] INFO craftBet - Browser for test will be chrome as chosen
+2023-01-17 15:24:18,804 [main] INFO craftBet - manu.json and config.json Page elements are initialized
+2023-01-17 15:24:19,013 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestw3zof7ejR8IQRWU
+2023-01-17 15:24:19,353 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:19,503 [main] ERROR craftBet - APIConfigJson --> WebFragments has an Exception: org.json.JSONException: JSONObject["WebFragments"] is not a JSONArray.
+2023-01-17 15:24:19,503 [main] ERROR craftBet - APIConfigJson --> RegExProperty has an Exception: org.json.JSONException: JSONObject["RegExProperty"] is not a JSONArray.
+2023-01-17 15:24:19,508 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestWqGNSAMPteErfsy
+2023-01-17 15:24:19,902 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:20,239 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest3NGSW5ZS0MA8j9w
+2023-01-17 15:24:20,399 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:20,678 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestPBe3udPM73jLFMg
+2023-01-17 15:24:21,071 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:21,290 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTesttia6UqHSBYc6jXw
+2023-01-17 15:24:21,431 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:21,571 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTesto7YM1XWBSqiI8AJ
+2023-01-17 15:24:21,702 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:21,789 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestA5BRpq0ztTU18Xu
+2023-01-17 15:24:22,166 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:22,316 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestbQ4J4VZcoYhXoFx
+2023-01-17 15:24:22,476 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:22,746 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestcaDZUP3cO2GaAJD
+2023-01-17 15:24:23,115 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:23,205 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestPPHJJtLCd0kRvCb
+2023-01-17 15:24:23,369 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:23,457 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest76JHwDMEyiJR79c
+2023-01-17 15:24:23,611 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:23,697 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestUDen298de8CV565
+2023-01-17 15:24:24,105 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:24,195 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestMHgRorhvpRNQ29d
+2023-01-17 15:24:24,329 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:24,472 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestTCBqsHkSXgEuvto
+2023-01-17 15:24:24,625 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:24,711 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestRgc2vvMKpFenIyi
+2023-01-17 15:24:24,851 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:24,942 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestMh7FkyxTfRFVGLr
+2023-01-17 15:24:25,105 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:25,194 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTest1IcKLXha5hRpELI
+2023-01-17 15:24:25,352 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:25,496 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestQZZ85yVHomr14PQ
+2023-01-17 15:24:25,641 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:25,730 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestuJrRwBdNgQKAlW2
+2023-01-17 15:24:25,884 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:26,091 [main] INFO craftBet - Browser closed
+2023-01-17 15:24:26,091 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test Suite started 
+2023-01-17 15:24:26,159 [main] INFO craftBet - Browser for test will be chrome as chosen
+2023-01-17 15:24:27,485 [main] INFO craftBet - All Page elements are initialized
+2023-01-17 15:24:27,751 [main] INFO craftBet - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Test started 
+2023-01-17 15:24:27,838 [main] INFO craftBet - Request:  https://craftbet.com/assets/js/version.js?=QaTestJGB4kl0Z5cPS29G
+2023-01-17 15:24:27,974 [main] INFO craftBet - Response: window.VERSION = 634;
+2023-01-17 15:24:28,599 [main] INFO craftBet - Browser closed
+2023-01-17 15:24:28,599 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test finished 
+2023-01-17 15:24:28,608 [main] INFO craftBet - <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  Test Suite finished  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  

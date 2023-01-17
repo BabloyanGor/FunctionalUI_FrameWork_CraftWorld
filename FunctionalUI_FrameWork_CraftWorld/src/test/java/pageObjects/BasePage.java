@@ -37,6 +37,8 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class BasePage {
 
@@ -961,6 +963,22 @@ public class BasePage {
     }
 
     //endregion
+
+
+    public boolean regexCheck(String regex, String matcher){
+        boolean isRegexTrue = false;
+
+//        isRegexTrue = Pattern.compile(regex).matcher(matcher).matches();
+
+//        Pattern p = Pattern.compile(".s");//. represents single character
+//        Matcher m = p.matcher("as");
+//        boolean b = m.matches();
+
+        isRegexTrue = Pattern.matches(regex, matcher);
+        return isRegexTrue;
+    }
+
+
     public void writeInExelSixArrayList(ArrayList<String> errorSrc1 ,ArrayList<String> errorSrc2 ,ArrayList<String> errorSrc3 ,ArrayList<String> errorSrc4 ,ArrayList<String> errorSrc5 ,ArrayList<String> errorSrc6 , String src, String shitName) throws IOException {
         String target = System.getProperty("user.dir") +src;
         XSSFWorkbook workbook = new XSSFWorkbook();
