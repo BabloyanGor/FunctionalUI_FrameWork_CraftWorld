@@ -581,7 +581,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//li[contains (@data-id, 'header-panel2-menu-more-menu')]")
+    @FindBy(xpath = "//li[contains (@data-id, 'header-panel1-menu-more-menu')]")
     @CacheLookup
     WebElement more2DropDown;
     public void hoverOnMore2DropDown() {

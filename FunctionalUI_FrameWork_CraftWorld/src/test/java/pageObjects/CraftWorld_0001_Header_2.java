@@ -19,7 +19,7 @@ public class CraftWorld_0001_Header_2 extends BasePage{
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel2Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-    @FindBy (xpath = "//div[@class='header-section_bottomPanel flex_between']//li[not (contains (@class, 'TEST_HeaderPanel2Menu_MoreMenu'))]")
+    @FindBy (xpath = "//div[@class='header-section_bottomPanel flex_between']//li[not (contains (@data-id, 'header-panel2-menu-more-menu'))]")
     List<WebElement> Header2AllLinks;
 
     public List<WebElement> getHeader2AllLinks() {
@@ -33,7 +33,7 @@ public class CraftWorld_0001_Header_2 extends BasePage{
     }
 
 
-    @FindBy(xpath = "//li[contains (@class, 'TEST_HeaderPanel2Menu_MoreMenu')]")
+    @FindBy(xpath = "//li[contains (@data-id, 'header-panel2-menu-more-menu')]")
     @CacheLookup
     WebElement moreDropDownHeader2;
     public void moveToMoreDropDownHeader2() {

@@ -33,51 +33,6 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @FindBy(xpath = "//a[@class='reg_item active']")
-    @CacheLookup
-    WebElement logo;
-
-    public boolean logoPresence() {
-        try {
-            basePage.waitElementToBeVisible(logo);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
     @FindBy(xpath = "//div[@class='register-background']")
     @CacheLookup
     WebElement BackgroundPhoto;
@@ -90,6 +45,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
             return false;
         }
     }
+
     @FindBy(xpath = "//div[@class='reg-prompt-text']")
     @CacheLookup
     WebElement labelPleaseFill;
@@ -102,10 +58,10 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//button[text()='Quick Register']")
+    @FindBy(xpath = "//button[@data-id = 'register-type-Quick-Register']")
     @CacheLookup
     WebElement buttonQuickRegistration;
-    @FindBy(xpath = "//button[text()='Full Register']")
+    @FindBy(xpath = "//button[@data-id = 'register-type-Full-Register']")
     @CacheLookup
     WebElement buttonFullRegistration;
 //    public String getTextButtonSwitchQuickFullRegistration() {
@@ -135,7 +91,6 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-
     @FindBy(xpath = "//div[@class='social-register-text']")
     @CacheLookup
     WebElement labelThisSiteProtected;
@@ -160,7 +115,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//div[@class='registration-section_menu']//a[@class='reg_item active']")
+    @FindBy(xpath = "//a[@data-id='register-type-Quick-Register']")
     @CacheLookup
     WebElement titleQ;
 
@@ -172,7 +127,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
             return "Cant find element titleQ";
         }
     }
-    @FindBy(xpath = "//div[@class='registration-section_menu']//a[2]")
+    @FindBy(xpath = "//a[@data-id='register-type-Full-Register']")
     @CacheLookup
     WebElement titleF;
     public String getTitleF() {
@@ -184,6 +139,25 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
+    @FindBy(xpath = "//a[@class='go_back']")
+    @CacheLookup
+    WebElement backToPreviousPageButton;
+
+    public void clickOnBackToPreviousPageButton() {
+        basePage.waitElementToBeVisible(backToPreviousPageButton);
+        basePage.javaScriptClick(backToPreviousPageButton);
+    }
+    public boolean isBackToPreviousPageButtonVisible(){
+        boolean isVisible ;
+        try {
+            isVisible = basePage.waitElementToBeVisibleBoolean(backToPreviousPageButton);
+        }
+        catch (Exception e){
+            isVisible = false;
+        }
+        return isVisible;
+    }
+
 
     @FindBy(xpath = "//span[@class='icon-close-modal']")
     @CacheLookup
@@ -193,9 +167,53 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         basePage.waitElementToBeVisible(closeXButton);
         basePage.javaScriptClick(closeXButton);
     }
+    public boolean isCloseXButtonVisible(){
+        boolean isVisible ;
+        try {
+            isVisible = basePage.waitElementToBeVisibleBoolean(closeXButton);
+        }
+        catch (Exception e){
+            isVisible = false;
+        }
+        return isVisible;
+    }
 
 
-    @FindBy(xpath = "//div[@class='form_field']//label[text()='Register By']")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    @FindBy(xpath = "//a[@class='reg_item active']")  //Title
+//    @CacheLookup
+//    WebElement logo;
+
+//    public boolean logoPresence() {
+//        try {
+//            basePage.waitElementToBeVisible(logo);
+//            return true;
+//        } catch (Exception e) {
+//            return false;
+//        }
+//    }
+
+
+
+    @FindBy(xpath = "//div[@data-id='register-item-quick-RegisterTypes']//label")
     @CacheLookup
     WebElement labelEmailMobileDropDownQ;
 
@@ -207,7 +225,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//select[@class='custom_dropdown_reg']")
+    @FindBy(xpath = "//div[@data-id='register-item-quick-RegisterTypes']//select")
     @CacheLookup
     WebElement emailMobileDropDownQ;
 
@@ -223,12 +241,12 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         try {
             return basePage.getSelectedItemText(basePage.createSelectElement(emailMobileDropDownQ));
         } catch (Exception e) {
-            return "Cant find element currencyDropDownQ";
+            return "Cant find element emailMobileDropDownQ";
         }
     }
 
 
-    @FindBy(xpath = "//div[@class='form_field']//label[text()='Email']")
+    @FindBy(xpath = "//div[@data-id='register-item-quick-Email']//label")
     @CacheLookup
     WebElement labelEmailInputQ;
 
@@ -240,7 +258,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//input[@placeholder='Email']")
+    @FindBy(xpath = "//div[@data-id='register-item-quick-Email']//input")
     @CacheLookup
     WebElement emailInputQ;
 
@@ -252,86 +270,86 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//div[@class='form_field']//label[text()='Mobile']")
-    @CacheLookup
-    WebElement labelMobileInputQ;
+//    @FindBy(xpath = "//div[@class='form_field']//label[text()='Mobile']")      //need to be changed
+//    @CacheLookup
+//    WebElement labelMobileInputQ;
+//
+//    public String getTextLabelMobileInputQ() {
+//        try {
+//            return basePage.getText(labelMobileInputQ);
+//        } catch (Exception e) {
+//            return "Cant find element labelMobileInputQ";
+//        }
+//    }
+//
+//    @FindBy(xpath = "//div[@class='flex_between current_item']")      //need to be changed
+//    @CacheLookup
+//    WebElement mobileDropDownQ;
+//    @FindBy(xpath = "//span[text()=' AM (+374)']")      //need to be changed
+//    @CacheLookup
+//    WebElement mobileArm;
+//
+//    public void clickOnMobileArmQ() {
+//        basePage.waitElementToBeVisible(mobileArm);
+//        basePage.javaScriptClick(mobileArm);
+//    }
+//    public void clickOnMobileDropDownQ() {
+//        basePage.waitElementToBeVisible(mobileDropDownQ);
+//        basePage.javaScriptClick(mobileDropDownQ);
+//    }
+//
+//
+//    public void SelectFromMobileDropDownByVisibleTextQ(String text) {
+//        try {
+//            basePage.waitElementToBeVisible(mobileDropDownQ);
+//            basePage.selectFromDropDownByVisibleText(mobileDropDownQ, text);
+//        } catch (Exception e) {
+//
+//        }
+//    }
+//
+//    public void SelectFromMobileDropDownByIndexQ(int index) { //index starts from 0
+//        try {
+//            basePage.waitElementToBeVisible(mobileDropDownQ);
+//            basePage.selectFromDropDownByIndex(mobileDropDownQ, index);
+//        } catch (Exception e) {
+//
+//        }
+//    }
+//    public String getTextFromMobileDropDownQ() {
+//        try {
+//            return basePage.getSelectedItemText(basePage.createSelectElement(mobileDropDownQ));
+//        } catch (Exception e) {
+//            return "Cant find element currencyDropDownQ";
+//        }
+//    }
+//
+//
+//    @FindBy(xpath = "//div[@class='flex_between current_item']//div//img")
+//    @CacheLookup
+//    WebElement mobileDropDownFlagQ;
+//
+//    public void SelectFromMobileDropDownQ() {
+//        try {
+//            basePage.waitElementToBeVisible(mobileDropDownFlagQ);
+//        } catch (Exception e) {
+//
+//        }
+//    }
+//
+//    @FindBy(xpath = "//div[@class='mobileData_tabs']//input")
+//    @CacheLookup
+//    WebElement mobileInputQ;
+//
+//    public void sendKeysMobileInputQ(String number) {
+//        try {
+//            basePage.sendKeysIfElementVisible(mobileInputQ, number);
+//        } catch (Exception e) {
+//
+//        }
+//    }
 
-    public String getTextLabelMobileInputQ() {
-        try {
-            return basePage.getText(labelMobileInputQ);
-        } catch (Exception e) {
-            return "Cant find element labelMobileInputQ";
-        }
-    }
-
-    @FindBy(xpath = "//div[@class='flex_between current_item']")
-    @CacheLookup
-    WebElement mobileDropDownQ;
-    @FindBy(xpath = "//span[text()=' AM (+374)']")
-    @CacheLookup
-    WebElement mobileArm;
-
-    public void clickOnMobileArmQ() {
-        basePage.waitElementToBeVisible(mobileArm);
-        basePage.javaScriptClick(mobileArm);
-    }
-    public void clickOnMobileDropDownQ() {
-        basePage.waitElementToBeVisible(mobileDropDownQ);
-        basePage.javaScriptClick(mobileDropDownQ);
-    }
-
-
-    public void SelectFromMobileDropDownByVisibleTextQ(String text) {
-        try {
-            basePage.waitElementToBeVisible(mobileDropDownQ);
-            basePage.selectFromDropDownByVisibleText(mobileDropDownQ, text);
-        } catch (Exception e) {
-
-        }
-    }
-
-    public void SelectFromMobileDropDownByIndexQ(int index) { //index starts from 0
-        try {
-            basePage.waitElementToBeVisible(mobileDropDownQ);
-            basePage.selectFromDropDownByIndex(mobileDropDownQ, index);
-        } catch (Exception e) {
-
-        }
-    }
-    public String getTextFromMobileDropDownQ() {
-        try {
-            return basePage.getSelectedItemText(basePage.createSelectElement(mobileDropDownQ));
-        } catch (Exception e) {
-            return "Cant find element currencyDropDownQ";
-        }
-    }
-
-
-    @FindBy(xpath = "//div[@class='flex_between current_item']//div//img")
-    @CacheLookup
-    WebElement mobileDropDownFlagQ;
-
-    public void SelectFromMobileDropDownQ() {
-        try {
-            basePage.waitElementToBeVisible(mobileDropDownFlagQ);
-        } catch (Exception e) {
-
-        }
-    }
-
-    @FindBy(xpath = "//div[@class='mobileData_tabs']//input")
-    @CacheLookup
-    WebElement mobileInputQ;
-
-    public void sendKeysMobileInputQ(String number) {
-        try {
-            basePage.sendKeysIfElementVisible(mobileInputQ, number);
-        } catch (Exception e) {
-
-        }
-    }
-
-    @FindBy(xpath = "//div[@class='form_field']//label[text()='Currency']")
+    @FindBy(xpath = "//div[@data-id='register-item-quick-CurrencyId']//label")
     @CacheLookup
     WebElement labelCurrencyDropDownQ;
 
@@ -345,7 +363,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//label[text()='Currency']//following::select")
+    @FindBy(xpath = "//div[@data-id='register-item-quick-CurrencyId']//select")
     @CacheLookup
     WebElement currencyDropDownQ;
 
@@ -413,7 +431,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//div[@class='reg-step-navigate-buttons flex-center']//button")
+    @FindBy(xpath = "//button[@data-id='register-quick-button']")
     @CacheLookup
     WebElement buttonRegisterQ;
 
@@ -468,12 +486,12 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
 
     @FindBy(xpath = "//div[@class='register_PSection_redirect']//a")
     @CacheLookup
-    WebElement linkLogIn;
+    WebElement linkToLogInPapUp;
 
     public void clickOnLinkLogIn() {
         try {
-            basePage.waitElementToBeVisible(linkLogIn);
-            basePage.javaScriptClick(linkLogIn);
+            basePage.waitElementToBeVisible(linkToLogInPapUp);
+            basePage.javaScriptClick(linkToLogInPapUp);
         } catch (Exception e) {
 
         }
@@ -484,7 +502,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
 
     // first page
 
-    @FindBy(xpath = "//select[@class='custom_dropdown_reg ng-pristine ng-valid ng-touched']")
+    @FindBy(xpath = "//select[@class='custom_dropdown_reg ng-pristine ng-valid ng-touched']")      //need to be changed
     @CacheLookup
     WebElement genderDropDownF;
 
@@ -507,7 +525,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//label[text()='First name']")
+    @FindBy(xpath = "//label[text()='First name']")      //need to be changed
     @CacheLookup
     WebElement labelFirstNameF;
 
@@ -519,7 +537,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//input[@placeholder='First name']")
+    @FindBy(xpath = "//input[@placeholder='First name']")      //need to be changed
     @CacheLookup
     WebElement inputFirstNameF;
 
@@ -531,7 +549,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//label[text()='Last name']")
+    @FindBy(xpath = "//label[text()='Last name']")      //need to be changed
     @CacheLookup
     WebElement labelLastName;
 
@@ -543,7 +561,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//input[@placeholder='Last name']")
+    @FindBy(xpath = "//input[@placeholder='Last name']")      //need to be changed
     @CacheLookup
     WebElement inputLastNameF;
 
@@ -556,7 +574,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
     }
 
 
-    @FindBy(xpath = "//label[text()='Mobile Number']")
+    @FindBy(xpath = "//label[text()='Mobile Number']")      //need to be changed
     @CacheLookup
     WebElement labelMobileNumber;
 
@@ -591,7 +609,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
     }
 
 
-    @FindBy(xpath = "//input[@placeholder='00 00 00 00']")
+    @FindBy(xpath = "//input[@placeholder='00 00 00 00']")      //need to be changed
     @CacheLookup
     WebElement inputNumberF;
 
@@ -612,7 +630,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
     }
 
 
-    @FindBy(xpath = "//label[text()='Birth Day']")
+    @FindBy(xpath = "//label[text()='Birth Day']")      //need to be changed
     @CacheLookup
     WebElement labelBirthDayF;
 
@@ -626,7 +644,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
 
 
 
-    @FindBy(xpath = "//select[@class='custom_dropdown_reg ng-pristine ng-invalid invalid-filed ng-touched']")
+    @FindBy(xpath = "//select[@class='custom_dropdown_reg ng-pristine ng-invalid invalid-filed ng-touched']")      //need to be changed
     @CacheLookup
     WebElement dropDownYearF;
 
@@ -670,7 +688,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//select[@class='disable-item ng-untouched ng-pristine ng-invalid']")
+    @FindBy(xpath = "//select[@class='disable-item ng-untouched ng-pristine ng-invalid']")      //need to be changed
     @CacheLookup
     WebElement dropDownDayF;
 
@@ -807,7 +825,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//label[text()='Address']")
+    @FindBy(xpath = "//label[text()='Address']")      //need to be changed
     @CacheLookup
     WebElement labelInputAddressF;
     public String getTextLabelInputAddressF() {
@@ -818,7 +836,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//input[@placeholder='Address']")
+    @FindBy(xpath = "//input[@placeholder='Address']")      //need to be changed
     @CacheLookup
     WebElement inputAddressF;
 
@@ -831,7 +849,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
 
 
 
-    @FindBy(xpath = "//label[text()='Document number']")
+    @FindBy(xpath = "//label[text()='Document number']")      //need to be changed
     @CacheLookup
     WebElement labelDocNumberF;
 
@@ -843,7 +861,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//input[@placeholder='Document number']")
+    @FindBy(xpath = "//input[@placeholder='Document number']")      //need to be changed
     @CacheLookup
     WebElement inputDocNumberF;
     public void sendKeysInputDocNumberF(String number) {
@@ -854,7 +872,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
     }
 
 
-    @FindBy(xpath = "//label[text()='Promo Code (Optional)']")
+    @FindBy(xpath = "//label[text()='Promo Code (Optional)']")      //need to be changed
     @CacheLookup
     WebElement labelPromoCodF;
 
@@ -866,7 +884,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//input[@placeholder='Promo Code (Optional)']")
+    @FindBy(xpath = "//input[@placeholder='Promo Code (Optional)']")      //need to be changed
     @CacheLookup
     WebElement inputPromoCodF;
 
@@ -896,7 +914,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
 
 // The third Page
 
-    @FindBy(xpath = "//label[text()='Username']")
+    @FindBy(xpath = "//label[text()='Username']")      //need to be changed
     @CacheLookup
     WebElement labelUsernameF;
 
@@ -919,7 +937,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//label[text()='Email']")
+    @FindBy(xpath = "//label[text()='Email']")      //need to be changed
     @CacheLookup
     WebElement labelEmailF;
 
@@ -931,7 +949,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//input[@placeholder='Email']")
+    @FindBy(xpath = "//input[@placeholder='Email']")      //need to be changed
     @CacheLookup
     WebElement inputEmailF;
 
@@ -943,7 +961,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
     }
 
 
-    @FindBy(xpath = "//label[text()='Currency']")
+    @FindBy(xpath = "//label[text()='Currency']")      //need to be changed
     @CacheLookup
     WebElement labelCurrencyDropDownF;
 
@@ -976,7 +994,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//label[text()='Password']")
+    @FindBy(xpath = "//label[text()='Password']")      //need to be changed
     @CacheLookup
     WebElement labelPasswordF;
 
@@ -988,7 +1006,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//input[@placeholder='Password (8 or more characters)']")
+    @FindBy(xpath = "//input[@placeholder='Password (8 or more characters)']")      //need to be changed
     @CacheLookup
     WebElement inputPasswordF;
     public void sendKeysInputPasswordF(String password) {
@@ -998,7 +1016,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//label[text()='Confirm Password']")
+    @FindBy(xpath = "//label[text()='Confirm Password']")      //need to be changed
     @CacheLookup
     WebElement labelConfirmPasswordF;
 
@@ -1010,7 +1028,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//input[@placeholder='Confirm password']")
+    @FindBy(xpath = "//input[@placeholder='Confirm password']")      //need to be changed
     @CacheLookup
     WebElement inputConfirmPasswordF;
 
@@ -1021,7 +1039,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//span[@class='reg-conditions']//span")
+    @FindBy(xpath = "//span[@class='reg-conditions']//span")      //need to be changed
     @CacheLookup
     WebElement labelPrivacyPolicyF;
 
@@ -1034,7 +1052,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
     }
 
 
-    @FindBy(xpath = "//a[text()='Terms & Conditions and Privacy Policy ']")
+    @FindBy(xpath = "//a[text()='Terms & Conditions and Privacy Policy ']")      //need to be changed
     @CacheLookup
     WebElement linkPrivacyPolicyF;
     public void clickOnLinkPrivacyPolicyF() {
@@ -1046,7 +1064,7 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//input[@class='reg-checkbox distans-right ng-valid ng-dirty invalid-filed ng-touched']")
+    @FindBy(xpath = "//input[@class='reg-checkbox distans-right ng-valid ng-dirty invalid-filed ng-touched']")      //need to be changed
     @CacheLookup
     WebElement checkBoxPrivacyPolicyF;
     public void clickOnCheckBoxPrivacyPolicyF() {
