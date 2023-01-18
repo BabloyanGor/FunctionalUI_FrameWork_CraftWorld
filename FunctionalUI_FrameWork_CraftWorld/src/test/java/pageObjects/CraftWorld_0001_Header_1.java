@@ -19,7 +19,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   HeaderPanel1Elements  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-    @FindBy(xpath = "//div[@class='header-section_topPanel flex_between']//li[contains (@class, 'HeaderPanel1Menu')]")
+    @FindBy(xpath = "//div[@class='header-section_topPanel flex_between']//li[contains (@data-id, 'header-panel1')]")  //all visible links without dropdown inner values
     List<WebElement> Header1AllLinks;
 
     public List<WebElement> getHeaderPanel1MenuAllLinks() {
@@ -40,7 +40,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
             logger.error(" clickOnHeader1Link(WebElement header1Link) method has an Exception: " + e);
         }
     }
-    @FindBy(xpath = "//div[@class='header-section_topPanel flex_between']//li[contains (@class, 'HeaderPanel1Menu')]//li")
+    @FindBy(xpath = "//div[@class='header-section_topPanel flex_between']//li[contains (@data-id, 'header-panel1')]//li")
     List<WebElement> Header1MenuSubLinks;
 
     public List<WebElement> getHeader1MenuSubAllLinks() {
@@ -275,7 +275,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
 
 
 
-    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Balance']/div[@class='balance_section']/span[1]")
+    @FindBy(xpath = "//li[@data-id='header-panel1-menu-Balance']/div[@class='balance_section']/span[1]")
     @CacheLookup
     WebElement balanceLabel;
 
@@ -299,7 +299,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
     }
 
 
-    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Balance']/div[@class='balance_section']/span[2]")
+    @FindBy(xpath = "//li[@data-id='header-panel1-menu-Balance']/div[@class='balance_section']/span[2]")
     @CacheLookup
     WebElement balance;
 
@@ -377,7 +377,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
     }
 
 
-    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Bonus Balance']/div[@class='balance_section']/span[1]")
+    @FindBy(xpath = "//li[@data-id='header-panel1-menu-Client Id']/div[@class='balance_section']/span[1]")
     @CacheLookup
     WebElement bonusLabel;
 
@@ -400,7 +400,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//li[@class='text-style2 TEST_HeaderPanel1Menu_Bonus Balance']/div[@class='balance_section']/span[2]")
+    @FindBy(xpath = "//li[@data-id='header-panel1-menu-Client Id']/div[@class='balance_section']/span[2]")
     @CacheLookup
     WebElement bonus;
 
@@ -442,7 +442,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
     }
 
 
-    @FindBy(xpath = "//li[@class='button-style3 TEST_HeaderPanel1Menu_Deposit']/div")
+    @FindBy(xpath = "//li[@data-id='header-panel1-menu-Deposit']/div")
     @CacheLookup
     WebElement depositButton;
 
@@ -473,7 +473,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
     }
 
 
-    @FindBy(xpath = "//div[@class='TEST_ACCOUNT_DPD_Deposit list-section']")
+    @FindBy(xpath = "//div[@data-id='account-dpdDeposit']")
     @CacheLookup
     WebElement customDropDownDeposit;
 
@@ -488,7 +488,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//div[@class='TEST_ACCOUNT_DPD_Withdraw list-section']")
+    @FindBy(xpath = "//div[@data-id='account-dpdWithdraw']")
     @CacheLookup
     WebElement customDropDownWithdraw;
     public void clickOnCustomDropDownWithdrawJS() {
@@ -502,7 +502,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
     }
 
 
-    @FindBy(xpath = "//div[@class='TEST_ACCOUNT_DPD_Bank_Accounts list-section']")
+    @FindBy(xpath = "//div[@data-id='account-dpdBank_Accounts']")
     @CacheLookup
     WebElement customDropDownBankAccounts;
     public void clickOnCustomDropDownBankAccountsJS() {
@@ -515,7 +515,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//div[@class='TEST_ACCOUNT_DPD_My_bets list-section']")
+    @FindBy(xpath = "//div[@data-id='account-dpdMy_bets']")
     @CacheLookup
     WebElement customDropDownHistory;
     public void clickOnCustomDropDownHistoryJS() {
@@ -528,7 +528,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//div[@class='TEST_ACCOUNT_DPD_Settings list-section']")
+    @FindBy(xpath = "//div[@data-id='account-dpdSettings']")
     @CacheLookup
     WebElement customDropDownSettings;
     public void clickOnCustomDropDownSettingsJS() {
@@ -541,7 +541,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//div[@class='TEST_ACCOUNT_DPD_My_tickets list-section']")
+    @FindBy(xpath = "//div[@data-id='account-dpdMy_tickets']")
     @CacheLookup
     WebElement customDropDownMyTickets;
     public void clickOnCustomDropDownMyTicketsJS() {
@@ -554,7 +554,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//div[@class='Friends TEST_ACCOUNT_DPD_My list-section']")
+    @FindBy(xpath = "//div[@data-id='account-dpdMy Friends']")
     @CacheLookup
     WebElement customDropDownMyFriends;
     public void clickOnCustomDropDownMyFriendsJS() {
@@ -567,7 +567,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//div[@class='TEST_ACCOUNT_DPD_Logout list-section']")
+    @FindBy(xpath = "//div[@data-id='account-dpdLogout']")
     @CacheLookup
     WebElement customDropDownLogOut;
 
@@ -581,7 +581,7 @@ public class CraftWorld_0001_Header_1 extends BasePage {
         }
     }
 
-    @FindBy(xpath = "//li[contains (@class, 'TEST_HeaderPanel2Menu_MoreMenu')]")
+    @FindBy(xpath = "//li[contains (@data-id, 'header-panel2-menu-more-menu')]")
     @CacheLookup
     WebElement more2DropDown;
     public void hoverOnMore2DropDown() {

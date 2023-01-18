@@ -120,7 +120,7 @@ public class CraftWorld_0000_Login_PopUp_Page extends BasePage {
     }
 
 
-    @FindBy(xpath = "//*[@class='login-title']")
+    @FindBy(xpath = "//*[@class='login-title']")  //there are two titles in this popUo one invisible
     @CacheLookup
     WebElement loginPopUpHeader;
 
