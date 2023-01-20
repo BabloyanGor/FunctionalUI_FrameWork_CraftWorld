@@ -20,58 +20,311 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
     }
 
 
-
+                    //Common Part
     @FindBy(xpath = "//div[@class='registration-section']")
     @CacheLookup
     WebElement registrationPopUpForm;
+    public boolean registrationPopUpFormPresence() {
+        try {
+            basePage.waitElementToBeVisible(registrationPopUpForm);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
     @FindBy(xpath = "//div[@class='register-background']")
     @CacheLookup
     WebElement BackgroundPhoto;
+    public boolean BackgroundPhotoPresence() {
+        try {
+            basePage.waitElementToBeVisible(BackgroundPhoto);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
     @FindBy(xpath = "//div[@class='reg-prompt-text']")
     @CacheLookup
     WebElement labelPleaseFill;
-    @FindBy(xpath = "//button[@data-id = 'register-type-Quick-Register']")
-    @CacheLookup
-    WebElement buttonQuickRegistration;
-    @FindBy(xpath = "//button[@data-id = 'register-type-Full-Register']")
-    @CacheLookup
-    WebElement buttonFullRegistration;
+    public String getTextLabelPleaseFill() {
+        try {
+            return basePage.getText(labelPleaseFill);
+        } catch (Exception e) {
+            return "Cant find element labelPleaseFill";
+        }
+    }
     @FindBy(xpath = "//div[@class='social-register-text']")
     @CacheLookup
     WebElement labelThisSiteProtected;
+    public String getTextLabelThisSiteProtected() {
+        try {
+            return basePage.getText(labelThisSiteProtected);
+        } catch (Exception e) {
+            return "Cant find element labelThisSiteProtected";
+        }
+    }
     @FindBy(xpath = "//div[@class='safety-info_text']//a")
     @CacheLookup
     WebElement labelSafeAndSecure;
-    @FindBy(xpath = "//a[@data-id='register-type-Quick-Register']")
-    @CacheLookup
-    WebElement titleQ;
-    @FindBy(xpath = "//a[@data-id='register-type-Full-Register']")
-    @CacheLookup
-    WebElement titleF;
+    public String getTextLabelSafeAndSecure() {
+        try {
+            return basePage.getText(labelSafeAndSecure);
+        } catch (Exception e) {
+            return "Cant find element labelSafeAndSecure";
+        }
+    }
     @FindBy(xpath = "//a[@class='go_back']")
     @CacheLookup
     WebElement backToPreviousPageButton;
+    public void clickOnBackToPreviousPageButton() {
+        try{
+            basePage.waitElementToBeVisible(backToPreviousPageButton);
+            basePage.javaScriptClick(backToPreviousPageButton);
+        }
+        catch (Exception e){
+            logger.info("Cant find element backToPreviousPageButton");
+        }
+    }
+    public boolean isBackToPreviousPageButtonVisible(){
+        boolean isVisible ;
+        try {
+            isVisible = basePage.waitElementToBeVisibleBoolean(backToPreviousPageButton);
+        }
+        catch (Exception e){
+            isVisible = false;
+        }
+        return isVisible;
+    }
     @FindBy(xpath = "//span[@class='icon-close-modal']")
     @CacheLookup
     WebElement closeXButton;
+    public void clickOnButtonCloseXButton() {
+        try{
+            basePage.waitElementToBeVisible(closeXButton);
+            basePage.javaScriptClick(closeXButton);
+        }
+        catch (Exception e){
+            logger.info("Cant find element closeXButton");
+        }
 
-    //Type - EmailMobile DropDown
+    }
+    public boolean isCloseXButtonVisible(){
+        boolean isVisible ;
+        try {
+            isVisible = basePage.waitElementToBeVisibleBoolean(closeXButton);
+        }
+        catch (Exception e){
+            isVisible = false;
+        }
+        return isVisible;
+    }
+
+
+    //Quick Register common
+
+    @FindBy(xpath = "//div[@class='error_message register_error_message']")
+    @CacheLookup
+    WebElement errorMessage;
+    public String getTextErrorMessage() {
+        try {
+            return basePage.getText(errorMessage);
+        } catch (Exception e) {
+            return "Cant find element errorMessage";
+        }
+    }
+    @FindBy(xpath = "//div[@class='register_PSection_redirect']")
+    @CacheLookup
+    WebElement labelAlreadyHaveAnAccount;
+    public String getTextLabelAlreadyHaveAnAccount() {
+        try {
+            return basePage.getText(labelAlreadyHaveAnAccount);
+        } catch (Exception e) {
+            return "Cant find element labelAlreadyHaveAnAccount";
+        }
+    }
+    @FindBy(xpath = "//div[@class='register_PSection_redirect']//a")
+    @CacheLookup
+    WebElement linkToLogInPapUp;
+    public void clickOnLinkLogIn() {
+        try {
+            basePage.waitElementToBeVisible(linkToLogInPapUp);
+            basePage.javaScriptClick(linkToLogInPapUp);
+        } catch (Exception e) {
+
+        }
+    }
+    @FindBy(xpath = "//button[@data-id='register-quick-button']")
+    @CacheLookup
+    WebElement buttonRegisterQ;
+    public String getTextButtonRegisterQ() {
+        try {
+            return basePage.getText(buttonRegisterQ);
+        } catch (Exception e) {
+            return "Cant find element buttonRegisterQ";
+        }
+    }
+    public void clickOnButtonRegisterQ() {
+        try {
+            basePage.waitElementToBeVisible(buttonRegisterQ);
+            basePage.javaScriptClick(buttonRegisterQ);
+        } catch (Exception e) {
+
+        }
+    }
+    public String  getAttributeClassButtonRegisterQ() {
+        try {
+            return basePage.getAttribute(buttonRegisterQ,"class");
+        } catch (Exception e) {
+            return "Cant find element buttonRegisterQ";
+        }
+    }
+
+
+
+
+    @FindBy(xpath = "//button[@data-id = 'register-type-Quick-Register']")
+    @CacheLookup
+    WebElement buttonQuickRegistration;
+    public String getTextButtonQuickRegistration() {
+        try {
+            return basePage.getText(buttonQuickRegistration);
+        } catch (Exception e) {
+            return "Cant find element buttonQuickRegistration";
+        }
+    }
+    public void clickOnButtonQuickRegistration() {
+        try{
+            basePage.waitElementToBeVisible(buttonQuickRegistration);
+            basePage.javaScriptClick(buttonQuickRegistration);
+        }
+        catch (Exception e){
+            logger.info("Cant find element buttonQuickRegistration");
+        }
+    }
+    @FindBy(xpath = "//button[@data-id = 'register-type-Full-Register']")
+    @CacheLookup
+    WebElement buttonFullRegistration;
+    public String getTextButtonFullRegistration() {
+        try {
+            return basePage.getText(buttonFullRegistration);
+        } catch (Exception e) {
+            return "Cant find element buttonFullRegistration";
+        }
+    }
+    public void clickOnButtonFullRegistration() {
+        try{
+            basePage.waitElementToBeVisible(buttonFullRegistration);
+            basePage.javaScriptClick(buttonFullRegistration);
+        }
+        catch (Exception e){
+            logger.info("Cant find element buttonFullRegistration");
+        }
+    }
+    @FindBy(xpath = "//a[@data-id='register-type-Quick-Register']")
+    @CacheLookup
+    WebElement titleQ;
+    public String getTextTitleQ() {
+        try {
+            basePage.waitElementToBeVisible(titleQ);
+            return basePage.getText(titleQ);
+        } catch (Exception e) {
+            return "Cant find element titleQ";
+        }
+    }
+    public void clickOnButtonTitleQ() {
+        try{
+            basePage.waitElementToBeVisible(titleQ);
+            basePage.javaScriptClick(titleQ);
+        }
+        catch (Exception e){
+            logger.info("Cant find element titleQ");
+        }
+    }
+    @FindBy(xpath = "//a[@data-id='register-type-Full-Register']")
+    @CacheLookup
+    WebElement titleF;
+    public String getTextTitleF() {
+        try {
+            basePage.waitElementToBeVisible(titleF);
+            return basePage.getText(titleF);
+        } catch (Exception e) {
+            return "Cant find element titleF";
+        }
+    }
+    public void clickOnButtonTitleF() {
+        try{
+            basePage.waitElementToBeVisible(titleF);
+            basePage.javaScriptClick(titleF);
+        }
+        catch (Exception e){
+            logger.info("Cant find element titleF");
+        }
+    }
+
+
+
+
+
+
+
+
+    //Type - DropDown (Email/Mobile)  Quick Reg
     @FindBy(xpath = "//div[@data-id='register-item-quick-RegisterTypes']//label")
     @CacheLookup
     WebElement labelEmailMobileDropDownQ;
+    public String getTextLabelEmailMobileDropDownQ() {
+        try {
+            return basePage.getText(labelEmailMobileDropDownQ);
+        } catch (Exception e) {
+            return "Cant find element labelEmailMobileDropDownQ";
+        }
+    }
     @FindBy(xpath = "//div[@data-id='register-item-quick-RegisterTypes']//select")
     @CacheLookup
     WebElement emailMobileDropDownQ;
+    public void selectEmailMobileDropDownQ(String text) {
+        try {
+            basePage.waitElementToBeVisible(emailMobileDropDownQ);
+            basePage.selectFromDropDownByVisibleText(emailMobileDropDownQ, text);
+        } catch (Exception e) {
+            logger.info("Cant find element emailMobileDropDownQ");
+        }
+    }
+    public String getTextEmailMobileDropDownQ() {
+        try {
+            return basePage.getSelectedItemText(basePage.createSelectElement(emailMobileDropDownQ));
+        } catch (Exception e) {
+            return "Cant find element emailMobileDropDownQ";
+        }
+    }
 
-    //Type - Email
+
+
+    //Type - text   Email
     @FindBy(xpath = "//div[@data-id='register-item-quick-Email']//label")
     @CacheLookup
     WebElement labelEmailInputQ;
+    public String getTextLabelEmailInputQ() {
+        try {
+            return basePage.getText(labelEmailInputQ);
+        } catch (Exception e) {
+            return "Cant find element labelEmailInputQ";
+        }
+    }
     @FindBy(xpath = "//div[@data-id='register-item-quick-Email']//input")
     @CacheLookup
     WebElement emailInputQ;
+    public void sendKeysEmailInputQ(String email) {
+        try {
+            basePage.sendKeysIfElementVisible(emailInputQ, email);
+        } catch (Exception e) {
+            logger.info("Cant find element emailInputQ");
+        }
+    }
 
-    // Type - Mobile Quick_Reg
+
+
+    // Type - MobileData Quick_Reg
     @FindBy(xpath = "//ul[@data-id='register-mobile-codes']")
     @CacheLookup
     WebElement mobileDropDownQ;
@@ -167,6 +420,14 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         }
         return null;
     }
+    public void setTextMobileCodText(WebElement mobileCodText) {
+        try {
+            basePage.waitElementToBeVisible(mobileCodText);
+            basePage.javaScriptClick(mobileCodText);
+        } catch (Exception e) {
+            logger.error("getTextMobileCodText(WebElement mobileCodText)  method has an Exception: " + e);
+        }
+    }
     @FindBy(xpath = "//*[@data-id='register-mobile-codes']//img")
     List<WebElement> mobileCodesImgList;
     public List<WebElement> getMobileCodesImgList() {
@@ -233,226 +494,6 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
     @FindBy(xpath = "//div[@data-id='register-item-quick-CurrencyId']//label")
     @CacheLookup
     WebElement labelCurrencyDropDownQ;
-    @FindBy(xpath = "//div[@data-id='register-item-quick-CurrencyId']//select")
-    @CacheLookup
-    WebElement currencyDropDownQ;
-
-    // Terms Conditions
-    @FindBy(xpath = "//span[@class='reg-conditions']")
-    @CacheLookup
-    WebElement labelTermsConditionsQ;
-    @FindBy(xpath = "//span[@class='reg-conditions']//a")
-    @CacheLookup
-    WebElement linkTermsConditionsQ;
-    @FindBy(xpath = "//input[@id='acceptTerms']")
-    @CacheLookup
-    WebElement checkBoxTermsConditionsQ;
-
-
-    @FindBy(xpath = "//button[@data-id='register-quick-button']")
-    @CacheLookup
-    WebElement buttonRegisterQ;
-    @FindBy(xpath = "//div[@class='error_message register_error_message']")
-    @CacheLookup
-    WebElement errorMessage;
-    @FindBy(xpath = "//div[@class='register_PSection_redirect']")
-    @CacheLookup
-    WebElement labelAlreadyHaveAnAccount;
-    @FindBy(xpath = "//div[@class='register_PSection_redirect']//a")
-    @CacheLookup
-    WebElement linkToLogInPapUp;
-    public boolean registrationPopUpFormPresence() {
-        try {
-            basePage.waitElementToBeVisible(registrationPopUpForm);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-    public boolean BackgroundPhotoPresence() {
-        try {
-            basePage.waitElementToBeVisible(BackgroundPhoto);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-    public String getTextLabelPleaseFill() {
-        try {
-            return basePage.getText(labelPleaseFill);
-        } catch (Exception e) {
-            return "Cant find element labelPleaseFill";
-        }
-    }
-    public String getTextButtonQuickRegistration() {
-        try {
-            return basePage.getText(buttonQuickRegistration);
-        } catch (Exception e) {
-            return "Cant find element buttonQuickRegistration";
-        }
-    }
-    public String getTextButtonFullRegistration() {
-        try {
-            return basePage.getText(buttonFullRegistration);
-        } catch (Exception e) {
-            return "Cant find element buttonFullRegistration";
-        }
-    }
-    public void clickOnButtonFullRegistration() {
-        try{
-            basePage.waitElementToBeVisible(buttonFullRegistration);
-            basePage.javaScriptClick(buttonFullRegistration);
-        }
-        catch (Exception e){
-            logger.info("Cant find element buttonFullRegistration");
-        }
-    }
-    public void clickOnButtonQuickRegistration() {
-        try{
-            basePage.waitElementToBeVisible(buttonQuickRegistration);
-            basePage.javaScriptClick(buttonQuickRegistration);
-        }
-        catch (Exception e){
-            logger.info("Cant find element buttonQuickRegistration");
-        }
-    }
-    public String getTextLabelThisSiteProtected() {
-        try {
-            return basePage.getText(labelThisSiteProtected);
-        } catch (Exception e) {
-            return "Cant find element labelThisSiteProtected";
-        }
-    }
-    public String getTextLabelSafeAndSecure() {
-        try {
-            return basePage.getText(labelSafeAndSecure);
-        } catch (Exception e) {
-            return "Cant find element labelSafeAndSecure";
-        }
-    }
-    public String getTextTitleQ() {
-        try {
-            basePage.waitElementToBeVisible(titleQ);
-            return basePage.getText(titleQ);
-        } catch (Exception e) {
-            return "Cant find element titleQ";
-        }
-    }
-    public void clickOnButtonTitleQ() {
-        try{
-            basePage.waitElementToBeVisible(titleQ);
-            basePage.javaScriptClick(titleQ);
-        }
-        catch (Exception e){
-            logger.info("Cant find element titleQ");
-        }
-    }
-    public String getTextTitleF() {
-        try {
-            basePage.waitElementToBeVisible(titleF);
-            return basePage.getText(titleF);
-        } catch (Exception e) {
-            return "Cant find element titleF";
-        }
-    }
-    public void clickOnButtonTitleF() {
-        try{
-            basePage.waitElementToBeVisible(titleF);
-            basePage.javaScriptClick(titleF);
-        }
-        catch (Exception e){
-            logger.info("Cant find element titleF");
-        }
-    }
-    public void clickOnBackToPreviousPageButton() {
-        try{
-            basePage.waitElementToBeVisible(backToPreviousPageButton);
-            basePage.javaScriptClick(backToPreviousPageButton);
-        }
-        catch (Exception e){
-            logger.info("Cant find element backToPreviousPageButton");
-        }
-    }
-    public boolean isBackToPreviousPageButtonVisible(){
-        boolean isVisible ;
-        try {
-            isVisible = basePage.waitElementToBeVisibleBoolean(backToPreviousPageButton);
-        }
-        catch (Exception e){
-            isVisible = false;
-        }
-        return isVisible;
-    }
-    public void clickOnButtonCloseXButton() {
-        try{
-            basePage.waitElementToBeVisible(closeXButton);
-            basePage.javaScriptClick(closeXButton);
-        }
-        catch (Exception e){
-            logger.info("Cant find element closeXButton");
-        }
-
-    }
-    public boolean isCloseXButtonVisible(){
-        boolean isVisible ;
-        try {
-            isVisible = basePage.waitElementToBeVisibleBoolean(closeXButton);
-        }
-        catch (Exception e){
-            isVisible = false;
-        }
-        return isVisible;
-    }
-    public String getTextLabelEmailMobileDropDownQ() {
-        try {
-            return basePage.getText(labelEmailMobileDropDownQ);
-        } catch (Exception e) {
-            return "Cant find element labelEmailMobileDropDownQ";
-        }
-    }
-    public void selectEmailMobileDropDownQ(String text) {
-        try {
-            basePage.waitElementToBeVisible(emailMobileDropDownQ);
-            basePage.selectFromDropDownByVisibleText(emailMobileDropDownQ, text);
-        } catch (Exception e) {
-            logger.info("Cant find element emailMobileDropDownQ");
-        }
-    }
-    public String getTextEmailMobileDropDownQ() {
-        try {
-            return basePage.getSelectedItemText(basePage.createSelectElement(emailMobileDropDownQ));
-        } catch (Exception e) {
-            return "Cant find element emailMobileDropDownQ";
-        }
-    }
-    public String getTextLabelEmailInputQ() {
-        try {
-            return basePage.getText(labelEmailInputQ);
-        } catch (Exception e) {
-            return "Cant find element labelEmailInputQ";
-        }
-    }
-    public void sendKeysEmailInputQ(String email) {
-        try {
-            basePage.sendKeysIfElementVisible(emailInputQ, email);
-        } catch (Exception e) {
-            logger.info("Cant find element emailInputQ");
-        }
-    }
-
-
-
-    public void getTextMobileCodText(WebElement mobileCodText) {
-        try {
-            basePage.waitElementToBeVisible(mobileCodText);
-            basePage.javaScriptClick(mobileCodText);
-        } catch (Exception e) {
-            logger.error("getTextMobileCodText(WebElement mobileCodText)  method has an Exception: " + e);
-        }
-    }
-
-
-
     public String getTextLabelCurrencyDropDownQ() {
         try {
             return basePage.getText(labelCurrencyDropDownQ);
@@ -460,6 +501,9 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
             return "Cant find element labelCurrencyDropDownQ";
         }
     }
+    @FindBy(xpath = "//div[@data-id='register-item-quick-CurrencyId']//select")
+    @CacheLookup
+    WebElement currencyDropDownQ;
     public void selectFromCurrencyDropDownByVisibleTextQ(String text) {
         try {
             basePage.waitElementToBeVisible(currencyDropDownQ);
@@ -483,6 +527,119 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
             logger.info("Cant find element currencyDropDownQ") ;
         }
     }
+
+
+    // Type Currency Quick_Reg
+    @FindBy(xpath = "//div[@data-id = 'register-item-Gender']//label")
+    @CacheLookup
+    WebElement labelGenderDropDownQ;
+    public String getTextLabelGenderDropDownQ() {
+        try {
+            return basePage.getText(labelGenderDropDownQ);
+        } catch (Exception e) {
+            return "Cant find element labelGenderDropDownQ";
+        }
+    }
+    @FindBy(xpath = "//div[@data-id = 'register-item-Gender']//select")
+    @CacheLookup
+    WebElement genderDropDownQ;
+    public void selectFromGenderDropDownByVisibleTextQ(String text) {
+        try {
+            basePage.waitElementToBeVisible(genderDropDownQ);
+            basePage.selectFromDropDownByVisibleText(genderDropDownQ, text);
+        } catch (Exception e) {
+            logger.info("Cant find element genderDropDownQ") ;
+        }
+    }
+    public String getTextFromGenderDropDownQ() {
+        try {
+            return basePage.getSelectedItemText(basePage.createSelectElement(genderDropDownQ));
+        } catch (Exception e) {
+            return "Cant find element genderDropDownQ";
+        }
+    }
+    public void clickOnGenderDropDownQ() {
+        try {
+            basePage.waitElementToBeVisible(genderDropDownQ);
+            basePage.javaScriptClick(genderDropDownQ);
+        } catch (Exception e) {
+            logger.info("Cant find element genderDropDownQ") ;
+        }
+    }
+
+
+    //Type - PasswordType  Password/ConfirmPassword
+    @FindBy(xpath = "//div[@class='password_form_field_top password_form_field_top_quick']//label[1]")
+    @CacheLookup
+    WebElement labelPasswordInputQ;
+    public String getTextLabelPasswordInputQ() {
+        try {
+            return basePage.getText(labelPasswordInputQ);
+        } catch (Exception e) {
+            return "Cant find element labelPasswordInputQ";
+        }
+    }
+    @FindBy(xpath = "//div[@class='password_form_field_top password_form_field_top_quick']//input[1]")
+    @CacheLookup
+    WebElement passwordInputQ;
+    public void sendKeysPasswordInputQ(String password) {
+        try {
+            basePage.sendKeysIfElementVisible(passwordInputQ, password);
+        } catch (Exception e) {
+            logger.info("Cant find element passwordInputQ");
+        }
+    }
+    @FindBy(xpath = "//div[@class='password_form_field_top password_form_field_top_quick']//span[1]")
+    @CacheLookup
+    WebElement errorMessagePasswordInputQ;
+    public String getTextErrorMessagePasswordInputQ() {
+        try {
+            return basePage.getText(errorMessagePasswordInputQ);
+        } catch (Exception e) {
+            return "Cant find element errorMessagePasswordInputQ";
+        }
+    }
+
+
+
+    @FindBy(xpath = "//div[@class='password_form_field_top password_form_field_top_quick']//label[2]")
+    @CacheLookup
+    WebElement labelConfirmPasswordInputQ;
+    public String getTextLabelConfirmPasswordInputQ() {
+        try {
+            return basePage.getText(labelConfirmPasswordInputQ);
+        } catch (Exception e) {
+            return "Cant find element labelConfirmPasswordInputQ";
+        }
+    }
+    @FindBy(xpath = "//div[@class='password_form_field_top password_form_field_top_quick']//input[2]")
+    @CacheLookup
+    WebElement confirmPasswordInputQ;
+    public void sendKeysConfirmPasswordInputQ(String confirmPassword) {
+        try {
+            basePage.sendKeysIfElementVisible(confirmPasswordInputQ, confirmPassword);
+        } catch (Exception e) {
+            logger.info("Cant find element confirmPasswordInputQ");
+        }
+    }
+    @FindBy(xpath = "//div[@class='password_form_field_top password_form_field_top_quick']//span[2]")
+    @CacheLookup
+    WebElement errorMessageConfirmPasswordInputQ;
+    public String getTextErrorMessageConfirmPasswordInputQ() {
+        try {
+            return basePage.getText(errorMessageConfirmPasswordInputQ);
+        } catch (Exception e) {
+            return "Cant find element errorMessagePasswordInputQ";
+        }
+    }
+
+
+
+
+    // Type checkBox Terms Conditions
+    @FindBy(xpath = "//span[@class='reg-conditions']")
+    @CacheLookup
+    WebElement labelTermsConditionsQ;
     public String getTextLabelTermsConditionsQ() {
         try {
             return basePage.getText(labelTermsConditionsQ);
@@ -490,6 +647,9 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
             return "Cant find element labelTermsConditionsQ";
         }
     }
+    @FindBy(xpath = "//span[@class='reg-conditions']//a")
+    @CacheLookup
+    WebElement linkTermsConditionsQ;
     public void clickOnLinkTermsConditionsQ() {
         try {
             basePage.waitElementToBeVisible(linkTermsConditionsQ);
@@ -498,6 +658,9 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
             logger.info("Cant find element linkTermsConditionsQ");
         }
     }
+    @FindBy(xpath = "//input[@id='acceptTerms']")
+    @CacheLookup
+    WebElement checkBoxTermsConditionsQ;
     public void clickOnCheckBoxTermsConditionsQ() {
         try {
             basePage.waitElementToBeVisible(checkBoxTermsConditionsQ);
@@ -506,50 +669,22 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
             logger.info("Cant find element checkBoxTermsConditionsQ");
         }
     }
-    public String getTextButtonRegisterQ() {
-        try {
-            return basePage.getText(buttonRegisterQ);
-        } catch (Exception e) {
-            return "Cant find element buttonRegisterQ";
-        }
-    }
-    public void clickOnButtonRegisterQ() {
-        try {
-            basePage.waitElementToBeVisible(buttonRegisterQ);
-            basePage.javaScriptClick(buttonRegisterQ);
-        } catch (Exception e) {
 
-        }
-    }
-    public String  getAttributeClassButtonRegisterQ() {
-        try {
-            return basePage.getAttribute(buttonRegisterQ,"class");
-        } catch (Exception e) {
-            return "Cant find element buttonRegisterQ";
-        }
-    }
-    public void clickOnLinkLogIn() {
-        try {
-            basePage.waitElementToBeVisible(linkToLogInPapUp);
-            basePage.javaScriptClick(linkToLogInPapUp);
-        } catch (Exception e) {
 
-        }
-    }
-    public String getTextErrorMessage() {
-        try {
-            return basePage.getText(errorMessage);
-        } catch (Exception e) {
-            return "Cant find element errorMessage";
-        }
-    }
-    public String getTextLabelAlreadyHaveAnAccount() {
-        try {
-            return basePage.getText(labelAlreadyHaveAnAccount);
-        } catch (Exception e) {
-            return "Cant find element labelAlreadyHaveAnAccount";
-        }
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
