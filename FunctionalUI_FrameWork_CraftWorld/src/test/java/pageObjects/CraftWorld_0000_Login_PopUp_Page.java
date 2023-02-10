@@ -264,13 +264,51 @@ public class CraftWorld_0000_Login_PopUp_Page extends BasePage {
     }
 
 
+    @FindBy(xpath = "//input[@id='remeberMe']")
+    @CacheLookup
+    WebElement loginPopUpRememberMeCheckbox;
 
-//    @FindBy(xpath = "//input[@id='remeberMe']")
-//    @CacheLookup
-//    WebElement loginPopUpRememberMeCheckbox;
-//    @FindBy(xpath = "//label[@class='reg-conditions']")
-//    @CacheLookup
-//    WebElement loginPopUpRememberMeLabel;
+    public void clickLoginPopUpRememberMeCheckBox() {
+        try {
+            basePage.waitElementToBeVisible(loginPopUpRememberMeCheckbox);
+            basePage.clickOnElementIfClickable(loginPopUpRememberMeCheckbox);
+        } catch (Exception e) {
+            logger.error("clickLoginPopUpRememberMeCheckBox() method has an Exception: " + e);
+
+        }
+    }
+
+        public boolean loginPopUpRememberMeCheckboxIsSelected() {
+        try{
+            basePage.waitElementToBeVisible(loginPopUpRememberMeCheckbox);
+            return basePage.elementIsSelected(loginPopUpRememberMeCheckbox);
+        }
+        catch(Exception e){
+            return basePage.elementIsSelected(loginPopUpRememberMeCheckbox);
+        }
+    }
+
+
+
+    @FindBy(xpath = "//label[@class='reg-conditions']")
+    @CacheLookup
+    WebElement loginPopUpRememberMeLabel;
+
+    public boolean LoginPopUpRememberMeLabelIsNotEmpty() {
+        try {
+            basePage.waitElementToBeVisible(loginPopUpRememberMeLabel);
+            if (basePage.getText(loginPopUpRememberMeLabel).isEmpty()) {
+                return false;
+            } else {
+                return true;
+            }
+        } catch (Exception e) {
+            logger.error("LoginPopUpRememberMeLabelIsNotEmpty() method has an Exception: " + e);
+            return false;
+        }
+    }
+
+
 //    @FindBy(xpath = "//*[@class='social-login-text']")
 //    @CacheLookup
 //    WebElement loginPopUpYouCanSignUpWithLabel;
@@ -297,15 +335,7 @@ public class CraftWorld_0000_Login_PopUp_Page extends BasePage {
 //    WebElement loginPopUpSaveAndSecureLabel;
 
 
-//    public boolean loginPopUpRememberMeCheckboxIsSelected() {
-//        try{
-//            basePage.waitElementToBeVisible(loginPopUpRememberMeCheckbox);
-//            return basePage.elementIsSelected(loginPopUpRememberMeCheckbox);
-//        }
-//        catch(Exception e){
-//            return basePage.elementIsSelected(loginPopUpRememberMeCheckbox);
-//        }
-//    }
+
 //
 //    public void clickLoginPopUpRememberMeLabel() {
 //        try{

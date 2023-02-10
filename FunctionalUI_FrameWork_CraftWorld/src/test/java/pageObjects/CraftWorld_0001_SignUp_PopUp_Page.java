@@ -43,6 +43,20 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
             return false;
         }
     }
+
+    @FindBy(xpath = "//div[@class='register-background']//img")
+    @CacheLookup
+    WebElement logo;
+
+    public boolean logoPresence() {
+        try {
+            basePage.waitElementToBeVisible(logo);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     @FindBy(xpath = "//div[@class='reg-prompt-text']")
     @CacheLookup
     WebElement labelPleaseFill;
@@ -119,9 +133,6 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
         return isVisible;
     }
 
-
-    //Quick Register common
-
     @FindBy(xpath = "//div[@class='error_message register_error_message']")
     @CacheLookup
     WebElement errorMessage;
@@ -155,47 +166,44 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
     }
     @FindBy(xpath = "//button[@data-id='register-quick-button']")
     @CacheLookup
-    WebElement buttonRegisterQ;
+    WebElement buttonRegistrationQ;
     public String getTextButtonRegisterQ() {
         try {
-            return basePage.getText(buttonRegisterQ);
+            return basePage.getText(buttonRegistrationQ);
         } catch (Exception e) {
             return "Cant find element buttonRegisterQ";
         }
     }
     public void clickOnButtonRegisterQ() {
         try {
-            basePage.waitElementToBeVisible(buttonRegisterQ);
-            basePage.javaScriptClick(buttonRegisterQ);
+            basePage.waitElementToBeVisible(buttonRegistrationQ);
+            basePage.javaScriptClick(buttonRegistrationQ);
         } catch (Exception e) {
 
         }
     }
     public String  getAttributeClassButtonRegisterQ() {
         try {
-            return basePage.getAttribute(buttonRegisterQ,"class");
+            return basePage.getAttribute(buttonRegistrationQ,"class");
         } catch (Exception e) {
             return "Cant find element buttonRegisterQ";
         }
     }
 
-
-
-
     @FindBy(xpath = "//button[@data-id = 'register-type-Quick-Register']")
     @CacheLookup
-    WebElement buttonQuickRegistration;
+    WebElement switchButtonQuickRegistration;
     public String getTextButtonQuickRegistration() {
         try {
-            return basePage.getText(buttonQuickRegistration);
+            return basePage.getText(switchButtonQuickRegistration);
         } catch (Exception e) {
             return "Cant find element buttonQuickRegistration";
         }
     }
     public void clickOnButtonQuickRegistration() {
         try{
-            basePage.waitElementToBeVisible(buttonQuickRegistration);
-            basePage.javaScriptClick(buttonQuickRegistration);
+            basePage.waitElementToBeVisible(switchButtonQuickRegistration);
+            basePage.javaScriptClick(switchButtonQuickRegistration);
         }
         catch (Exception e){
             logger.info("Cant find element buttonQuickRegistration");
@@ -203,18 +211,18 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
     }
     @FindBy(xpath = "//button[@data-id = 'register-type-Full-Register']")
     @CacheLookup
-    WebElement buttonFullRegistration;
+    WebElement switchButtonFullRegistration;
     public String getTextButtonFullRegistration() {
         try {
-            return basePage.getText(buttonFullRegistration);
+            return basePage.getText(switchButtonFullRegistration);
         } catch (Exception e) {
             return "Cant find element buttonFullRegistration";
         }
     }
     public void clickOnButtonFullRegistration() {
         try{
-            basePage.waitElementToBeVisible(buttonFullRegistration);
-            basePage.javaScriptClick(buttonFullRegistration);
+            basePage.waitElementToBeVisible(switchButtonFullRegistration);
+            basePage.javaScriptClick(switchButtonFullRegistration);
         }
         catch (Exception e){
             logger.info("Cant find element buttonFullRegistration");
@@ -688,18 +696,6 @@ public class CraftWorld_0001_SignUp_PopUp_Page extends BasePage {
 
 
 
-//    @FindBy(xpath = "//a[@class='reg_item active']")  //Title
-//    @CacheLookup
-//    WebElement logo;
-
-//    public boolean logoPresence() {
-//        try {
-//            basePage.waitElementToBeVisible(logo);
-//            return true;
-//        } catch (Exception e) {
-//            return false;
-//        }
-//    }
 
 
 

@@ -88,71 +88,6 @@ public class BasePage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public HttpResponse<String> menuListAPI() throws UnirestException {
         Unirest.setTimeouts(0, 0);
         HttpResponse<String> response = Unirest.get(baseURL + "/assets/json/menu.json?=636")
@@ -623,6 +558,7 @@ public class BasePage {
 
 
     //endregion
+
     //region <Check version.js SportsBook >
     public String generateRandomKeySportsBook() {
         String randomKey;
@@ -656,7 +592,6 @@ public class BasePage {
 
 
     //endregion
-
 
     //region <Config.json CorePlatform getLanguages>
     public String generateRandomKeyConfig() {
@@ -698,8 +633,6 @@ public class BasePage {
     //endregion
     //<Config.json SportsBook>
     //endregion
-
-
 
     //region <en.json CorePlatform>
 
@@ -825,7 +758,6 @@ public class BasePage {
         }
     }
     //endregion
-
 
     //region <en.json SportsBook>
     public static ArrayList<String> translationMissingLinesSport = new ArrayList<>();
@@ -1154,6 +1086,11 @@ public class BasePage {
 
     public void sendKeys(WebElement element, String keys) {
         element.sendKeys(keys);
+    }
+
+
+    public boolean isCheckboxSelected(WebElement checkbox){
+        return checkbox.isSelected();
     }
 
     /* this method will be true if element is enabled */
