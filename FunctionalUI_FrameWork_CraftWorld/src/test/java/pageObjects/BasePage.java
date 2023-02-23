@@ -858,7 +858,7 @@ public class BasePage {
     Date timestamp;
     public static ArrayList<String> timestampArr = new ArrayList<>();
 
-    public HttpResponse<String> serverLoad() throws UnirestException {
+    public HttpResponse<String> serverLoad() {
 
         try {
             Unirest.setTimeouts(35000, 25000);

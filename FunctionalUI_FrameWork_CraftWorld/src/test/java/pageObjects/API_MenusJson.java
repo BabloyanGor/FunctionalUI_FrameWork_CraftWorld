@@ -92,7 +92,6 @@ public class API_MenusJson extends BasePage {
                     if (Title.equals("Login Button")) {
                         loginPageStyle = String.valueOf(jsonObjectHeaderPanel1MenuItemString.get("StyleType"));
                         loginPageType = String.valueOf(jsonObjectHeaderPanel1MenuItemString.get("Type"));
-//
                     }
                 }
             }
@@ -108,14 +107,12 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("HeaderPanel2Menu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
 
 
         }
 
     }
-
 
     public void headerGroup1Menu() {
         JSONObject jsonObjectBody = new JSONObject(MenusJsonApi());
@@ -126,12 +123,8 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("HeaderGroup1Menu")) {
                 JSONArray jsonArrayItems = jsonObject.getJSONArray("Items");
-//                System.out.println(i + "-------->  " + jsonArrayItems);
             }
-
-
         }
-
     }
     private static JSONArray jsonArrayRegistration;
 
@@ -148,10 +141,7 @@ public class API_MenusJson extends BasePage {
             String Type = String.valueOf(jsonObject.get("Type"));
             if (Type.equals("Registration")) {
                 jsonArrayRegistration= jsonObject.getJSONArray("Items");
-//                System.out.println(i + "-------->  " + jsonArrayRegistration);
             }
-
-
         }
     }
 

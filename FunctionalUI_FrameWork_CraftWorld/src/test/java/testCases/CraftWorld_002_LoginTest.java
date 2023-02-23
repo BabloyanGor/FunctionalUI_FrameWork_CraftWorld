@@ -26,7 +26,7 @@ CraftWorld_002_LoginTest extends BaseTest {
     int isLoginHasPopUp = 0;   // 1-PopUp , 2-InPage, 0-UnknownType
 
     @BeforeMethod
-    public void goToLoginPopUp() throws UnirestException, IOException {
+    public void goToLoginPopUp()  {
 //        api_menusJson.headerPanel1Menu();
         if (API_MenusJson.loginPageType.equals("loginBtn_button")) {
             isLoginHasPopUp = 1;

@@ -73,39 +73,45 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
 
 
     @BeforeMethod
-    public void goToLoginPopUp() {
-        api_menusJson.registration();
+    public void goToRegistrationPopUp() {
+        try{
+            api_menusJson.registration();
 
-        craftWorld_0001_header_1.clickOnHeader1SignUpButton();
+            craftWorld_0001_header_1.clickOnHeader1SignUpButton();
 
-        if (API_ConfigJson.getRegistrationTypesCount() == 1) {
-            String jsonObjectString = String.valueOf(api_menusJson.getJsonArrayRegistration().get(0));
-            JSONObject jsonObject = new JSONObject(jsonObjectString);
-            jsonArraySubmenu1 = jsonObject.getJSONArray("SubMenu"); // jsonArraySubmenu1 _ Array list all submenus firstRegForm
-            regType1SubmenusCount = jsonArraySubmenu1.length();  // regType1SubmenusCount _ how many fields have firstRegForm
-
-
-        } else if (API_ConfigJson.getRegistrationTypesCount() == 2) {
-            String jsonObjectString = String.valueOf(api_menusJson.getJsonArrayRegistration().get(0));
-            JSONObject jsonObject = new JSONObject(jsonObjectString);
-            jsonArraySubmenu1 = jsonObject.getJSONArray("SubMenu"); // jsonArraySubmenu1 _ Array list all submenus firstRegForm
-            regType1SubmenusCount = jsonArraySubmenu1.length();   // regType1SubmenusCount _ how many fields have firstRegForm
+            if (API_ConfigJson.getRegistrationTypesCount() == 1) {
+                String jsonObjectString = String.valueOf(api_menusJson.getJsonArrayRegistration().get(0));
+                JSONObject jsonObject = new JSONObject(jsonObjectString);
+                jsonArraySubmenu1 = jsonObject.getJSONArray("SubMenu"); // jsonArraySubmenu1 _ Array list all submenus firstRegForm
+                regType1SubmenusCount = jsonArraySubmenu1.length();  // regType1SubmenusCount _ how many fields have firstRegForm
 
 
-            String jsonObjectString1 = String.valueOf(api_menusJson.getJsonArrayRegistration().get(1));
-            JSONObject jsonObject1 = new JSONObject(jsonObjectString1);
-            jsonArraySubmenu2 = jsonObject1.getJSONArray("SubMenu"); // jsonArraySubmenu2 _ Array list all submenus secondRegForm
-            regType2SubmenusCount = jsonArraySubmenu2.length();  // regType2SubmenusCount _ how many fields have secondRegForm
+            } else if (API_ConfigJson.getRegistrationTypesCount() == 2) {
+                String jsonObjectString = String.valueOf(api_menusJson.getJsonArrayRegistration().get(0));
+                JSONObject jsonObject = new JSONObject(jsonObjectString);
+                jsonArraySubmenu1 = jsonObject.getJSONArray("SubMenu"); // jsonArraySubmenu1 _ Array list all submenus firstRegForm
+                regType1SubmenusCount = jsonArraySubmenu1.length();   // regType1SubmenusCount _ how many fields have firstRegForm
 
-        } else {
-            logger.info("Reg form has a additional reg form implemented");
+
+                String jsonObjectString1 = String.valueOf(api_menusJson.getJsonArrayRegistration().get(1));
+                JSONObject jsonObject1 = new JSONObject(jsonObjectString1);
+                jsonArraySubmenu2 = jsonObject1.getJSONArray("SubMenu"); // jsonArraySubmenu2 _ Array list all submenus secondRegForm
+                regType2SubmenusCount = jsonArraySubmenu2.length();  // regType2SubmenusCount _ how many fields have secondRegForm
+
+            } else {
+                logger.info("Reg form has a additional reg form implemented");
+            }
+            regTypesCount = API_ConfigJson.getRegistrationTypesCount();
+            firstRegFormNameByOrder = API_ConfigJson.getRegistrationTypesFirstRegFormName();
+            secondRegFormNameByOrder = API_ConfigJson.getRegistrationTypesSecondRegFormName();
+            firstRegAutologinIsTrue = API_ConfigJson.isRegistrationTypeFirstIsAutologinOn();
+            secondRegAutologinIsTrue = API_ConfigJson.isRegistrationTypeSecondIsAutologinOn();
+            currencies = API_ConfigJson.getCurrenciesArrayList();
         }
-        regTypesCount = API_ConfigJson.getRegistrationTypesCount();
-        firstRegFormNameByOrder = API_ConfigJson.getRegistrationTypesFirstRegFormName();
-        secondRegFormNameByOrder = API_ConfigJson.getRegistrationTypesSecondRegFormName();
-        firstRegAutologinIsTrue = API_ConfigJson.isRegistrationTypeFirstIsAutologinOn();
-        secondRegAutologinIsTrue = API_ConfigJson.isRegistrationTypeSecondIsAutologinOn();
-        currencies = API_ConfigJson.getCurrenciesArrayList();
+        catch(Exception e){
+            logger.error("Registration  @BeforeMethod has an exception");
+        }
+
     }
 
     private int regTypesCount;
@@ -144,7 +150,7 @@ public class CraftWorld_03_SignUpQuickRegisterTest extends BaseTest {
                     }
                     case "dropdown": {
                         logger.info("RegForm input field num: " + i + "  Type is dropdown");
-                        if (Title.equals("RegisterTypes")){
+                        if (Title.equals("RegisterTypes")){                                 //  "Email" /  "Mobile"
 
                         }
                         else{
