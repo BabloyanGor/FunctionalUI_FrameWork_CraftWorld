@@ -93,7 +93,7 @@ CraftWorld_002_LoginTest extends BaseTest {
         } else {
             Assert.fail("Unknown Login button style");
         }
-        craftWorld_0000_login_popUp_page.waitAction(5000);
+//        craftWorld_0000_login_popUp_page.waitAction(5000);
     }
 
 

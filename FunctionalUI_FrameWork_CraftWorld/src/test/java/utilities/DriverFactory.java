@@ -26,12 +26,18 @@ public class DriverFactory {
         switch (browser) {
             case "chrome":
                 BaseTest.logger.info("Browser for test will be chrome as chosen");
+
+//                String path = System.getProperty("user.dir") + "\\src\\test\\java\\com\\drivers\\chromedriver\\win64\\124.0.6367.91\\chromedriver.exe";
+//                System.setProperty("webdriver.chrome.driver", path);
+
                 WebDriverManager.chromedriver().setup();
+
                 if (isHeadless.equals("true")){
                     cOptions=new ChromeOptions();
                     cOptions.addArguments("--headless", "--window-size=1920,1080");
-//                    cOptions.setHeadless(true);
+
                     driver= new ChromeDriver(cOptions);
+
                 }
                 else{
                     driver = new ChromeDriver();
